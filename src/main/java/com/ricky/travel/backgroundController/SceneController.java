@@ -170,9 +170,9 @@ public class SceneController {
     @RequestMapping("/delete")
     @ResponseBody
 //    HttpServletRequest request, @ModelAttribute("scenicVO") ScenicVO scenicVO, TrafficVO trafficVO, MultipartFile[] file
-    public JSONObject delete(@RequestParam("scenicPhotoId") String scenicPhotoId ){
+    public JSONObject delete(@RequestParam("scenicId") String scenicId ){
         JSONObject json=new JSONObject();
-        List<ScenicPhoto> photos=scenePhotoService.getPhotoes(Integer.parseInt(scenicPhotoId));
+        List<ScenicPhoto> photos=scenePhotoService.getPhotoes(Integer.parseInt(scenicId));
         //删除图片
         for(ScenicPhoto photo:photos){
             String preUrl="http://pic-1253210486.cosgz.myqcloud.com/";
@@ -188,7 +188,7 @@ public class SceneController {
             }
         }
         try{
-            sceneService.delete(Integer.parseInt(scenicPhotoId));
+            sceneService.delete(Integer.parseInt(scenicId));
             json.put("result",1);
         }catch (Exception  e){
             json.put("result",0);

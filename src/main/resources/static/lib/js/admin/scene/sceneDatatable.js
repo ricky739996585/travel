@@ -122,13 +122,13 @@ function deleteScene(scenicId) {
 }
 
 $("#isDelete").click(function () {
-   var scenicPhotoId= $("#isDelete").attr("data-id");
+   var scenicId= $("#isDelete").attr("data-id");
     $('#myModal').modal('hide');
     $.ajax({
         url:"/scene/delete.do",
         type:"POST",
         dataType:'JSON',
-        data:{"scenicPhotoId":scenicPhotoId},
+        data:{"scenicId":scenicId},
         error:function(){
             window.location.href="/admin/error.do";
         },

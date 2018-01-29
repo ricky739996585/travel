@@ -130,13 +130,13 @@
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.ricky.travel.domain.CateVO" useGeneratedKeys="true" keyProperty="id" >
+  <insert id="insert" parameterType="com.ricky.travel.domain.CateVO" useGeneratedKeys="true" keyProperty="cateId" >
     insert into cate (Cate_Id, City_Id, Cate_Name, 
       Cate_Description, Cate_Address)
     values (#{cateId,jdbcType=INTEGER}, #{cityId,jdbcType=INTEGER}, #{cateName,jdbcType=VARCHAR}, 
       #{cateDescription,jdbcType=LONGVARCHAR}, #{cateAddress,jdbcType=LONGVARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.ricky.travel.domain.CateVO" useGeneratedKeys="true" keyProperty="id" >
+  <insert id="insertSelective" parameterType="com.ricky.travel.domain.CateVO" useGeneratedKeys="true" keyProperty="cateId" >
     insert into cate
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="cateId != null" >

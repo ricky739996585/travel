@@ -7,6 +7,8 @@ import java.util.List;
 public class CateVOExample implements Serializable {
     protected String orderByClause;
 
+    private String orderByDirection;
+
     protected boolean distinct;
 
     protected List<Criteria> oredCriteria;
@@ -68,6 +70,8 @@ public class CateVOExample implements Serializable {
         distinct = false;
     }
 
+
+
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
@@ -82,6 +86,14 @@ public class CateVOExample implements Serializable {
 
     public Integer getOffset() {
         return offset;
+    }
+
+    public String getOrderByDirection() {
+        return orderByDirection;
+    }
+
+    public void setOrderByDirection(String orderByDirection) {
+        this.orderByDirection = orderByDirection;
     }
 
     protected abstract static class GeneratedCriteria implements Serializable {
