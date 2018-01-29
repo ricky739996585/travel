@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ricky.travel.dao.ArticleMapper" >
+  <resultMap id="BaseResultMap" type="com.ricky.travel.domain.Article" >
+    <id column="Article_Id" property="articleId" jdbcType="INTEGER" />
+    <result column="User_Id" property="userId" jdbcType="INTEGER" />
+    <result column="Article_Name" property="articleName" jdbcType="VARCHAR" />
+    <result column="Article_Date" property="articleDate" jdbcType="DATE" />
+    <result column="Article_Like" property="articleLike" jdbcType="INTEGER" />
+    <result column="Article_Tag" property="articleTag" jdbcType="VARCHAR" />
+    <result column="Article_Pass" property="articlePass" jdbcType="INTEGER" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.ricky.travel.domain.Article" extends="BaseResultMap" >
+    <result column="Article_Content" property="articleContent" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    Article_Id, User_Id, Article_Name, Article_Date, Article_Like, Article_Tag, Article_Pass
+  </sql>
+  <sql id="Blob_Column_List" >
+    Article_Content
+  </sql>
+  <select id="selectByExampleWithBLOBs" resultMap="ResultMapWithBLOBs" parameterType="com.ricky.travel.domain.ArticleExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from article
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.ricky.travel.domain.ArticleExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from article
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+    <if test="limit != null" >
+      <if test="offset != null" >
+        limit ${offset}, ${limit}
+      </if>
+      <if test="offset == null" >
+        limit ${limit}
+      </if>
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from article
+    where Article_Id = #{articleId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from article
+    where Article_Id = #{articleId,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.ricky.travel.domain.ArticleExample" >
+    delete from article
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.ricky.travel.domain.Article" useGeneratedKeys="true" keyProperty="id" >
+    insert into article (Article_Id, User_Id, Article_Name, 
+      Article_Date, Article_Like, Article_Tag, 
+      Article_Pass, Article_Content)
+    values (#{articleId,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, #{articleName,jdbcType=VARCHAR}, 
+      #{articleDate,jdbcType=DATE}, #{articleLike,jdbcType=INTEGER}, #{articleTag,jdbcType=VARCHAR}, 
+      #{articlePass,jdbcType=INTEGER}, #{articleContent,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.ricky.travel.domain.Article" useGeneratedKeys="true" keyProperty="id" >
+    insert into article
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="articleId != null" >
+        Article_Id,
+      </if>
+      <if test="userId != null" >
+        User_Id,
+      </if>
+      <if test="articleName != null" >
+        Article_Name,
+      </if>
+      <if test="articleDate != null" >
+        Article_Date,
+      </if>
+      <if test="articleLike != null" >
+        Article_Like,
+      </if>
+      <if test="articleTag != null" >
+        Article_Tag,
+      </if>
+      <if test="articlePass != null" >
+        Article_Pass,
+      </if>
+      <if test="articleContent != null" >
+        Article_Content,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="articleId != null" >
+        #{articleId,jdbcType=INTEGER},
+      </if>
+      <if test="userId != null" >
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="articleName != null" >
+        #{articleName,jdbcType=VARCHAR},
+      </if>
+      <if test="articleDate != null" >
+        #{articleDate,jdbcType=DATE},
+      </if>
+      <if test="articleLike != null" >
+        #{articleLike,jdbcType=INTEGER},
+      </if>
+      <if test="articleTag != null" >
+        #{articleTag,jdbcType=VARCHAR},
+      </if>
+      <if test="articlePass != null" >
+        #{articlePass,jdbcType=INTEGER},
+      </if>
+      <if test="articleContent != null" >
+        #{articleContent,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.ricky.travel.domain.ArticleExample" resultType="java.lang.Integer" >
+    select count(*) from article
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update article
+    <set >
+      <if test="record.articleId != null" >
+        Article_Id = #{record.articleId,jdbcType=INTEGER},
+      </if>
+      <if test="record.userId != null" >
+        User_Id = #{record.userId,jdbcType=INTEGER},
+      </if>
+      <if test="record.articleName != null" >
+        Article_Name = #{record.articleName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.articleDate != null" >
+        Article_Date = #{record.articleDate,jdbcType=DATE},
+      </if>
+      <if test="record.articleLike != null" >
+        Article_Like = #{record.articleLike,jdbcType=INTEGER},
+      </if>
+      <if test="record.articleTag != null" >
+        Article_Tag = #{record.articleTag,jdbcType=VARCHAR},
+      </if>
+      <if test="record.articlePass != null" >
+        Article_Pass = #{record.articlePass,jdbcType=INTEGER},
+      </if>
+      <if test="record.articleContent != null" >
+        Article_Content = #{record.articleContent,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExampleWithBLOBs" parameterType="map" >
+    update article
+    set Article_Id = #{record.articleId,jdbcType=INTEGER},
+      User_Id = #{record.userId,jdbcType=INTEGER},
+      Article_Name = #{record.articleName,jdbcType=VARCHAR},
+      Article_Date = #{record.articleDate,jdbcType=DATE},
+      Article_Like = #{record.articleLike,jdbcType=INTEGER},
+      Article_Tag = #{record.articleTag,jdbcType=VARCHAR},
+      Article_Pass = #{record.articlePass,jdbcType=INTEGER},
+      Article_Content = #{record.articleContent,jdbcType=LONGVARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update article
+    set Article_Id = #{record.articleId,jdbcType=INTEGER},
+      User_Id = #{record.userId,jdbcType=INTEGER},
+      Article_Name = #{record.articleName,jdbcType=VARCHAR},
+      Article_Date = #{record.articleDate,jdbcType=DATE},
+      Article_Like = #{record.articleLike,jdbcType=INTEGER},
+      Article_Tag = #{record.articleTag,jdbcType=VARCHAR},
+      Article_Pass = #{record.articlePass,jdbcType=INTEGER}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ricky.travel.domain.Article" >
+    update article
+    <set >
+      <if test="userId != null" >
+        User_Id = #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="articleName != null" >
+        Article_Name = #{articleName,jdbcType=VARCHAR},
+      </if>
+      <if test="articleDate != null" >
+        Article_Date = #{articleDate,jdbcType=DATE},
+      </if>
+      <if test="articleLike != null" >
+        Article_Like = #{articleLike,jdbcType=INTEGER},
+      </if>
+      <if test="articleTag != null" >
+        Article_Tag = #{articleTag,jdbcType=VARCHAR},
+      </if>
+      <if test="articlePass != null" >
+        Article_Pass = #{articlePass,jdbcType=INTEGER},
+      </if>
+      <if test="articleContent != null" >
+        Article_Content = #{articleContent,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where Article_Id = #{articleId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.ricky.travel.domain.Article" >
+    update article
+    set User_Id = #{userId,jdbcType=INTEGER},
+      Article_Name = #{articleName,jdbcType=VARCHAR},
+      Article_Date = #{articleDate,jdbcType=DATE},
+      Article_Like = #{articleLike,jdbcType=INTEGER},
+      Article_Tag = #{articleTag,jdbcType=VARCHAR},
+      Article_Pass = #{articlePass,jdbcType=INTEGER},
+      Article_Content = #{articleContent,jdbcType=LONGVARCHAR}
+    where Article_Id = #{articleId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ricky.travel.domain.Article" >
+    update article
+    set User_Id = #{userId,jdbcType=INTEGER},
+      Article_Name = #{articleName,jdbcType=VARCHAR},
+      Article_Date = #{articleDate,jdbcType=DATE},
+      Article_Like = #{articleLike,jdbcType=INTEGER},
+      Article_Tag = #{articleTag,jdbcType=VARCHAR},
+      Article_Pass = #{articlePass,jdbcType=INTEGER}
+    where Article_Id = #{articleId,jdbcType=INTEGER}
+  </update>
+</mapper>

@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ricky.travel.dao.TrafficVOMapper" >
+  <resultMap id="BaseResultMap" type="com.ricky.travel.domain.TrafficVO" >
+    <id column="Traffic_Id" property="trafficId" jdbcType="INTEGER" />
+    <result column="Scenic_Id" property="scenicId" jdbcType="INTEGER" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.ricky.travel.domain.TrafficVO" extends="BaseResultMap" >
+    <result column="Traffic_Content" property="trafficContent" jdbcType="LONGVARCHAR" />
+    <result column="Traffic_Cost" property="trafficCost" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    Traffic_Id, Scenic_Id
+  </sql>
+  <sql id="Blob_Column_List" >
+    Traffic_Content, Traffic_Cost
+  </sql>
+  <select id="selectByExampleWithBLOBs" resultMap="ResultMapWithBLOBs" parameterType="com.ricky.travel.domain.TrafficVOExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from traffic
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.ricky.travel.domain.TrafficVOExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from traffic
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+    <if test="limit != null" >
+      <if test="offset != null" >
+        limit ${offset}, ${limit}
+      </if>
+      <if test="offset == null" >
+        limit ${limit}
+      </if>
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from traffic
+    where Traffic_Id = #{trafficId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from traffic
+    where Traffic_Id = #{trafficId,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.ricky.travel.domain.TrafficVOExample" >
+    delete from traffic
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.ricky.travel.domain.TrafficVO" useGeneratedKeys="true" keyProperty="trafficId" >
+    insert into traffic (Traffic_Id, Scenic_Id, Traffic_Content, 
+      Traffic_Cost)
+    values (#{trafficId,jdbcType=INTEGER}, #{scenicId,jdbcType=INTEGER}, #{trafficContent,jdbcType=LONGVARCHAR}, 
+      #{trafficCost,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.ricky.travel.domain.TrafficVO" useGeneratedKeys="true" keyProperty="trafficId" >
+    insert into traffic
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="trafficId != null" >
+        Traffic_Id,
+      </if>
+      <if test="scenicId != null" >
+        Scenic_Id,
+      </if>
+      <if test="trafficContent != null" >
+        Traffic_Content,
+      </if>
+      <if test="trafficCost != null" >
+        Traffic_Cost,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="trafficId != null" >
+        #{trafficId,jdbcType=INTEGER},
+      </if>
+      <if test="scenicId != null" >
+        #{scenicId,jdbcType=INTEGER},
+      </if>
+      <if test="trafficContent != null" >
+        #{trafficContent,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="trafficCost != null" >
+        #{trafficCost,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.ricky.travel.domain.TrafficVOExample" resultType="java.lang.Integer" >
+    select count(*) from traffic
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update traffic
+    <set >
+      <if test="record.trafficId != null" >
+        Traffic_Id = #{record.trafficId,jdbcType=INTEGER},
+      </if>
+      <if test="record.scenicId != null" >
+        Scenic_Id = #{record.scenicId,jdbcType=INTEGER},
+      </if>
+      <if test="record.trafficContent != null" >
+        Traffic_Content = #{record.trafficContent,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="record.trafficCost != null" >
+        Traffic_Cost = #{record.trafficCost,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExampleWithBLOBs" parameterType="map" >
+    update traffic
+    set Traffic_Id = #{record.trafficId,jdbcType=INTEGER},
+      Scenic_Id = #{record.scenicId,jdbcType=INTEGER},
+      Traffic_Content = #{record.trafficContent,jdbcType=LONGVARCHAR},
+      Traffic_Cost = #{record.trafficCost,jdbcType=LONGVARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update traffic
+    set Traffic_Id = #{record.trafficId,jdbcType=INTEGER},
+      Scenic_Id = #{record.scenicId,jdbcType=INTEGER}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ricky.travel.domain.TrafficVO" >
+    update traffic
+    <set >
+      <if test="scenicId != null" >
+        Scenic_Id = #{scenicId,jdbcType=INTEGER},
+      </if>
+      <if test="trafficContent != null" >
+        Traffic_Content = #{trafficContent,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="trafficCost != null" >
+        Traffic_Cost = #{trafficCost,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where Traffic_Id = #{trafficId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.ricky.travel.domain.TrafficVO" >
+    update traffic
+    set Scenic_Id = #{scenicId,jdbcType=INTEGER},
+      Traffic_Content = #{trafficContent,jdbcType=LONGVARCHAR},
+      Traffic_Cost = #{trafficCost,jdbcType=LONGVARCHAR}
+    where Traffic_Id = #{trafficId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ricky.travel.domain.TrafficVO" >
+    update traffic
+    set Scenic_Id = #{scenicId,jdbcType=INTEGER}
+    where Traffic_Id = #{trafficId,jdbcType=INTEGER}
+  </update>
+</mapper>

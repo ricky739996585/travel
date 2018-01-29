@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ricky.travel.dao.RsUserMapper" >
+  <resultMap id="BaseResultMap" type="com.ricky.travel.domain.RsUser" >
+    <id column="User_Id" property="userId" jdbcType="INTEGER" />
+    <result column="User_Phone" property="userPhone" jdbcType="CHAR" />
+    <result column="User_Email" property="userEmail" jdbcType="VARCHAR" />
+    <result column="User_Status" property="userStatus" jdbcType="INTEGER" />
+    <result column="User_Level" property="userLevel" jdbcType="INTEGER" />
+    <result column="User_Date" property="userDate" jdbcType="TIMESTAMP" />
+    <result column="Last_Login" property="lastLogin" jdbcType="TIMESTAMP" />
+    <result column="User_Name" property="userName" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    User_Id, User_Phone, User_Email, User_Status, User_Level, User_Date, Last_Login, 
+    User_Name
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.ricky.travel.domain.RsUserExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from rs_user
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+    <if test="limit != null" >
+      <if test="offset != null" >
+        limit ${offset}, ${limit}
+      </if>
+      <if test="offset == null" >
+        limit ${limit}
+      </if>
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from rs_user
+    where User_Id = #{userId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from rs_user
+    where User_Id = #{userId,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.ricky.travel.domain.RsUserExample" >
+    delete from rs_user
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.ricky.travel.domain.RsUser" useGeneratedKeys="true" keyProperty="id" >
+    insert into rs_user (User_Id, User_Phone, User_Email, 
+      User_Status, User_Level, User_Date, 
+      Last_Login, User_Name)
+    values (#{userId,jdbcType=INTEGER}, #{userPhone,jdbcType=CHAR}, #{userEmail,jdbcType=VARCHAR}, 
+      #{userStatus,jdbcType=INTEGER}, #{userLevel,jdbcType=INTEGER}, #{userDate,jdbcType=TIMESTAMP}, 
+      #{lastLogin,jdbcType=TIMESTAMP}, #{userName,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.ricky.travel.domain.RsUser" useGeneratedKeys="true" keyProperty="id" >
+    insert into rs_user
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="userId != null" >
+        User_Id,
+      </if>
+      <if test="userPhone != null" >
+        User_Phone,
+      </if>
+      <if test="userEmail != null" >
+        User_Email,
+      </if>
+      <if test="userStatus != null" >
+        User_Status,
+      </if>
+      <if test="userLevel != null" >
+        User_Level,
+      </if>
+      <if test="userDate != null" >
+        User_Date,
+      </if>
+      <if test="lastLogin != null" >
+        Last_Login,
+      </if>
+      <if test="userName != null" >
+        User_Name,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="userId != null" >
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="userPhone != null" >
+        #{userPhone,jdbcType=CHAR},
+      </if>
+      <if test="userEmail != null" >
+        #{userEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="userStatus != null" >
+        #{userStatus,jdbcType=INTEGER},
+      </if>
+      <if test="userLevel != null" >
+        #{userLevel,jdbcType=INTEGER},
+      </if>
+      <if test="userDate != null" >
+        #{userDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastLogin != null" >
+        #{lastLogin,jdbcType=TIMESTAMP},
+      </if>
+      <if test="userName != null" >
+        #{userName,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.ricky.travel.domain.RsUserExample" resultType="java.lang.Integer" >
+    select count(*) from rs_user
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update rs_user
+    <set >
+      <if test="record.userId != null" >
+        User_Id = #{record.userId,jdbcType=INTEGER},
+      </if>
+      <if test="record.userPhone != null" >
+        User_Phone = #{record.userPhone,jdbcType=CHAR},
+      </if>
+      <if test="record.userEmail != null" >
+        User_Email = #{record.userEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="record.userStatus != null" >
+        User_Status = #{record.userStatus,jdbcType=INTEGER},
+      </if>
+      <if test="record.userLevel != null" >
+        User_Level = #{record.userLevel,jdbcType=INTEGER},
+      </if>
+      <if test="record.userDate != null" >
+        User_Date = #{record.userDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.lastLogin != null" >
+        Last_Login = #{record.lastLogin,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.userName != null" >
+        User_Name = #{record.userName,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update rs_user
+    set User_Id = #{record.userId,jdbcType=INTEGER},
+      User_Phone = #{record.userPhone,jdbcType=CHAR},
+      User_Email = #{record.userEmail,jdbcType=VARCHAR},
+      User_Status = #{record.userStatus,jdbcType=INTEGER},
+      User_Level = #{record.userLevel,jdbcType=INTEGER},
+      User_Date = #{record.userDate,jdbcType=TIMESTAMP},
+      Last_Login = #{record.lastLogin,jdbcType=TIMESTAMP},
+      User_Name = #{record.userName,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ricky.travel.domain.RsUser" >
+    update rs_user
+    <set >
+      <if test="userPhone != null" >
+        User_Phone = #{userPhone,jdbcType=CHAR},
+      </if>
+      <if test="userEmail != null" >
+        User_Email = #{userEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="userStatus != null" >
+        User_Status = #{userStatus,jdbcType=INTEGER},
+      </if>
+      <if test="userLevel != null" >
+        User_Level = #{userLevel,jdbcType=INTEGER},
+      </if>
+      <if test="userDate != null" >
+        User_Date = #{userDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastLogin != null" >
+        Last_Login = #{lastLogin,jdbcType=TIMESTAMP},
+      </if>
+      <if test="userName != null" >
+        User_Name = #{userName,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where User_Id = #{userId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ricky.travel.domain.RsUser" >
+    update rs_user
+    set User_Phone = #{userPhone,jdbcType=CHAR},
+      User_Email = #{userEmail,jdbcType=VARCHAR},
+      User_Status = #{userStatus,jdbcType=INTEGER},
+      User_Level = #{userLevel,jdbcType=INTEGER},
+      User_Date = #{userDate,jdbcType=TIMESTAMP},
+      Last_Login = #{lastLogin,jdbcType=TIMESTAMP},
+      User_Name = #{userName,jdbcType=VARCHAR}
+    where User_Id = #{userId,jdbcType=INTEGER}
+  </update>
+</mapper>

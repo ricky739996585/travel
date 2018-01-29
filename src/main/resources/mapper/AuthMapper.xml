@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ricky.travel.dao.AuthMapper" >
+  <resultMap id="BaseResultMap" type="com.ricky.travel.domain.Auth" >
+    <id column="Auth_Id" property="authId" jdbcType="INTEGER" />
+    <result column="Auth_Name" property="authName" jdbcType="VARCHAR" />
+    <result column="Auth_Date" property="authDate" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.ricky.travel.domain.Auth" extends="BaseResultMap" >
+    <result column="Auth_Content" property="authContent" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    Auth_Id, Auth_Name, Auth_Date
+  </sql>
+  <sql id="Blob_Column_List" >
+    Auth_Content
+  </sql>
+  <select id="selectByExampleWithBLOBs" resultMap="ResultMapWithBLOBs" parameterType="com.ricky.travel.domain.AuthExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from auth
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.ricky.travel.domain.AuthExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from auth
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+    <if test="limit != null" >
+      <if test="offset != null" >
+        limit ${offset}, ${limit}
+      </if>
+      <if test="offset == null" >
+        limit ${limit}
+      </if>
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from auth
+    where Auth_Id = #{authId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from auth
+    where Auth_Id = #{authId,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.ricky.travel.domain.AuthExample" >
+    delete from auth
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.ricky.travel.domain.Auth" useGeneratedKeys="true" keyProperty="id" >
+    insert into auth (Auth_Id, Auth_Name, Auth_Date, 
+      Auth_Content)
+    values (#{authId,jdbcType=INTEGER}, #{authName,jdbcType=VARCHAR}, #{authDate,jdbcType=TIMESTAMP}, 
+      #{authContent,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.ricky.travel.domain.Auth" useGeneratedKeys="true" keyProperty="id" >
+    insert into auth
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="authId != null" >
+        Auth_Id,
+      </if>
+      <if test="authName != null" >
+        Auth_Name,
+      </if>
+      <if test="authDate != null" >
+        Auth_Date,
+      </if>
+      <if test="authContent != null" >
+        Auth_Content,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="authId != null" >
+        #{authId,jdbcType=INTEGER},
+      </if>
+      <if test="authName != null" >
+        #{authName,jdbcType=VARCHAR},
+      </if>
+      <if test="authDate != null" >
+        #{authDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="authContent != null" >
+        #{authContent,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.ricky.travel.domain.AuthExample" resultType="java.lang.Integer" >
+    select count(*) from auth
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update auth
+    <set >
+      <if test="record.authId != null" >
+        Auth_Id = #{record.authId,jdbcType=INTEGER},
+      </if>
+      <if test="record.authName != null" >
+        Auth_Name = #{record.authName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.authDate != null" >
+        Auth_Date = #{record.authDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.authContent != null" >
+        Auth_Content = #{record.authContent,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExampleWithBLOBs" parameterType="map" >
+    update auth
+    set Auth_Id = #{record.authId,jdbcType=INTEGER},
+      Auth_Name = #{record.authName,jdbcType=VARCHAR},
+      Auth_Date = #{record.authDate,jdbcType=TIMESTAMP},
+      Auth_Content = #{record.authContent,jdbcType=LONGVARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update auth
+    set Auth_Id = #{record.authId,jdbcType=INTEGER},
+      Auth_Name = #{record.authName,jdbcType=VARCHAR},
+      Auth_Date = #{record.authDate,jdbcType=TIMESTAMP}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ricky.travel.domain.Auth" >
+    update auth
+    <set >
+      <if test="authName != null" >
+        Auth_Name = #{authName,jdbcType=VARCHAR},
+      </if>
+      <if test="authDate != null" >
+        Auth_Date = #{authDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="authContent != null" >
+        Auth_Content = #{authContent,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where Auth_Id = #{authId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.ricky.travel.domain.Auth" >
+    update auth
+    set Auth_Name = #{authName,jdbcType=VARCHAR},
+      Auth_Date = #{authDate,jdbcType=TIMESTAMP},
+      Auth_Content = #{authContent,jdbcType=LONGVARCHAR}
+    where Auth_Id = #{authId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ricky.travel.domain.Auth" >
+    update auth
+    set Auth_Name = #{authName,jdbcType=VARCHAR},
+      Auth_Date = #{authDate,jdbcType=TIMESTAMP}
+    where Auth_Id = #{authId,jdbcType=INTEGER}
+  </update>
+</mapper>

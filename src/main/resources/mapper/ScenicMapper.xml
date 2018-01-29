@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ricky.travel.dao.ScenicMapper" >
+  <resultMap id="BaseResultMap" type="com.ricky.travel.domain.Scenic" >
+    <id column="Scenic_Id" property="scenicId" jdbcType="INTEGER" />
+    <result column="Create_Id" property="createId" jdbcType="INTEGER" />
+    <result column="City_Id" property="cityId" jdbcType="INTEGER" />
+    <result column="Scenic_Name" property="scenicName" jdbcType="VARCHAR" />
+    <result column="Scenic_Phone" property="scenicPhone" jdbcType="CHAR" />
+    <result column="Scenic_Want" property="scenicWant" jdbcType="INTEGER" />
+    <result column="Scenic_Like" property="scenicLike" jdbcType="INTEGER" />
+    <result column="Scenic_Tag" property="scenicTag" jdbcType="VARCHAR" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.ricky.travel.domain.ScenicWithBLOBs" extends="BaseResultMap" >
+    <result column="Scenic_Description" property="scenicDescription" jdbcType="LONGVARCHAR" />
+    <result column="Scenic_Cost" property="scenicCost" jdbcType="LONGVARCHAR" />
+    <result column="Scenic_Address" property="scenicAddress" jdbcType="LONGVARCHAR" />
+    <result column="Scenic_Time" property="scenicTime" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    Scenic_Id, Create_Id, City_Id, Scenic_Name, Scenic_Phone, Scenic_Want, Scenic_Like, 
+    Scenic_Tag
+  </sql>
+  <sql id="Blob_Column_List" >
+    Scenic_Description, Scenic_Cost, Scenic_Address, Scenic_Time
+  </sql>
+  <select id="selectByExampleWithBLOBs" resultMap="ResultMapWithBLOBs" parameterType="com.ricky.travel.domain.ScenicExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from scenic
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.ricky.travel.domain.ScenicExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from scenic
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+    <if test="limit != null" >
+      <if test="offset != null" >
+        limit ${offset}, ${limit}
+      </if>
+      <if test="offset == null" >
+        limit ${limit}
+      </if>
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from scenic
+    where Scenic_Id = #{scenicId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from scenic
+    where Scenic_Id = #{scenicId,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.ricky.travel.domain.ScenicExample" >
+    delete from scenic
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.ricky.travel.domain.ScenicWithBLOBs" useGeneratedKeys="true" keyProperty="id" >
+    insert into scenic (Scenic_Id, Create_Id, City_Id, 
+      Scenic_Name, Scenic_Phone, Scenic_Want, 
+      Scenic_Like, Scenic_Tag, Scenic_Description, 
+      Scenic_Cost, Scenic_Address, Scenic_Time
+      )
+    values (#{scenicId,jdbcType=INTEGER}, #{createId,jdbcType=INTEGER}, #{cityId,jdbcType=INTEGER}, 
+      #{scenicName,jdbcType=VARCHAR}, #{scenicPhone,jdbcType=CHAR}, #{scenicWant,jdbcType=INTEGER}, 
+      #{scenicLike,jdbcType=INTEGER}, #{scenicTag,jdbcType=VARCHAR}, #{scenicDescription,jdbcType=LONGVARCHAR}, 
+      #{scenicCost,jdbcType=LONGVARCHAR}, #{scenicAddress,jdbcType=LONGVARCHAR}, #{scenicTime,jdbcType=LONGVARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.ricky.travel.domain.ScenicWithBLOBs" useGeneratedKeys="true" keyProperty="id" >
+    insert into scenic
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="scenicId != null" >
+        Scenic_Id,
+      </if>
+      <if test="createId != null" >
+        Create_Id,
+      </if>
+      <if test="cityId != null" >
+        City_Id,
+      </if>
+      <if test="scenicName != null" >
+        Scenic_Name,
+      </if>
+      <if test="scenicPhone != null" >
+        Scenic_Phone,
+      </if>
+      <if test="scenicWant != null" >
+        Scenic_Want,
+      </if>
+      <if test="scenicLike != null" >
+        Scenic_Like,
+      </if>
+      <if test="scenicTag != null" >
+        Scenic_Tag,
+      </if>
+      <if test="scenicDescription != null" >
+        Scenic_Description,
+      </if>
+      <if test="scenicCost != null" >
+        Scenic_Cost,
+      </if>
+      <if test="scenicAddress != null" >
+        Scenic_Address,
+      </if>
+      <if test="scenicTime != null" >
+        Scenic_Time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="scenicId != null" >
+        #{scenicId,jdbcType=INTEGER},
+      </if>
+      <if test="createId != null" >
+        #{createId,jdbcType=INTEGER},
+      </if>
+      <if test="cityId != null" >
+        #{cityId,jdbcType=INTEGER},
+      </if>
+      <if test="scenicName != null" >
+        #{scenicName,jdbcType=VARCHAR},
+      </if>
+      <if test="scenicPhone != null" >
+        #{scenicPhone,jdbcType=CHAR},
+      </if>
+      <if test="scenicWant != null" >
+        #{scenicWant,jdbcType=INTEGER},
+      </if>
+      <if test="scenicLike != null" >
+        #{scenicLike,jdbcType=INTEGER},
+      </if>
+      <if test="scenicTag != null" >
+        #{scenicTag,jdbcType=VARCHAR},
+      </if>
+      <if test="scenicDescription != null" >
+        #{scenicDescription,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="scenicCost != null" >
+        #{scenicCost,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="scenicAddress != null" >
+        #{scenicAddress,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="scenicTime != null" >
+        #{scenicTime,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.ricky.travel.domain.ScenicExample" resultType="java.lang.Integer" >
+    select count(*) from scenic
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update scenic
+    <set >
+      <if test="record.scenicId != null" >
+        Scenic_Id = #{record.scenicId,jdbcType=INTEGER},
+      </if>
+      <if test="record.createId != null" >
+        Create_Id = #{record.createId,jdbcType=INTEGER},
+      </if>
+      <if test="record.cityId != null" >
+        City_Id = #{record.cityId,jdbcType=INTEGER},
+      </if>
+      <if test="record.scenicName != null" >
+        Scenic_Name = #{record.scenicName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.scenicPhone != null" >
+        Scenic_Phone = #{record.scenicPhone,jdbcType=CHAR},
+      </if>
+      <if test="record.scenicWant != null" >
+        Scenic_Want = #{record.scenicWant,jdbcType=INTEGER},
+      </if>
+      <if test="record.scenicLike != null" >
+        Scenic_Like = #{record.scenicLike,jdbcType=INTEGER},
+      </if>
+      <if test="record.scenicTag != null" >
+        Scenic_Tag = #{record.scenicTag,jdbcType=VARCHAR},
+      </if>
+      <if test="record.scenicDescription != null" >
+        Scenic_Description = #{record.scenicDescription,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="record.scenicCost != null" >
+        Scenic_Cost = #{record.scenicCost,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="record.scenicAddress != null" >
+        Scenic_Address = #{record.scenicAddress,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="record.scenicTime != null" >
+        Scenic_Time = #{record.scenicTime,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExampleWithBLOBs" parameterType="map" >
+    update scenic
+    set Scenic_Id = #{record.scenicId,jdbcType=INTEGER},
+      Create_Id = #{record.createId,jdbcType=INTEGER},
+      City_Id = #{record.cityId,jdbcType=INTEGER},
+      Scenic_Name = #{record.scenicName,jdbcType=VARCHAR},
+      Scenic_Phone = #{record.scenicPhone,jdbcType=CHAR},
+      Scenic_Want = #{record.scenicWant,jdbcType=INTEGER},
+      Scenic_Like = #{record.scenicLike,jdbcType=INTEGER},
+      Scenic_Tag = #{record.scenicTag,jdbcType=VARCHAR},
+      Scenic_Description = #{record.scenicDescription,jdbcType=LONGVARCHAR},
+      Scenic_Cost = #{record.scenicCost,jdbcType=LONGVARCHAR},
+      Scenic_Address = #{record.scenicAddress,jdbcType=LONGVARCHAR},
+      Scenic_Time = #{record.scenicTime,jdbcType=LONGVARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update scenic
+    set Scenic_Id = #{record.scenicId,jdbcType=INTEGER},
+      Create_Id = #{record.createId,jdbcType=INTEGER},
+      City_Id = #{record.cityId,jdbcType=INTEGER},
+      Scenic_Name = #{record.scenicName,jdbcType=VARCHAR},
+      Scenic_Phone = #{record.scenicPhone,jdbcType=CHAR},
+      Scenic_Want = #{record.scenicWant,jdbcType=INTEGER},
+      Scenic_Like = #{record.scenicLike,jdbcType=INTEGER},
+      Scenic_Tag = #{record.scenicTag,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ricky.travel.domain.ScenicWithBLOBs" >
+    update scenic
+    <set >
+      <if test="createId != null" >
+        Create_Id = #{createId,jdbcType=INTEGER},
+      </if>
+      <if test="cityId != null" >
+        City_Id = #{cityId,jdbcType=INTEGER},
+      </if>
+      <if test="scenicName != null" >
+        Scenic_Name = #{scenicName,jdbcType=VARCHAR},
+      </if>
+      <if test="scenicPhone != null" >
+        Scenic_Phone = #{scenicPhone,jdbcType=CHAR},
+      </if>
+      <if test="scenicWant != null" >
+        Scenic_Want = #{scenicWant,jdbcType=INTEGER},
+      </if>
+      <if test="scenicLike != null" >
+        Scenic_Like = #{scenicLike,jdbcType=INTEGER},
+      </if>
+      <if test="scenicTag != null" >
+        Scenic_Tag = #{scenicTag,jdbcType=VARCHAR},
+      </if>
+      <if test="scenicDescription != null" >
+        Scenic_Description = #{scenicDescription,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="scenicCost != null" >
+        Scenic_Cost = #{scenicCost,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="scenicAddress != null" >
+        Scenic_Address = #{scenicAddress,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="scenicTime != null" >
+        Scenic_Time = #{scenicTime,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where Scenic_Id = #{scenicId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.ricky.travel.domain.ScenicWithBLOBs" >
+    update scenic
+    set Create_Id = #{createId,jdbcType=INTEGER},
+      City_Id = #{cityId,jdbcType=INTEGER},
+      Scenic_Name = #{scenicName,jdbcType=VARCHAR},
+      Scenic_Phone = #{scenicPhone,jdbcType=CHAR},
+      Scenic_Want = #{scenicWant,jdbcType=INTEGER},
+      Scenic_Like = #{scenicLike,jdbcType=INTEGER},
+      Scenic_Tag = #{scenicTag,jdbcType=VARCHAR},
+      Scenic_Description = #{scenicDescription,jdbcType=LONGVARCHAR},
+      Scenic_Cost = #{scenicCost,jdbcType=LONGVARCHAR},
+      Scenic_Address = #{scenicAddress,jdbcType=LONGVARCHAR},
+      Scenic_Time = #{scenicTime,jdbcType=LONGVARCHAR}
+    where Scenic_Id = #{scenicId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ricky.travel.domain.Scenic" >
+    update scenic
+    set Create_Id = #{createId,jdbcType=INTEGER},
+      City_Id = #{cityId,jdbcType=INTEGER},
+      Scenic_Name = #{scenicName,jdbcType=VARCHAR},
+      Scenic_Phone = #{scenicPhone,jdbcType=CHAR},
+      Scenic_Want = #{scenicWant,jdbcType=INTEGER},
+      Scenic_Like = #{scenicLike,jdbcType=INTEGER},
+      Scenic_Tag = #{scenicTag,jdbcType=VARCHAR}
+    where Scenic_Id = #{scenicId,jdbcType=INTEGER}
+  </update>
+</mapper>

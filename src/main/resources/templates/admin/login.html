@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8"></meta>
+    <title>登陆页面 </title>
+
+</head>
+<body>
+<form th:type="POST" action="/admin/validate.do" enctype="multipart/form-data" >
+    用户名：<input type="text" name="username" placeholder="请输入用户" />
+    密码：<input type="password" name="password" placeholder="请输入密码" />
+    文件：<input type="file" name="file">
+    <!--<input type="file" name="file">-->
+    <input type="submit" value="提交" />
+</form>
+<br>
+图片：<image src="/img/bg.jpg" width="100px" height="50px" />
+
+
+</body>
+</html>

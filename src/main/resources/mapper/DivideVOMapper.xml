@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ricky.travel.dao.DivideVOMapper" >
+  <resultMap id="BaseResultMap" type="com.ricky.travel.domain.DivideVO" >
+    <id column="Divide_Id" property="divideId" jdbcType="INTEGER" />
+    <result column="Admin_Id" property="adminId" jdbcType="INTEGER" />
+    <result column="Auth_Id" property="authId" jdbcType="INTEGER" />
+    <result column="Divide_Date" property="divideDate" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    Divide_Id, Admin_Id, Auth_Id, Divide_Date
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.ricky.travel.domain.DivideVOExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from divide
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+    <if test="limit != null" >
+      <if test="offset != null" >
+        limit ${offset}, ${limit}
+      </if>
+      <if test="offset == null" >
+        limit ${limit}
+      </if>
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from divide
+    where Divide_Id = #{divideId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from divide
+    where Divide_Id = #{divideId,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.ricky.travel.domain.DivideVOExample" >
+    delete from divide
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.ricky.travel.domain.DivideVO" useGeneratedKeys="true" keyProperty="id" >
+    insert into divide (Divide_Id, Admin_Id, Auth_Id, 
+      Divide_Date)
+    values (#{divideId,jdbcType=INTEGER}, #{adminId,jdbcType=INTEGER}, #{authId,jdbcType=INTEGER}, 
+      #{divideDate,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.ricky.travel.domain.DivideVO" useGeneratedKeys="true" keyProperty="id" >
+    insert into divide
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="divideId != null" >
+        Divide_Id,
+      </if>
+      <if test="adminId != null" >
+        Admin_Id,
+      </if>
+      <if test="authId != null" >
+        Auth_Id,
+      </if>
+      <if test="divideDate != null" >
+        Divide_Date,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="divideId != null" >
+        #{divideId,jdbcType=INTEGER},
+      </if>
+      <if test="adminId != null" >
+        #{adminId,jdbcType=INTEGER},
+      </if>
+      <if test="authId != null" >
+        #{authId,jdbcType=INTEGER},
+      </if>
+      <if test="divideDate != null" >
+        #{divideDate,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.ricky.travel.domain.DivideVOExample" resultType="java.lang.Integer" >
+    select count(*) from divide
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update divide
+    <set >
+      <if test="record.divideId != null" >
+        Divide_Id = #{record.divideId,jdbcType=INTEGER},
+      </if>
+      <if test="record.adminId != null" >
+        Admin_Id = #{record.adminId,jdbcType=INTEGER},
+      </if>
+      <if test="record.authId != null" >
+        Auth_Id = #{record.authId,jdbcType=INTEGER},
+      </if>
+      <if test="record.divideDate != null" >
+        Divide_Date = #{record.divideDate,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update divide
+    set Divide_Id = #{record.divideId,jdbcType=INTEGER},
+      Admin_Id = #{record.adminId,jdbcType=INTEGER},
+      Auth_Id = #{record.authId,jdbcType=INTEGER},
+      Divide_Date = #{record.divideDate,jdbcType=TIMESTAMP}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ricky.travel.domain.DivideVO" >
+    update divide
+    <set >
+      <if test="adminId != null" >
+        Admin_Id = #{adminId,jdbcType=INTEGER},
+      </if>
+      <if test="authId != null" >
+        Auth_Id = #{authId,jdbcType=INTEGER},
+      </if>
+      <if test="divideDate != null" >
+        Divide_Date = #{divideDate,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where Divide_Id = #{divideId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ricky.travel.domain.DivideVO" >
+    update divide
+    set Admin_Id = #{adminId,jdbcType=INTEGER},
+      Auth_Id = #{authId,jdbcType=INTEGER},
+      Divide_Date = #{divideDate,jdbcType=TIMESTAMP}
+    where Divide_Id = #{divideId,jdbcType=INTEGER}
+  </update>
+</mapper>

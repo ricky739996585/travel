@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ricky.travel.dao.ScenicCreateMapper" >
+  <resultMap id="BaseResultMap" type="com.ricky.travel.domain.ScenicCreate" >
+    <id column="Create_Id" property="createId" jdbcType="INTEGER" />
+    <result column="Scenic_Id" property="scenicId" jdbcType="INTEGER" />
+    <result column="Create_User" property="createUser" jdbcType="INTEGER" />
+    <result column="Create_Date" property="createDate" jdbcType="DATE" />
+    <result column="Update_Date" property="updateDate" jdbcType="DATE" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    Create_Id, Scenic_Id, Create_User, Create_Date, Update_Date
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.ricky.travel.domain.ScenicCreateExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from scenic_create
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+    <if test="limit != null" >
+      <if test="offset != null" >
+        limit ${offset}, ${limit}
+      </if>
+      <if test="offset == null" >
+        limit ${limit}
+      </if>
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from scenic_create
+    where Create_Id = #{createId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from scenic_create
+    where Create_Id = #{createId,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.ricky.travel.domain.ScenicCreateExample" >
+    delete from scenic_create
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.ricky.travel.domain.ScenicCreate" useGeneratedKeys="true" keyProperty="id" >
+    insert into scenic_create (Create_Id, Scenic_Id, Create_User, 
+      Create_Date, Update_Date)
+    values (#{createId,jdbcType=INTEGER}, #{scenicId,jdbcType=INTEGER}, #{createUser,jdbcType=INTEGER}, 
+      #{createDate,jdbcType=DATE}, #{updateDate,jdbcType=DATE})
+  </insert>
+  <insert id="insertSelective" parameterType="com.ricky.travel.domain.ScenicCreate" useGeneratedKeys="true" keyProperty="id" >
+    insert into scenic_create
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="createId != null" >
+        Create_Id,
+      </if>
+      <if test="scenicId != null" >
+        Scenic_Id,
+      </if>
+      <if test="createUser != null" >
+        Create_User,
+      </if>
+      <if test="createDate != null" >
+        Create_Date,
+      </if>
+      <if test="updateDate != null" >
+        Update_Date,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="createId != null" >
+        #{createId,jdbcType=INTEGER},
+      </if>
+      <if test="scenicId != null" >
+        #{scenicId,jdbcType=INTEGER},
+      </if>
+      <if test="createUser != null" >
+        #{createUser,jdbcType=INTEGER},
+      </if>
+      <if test="createDate != null" >
+        #{createDate,jdbcType=DATE},
+      </if>
+      <if test="updateDate != null" >
+        #{updateDate,jdbcType=DATE},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.ricky.travel.domain.ScenicCreateExample" resultType="java.lang.Integer" >
+    select count(*) from scenic_create
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update scenic_create
+    <set >
+      <if test="record.createId != null" >
+        Create_Id = #{record.createId,jdbcType=INTEGER},
+      </if>
+      <if test="record.scenicId != null" >
+        Scenic_Id = #{record.scenicId,jdbcType=INTEGER},
+      </if>
+      <if test="record.createUser != null" >
+        Create_User = #{record.createUser,jdbcType=INTEGER},
+      </if>
+      <if test="record.createDate != null" >
+        Create_Date = #{record.createDate,jdbcType=DATE},
+      </if>
+      <if test="record.updateDate != null" >
+        Update_Date = #{record.updateDate,jdbcType=DATE},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update scenic_create
+    set Create_Id = #{record.createId,jdbcType=INTEGER},
+      Scenic_Id = #{record.scenicId,jdbcType=INTEGER},
+      Create_User = #{record.createUser,jdbcType=INTEGER},
+      Create_Date = #{record.createDate,jdbcType=DATE},
+      Update_Date = #{record.updateDate,jdbcType=DATE}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ricky.travel.domain.ScenicCreate" >
+    update scenic_create
+    <set >
+      <if test="scenicId != null" >
+        Scenic_Id = #{scenicId,jdbcType=INTEGER},
+      </if>
+      <if test="createUser != null" >
+        Create_User = #{createUser,jdbcType=INTEGER},
+      </if>
+      <if test="createDate != null" >
+        Create_Date = #{createDate,jdbcType=DATE},
+      </if>
+      <if test="updateDate != null" >
+        Update_Date = #{updateDate,jdbcType=DATE},
+      </if>
+    </set>
+    where Create_Id = #{createId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ricky.travel.domain.ScenicCreate" >
+    update scenic_create
+    set Scenic_Id = #{scenicId,jdbcType=INTEGER},
+      Create_User = #{createUser,jdbcType=INTEGER},
+      Create_Date = #{createDate,jdbcType=DATE},
+      Update_Date = #{updateDate,jdbcType=DATE}
+    where Create_Id = #{createId,jdbcType=INTEGER}
+  </update>
+</mapper>

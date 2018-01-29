@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<head>
+    <title>Ricky的旅游网</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300,400' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,900' rel='stylesheet' type='text/css'>
+    <!-- CSS Libs -->
+    <link th:href="@{/lib/css/bootstrap.min.css}" rel="stylesheet" type="text/css" />
+    <link th:href="@{/lib/css/font-awesome.min.css}" rel="stylesheet" type="text/css" />
+    <link th:href="@{/lib/css/animate.min.css}" rel="stylesheet" type="text/css" />
+    <link th:href="@{/lib/css/bootstrap-switch.min.css}" rel="stylesheet" type="text/css" />
+    <link th:href="@{/lib/css/checkbox3.min.css}" rel="stylesheet" type="text/css" />
+    <!--<link th:href="@{/lib/css/dataTables.min.css}" rel="stylesheet" type="text/css" />-->
+    <link th:href="@{/lib/css/dataTables.bootstrap.css}" rel="stylesheet" type="text/css" />
+    <link th:href="@{/lib/css/select2.min.css}" rel="stylesheet" type="text/css" />
+    <!-- CSS App -->
+    <link th:href="@{/css/style.css}" rel="stylesheet" type="text/css"/>
+    <link th:href="@{/css/pic.css}" rel="stylesheet" type="text/css" />
+    <link th:href="@{/css/themes/flat-blue.css}" rel="stylesheet" type="text/css" />
+</head>
+
+<body class="flat-blue">
+    <div class="app-container">
+        <div class="row content-container">
+            <nav class="navbar navbar-default navbar-fixed-top navbar-top">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-expand-toggle">
+                            <i class="fa fa-bars icon"></i>
+                        </button>
+                        <ol class="breadcrumb navbar-breadcrumb">
+                            <li>旅游景点</li>
+                            <li class="active">编辑景点</li>
+                        </ol>
+                        <button type="button" class="navbar-right-expand-toggle pull-right visible-xs">
+                            <i class="fa fa-th icon"></i>
+                        </button>
+                    </div>
+                    <!--
+                    	作者：ricky
+                    	时间：2018-01-05
+                    	描述：这是右上角的用户区域
+                    -->
+                    <ul class="nav navbar-nav navbar-right">
+                        <button type="button" class="navbar-right-expand-toggle pull-right visible-xs">
+                            <i class="fa fa-times icon"></i>
+                        </button>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-comments-o"></i></a>
+                            <ul class="dropdown-menu animated fadeInDown">
+                                <li class="title">
+                                    Notification <span class="badge pull-right">0</span>
+                                </li>
+                                <li class="message">
+                                    No new notification
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown danger">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-star-half-o"></i> 4</a>
+                            <ul class="dropdown-menu danger  animated fadeInDown">
+                                <li class="title">
+                                    Notification <span class="badge pull-right">4</span>
+                                </li>
+                                <li>
+                                    <ul class="list-group notifications">
+                                        <a href="#">
+                                            <li class="list-group-item">
+                                                <span class="badge">1</span> <i class="fa fa-exclamation-circle icon"></i> new registration
+                                            </li>
+                                        </a>
+                                        <a href="#">
+                                            <li class="list-group-item">
+                                                <span class="badge success">1</span> <i class="fa fa-check icon"></i> new orders
+                                            </li>
+                                        </a>
+                                        <a href="#">
+                                            <li class="list-group-item">
+                                                <span class="badge danger">2</span> <i class="fa fa-comments icon"></i> customers messages
+                                            </li>
+                                        </a>
+                                        <a href="#">
+                                            <li class="list-group-item message">
+                                                view all
+                                            </li>
+                                        </a>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown profile">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Emily Hart <span class="caret"></span></a>
+                            <ul class="dropdown-menu animated fadeInDown">
+                                <li class="profile-img">
+                                    <img src="../../img/profile/picjumbo.com_HNCK4153_resize.jpg" class="profile-img">
+                                </li>
+                                <li>
+                                    <div class="profile-info">
+                                        <h4 class="username">Emily Hart</h4>
+                                        <p>emily_hart@email.com</p>
+                                        <div class="btn-group margin-bottom-2x" role="group">
+                                            <button type="button" class="btn btn-default"><i class="fa fa-user"></i> Profile</button>
+                                            <button type="button" class="btn btn-default"><i class="fa fa-sign-out"></i> Logout</button>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </nav>
+            <div class="side-menu sidebar-inverse">
+                <nav class="navbar navbar-default" role="navigation">
+                    <div class="side-menu-container">
+                        <div class="navbar-header">
+                            <a class="navbar-brand" href="#">
+                                <div class="icon fa fa-paper-plane"></div>
+                                <div class="title">Flat Admin V.2</div>
+                            </a>
+                            <button type="button" class="navbar-expand-toggle pull-right visible-xs">
+                                <i class="fa fa-times icon"></i>
+                            </button>
+                        </div>
+                        <ul class="nav navbar-nav">
+                            <li class="">
+                                <a href="index.html">
+                                    <span class="icon fa fa-tachometer"></span><span class="title">主页</span>
+                                </a>
+                            </li>
+                            <li class="panel panel-default dropdown active">
+                                <a data-toggle="collapse" href="#dropdown-element">
+                                    <span class="icon fa fa-desktop"></span><span class="title">旅游景点</span>
+                                </a>
+                                <!-- Dropdown level 1 -->
+                                <div id="dropdown-element" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        <ul class="nav navbar-nav">
+                                            <li><a href="ui-kits/theming.html">景点编辑</a>
+                                            </li>
+                                            <li><a href="ui-kits/grid.html">新增景点</a>
+                                            </li>
+                                            
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="panel panel-default dropdown">
+                                <a data-toggle="collapse" href="#dropdown-element2">
+                                    <span class="icon fa fa-desktop"></span><span class="title">城市美食</span>
+                                </a>
+                                <!-- Dropdown level 1 -->
+                                <div id="dropdown-element2" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        <ul class="nav navbar-nav">
+                                            <li><a href="ui-kits/theming.html">查看美食</a>
+                                            </li>
+                                            <li><a href="ui-kits/grid.html">新增美食</a>
+                                            </li>
+                                            
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                            </li>
+                            <li class="">
+                                <a href="index.html">
+                                    <span class="icon fa fa-tachometer"></span><span class="title">用户信息</span>
+                                </a>
+                                
+                            </li>
+                            
+                            <!-- Dropdown-->
+                            <li class="">
+                                <a href="index.html">
+                                    <span class="icon fa fa-tachometer"></span><span class="title">管理员信息</span>
+                                </a>
+                                
+                            </li>
+                            <!-- Dropdown-->
+                            <li class="panel panel-default dropdown">
+                                <a data-toggle="collapse" href="#dropdown-example3">
+                                    <span class="icon fa fa-slack"></span><span class="title">审批管理</span>
+                                </a>
+                                <!-- Dropdown level 1 -->
+                                <div id="dropdown-example3" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        <ul class="nav navbar-nav">
+                                            <li><a href="pages/login.html">资料审批</a>
+                                            </li>
+                                            <li><a href="pages/index.html">文章审批</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- /.navbar-collapse -->
+                </nav>
+            </div>
+            <!-- Main Content -->
+            <div class="container-fluid">
+                <div class="side-body">
+                    <div class="page-title">
+                        <span class="title">Datatable</span>
+                        <div class="description">with jquery Datatable for display data with most usage functional. such as search, ajax loading, pagination, etc.</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <div class="card-title">
+                                        <div class="title">编辑景点</div>
+                                    </div>
+                                </div>
+                                <form id="SceneForm" method="post">
+                                    <div class="card-body col-xs-6 form-inline" style="height: 78px;">
+                                        <div>
+                                            国家：
+                                            <select name="countryId" id="s1" style="width: 100px;">
+                                                <optgroup label="国家">
+                                                    <option th:value="${scene.countryId}" th:text="${scene.countryName}"></option>
+                                                </optgroup>
+                                            </select>
+                                            省份：
+                                            <select name="provinceId" id="s2" style="width: 100px;">
+                                                <optgroup label="省份">
+                                                    <option th:value="${scene.provinceId}" th:text="${scene.provinceName}"></option>
+                                                </optgroup>
+                                            </select>
+                                            城市：
+                                            <select name="cityId" id="s3" style="width: 100px;">
+                                                <optgroup label="城市">
+                                                    <option th:value="${scene.cityId}" th:text="${scene.cityName}"></option>
+                                                </optgroup>
+                                            </select>
+                                            <!--<input type="text" class="form-control" placeholder="请输入名称">-->
+                                        </div>
+                                    </div>
+                                    <div class="card-body col-xs-6 form-inline" style="height: 78px;">
+                                        <!--<div class="sub-title">Select <span class="description">( with <a href="https://select2.github.io/">select2</a> )</span></div>-->
+                                        <div>
+                                            景点名称：
+                                            <input type="text" style="display: none" name="scenicId" th:value="${scene.scenicId}">
+                                            <input type="text" class="form-control" placeholder="请输入名称" style="width: 70%;" name="scenicName" id="scenicName" th:value="${scene.scenicName}">
+                                        </div>
+                                    </div>
+                                    <div class="card-body col-xs-6 form-inline" style="height: 78px;">
+                                        <!--<div class="sub-title">Select <span class="description">( with <a href="https://select2.github.io/">select2</a> )</span></div>-->
+                                        <div>
+                                            景点描述：
+                                            <input type="text" class="form-control" placeholder="请输入描述" style="width: 70%;" name="scenicDescription" id="scenicDescription" th:value="${scene.scenicDescription}">
+                                        </div>
+                                    </div>
+                                    <div class="card-body col-xs-6 form-inline" style="height: 78px;">
+                                        <!--<div class="sub-title">Select <span class="description">( with <a href="https://select2.github.io/">select2</a> )</span></div>-->
+                                        <div>
+                                            景点费用：
+                                            <input type="text" class="form-control" placeholder="请输入费用" style="width: 70%;" name="scenicCost" id="scenicCost" th:value="${scene.scenicCost}">
+                                        </div>
+                                    </div>
+                                    <div class="card-body col-xs-6 form-inline" style="height: 78px;">
+                                        <!--<div class="sub-title">Select <span class="description">( with <a href="https://select2.github.io/">select2</a> )</span></div>-->
+                                        <div>
+                                            咨询电话：
+                                            <input type="tel" class="form-control" placeholder="请输入咨询电话" style="width: 70%;" name="scenicPhone" id="scenicPhone" th:value="${scene.scenicPhone}">
+                                        </div>
+                                    </div>
+                                    <div class="card-body col-xs-6 form-inline" style="height: 78px;">
+                                        <!--<div class="sub-title">Select <span class="description">( with <a href="https://select2.github.io/">select2</a> )</span></div>-->
+                                        <div>
+                                            详细地址：
+                                            <input type="text" class="form-control" placeholder="请输入详细地址" style="width: 70%;" name="scenicAddress" id="scenicAddress" th:value="${scene.scenicAddress}">
+                                        </div>
+                                    </div>
+                                    <div class="card-body col-xs-6 form-inline" style="height: 78px;">
+                                        <!--<div class="sub-title">Select <span class="description">( with <a href="https://select2.github.io/">select2</a> )</span></div>-->
+                                        <div>
+                                            开放时间：
+                                            <input type="text" class="form-control" placeholder="请输入开放时间" style="width: 70%;" name="scenicTime" id="scenicTime" th:value="${scene.scenicTime}">
+                                        </div>
+                                    </div>
+                                    <div class="card-body col-xs-6 form-inline" style="height: 78px;">
+                                        <!--<div class="sub-title">Select <span class="description">( with <a href="https://select2.github.io/">select2</a> )</span></div>-->
+                                        <div>
+                                            标签：
+                                            <select name="scenicTag" id="scenicTag">
+                                                <optgroup label="标签类型">
+                                                    <option th:value="${scene.scenicTag}" th:text="${scene.scenicTag}"></option>
+                                                </optgroup>
+                                            </select>
+
+                                            <!--<input type="text" class="form-control" placeholder="请输入名称">-->
+                                        </div>
+                                    </div>
+                                    <div class="card-body col-xs-6 form-inline" style="height: 78px;">
+                                        <!--<div class="sub-title">Select <span class="description">( with <a href="https://select2.github.io/">select2</a> )</span></div>-->
+                                        <div>
+                                            交通描述：<input type="text"  style="display: none" name="trafficId" id="trafficId" th:value="${scene.trafficId}">
+                                            <input type="text" class="form-control" placeholder="请输入交通描述" style="width: 70%;" name="trafficContent" id="trafficContent" th:value="${scene.trafficContent}">
+                                        </div>
+                                    </div>
+                                    <div class="card-body col-xs-6 form-inline" style="height: 78px;">
+                                        <!--<div class="sub-title">Select <span class="description">( with <a href="https://select2.github.io/">select2</a> )</span></div>-->
+                                        <div>
+                                            交通费用：
+                                            <input type="text" class="form-control" placeholder="请输入交通费用" style="width: 70%;" name="trafficCost" id="trafficCost" th:value="${scene.trafficCost}">
+                                        </div>
+                                    </div>
+                                </form>
+                                <!--<div class="card-body col-xs-6 form-inline" style="height: 78px;">
+                                    <div>
+                                        创建时间：
+                                        <input type="datetime" class="form-control" placeholder="请输入开放时间" style="width: 70%;">
+                                    </div>
+                                </div>
+                                <div class="card-body col-xs-6 form-inline" style="height: 78px;">
+                                    <div>
+                                        开放时间：
+                                        <input type="text" class="form-control" placeholder="请输入开放时间" style="width: 70%;">
+                                    </div>
+                                </div>-->
+                                <form th:type="post" enctype="multipart/form-data" id="Form1">
+                                    <div class="card-body col-xs-12 form-inline">
+                                        <div>
+                                            景点照片：
+                                            <input id="photoSize" style="display: none" th:value="${size}">
+                                            <div id="tdRoomPicture" style="display: inline-block;">
+                                                <div th:each="photo,itemStat:${photos}" class="image_container" th:data-id="${photo.scenicPhotoId}" th:id="${itemStat.index}">
+                                                    <a href="javascript:;" th:id="'box'+${itemStat.index}" class="previewBox">
+                                                        <div class="delImg">&times;</div>
+                                                        <img th:id="'view'+${itemStat.index}" style="height: 100px; width: 100px; border-width: 0px;" th:src="${photo.scenicPhotoUrl}" />
+                                                    </a>
+                                                </div>
+                                                <a href="javascript:;" class="addImg" data-picid="0">+</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-body col-xs-6">
+                                        <!--<div class="sub-title">Select <span class="description">( with <a href="https://select2.github.io/">select2</a> )</span></div>-->
+                                        <div>
+                                            <!--<input type="submit" class="btn btn-info" value="保存">-->
+                                            <!--<button type="submit" class="btn btn-info">保存</button>-->
+                                            <button type="button" class="btn btn-info" id="add">保存</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="app-footer">
+            <div class="wrapper">
+                <span class="pull-right">2.1 <a href="#"><i class="fa fa-long-arrow-up"></i></a></span> © 2015 Copyright.
+            </div>
+        </footer>
+    <div>
+        <!-- 模态框（Modal） -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                            &times;
+                        </button>
+                        <h4 class="modal-title" id="myModalLabel">
+                            警告！
+                        </h4>
+                    </div>
+                    <div class="modal-body">
+                        网络异常！请稍后再尝试操作
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">关闭
+                        </button>
+
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal -->
+        </div>
+        <!-- Javascript Libs -->
+        <script type="text/javascript" th:src="@{/lib/js/jquery.min.js}"></script>
+        <script type="text/javascript" th:src="@{/lib/js/bootstrap.min.js}"></script>
+        <script type="text/javascript" th:src="@{/lib/js/Chart.min.js}"></script>
+        <script type="text/javascript" th:src="@{/lib/js/bootstrap-switch.min.js}"></script>
+        <script type="text/javascript" th:src="@{/lib/js/jquery.matchHeight-min.js}"></script>
+        <script type="text/javascript" th:src="@{/lib/js/jquery.dataTables.min.js}"></script>
+        <script type="text/javascript" th:src="@{/lib/js/dataTables.bootstrap.min.js}"></script>
+        <script type="text/javascript" th:src="@{/lib/js/select2.full.min.js}"></script>
+        <script type="text/javascript" th:src="@{/lib/js/ace/ace.js}"></script>
+        <script type="text/javascript" th:src="@{/lib/js/ace/mode-html.js}"></script>
+        <script type="text/javascript" th:src="@{/lib/js/ace/theme-github.js}"></script>
+        <script type="text/javascript" th:src="@{/lib/js/admin/updateScene.js}"></script>
+        <!-- Javascript -->
+        <script type="text/javascript" th:src="@{/js/app.js}"></script>
+        <!--<script type="text/javascript" th:src="@{/js/pic.js}"></script>-->
+        <!--<script type="text/javascript" th:src="@{/lib/js/city.js}"></script>-->
+        <!-- DataTables -->
+        <script src="http://cdn.datatables.net/plug-ins/28e7751dbec/integration/bootstrap/3/dataTables.bootstrap.js"></script>
+</body>
+
+</html>

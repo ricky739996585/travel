@@ -1,0 +1,368 @@
+17:58:48.160 [restartedMain] INFO  com.ricky.travel.TravelApplication - Starting TravelApplication on PC-201702111430 with PID 14316 (E:\idea_workplace\travel\target\classes started by Administrator in E:\idea_workplace\travel)
+17:58:48.191 [restartedMain] INFO  com.ricky.travel.TravelApplication - No active profile set, falling back to default profiles: default
+17:58:50.941 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+17:58:50.941 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
+17:58:51.003 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+17:58:51.144 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Started.
+17:58:52.347 [restartedMain] WARN  o.t.templatemode.TemplateMode - [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+17:58:52.785 [restartedMain] INFO  com.ricky.travel.TravelApplication - Started TravelApplication in 4.781 seconds (JVM running for 6.332)
+17:59:24.910 [http-nio-80-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+18:02:17.027 [restartedMain] INFO  com.ricky.travel.TravelApplication - Starting TravelApplication on PC-201702111430 with PID 11964 (E:\idea_workplace\travel\target\classes started by Administrator in E:\idea_workplace\travel)
+18:02:17.027 [restartedMain] INFO  com.ricky.travel.TravelApplication - No active profile set, falling back to default profiles: default
+18:02:18.309 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+18:02:18.309 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
+18:02:18.371 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+18:02:18.512 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Started.
+18:02:19.481 [restartedMain] WARN  o.t.templatemode.TemplateMode - [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+18:02:19.887 [restartedMain] INFO  com.ricky.travel.TravelApplication - Started TravelApplication in 3.125 seconds (JVM running for 4.109)
+18:02:28.863 [http-nio-80-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+18:02:31.547 [http-nio-80-exec-10] DEBUG c.r.t.d.C.selectByExample - ==>  Preparing: select Country_ID, Country_Nname from country WHERE ( Country_ID is not null ) 
+18:02:31.563 [http-nio-80-exec-10] DEBUG c.r.t.d.C.selectByExample - ==> Parameters: 
+18:02:31.579 [http-nio-80-exec-10] DEBUG c.r.t.d.C.selectByExample - <==      Total: 11
+18:02:36.165 [http-nio-80-exec-6] DEBUG c.r.t.d.P.selectByExample - ==>  Preparing: select Province_Id, Country_ID, Province_Name from province WHERE ( Country_ID = ? ) 
+18:02:36.166 [http-nio-80-exec-6] DEBUG c.r.t.d.P.selectByExample - ==> Parameters: 1(Integer)
+18:02:36.178 [http-nio-80-exec-6] DEBUG c.r.t.d.P.selectByExample - <==      Total: 34
+18:02:41.744 [http-nio-80-exec-2] DEBUG c.r.t.d.CityVOMapper.selectByExample - ==>  Preparing: select City_Id, Province_Id, City_Name from city WHERE ( Province_Id = ? ) 
+18:02:41.744 [http-nio-80-exec-2] DEBUG c.r.t.d.CityVOMapper.selectByExample - ==> Parameters: 18(Integer)
+18:02:41.748 [http-nio-80-exec-2] DEBUG c.r.t.d.CityVOMapper.selectByExample - <==      Total: 21
+18:16:34.190 [http-nio-80-exec-10] DEBUG c.r.t.d.C.selectByExample - ==>  Preparing: select Country_ID, Country_Nname from country WHERE ( Country_ID is not null ) 
+18:16:34.191 [http-nio-80-exec-10] DEBUG c.r.t.d.C.selectByExample - ==> Parameters: 
+18:16:34.193 [http-nio-80-exec-10] DEBUG c.r.t.d.C.selectByExample - <==      Total: 11
+18:16:35.832 [http-nio-80-exec-7] DEBUG c.r.t.d.P.selectByExample - ==>  Preparing: select Province_Id, Country_ID, Province_Name from province WHERE ( Country_ID = ? ) 
+18:16:35.833 [http-nio-80-exec-7] DEBUG c.r.t.d.P.selectByExample - ==> Parameters: 1(Integer)
+18:16:35.837 [http-nio-80-exec-7] DEBUG c.r.t.d.P.selectByExample - <==      Total: 34
+18:16:40.396 [http-nio-80-exec-2] DEBUG c.r.t.d.P.selectByExample - ==>  Preparing: select Province_Id, Country_ID, Province_Name from province WHERE ( Country_ID = ? ) 
+18:16:40.397 [http-nio-80-exec-2] DEBUG c.r.t.d.P.selectByExample - ==> Parameters: 1(Integer)
+18:16:40.398 [http-nio-80-exec-2] DEBUG c.r.t.d.P.selectByExample - <==      Total: 34
+18:16:40.556 [http-nio-80-exec-1] DEBUG c.r.t.d.P.selectByExample - ==>  Preparing: select Province_Id, Country_ID, Province_Name from province WHERE ( Province_Name like ? ) 
+18:16:40.558 [http-nio-80-exec-1] DEBUG c.r.t.d.P.selectByExample - ==> Parameters: g%(String)
+18:16:40.559 [http-nio-80-exec-1] DEBUG c.r.t.d.P.selectByExample - <==      Total: 0
+18:16:40.566 [http-nio-80-exec-5] DEBUG c.r.t.d.P.selectByExample - ==>  Preparing: select Province_Id, Country_ID, Province_Name from province WHERE ( Province_Name like ? ) 
+18:16:40.566 [http-nio-80-exec-5] DEBUG c.r.t.d.P.selectByExample - ==> Parameters: g%(String)
+18:16:40.567 [http-nio-80-exec-5] DEBUG c.r.t.d.P.selectByExample - <==      Total: 0
+18:16:40.689 [http-nio-80-exec-3] DEBUG c.r.t.d.P.selectByExample - ==>  Preparing: select Province_Id, Country_ID, Province_Name from province WHERE ( Province_Name like ? ) 
+18:16:40.689 [http-nio-80-exec-3] DEBUG c.r.t.d.P.selectByExample - ==> Parameters: gu%(String)
+18:16:40.690 [http-nio-80-exec-3] DEBUG c.r.t.d.P.selectByExample - <==      Total: 0
+18:16:40.695 [http-nio-80-exec-4] DEBUG c.r.t.d.P.selectByExample - ==>  Preparing: select Province_Id, Country_ID, Province_Name from province WHERE ( Province_Name like ? ) 
+18:16:40.695 [http-nio-80-exec-4] DEBUG c.r.t.d.P.selectByExample - ==> Parameters: gu%(String)
+18:16:40.696 [http-nio-80-exec-4] DEBUG c.r.t.d.P.selectByExample - <==      Total: 0
+18:16:40.702 [http-nio-80-exec-6] DEBUG c.r.t.d.P.selectByExample - ==>  Preparing: select Province_Id, Country_ID, Province_Name from province WHERE ( Province_Name like ? ) 
+18:16:40.703 [http-nio-80-exec-6] DEBUG c.r.t.d.P.selectByExample - ==> Parameters: gu%(String)
+18:16:40.704 [http-nio-80-exec-6] DEBUG c.r.t.d.P.selectByExample - <==      Total: 0
+18:16:40.781 [http-nio-80-exec-9] DEBUG c.r.t.d.P.selectByExample - ==>  Preparing: select Province_Id, Country_ID, Province_Name from province WHERE ( Province_Name like ? ) 
+18:16:40.781 [http-nio-80-exec-9] DEBUG c.r.t.d.P.selectByExample - ==> Parameters: gua%(String)
+18:16:40.782 [http-nio-80-exec-9] DEBUG c.r.t.d.P.selectByExample - <==      Total: 0
+18:16:40.790 [http-nio-80-exec-8] DEBUG c.r.t.d.P.selectByExample - ==>  Preparing: select Province_Id, Country_ID, Province_Name from province WHERE ( Province_Name like ? ) 
+18:16:40.791 [http-nio-80-exec-8] DEBUG c.r.t.d.P.selectByExample - ==> Parameters: gua%(String)
+18:16:40.793 [http-nio-80-exec-8] DEBUG c.r.t.d.P.selectByExample - <==      Total: 0
+18:16:40.795 [http-nio-80-exec-10] DEBUG c.r.t.d.P.selectByExample - ==>  Preparing: select Province_Id, Country_ID, Province_Name from province WHERE ( Province_Name like ? ) 
+18:16:40.795 [http-nio-80-exec-10] DEBUG c.r.t.d.P.selectByExample - ==> Parameters: gua%(String)
+18:16:40.796 [http-nio-80-exec-10] DEBUG c.r.t.d.P.selectByExample - <==      Total: 0
+18:16:40.893 [http-nio-80-exec-7] DEBUG c.r.t.d.P.selectByExample - ==>  Preparing: select Province_Id, Country_ID, Province_Name from province WHERE ( Province_Name like ? ) 
+18:16:40.894 [http-nio-80-exec-7] DEBUG c.r.t.d.P.selectByExample - ==> Parameters: guan%(String)
+18:16:40.896 [http-nio-80-exec-7] DEBUG c.r.t.d.P.selectByExample - <==      Total: 0
+18:16:40.904 [http-nio-80-exec-2] DEBUG c.r.t.d.P.selectByExample - ==>  Preparing: select Province_Id, Country_ID, Province_Name from province WHERE ( Province_Name like ? ) 
+18:16:40.905 [http-nio-80-exec-2] DEBUG c.r.t.d.P.selectByExample - ==> Parameters: guan%(String)
+18:16:40.906 [http-nio-80-exec-7] DEBUG c.r.t.d.P.selectByExample - ==>  Preparing: select Province_Id, Country_ID, Province_Name from province WHERE ( Province_Name like ? ) 
+18:16:40.907 [http-nio-80-exec-7] DEBUG c.r.t.d.P.selectByExample - ==> Parameters: guan%(String)
+18:16:40.907 [http-nio-80-exec-2] DEBUG c.r.t.d.P.selectByExample - <==      Total: 0
+18:16:40.908 [http-nio-80-exec-7] DEBUG c.r.t.d.P.selectByExample - <==      Total: 0
+18:16:40.920 [http-nio-80-exec-5] DEBUG c.r.t.d.P.selectByExample - ==>  Preparing: select Province_Id, Country_ID, Province_Name from province WHERE ( Province_Name like ? ) 
+18:16:40.921 [http-nio-80-exec-5] DEBUG c.r.t.d.P.selectByExample - ==> Parameters: guang%(String)
+18:16:40.921 [http-nio-80-exec-5] DEBUG c.r.t.d.P.selectByExample - <==      Total: 0
+18:16:40.927 [http-nio-80-exec-4] DEBUG c.r.t.d.P.selectByExample - ==>  Preparing: select Province_Id, Country_ID, Province_Name from province WHERE ( Province_Name like ? ) 
+18:16:40.927 [http-nio-80-exec-4] DEBUG c.r.t.d.P.selectByExample - ==> Parameters: guang%(String)
+18:16:40.927 [http-nio-80-exec-3] DEBUG c.r.t.d.P.selectByExample - ==>  Preparing: select Province_Id, Country_ID, Province_Name from province WHERE ( Province_Name like ? ) 
+18:16:40.928 [http-nio-80-exec-3] DEBUG c.r.t.d.P.selectByExample - ==> Parameters: guang%(String)
+18:16:40.928 [http-nio-80-exec-4] DEBUG c.r.t.d.P.selectByExample - <==      Total: 0
+18:16:40.928 [http-nio-80-exec-3] DEBUG c.r.t.d.P.selectByExample - <==      Total: 0
+18:16:41.436 [http-nio-80-exec-6] DEBUG c.r.t.d.P.selectByExample - ==>  Preparing: select Province_Id, Country_ID, Province_Name from province WHERE ( Province_Name like ? ) 
+18:16:41.437 [http-nio-80-exec-6] DEBUG c.r.t.d.P.selectByExample - ==> Parameters: 广%(String)
+18:16:41.437 [http-nio-80-exec-6] DEBUG c.r.t.d.P.selectByExample - <==      Total: 2
+18:16:41.442 [http-nio-80-exec-9] DEBUG c.r.t.d.P.selectByExample - ==>  Preparing: select Province_Id, Country_ID, Province_Name from province WHERE ( Province_Name like ? ) 
+18:16:41.443 [http-nio-80-exec-8] DEBUG c.r.t.d.P.selectByExample - ==>  Preparing: select Province_Id, Country_ID, Province_Name from province WHERE ( Province_Name like ? ) 
+18:16:41.443 [http-nio-80-exec-9] DEBUG c.r.t.d.P.selectByExample - ==> Parameters: 广%(String)
+18:16:41.443 [http-nio-80-exec-8] DEBUG c.r.t.d.P.selectByExample - ==> Parameters: 广%(String)
+18:16:41.444 [http-nio-80-exec-8] DEBUG c.r.t.d.P.selectByExample - <==      Total: 2
+18:16:41.444 [http-nio-80-exec-9] DEBUG c.r.t.d.P.selectByExample - <==      Total: 2
+18:16:43.457 [http-nio-80-exec-10] DEBUG c.r.t.d.CityVOMapper.selectByExample - ==>  Preparing: select City_Id, Province_Id, City_Name from city WHERE ( Province_Id = ? ) 
+18:16:43.458 [http-nio-80-exec-10] DEBUG c.r.t.d.CityVOMapper.selectByExample - ==> Parameters: 18(Integer)
+18:16:43.459 [http-nio-80-exec-10] DEBUG c.r.t.d.CityVOMapper.selectByExample - <==      Total: 21
+18:22:27.992 [http-nio-80-exec-10] DEBUG c.r.t.d.C.selectByExample - ==>  Preparing: select Country_ID, Country_Nname from country WHERE ( Country_ID is not null ) 
+18:22:27.992 [http-nio-80-exec-10] DEBUG c.r.t.d.C.selectByExample - ==> Parameters: 
+18:22:27.993 [http-nio-80-exec-10] DEBUG c.r.t.d.C.selectByExample - <==      Total: 11
+18:22:29.769 [http-nio-80-exec-8] DEBUG c.r.t.d.P.selectByExample - ==>  Preparing: select Province_Id, Country_ID, Province_Name from province WHERE ( Country_ID = ? ) 
+18:22:29.770 [http-nio-80-exec-8] DEBUG c.r.t.d.P.selectByExample - ==> Parameters: 1(Integer)
+18:22:29.773 [http-nio-80-exec-8] DEBUG c.r.t.d.P.selectByExample - <==      Total: 34
+18:22:34.500 [http-nio-80-exec-6] DEBUG c.r.t.d.P.selectByExample - ==>  Preparing: select Province_Id, Country_ID, Province_Name from province WHERE ( Province_Name like ? ) 
+18:22:34.500 [http-nio-80-exec-6] DEBUG c.r.t.d.P.selectByExample - ==> Parameters: g%(String)
+18:22:34.501 [http-nio-80-exec-6] DEBUG c.r.t.d.P.selectByExample - <==      Total: 0
+18:22:34.934 [http-nio-80-exec-3] DEBUG c.r.t.d.P.selectByExample - ==>  Preparing: select Province_Id, Country_ID, Province_Name from province WHERE ( Province_Name like ? ) 
+18:22:34.935 [http-nio-80-exec-3] DEBUG c.r.t.d.P.selectByExample - ==> Parameters: gu%(String)
+18:22:34.937 [http-nio-80-exec-3] DEBUG c.r.t.d.P.selectByExample - <==      Total: 0
+18:22:35.082 [http-nio-80-exec-2] DEBUG c.r.t.d.P.selectByExample - ==>  Preparing: select Province_Id, Country_ID, Province_Name from province WHERE ( Province_Name like ? ) 
+18:22:35.083 [http-nio-80-exec-2] DEBUG c.r.t.d.P.selectByExample - ==> Parameters: gua%(String)
+18:22:35.085 [http-nio-80-exec-2] DEBUG c.r.t.d.P.selectByExample - <==      Total: 0
+18:22:35.152 [http-nio-80-exec-9] DEBUG c.r.t.d.P.selectByExample - ==>  Preparing: select Province_Id, Country_ID, Province_Name from province WHERE ( Province_Name like ? ) 
+18:22:35.153 [http-nio-80-exec-9] DEBUG c.r.t.d.P.selectByExample - ==> Parameters: guan%(String)
+18:22:35.154 [http-nio-80-exec-9] DEBUG c.r.t.d.P.selectByExample - <==      Total: 0
+18:22:35.260 [http-nio-80-exec-5] DEBUG c.r.t.d.P.selectByExample - ==>  Preparing: select Province_Id, Country_ID, Province_Name from province WHERE ( Province_Name like ? ) 
+18:22:35.260 [http-nio-80-exec-5] DEBUG c.r.t.d.P.selectByExample - ==> Parameters: guang%(String)
+18:22:35.261 [http-nio-80-exec-5] DEBUG c.r.t.d.P.selectByExample - <==      Total: 0
+18:22:35.895 [http-nio-80-exec-7] DEBUG c.r.t.d.P.selectByExample - ==>  Preparing: select Province_Id, Country_ID, Province_Name from province WHERE ( Province_Name like ? ) 
+18:22:35.896 [http-nio-80-exec-7] DEBUG c.r.t.d.P.selectByExample - ==> Parameters: guan%(String)
+18:22:35.898 [http-nio-80-exec-7] DEBUG c.r.t.d.P.selectByExample - <==      Total: 0
+18:22:36.391 [http-nio-80-exec-1] DEBUG c.r.t.d.P.selectByExample - ==>  Preparing: select Province_Id, Country_ID, Province_Name from province WHERE ( Province_Name like ? ) 
+18:22:36.391 [http-nio-80-exec-1] DEBUG c.r.t.d.P.selectByExample - ==> Parameters: gua%(String)
+18:22:36.392 [http-nio-80-exec-1] DEBUG c.r.t.d.P.selectByExample - <==      Total: 0
+18:22:36.419 [http-nio-80-exec-4] DEBUG c.r.t.d.P.selectByExample - ==>  Preparing: select Province_Id, Country_ID, Province_Name from province WHERE ( Province_Name like ? ) 
+18:22:36.420 [http-nio-80-exec-4] DEBUG c.r.t.d.P.selectByExample - ==> Parameters: gu%(String)
+18:22:36.421 [http-nio-80-exec-4] DEBUG c.r.t.d.P.selectByExample - <==      Total: 0
+18:22:36.460 [http-nio-80-exec-10] DEBUG c.r.t.d.P.selectByExample - ==>  Preparing: select Province_Id, Country_ID, Province_Name from province WHERE ( Province_Name like ? ) 
+18:22:36.462 [http-nio-80-exec-10] DEBUG c.r.t.d.P.selectByExample - ==> Parameters: g%(String)
+18:22:36.464 [http-nio-80-exec-10] DEBUG c.r.t.d.P.selectByExample - <==      Total: 0
+18:22:36.485 [http-nio-80-exec-8] DEBUG c.r.t.d.P.selectByExample - ==>  Preparing: select Province_Id, Country_ID, Province_Name from province WHERE ( Country_ID = ? ) 
+18:22:36.486 [http-nio-80-exec-8] DEBUG c.r.t.d.P.selectByExample - ==> Parameters: 1(Integer)
+18:22:36.488 [http-nio-80-exec-8] DEBUG c.r.t.d.P.selectByExample - <==      Total: 34
+18:22:37.782 [http-nio-80-exec-6] DEBUG c.r.t.d.P.selectByExample - ==>  Preparing: select Province_Id, Country_ID, Province_Name from province WHERE ( Province_Name like ? ) 
+18:22:37.783 [http-nio-80-exec-6] DEBUG c.r.t.d.P.selectByExample - ==> Parameters: g%(String)
+18:22:37.785 [http-nio-80-exec-6] DEBUG c.r.t.d.P.selectByExample - <==      Total: 0
+18:22:37.792 [http-nio-80-exec-3] DEBUG c.r.t.d.P.selectByExample - ==>  Preparing: select Province_Id, Country_ID, Province_Name from province WHERE ( Province_Name like ? ) 
+18:22:37.792 [http-nio-80-exec-3] DEBUG c.r.t.d.P.selectByExample - ==> Parameters: g%(String)
+18:22:37.794 [http-nio-80-exec-3] DEBUG c.r.t.d.P.selectByExample - <==      Total: 0
+18:22:37.944 [http-nio-80-exec-2] DEBUG c.r.t.d.P.selectByExample - ==>  Preparing: select Province_Id, Country_ID, Province_Name from province WHERE ( Province_Name like ? ) 
+18:22:37.946 [http-nio-80-exec-2] DEBUG c.r.t.d.P.selectByExample - ==> Parameters: gu%(String)
+18:22:37.947 [http-nio-80-exec-2] DEBUG c.r.t.d.P.selectByExample - <==      Total: 0
+18:22:37.955 [http-nio-80-exec-9] DEBUG c.r.t.d.P.selectByExample - ==>  Preparing: select Province_Id, Country_ID, Province_Name from province WHERE ( Province_Name like ? ) 
+18:22:37.955 [http-nio-80-exec-9] DEBUG c.r.t.d.P.selectByExample - ==> Parameters: gu%(String)
+18:22:37.957 [http-nio-80-exec-9] DEBUG c.r.t.d.P.selectByExample - <==      Total: 0
+18:22:37.961 [http-nio-80-exec-5] DEBUG c.r.t.d.P.selectByExample - ==>  Preparing: select Province_Id, Country_ID, Province_Name from province WHERE ( Province_Name like ? ) 
+18:22:37.962 [http-nio-80-exec-5] DEBUG c.r.t.d.P.selectByExample - ==> Parameters: gu%(String)
+18:22:37.962 [http-nio-80-exec-5] DEBUG c.r.t.d.P.selectByExample - <==      Total: 0
+18:22:38.034 [http-nio-80-exec-7] DEBUG c.r.t.d.P.selectByExample - ==>  Preparing: select Province_Id, Country_ID, Province_Name from province WHERE ( Province_Name like ? ) 
+18:22:38.034 [http-nio-80-exec-7] DEBUG c.r.t.d.P.selectByExample - ==> Parameters: gua%(String)
+18:22:38.035 [http-nio-80-exec-7] DEBUG c.r.t.d.P.selectByExample - <==      Total: 0
+18:22:38.039 [http-nio-80-exec-1] DEBUG c.r.t.d.P.selectByExample - ==>  Preparing: select Province_Id, Country_ID, Province_Name from province WHERE ( Province_Name like ? ) 
+18:22:38.040 [http-nio-80-exec-1] DEBUG c.r.t.d.P.selectByExample - ==> Parameters: gua%(String)
+18:22:38.040 [http-nio-80-exec-1] DEBUG c.r.t.d.P.selectByExample - <==      Total: 0
+18:22:38.043 [http-nio-80-exec-4] DEBUG c.r.t.d.P.selectByExample - ==>  Preparing: select Province_Id, Country_ID, Province_Name from province WHERE ( Province_Name like ? ) 
+18:22:38.043 [http-nio-80-exec-4] DEBUG c.r.t.d.P.selectByExample - ==> Parameters: gua%(String)
+18:22:38.044 [http-nio-80-exec-4] DEBUG c.r.t.d.P.selectByExample - <==      Total: 0
+18:22:38.141 [http-nio-80-exec-10] DEBUG c.r.t.d.P.selectByExample - ==>  Preparing: select Province_Id, Country_ID, Province_Name from province WHERE ( Province_Name like ? ) 
+18:22:38.143 [http-nio-80-exec-10] DEBUG c.r.t.d.P.selectByExample - ==> Parameters: guan%(String)
+18:22:38.144 [http-nio-80-exec-10] DEBUG c.r.t.d.P.selectByExample - <==      Total: 0
+18:22:38.153 [http-nio-80-exec-8] DEBUG c.r.t.d.P.selectByExample - ==>  Preparing: select Province_Id, Country_ID, Province_Name from province WHERE ( Province_Name like ? ) 
+18:22:38.154 [http-nio-80-exec-8] DEBUG c.r.t.d.P.selectByExample - ==> Parameters: guan%(String)
+18:22:38.155 [http-nio-80-exec-8] DEBUG c.r.t.d.P.selectByExample - <==      Total: 0
+18:22:38.158 [http-nio-80-exec-6] DEBUG c.r.t.d.P.selectByExample - ==>  Preparing: select Province_Id, Country_ID, Province_Name from province WHERE ( Province_Name like ? ) 
+18:22:38.159 [http-nio-80-exec-6] DEBUG c.r.t.d.P.selectByExample - ==> Parameters: guan%(String)
+18:22:38.160 [http-nio-80-exec-6] DEBUG c.r.t.d.P.selectByExample - <==      Total: 0
+18:22:38.213 [http-nio-80-exec-3] DEBUG c.r.t.d.P.selectByExample - ==>  Preparing: select Province_Id, Country_ID, Province_Name from province WHERE ( Province_Name like ? ) 
+18:22:38.213 [http-nio-80-exec-3] DEBUG c.r.t.d.P.selectByExample - ==> Parameters: guang%(String)
+18:22:38.214 [http-nio-80-exec-3] DEBUG c.r.t.d.P.selectByExample - <==      Total: 0
+18:22:38.218 [http-nio-80-exec-2] DEBUG c.r.t.d.P.selectByExample - ==>  Preparing: select Province_Id, Country_ID, Province_Name from province WHERE ( Province_Name like ? ) 
+18:22:38.218 [http-nio-80-exec-2] DEBUG c.r.t.d.P.selectByExample - ==> Parameters: guang%(String)
+18:22:38.218 [http-nio-80-exec-2] DEBUG c.r.t.d.P.selectByExample - <==      Total: 0
+18:22:38.220 [http-nio-80-exec-9] DEBUG c.r.t.d.P.selectByExample - ==>  Preparing: select Province_Id, Country_ID, Province_Name from province WHERE ( Province_Name like ? ) 
+18:22:38.221 [http-nio-80-exec-9] DEBUG c.r.t.d.P.selectByExample - ==> Parameters: guang%(String)
+18:22:38.221 [http-nio-80-exec-9] DEBUG c.r.t.d.P.selectByExample - <==      Total: 0
+18:22:38.731 [http-nio-80-exec-5] DEBUG c.r.t.d.P.selectByExample - ==>  Preparing: select Province_Id, Country_ID, Province_Name from province WHERE ( Province_Name like ? ) 
+18:22:38.731 [http-nio-80-exec-5] DEBUG c.r.t.d.P.selectByExample - ==> Parameters: 广%(String)
+18:22:38.732 [http-nio-80-exec-5] DEBUG c.r.t.d.P.selectByExample - <==      Total: 2
+18:22:38.735 [http-nio-80-exec-7] DEBUG c.r.t.d.P.selectByExample - ==>  Preparing: select Province_Id, Country_ID, Province_Name from province WHERE ( Province_Name like ? ) 
+18:22:38.736 [http-nio-80-exec-7] DEBUG c.r.t.d.P.selectByExample - ==> Parameters: 广%(String)
+18:22:38.736 [http-nio-80-exec-7] DEBUG c.r.t.d.P.selectByExample - <==      Total: 2
+18:22:38.738 [http-nio-80-exec-7] DEBUG c.r.t.d.P.selectByExample - ==>  Preparing: select Province_Id, Country_ID, Province_Name from province WHERE ( Province_Name like ? ) 
+18:22:38.739 [http-nio-80-exec-7] DEBUG c.r.t.d.P.selectByExample - ==> Parameters: 广%(String)
+18:22:38.739 [http-nio-80-exec-7] DEBUG c.r.t.d.P.selectByExample - <==      Total: 2
+18:22:41.305 [http-nio-80-exec-4] DEBUG c.r.t.d.CityVOMapper.selectByExample - ==>  Preparing: select City_Id, Province_Id, City_Name from city WHERE ( Province_Id = ? ) 
+18:22:41.306 [http-nio-80-exec-4] DEBUG c.r.t.d.CityVOMapper.selectByExample - ==> Parameters: 18(Integer)
+18:22:41.307 [http-nio-80-exec-4] DEBUG c.r.t.d.CityVOMapper.selectByExample - <==      Total: 21
+18:24:39.978 [restartedMain] INFO  com.ricky.travel.TravelApplication - Starting TravelApplication on PC-201702111430 with PID 9864 (E:\idea_workplace\travel\target\classes started by Administrator in E:\idea_workplace\travel)
+18:24:39.983 [restartedMain] INFO  com.ricky.travel.TravelApplication - No active profile set, falling back to default profiles: default
+18:24:41.453 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+18:24:41.454 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
+18:24:41.518 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+18:24:41.653 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Started.
+18:24:42.668 [restartedMain] WARN  o.t.templatemode.TemplateMode - [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+18:24:43.058 [restartedMain] INFO  com.ricky.travel.TravelApplication - Started TravelApplication in 3.295 seconds (JVM running for 4.535)
+18:24:48.966 [http-nio-80-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+18:24:55.650 [http-nio-80-exec-2] DEBUG c.r.t.d.S.countByExample - ==>  Preparing: select count(*) from scenic 
+18:24:55.664 [http-nio-80-exec-2] DEBUG c.r.t.d.S.countByExample - ==> Parameters: 
+18:24:55.690 [http-nio-80-exec-2] DEBUG c.r.t.d.S.countByExample - <==      Total: 1
+18:24:55.699 [http-nio-80-exec-2] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - ==>  Preparing: select Scenic_Id, Create_Id, City_Id, Scenic_Name, Scenic_Phone, Scenic_Want, Scenic_Like, Scenic_Tag , Scenic_Description, Scenic_Cost, Scenic_Address, Scenic_Time from scenic order by Scenic_Id asc limit 0, 2 
+18:24:55.700 [http-nio-80-exec-2] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - ==> Parameters: 
+18:24:55.709 [http-nio-80-exec-2] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - <==      Total: 2
+18:25:26.163 [http-nio-80-exec-2] DEBUG c.r.t.d.C.selectByExample - ==>  Preparing: select Country_ID, Country_Nname from country WHERE ( Country_ID is not null ) 
+18:25:26.163 [http-nio-80-exec-2] DEBUG c.r.t.d.C.selectByExample - ==> Parameters: 
+18:25:26.165 [http-nio-80-exec-2] DEBUG c.r.t.d.C.selectByExample - <==      Total: 11
+18:25:27.635 [http-nio-80-exec-6] DEBUG c.r.t.d.P.selectByExample - ==>  Preparing: select Province_Id, Country_ID, Province_Name from province WHERE ( Country_ID = ? ) 
+18:25:27.635 [http-nio-80-exec-6] DEBUG c.r.t.d.P.selectByExample - ==> Parameters: 1(Integer)
+18:25:27.638 [http-nio-80-exec-6] DEBUG c.r.t.d.P.selectByExample - <==      Total: 34
+18:25:32.497 [http-nio-80-exec-8] DEBUG c.r.t.d.CityVOMapper.selectByExample - ==>  Preparing: select City_Id, Province_Id, City_Name from city WHERE ( Province_Id = ? ) 
+18:25:32.497 [http-nio-80-exec-8] DEBUG c.r.t.d.CityVOMapper.selectByExample - ==> Parameters: 18(Integer)
+18:25:32.500 [http-nio-80-exec-8] DEBUG c.r.t.d.CityVOMapper.selectByExample - <==      Total: 21
+18:26:11.811 [http-nio-80-exec-2] DEBUG c.r.t.d.S.countByExample - ==>  Preparing: select count(*) from scenic 
+18:26:11.811 [http-nio-80-exec-2] DEBUG c.r.t.d.S.countByExample - ==> Parameters: 
+18:26:11.812 [http-nio-80-exec-2] DEBUG c.r.t.d.S.countByExample - <==      Total: 1
+18:26:11.812 [http-nio-80-exec-2] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - ==>  Preparing: select Scenic_Id, Create_Id, City_Id, Scenic_Name, Scenic_Phone, Scenic_Want, Scenic_Like, Scenic_Tag , Scenic_Description, Scenic_Cost, Scenic_Address, Scenic_Time from scenic order by Scenic_Id asc limit 0, 2 
+18:26:11.813 [http-nio-80-exec-2] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - ==> Parameters: 
+18:26:11.814 [http-nio-80-exec-2] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - <==      Total: 2
+18:31:13.258 [restartedMain] INFO  com.ricky.travel.TravelApplication - Starting TravelApplication on PC-201702111430 with PID 5228 (E:\idea_workplace\travel\target\classes started by Administrator in E:\idea_workplace\travel)
+18:31:13.261 [restartedMain] INFO  com.ricky.travel.TravelApplication - No active profile set, falling back to default profiles: default
+18:31:14.707 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+18:31:14.708 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
+18:31:14.768 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+18:31:14.907 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Started.
+18:31:15.947 [restartedMain] WARN  o.t.templatemode.TemplateMode - [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+18:31:16.365 [restartedMain] INFO  com.ricky.travel.TravelApplication - Started TravelApplication in 3.354 seconds (JVM running for 4.549)
+18:31:21.263 [http-nio-80-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+18:31:21.967 [http-nio-80-exec-1] DEBUG c.r.t.d.S.countByExample - ==>  Preparing: select count(*) from scenic 
+18:31:21.979 [http-nio-80-exec-1] DEBUG c.r.t.d.S.countByExample - ==> Parameters: 
+18:31:22.009 [http-nio-80-exec-1] DEBUG c.r.t.d.S.countByExample - <==      Total: 1
+18:31:22.013 [http-nio-80-exec-1] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - ==>  Preparing: select Scenic_Id, Create_Id, City_Id, Scenic_Name, Scenic_Phone, Scenic_Want, Scenic_Like, Scenic_Tag , Scenic_Description, Scenic_Cost, Scenic_Address, Scenic_Time from scenic order by Scenic_Id asc limit 0, 2 
+18:31:22.013 [http-nio-80-exec-1] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - ==> Parameters: 
+18:31:22.016 [http-nio-80-exec-1] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - <==      Total: 2
+18:31:26.554 [http-nio-80-exec-5] DEBUG c.r.t.d.C.selectByExample - ==>  Preparing: select Country_ID, Country_Nname from country WHERE ( Country_ID is not null ) 
+18:31:26.554 [http-nio-80-exec-5] DEBUG c.r.t.d.C.selectByExample - ==> Parameters: 
+18:31:26.556 [http-nio-80-exec-5] DEBUG c.r.t.d.C.selectByExample - <==      Total: 11
+18:31:28.251 [http-nio-80-exec-7] DEBUG c.r.t.d.P.selectByExample - ==>  Preparing: select Province_Id, Country_ID, Province_Name from province WHERE ( Country_ID = ? ) 
+18:31:28.252 [http-nio-80-exec-7] DEBUG c.r.t.d.P.selectByExample - ==> Parameters: 1(Integer)
+18:31:28.255 [http-nio-80-exec-7] DEBUG c.r.t.d.P.selectByExample - <==      Total: 34
+18:31:33.011 [http-nio-80-exec-2] DEBUG c.r.t.d.CityVOMapper.selectByExample - ==>  Preparing: select City_Id, Province_Id, City_Name from city WHERE ( Province_Id = ? ) 
+18:31:33.012 [http-nio-80-exec-2] DEBUG c.r.t.d.CityVOMapper.selectByExample - ==> Parameters: 22(Integer)
+18:31:33.014 [http-nio-80-exec-2] DEBUG c.r.t.d.CityVOMapper.selectByExample - <==      Total: 21
+18:31:47.712 [http-nio-80-exec-7] DEBUG c.r.t.d.S.countByExample - ==>  Preparing: select count(*) from scenic 
+18:31:47.712 [http-nio-80-exec-7] DEBUG c.r.t.d.S.countByExample - ==> Parameters: 
+18:31:47.713 [http-nio-80-exec-7] DEBUG c.r.t.d.S.countByExample - <==      Total: 1
+18:31:47.714 [http-nio-80-exec-7] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - ==>  Preparing: select Scenic_Id, Create_Id, City_Id, Scenic_Name, Scenic_Phone, Scenic_Want, Scenic_Like, Scenic_Tag , Scenic_Description, Scenic_Cost, Scenic_Address, Scenic_Time from scenic order by Scenic_Id asc limit 0, 2 
+18:31:47.714 [http-nio-80-exec-7] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - ==> Parameters: 
+18:31:47.715 [http-nio-80-exec-7] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - <==      Total: 2
+18:33:18.975 [restartedMain] INFO  com.ricky.travel.TravelApplication - Starting TravelApplication on PC-201702111430 with PID 10000 (E:\idea_workplace\travel\target\classes started by Administrator in E:\idea_workplace\travel)
+18:33:18.977 [restartedMain] INFO  com.ricky.travel.TravelApplication - No active profile set, falling back to default profiles: default
+18:33:20.324 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+18:33:20.325 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
+18:33:20.390 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+18:33:20.530 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Started.
+18:33:21.560 [restartedMain] WARN  o.t.templatemode.TemplateMode - [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+18:33:21.968 [restartedMain] INFO  com.ricky.travel.TravelApplication - Started TravelApplication in 3.241 seconds (JVM running for 4.213)
+18:33:27.637 [http-nio-80-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+18:33:28.362 [http-nio-80-exec-3] DEBUG c.r.t.d.S.countByExample - ==>  Preparing: select count(*) from scenic 
+18:33:28.376 [http-nio-80-exec-3] DEBUG c.r.t.d.S.countByExample - ==> Parameters: 
+18:33:28.385 [http-nio-80-exec-3] DEBUG c.r.t.d.S.countByExample - <==      Total: 1
+18:33:28.389 [http-nio-80-exec-3] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - ==>  Preparing: select Scenic_Id, Create_Id, City_Id, Scenic_Name, Scenic_Phone, Scenic_Want, Scenic_Like, Scenic_Tag , Scenic_Description, Scenic_Cost, Scenic_Address, Scenic_Time from scenic order by Scenic_Id asc limit 0, 2 
+18:33:28.389 [http-nio-80-exec-3] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - ==> Parameters: 
+18:33:28.392 [http-nio-80-exec-3] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - <==      Total: 2
+18:33:54.291 [restartedMain] INFO  com.ricky.travel.TravelApplication - Starting TravelApplication on PC-201702111430 with PID 6888 (E:\idea_workplace\travel\target\classes started by Administrator in E:\idea_workplace\travel)
+18:33:54.296 [restartedMain] INFO  com.ricky.travel.TravelApplication - No active profile set, falling back to default profiles: default
+18:33:55.632 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+18:33:55.633 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
+18:33:55.692 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+18:33:55.832 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Started.
+18:33:56.847 [restartedMain] WARN  o.t.templatemode.TemplateMode - [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+18:33:57.302 [restartedMain] INFO  com.ricky.travel.TravelApplication - Started TravelApplication in 3.216 seconds (JVM running for 4.397)
+18:34:02.883 [http-nio-80-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+18:34:02.946 [http-nio-80-exec-1] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved exception caused by Handler execution: org.springframework.web.bind.MissingServletRequestParameterException: Required String parameter 'scenicName' is not present
+18:34:15.862 [http-nio-80-exec-5] DEBUG c.r.t.d.C.selectByExample - ==>  Preparing: select Country_ID, Country_Nname from country WHERE ( Country_ID is not null ) 
+18:34:15.876 [http-nio-80-exec-5] DEBUG c.r.t.d.C.selectByExample - ==> Parameters: 
+18:34:15.886 [http-nio-80-exec-5] DEBUG c.r.t.d.C.selectByExample - <==      Total: 11
+18:34:17.125 [http-nio-80-exec-3] DEBUG c.r.t.d.P.selectByExample - ==>  Preparing: select Province_Id, Country_ID, Province_Name from province WHERE ( Country_ID = ? ) 
+18:34:17.126 [http-nio-80-exec-3] DEBUG c.r.t.d.P.selectByExample - ==> Parameters: 1(Integer)
+18:34:17.130 [http-nio-80-exec-3] DEBUG c.r.t.d.P.selectByExample - <==      Total: 34
+18:34:18.273 [http-nio-80-exec-9] DEBUG c.r.t.d.CityVOMapper.selectByExample - ==>  Preparing: select City_Id, Province_Id, City_Name from city WHERE ( Province_Id = ? ) 
+18:34:18.273 [http-nio-80-exec-9] DEBUG c.r.t.d.CityVOMapper.selectByExample - ==> Parameters: 2(Integer)
+18:34:18.278 [http-nio-80-exec-9] DEBUG c.r.t.d.CityVOMapper.selectByExample - <==      Total: 19
+18:34:20.637 [http-nio-80-exec-2] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved exception caused by Handler execution: org.springframework.web.bind.MissingServletRequestParameterException: Required String parameter 'scenicName' is not present
+18:37:14.581 [restartedMain] INFO  com.ricky.travel.TravelApplication - Starting TravelApplication on PC-201702111430 with PID 1964 (E:\idea_workplace\travel\target\classes started by Administrator in E:\idea_workplace\travel)
+18:37:14.599 [restartedMain] INFO  com.ricky.travel.TravelApplication - No active profile set, falling back to default profiles: default
+18:37:16.167 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+18:37:16.168 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
+18:37:16.237 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+18:37:16.453 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Started.
+18:37:17.932 [restartedMain] WARN  o.t.templatemode.TemplateMode - [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+18:37:18.548 [restartedMain] INFO  com.ricky.travel.TravelApplication - Started TravelApplication in 4.225 seconds (JVM running for 6.805)
+18:37:40.475 [restartedMain] INFO  com.ricky.travel.TravelApplication - Starting TravelApplication on PC-201702111430 with PID 13920 (E:\idea_workplace\travel\target\classes started by Administrator in E:\idea_workplace\travel)
+18:37:40.477 [restartedMain] INFO  com.ricky.travel.TravelApplication - No active profile set, falling back to default profiles: default
+18:37:42.403 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+18:37:42.404 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
+18:37:42.478 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+18:37:42.672 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Started.
+18:37:43.987 [restartedMain] WARN  o.t.templatemode.TemplateMode - [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+18:37:44.618 [restartedMain] INFO  com.ricky.travel.TravelApplication - Started TravelApplication in 4.423 seconds (JVM running for 5.639)
+18:37:54.916 [http-nio-80-exec-5] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+18:39:30.444 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=45s870ms411µs855ns).
+18:45:39.391 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=6m8s947ms686µs876ns).
+18:45:42.219 [restartedMain] INFO  com.ricky.travel.TravelApplication - Starting TravelApplication on PC-201702111430 with PID 5868 (E:\idea_workplace\travel\target\classes started by Administrator in E:\idea_workplace\travel)
+18:45:42.221 [restartedMain] INFO  com.ricky.travel.TravelApplication - No active profile set, falling back to default profiles: default
+18:45:44.088 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+18:45:44.089 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
+18:45:44.155 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+18:45:44.332 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Started.
+18:45:45.605 [restartedMain] WARN  o.t.templatemode.TemplateMode - [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+18:45:46.206 [restartedMain] INFO  com.ricky.travel.TravelApplication - Started TravelApplication in 4.281 seconds (JVM running for 5.99)
+18:45:51.041 [http-nio-80-exec-3] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+18:46:30.393 [restartedMain] INFO  com.ricky.travel.TravelApplication - Starting TravelApplication on PC-201702111430 with PID 14328 (E:\idea_workplace\travel\target\classes started by Administrator in E:\idea_workplace\travel)
+18:46:30.395 [restartedMain] INFO  com.ricky.travel.TravelApplication - No active profile set, falling back to default profiles: default
+18:46:32.188 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+18:46:32.188 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
+18:46:32.256 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+18:46:32.448 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Started.
+18:46:33.672 [restartedMain] WARN  o.t.templatemode.TemplateMode - [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+18:46:34.262 [restartedMain] INFO  com.ricky.travel.TravelApplication - Started TravelApplication in 4.159 seconds (JVM running for 5.358)
+18:46:43.006 [http-nio-80-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+18:46:43.090 [http-nio-80-exec-2] DEBUG c.r.t.d.C.selectByExample - ==>  Preparing: select Country_ID, Country_Nname from country WHERE ( Country_ID is not null ) 
+18:46:43.103 [http-nio-80-exec-2] DEBUG c.r.t.d.C.selectByExample - ==> Parameters: 
+18:46:43.112 [http-nio-80-exec-2] DEBUG c.r.t.d.C.selectByExample - <==      Total: 11
+18:46:44.478 [http-nio-80-exec-1] DEBUG c.r.t.d.P.selectByExample - ==>  Preparing: select Province_Id, Country_ID, Province_Name from province WHERE ( Country_ID = ? ) 
+18:46:44.479 [http-nio-80-exec-1] DEBUG c.r.t.d.P.selectByExample - ==> Parameters: 1(Integer)
+18:46:44.484 [http-nio-80-exec-1] DEBUG c.r.t.d.P.selectByExample - <==      Total: 34
+18:46:45.725 [http-nio-80-exec-3] DEBUG c.r.t.d.CityVOMapper.selectByExample - ==>  Preparing: select City_Id, Province_Id, City_Name from city WHERE ( Province_Id = ? ) 
+18:46:45.726 [http-nio-80-exec-3] DEBUG c.r.t.d.CityVOMapper.selectByExample - ==> Parameters: 2(Integer)
+18:46:45.729 [http-nio-80-exec-3] DEBUG c.r.t.d.CityVOMapper.selectByExample - <==      Total: 19
+18:53:00.615 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=5m14s668ms186µs197ns).
+18:53:04.383 [restartedMain] INFO  com.ricky.travel.TravelApplication - Starting TravelApplication on PC-201702111430 with PID 2252 (E:\idea_workplace\travel\target\classes started by Administrator in E:\idea_workplace\travel)
+18:53:04.386 [restartedMain] INFO  com.ricky.travel.TravelApplication - No active profile set, falling back to default profiles: default
+18:53:06.045 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+18:53:06.046 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
+18:53:06.122 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+18:53:06.314 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Started.
+18:53:07.553 [restartedMain] WARN  o.t.templatemode.TemplateMode - [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+18:53:08.182 [restartedMain] INFO  com.ricky.travel.TravelApplication - Started TravelApplication in 4.089 seconds (JVM running for 5.323)
+18:53:14.193 [http-nio-80-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+18:54:10.582 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m4s18ms505µs122ns).
+18:54:13.292 [restartedMain] INFO  com.ricky.travel.TravelApplication - Starting TravelApplication on PC-201702111430 with PID 10032 (E:\idea_workplace\travel\target\classes started by Administrator in E:\idea_workplace\travel)
+18:54:13.294 [restartedMain] INFO  com.ricky.travel.TravelApplication - No active profile set, falling back to default profiles: default
+18:54:14.751 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+18:54:14.751 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
+18:54:14.807 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+18:54:14.943 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Started.
+18:54:16.030 [restartedMain] WARN  o.t.templatemode.TemplateMode - [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+18:54:16.415 [restartedMain] INFO  com.ricky.travel.TravelApplication - Started TravelApplication in 3.4 seconds (JVM running for 4.483)
+18:54:18.028 [http-nio-80-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+18:54:27.469 [http-nio-80-exec-9] DEBUG c.r.t.d.S.countByExample - ==>  Preparing: select count(*) from scenic 
+18:54:27.483 [http-nio-80-exec-9] DEBUG c.r.t.d.S.countByExample - ==> Parameters: 
+18:54:27.493 [http-nio-80-exec-9] DEBUG c.r.t.d.S.countByExample - <==      Total: 1
+18:54:27.498 [http-nio-80-exec-9] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - ==>  Preparing: select Scenic_Id, Create_Id, City_Id, Scenic_Name, Scenic_Phone, Scenic_Want, Scenic_Like, Scenic_Tag , Scenic_Description, Scenic_Cost, Scenic_Address, Scenic_Time from scenic order by Scenic_Id asc limit 0, 2 
+18:54:27.498 [http-nio-80-exec-9] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - ==> Parameters: 
+18:54:27.501 [http-nio-80-exec-9] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - <==      Total: 2
+20:12:08.303 [restartedMain] INFO  com.ricky.travel.TravelApplication - Starting TravelApplication on PC-201702111430 with PID 10036 (E:\idea_workplace\travel\target\classes started by Administrator in E:\idea_workplace\travel)
+20:12:08.303 [restartedMain] INFO  com.ricky.travel.TravelApplication - No active profile set, falling back to default profiles: default
+20:12:10.059 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+20:12:10.075 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
+20:12:10.137 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+20:12:10.278 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Started.
+20:12:11.361 [restartedMain] WARN  o.t.templatemode.TemplateMode - [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+20:12:12.149 [restartedMain] INFO  com.ricky.travel.TravelApplication - Started TravelApplication in 4.081 seconds (JVM running for 5.151)
+20:12:20.885 [http-nio-80-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+20:12:21.722 [http-nio-80-exec-3] DEBUG c.r.t.d.S.countByExample - ==>  Preparing: select count(*) from scenic 
+20:12:21.734 [http-nio-80-exec-3] DEBUG c.r.t.d.S.countByExample - ==> Parameters: 
+20:12:21.743 [http-nio-80-exec-3] DEBUG c.r.t.d.S.countByExample - <==      Total: 1
+20:12:21.747 [http-nio-80-exec-3] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - ==>  Preparing: select Scenic_Id, Create_Id, City_Id, Scenic_Name, Scenic_Phone, Scenic_Want, Scenic_Like, Scenic_Tag , Scenic_Description, Scenic_Cost, Scenic_Address, Scenic_Time from scenic order by Scenic_Id asc limit 0, 2 
+20:12:21.748 [http-nio-80-exec-3] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - ==> Parameters: 
+20:12:21.750 [http-nio-80-exec-3] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - <==      Total: 2
+20:12:34.900 [http-nio-80-exec-7] DEBUG c.r.t.d.S.countByExample - ==>  Preparing: select count(*) from scenic 
+20:12:34.901 [http-nio-80-exec-7] DEBUG c.r.t.d.S.countByExample - ==> Parameters: 
+20:12:34.902 [http-nio-80-exec-7] DEBUG c.r.t.d.S.countByExample - <==      Total: 1
+20:12:34.902 [http-nio-80-exec-7] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - ==>  Preparing: select Scenic_Id, Create_Id, City_Id, Scenic_Name, Scenic_Phone, Scenic_Want, Scenic_Like, Scenic_Tag , Scenic_Description, Scenic_Cost, Scenic_Address, Scenic_Time from scenic order by Scenic_Id asc limit 0, 2 
+20:12:34.902 [http-nio-80-exec-7] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - ==> Parameters: 
+20:12:34.904 [http-nio-80-exec-7] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - <==      Total: 2

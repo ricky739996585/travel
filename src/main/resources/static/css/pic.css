@@ -1,0 +1,55 @@
+.image_container {
+            display: inline-block;
+            float: left;
+        }
+
+            #tdRoomPicture a, .image_container a {
+                text-align: center;
+                vertical-align: middle;
+                text-decoration: none;
+            }
+
+        a.addImg {
+            width: 100px;
+            height: 100px;
+            line-height: 100px;
+            display: inline-block;
+            font-size: 50px;
+            background-color: #dae6f3;
+        }
+
+        .image_container a.previewBox {
+            background-color: #dae6f3;
+            margin: 0 3px 0 0;
+            display: none;
+            /*display: inline-block;*/
+        }
+
+        .image_container .delImg {
+            position: absolute;
+            color: #f00;
+            margin: 0 0 0 84px;
+            font-size: 16px;
+            width: 16px;
+            height: 16px;
+            line-height: 16px;
+            text-align: center;
+            vertical-align: middle;
+            background-color: #c3c3c3;
+        }
+
+        .defaultImg {
+            border: 1px solid #f90303;
+        }
+
+            .defaultImg:before {
+                /*content: "默认图片";*/
+                float: left;
+                position: absolute;
+                color: #f90303;
+                font-size: 14px;
+            }
+
+            .defaultImg:after {
+                content: "";
+            }

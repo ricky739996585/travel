@@ -1,0 +1,578 @@
+17:35:36.353 [restartedMain] INFO  com.ricky.travel.TravelApplication - Starting TravelApplication on PC-201702111430 with PID 5236 (E:\idea_workplace\travel\target\classes started by Administrator in E:\idea_workplace\travel)
+17:35:36.369 [restartedMain] INFO  com.ricky.travel.TravelApplication - No active profile set, falling back to default profiles: default
+17:35:36.947 [restartedMain] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@119312e4: startup date [Sat Jan 13 17:35:36 CST 2018]; root of context hierarchy
+17:35:40.679 [restartedMain] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 80 (http)
+17:35:40.694 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+17:35:40.694 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
+17:35:40.757 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+17:35:40.757 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 3810 ms
+17:35:40.850 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [*.do, *.jpg, *.css, *.js, *.otf, *.eot, *.svg, *.ttf, *.woff, *.woff2]
+17:35:40.850 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+17:35:40.850 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Servlet dispatcherServlet was not registered (possibly already registered?)
+17:35:40.866 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+17:35:40.866 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+17:35:40.866 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+17:35:40.866 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+17:35:40.991 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Started.
+17:35:42.492 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@119312e4: startup date [Sat Jan 13 17:35:36 CST 2018]; root of context hierarchy
+17:35:42.538 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/admin/validate]}" onto public org.springframework.web.servlet.ModelAndView com.ricky.travel.backgroundController.LoginController.validate(javax.servlet.http.HttpServletRequest,java.lang.String,java.lang.String)
+17:35:42.538 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/admin/login]}" onto public java.lang.String com.ricky.travel.backgroundController.LoginController.login()
+17:35:42.538 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/scene/add]}" onto public java.lang.String com.ricky.travel.backgroundController.SceneController.login()
+17:35:42.538 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/scene/doScene]}" onto public com.ricky.travel.datatable.DataTablesResponse<com.ricky.travel.domain.ScenicVO> com.ricky.travel.backgroundController.SceneController.pageSearch(com.ricky.travel.datatable.DataTablesRequest,java.lang.String)
+17:35:42.554 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+17:35:42.554 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+17:35:42.585 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+17:35:42.585 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+17:35:42.601 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+17:35:42.648 [restartedMain] WARN  o.t.templatemode.TemplateMode - [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+17:35:43.273 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+17:35:43.304 [restartedMain] INFO  o.s.j.e.a.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+17:35:43.304 [restartedMain] INFO  o.s.j.e.a.AnnotationMBeanExporter - Bean with name 'dataSource' has been autodetected for JMX exposure
+17:35:43.304 [restartedMain] INFO  o.s.j.e.a.AnnotationMBeanExporter - Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+17:35:43.367 [restartedMain] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat started on port(s): 80 (http)
+17:35:43.367 [restartedMain] INFO  com.ricky.travel.TravelApplication - Started TravelApplication in 7.295 seconds (JVM running for 9.02)
+17:36:27.710 [http-nio-80-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+17:36:27.710 [http-nio-80-exec-1] INFO  o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
+17:36:27.723 [http-nio-80-exec-1] INFO  o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 13 ms
+17:39:19.391 [restartedMain] INFO  com.ricky.travel.TravelApplication - Starting TravelApplication on PC-201702111430 with PID 3328 (E:\idea_workplace\travel\target\classes started by Administrator in E:\idea_workplace\travel)
+17:39:19.391 [restartedMain] INFO  com.ricky.travel.TravelApplication - No active profile set, falling back to default profiles: default
+17:39:19.642 [restartedMain] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@6b5966da: startup date [Sat Jan 13 17:39:19 CST 2018]; root of context hierarchy
+17:39:20.830 [restartedMain] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 80 (http)
+17:39:20.846 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+17:39:20.846 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
+17:39:20.893 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+17:39:20.893 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1251 ms
+17:39:20.995 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [*.do, *.jpg, *.css, *.js, *.otf, *.eot, *.svg, *.ttf, *.woff, *.woff2]
+17:39:20.995 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+17:39:20.995 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Servlet dispatcherServlet was not registered (possibly already registered?)
+17:39:20.995 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+17:39:20.995 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+17:39:20.995 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+17:39:20.995 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+17:39:21.042 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Started.
+17:39:21.917 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@6b5966da: startup date [Sat Jan 13 17:39:19 CST 2018]; root of context hierarchy
+17:39:21.948 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/admin/validate]}" onto public org.springframework.web.servlet.ModelAndView com.ricky.travel.backgroundController.LoginController.validate(javax.servlet.http.HttpServletRequest,java.lang.String,java.lang.String)
+17:39:21.948 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/admin/login]}" onto public java.lang.String com.ricky.travel.backgroundController.LoginController.login()
+17:39:21.964 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/scene/doScene]}" onto public com.ricky.travel.datatable.DataTablesResponse<com.ricky.travel.domain.ScenicVO> com.ricky.travel.backgroundController.SceneController.pageSearch(com.ricky.travel.datatable.DataTablesRequest,java.lang.String)
+17:39:21.964 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/scene/add]}" onto public java.lang.String com.ricky.travel.backgroundController.SceneController.login()
+17:39:21.964 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+17:39:21.964 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+17:39:21.980 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+17:39:21.980 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+17:39:21.995 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+17:39:22.026 [restartedMain] WARN  o.t.templatemode.TemplateMode - [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+17:39:22.308 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+17:39:22.339 [restartedMain] INFO  o.s.j.e.a.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+17:39:22.355 [restartedMain] INFO  o.s.j.e.a.AnnotationMBeanExporter - Bean with name 'dataSource' has been autodetected for JMX exposure
+17:39:22.355 [restartedMain] INFO  o.s.j.e.a.AnnotationMBeanExporter - Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+17:39:22.386 [restartedMain] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat started on port(s): 80 (http)
+17:39:22.386 [restartedMain] INFO  com.ricky.travel.TravelApplication - Started TravelApplication in 3.354 seconds (JVM running for 4.37)
+17:39:28.516 [http-nio-80-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+17:39:28.516 [http-nio-80-exec-1] INFO  o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
+17:39:28.528 [http-nio-80-exec-1] INFO  o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 12 ms
+17:44:18.000 [restartedMain] INFO  com.ricky.travel.TravelApplication - Starting TravelApplication on PC-201702111430 with PID 9664 (E:\idea_workplace\travel\target\classes started by Administrator in E:\idea_workplace\travel)
+17:44:18.000 [restartedMain] INFO  com.ricky.travel.TravelApplication - No active profile set, falling back to default profiles: default
+17:44:18.219 [restartedMain] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@4b8d636: startup date [Sat Jan 13 17:44:18 CST 2018]; root of context hierarchy
+17:44:19.424 [restartedMain] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 80 (http)
+17:44:19.424 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+17:44:19.440 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
+17:44:19.503 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+17:44:19.503 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1284 ms
+17:44:19.581 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [*.do, *.jpg, *.css, *.js, *.otf, *.eot, *.svg, *.ttf, *.woff, *.woff2]
+17:44:19.581 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+17:44:19.581 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Servlet dispatcherServlet was not registered (possibly already registered?)
+17:44:19.596 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+17:44:19.596 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+17:44:19.596 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+17:44:19.596 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+17:44:19.628 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Started.
+17:44:20.473 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@4b8d636: startup date [Sat Jan 13 17:44:18 CST 2018]; root of context hierarchy
+17:44:20.504 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/admin/validate]}" onto public org.springframework.web.servlet.ModelAndView com.ricky.travel.backgroundController.LoginController.validate(javax.servlet.http.HttpServletRequest,java.lang.String,java.lang.String)
+17:44:20.504 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/admin/login]}" onto public java.lang.String com.ricky.travel.backgroundController.LoginController.login()
+17:44:20.504 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/scene/doScene]}" onto public com.ricky.travel.datatable.DataTablesResponse<com.ricky.travel.domain.ScenicVO> com.ricky.travel.backgroundController.SceneController.pageSearch(com.ricky.travel.datatable.DataTablesRequest,java.lang.String)
+17:44:20.504 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/scene/add]}" onto public java.lang.String com.ricky.travel.backgroundController.SceneController.login()
+17:44:20.520 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+17:44:20.520 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+17:44:20.535 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+17:44:20.535 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+17:44:20.551 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+17:44:20.582 [restartedMain] WARN  o.t.templatemode.TemplateMode - [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+17:44:20.879 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+17:44:20.910 [restartedMain] INFO  o.s.j.e.a.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+17:44:20.910 [restartedMain] INFO  o.s.j.e.a.AnnotationMBeanExporter - Bean with name 'dataSource' has been autodetected for JMX exposure
+17:44:20.926 [restartedMain] INFO  o.s.j.e.a.AnnotationMBeanExporter - Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+17:44:20.957 [restartedMain] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat started on port(s): 80 (http)
+17:44:20.957 [restartedMain] INFO  com.ricky.travel.TravelApplication - Started TravelApplication in 3.144 seconds (JVM running for 4.106)
+17:44:27.975 [http-nio-80-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+17:44:27.975 [http-nio-80-exec-1] INFO  o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
+17:44:27.988 [http-nio-80-exec-1] INFO  o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 12 ms
+17:59:57.969 [restartedMain] INFO  com.ricky.travel.TravelApplication - Starting TravelApplication on PC-201702111430 with PID 7868 (E:\idea_workplace\travel\target\classes started by Administrator in E:\idea_workplace\travel)
+17:59:57.984 [restartedMain] INFO  com.ricky.travel.TravelApplication - No active profile set, falling back to default profiles: default
+17:59:58.250 [restartedMain] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@73c54810: startup date [Sat Jan 13 17:59:58 CST 2018]; root of context hierarchy
+17:59:59.234 [restartedMain] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 80 (http)
+17:59:59.234 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+17:59:59.234 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
+17:59:59.297 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+17:59:59.297 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1047 ms
+17:59:59.391 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [*.do, *.jpg, *.css, *.js, *.otf, *.eot, *.svg, *.ttf, *.woff, *.woff2]
+17:59:59.391 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+17:59:59.391 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Servlet dispatcherServlet was not registered (possibly already registered?)
+17:59:59.391 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+17:59:59.391 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+17:59:59.391 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+17:59:59.391 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+17:59:59.438 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Started.
+18:00:00.281 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@73c54810: startup date [Sat Jan 13 17:59:58 CST 2018]; root of context hierarchy
+18:00:00.313 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/admin/validate]}" onto public org.springframework.web.servlet.ModelAndView com.ricky.travel.backgroundController.LoginController.validate(javax.servlet.http.HttpServletRequest,java.lang.String,java.lang.String)
+18:00:00.313 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/admin/login]}" onto public java.lang.String com.ricky.travel.backgroundController.LoginController.login()
+18:00:00.313 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/scene/add]}" onto public java.lang.String com.ricky.travel.backgroundController.SceneController.login()
+18:00:00.313 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/scene/doScene]}" onto public com.ricky.travel.datatable.DataTablesResponse<com.ricky.travel.domain.ScenicVO> com.ricky.travel.backgroundController.SceneController.pageSearch(com.ricky.travel.datatable.DataTablesRequest,java.lang.String)
+18:00:00.313 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+18:00:00.313 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+18:00:00.344 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+18:00:00.344 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+18:00:00.360 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+18:00:00.391 [restartedMain] WARN  o.t.templatemode.TemplateMode - [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+18:00:00.672 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+18:00:00.703 [restartedMain] INFO  o.s.j.e.a.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+18:00:00.703 [restartedMain] INFO  o.s.j.e.a.AnnotationMBeanExporter - Bean with name 'dataSource' has been autodetected for JMX exposure
+18:00:00.719 [restartedMain] INFO  o.s.j.e.a.AnnotationMBeanExporter - Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+18:00:00.750 [restartedMain] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat started on port(s): 80 (http)
+18:00:00.750 [restartedMain] INFO  com.ricky.travel.TravelApplication - Started TravelApplication in 3.016 seconds (JVM running for 3.892)
+18:00:06.100 [http-nio-80-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+18:00:06.101 [http-nio-80-exec-1] INFO  o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
+18:00:06.112 [http-nio-80-exec-1] INFO  o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 11 ms
+18:02:10.177 [restartedMain] INFO  com.ricky.travel.TravelApplication - Starting TravelApplication on PC-201702111430 with PID 5580 (E:\idea_workplace\travel\target\classes started by Administrator in E:\idea_workplace\travel)
+18:02:10.192 [restartedMain] INFO  com.ricky.travel.TravelApplication - No active profile set, falling back to default profiles: default
+18:02:11.421 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+18:02:11.421 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
+18:02:11.484 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+18:02:11.624 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Started.
+18:02:12.546 [restartedMain] WARN  o.t.templatemode.TemplateMode - [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+18:02:12.890 [restartedMain] INFO  com.ricky.travel.TravelApplication - Started TravelApplication in 2.885 seconds (JVM running for 3.621)
+18:02:28.261 [http-nio-80-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+18:03:03.366 [restartedMain] INFO  com.ricky.travel.TravelApplication - Starting TravelApplication on PC-201702111430 with PID 7812 (E:\idea_workplace\travel\target\classes started by Administrator in E:\idea_workplace\travel)
+18:03:03.366 [restartedMain] INFO  com.ricky.travel.TravelApplication - No active profile set, falling back to default profiles: default
+18:03:04.519 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+18:03:04.519 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
+18:03:04.582 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+18:03:04.707 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Started.
+18:03:05.644 [restartedMain] WARN  o.t.templatemode.TemplateMode - [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+18:03:05.988 [restartedMain] INFO  com.ricky.travel.TravelApplication - Started TravelApplication in 2.934 seconds (JVM running for 3.708)
+18:03:12.752 [http-nio-80-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+18:03:12.832 [http-nio-80-exec-2] DEBUG c.r.t.d.A.selectByExample - ==>  Preparing: select Admin_Id, Admin_Account, Admin_Password, Admin_Level from admin_user WHERE ( Admin_Account = ? ) 
+18:03:12.845 [http-nio-80-exec-2] DEBUG c.r.t.d.A.selectByExample - ==> Parameters: ricky(String)
+18:03:12.867 [http-nio-80-exec-2] DEBUG c.r.t.d.A.selectByExample - <==      Total: 1
+18:03:13.473 [http-nio-80-exec-5] DEBUG c.r.t.d.S.countByExample - ==>  Preparing: select count(*) from scenic WHERE ( Scenic_Tag = ? ) 
+18:03:13.474 [http-nio-80-exec-5] DEBUG c.r.t.d.S.countByExample - ==> Parameters: 草原(String)
+18:03:13.475 [http-nio-80-exec-5] DEBUG c.r.t.d.S.countByExample - <==      Total: 1
+18:03:13.478 [http-nio-80-exec-5] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - ==>  Preparing: select Scenic_Id, Create_Id, City_Id, Scenic_Name, Scenic_Phone, Scenic_Want, Scenic_Like, Scenic_Tag , Scenic_Description, Scenic_Cost, Scenic_Address, Scenic_Time from scenic WHERE ( Scenic_Tag = ? ) order by Scenic_Id asc limit 0, 2 
+18:03:13.478 [http-nio-80-exec-5] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - ==> Parameters: 草原(String)
+18:03:13.478 [http-nio-80-exec-5] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - <==      Total: 0
+18:05:10.938 [restartedMain] INFO  com.ricky.travel.TravelApplication - Starting TravelApplication on PC-201702111430 with PID 5036 (E:\idea_workplace\travel\target\classes started by Administrator in E:\idea_workplace\travel)
+18:05:10.938 [restartedMain] INFO  com.ricky.travel.TravelApplication - No active profile set, falling back to default profiles: default
+18:05:12.223 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+18:05:12.223 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
+18:05:12.302 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+18:05:12.427 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Started.
+18:05:13.349 [restartedMain] WARN  o.t.templatemode.TemplateMode - [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+18:05:13.692 [restartedMain] INFO  com.ricky.travel.TravelApplication - Started TravelApplication in 2.925 seconds (JVM running for 3.687)
+18:05:20.653 [http-nio-80-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+18:05:20.725 [http-nio-80-exec-1] DEBUG c.r.t.d.A.selectByExample - ==>  Preparing: select Admin_Id, Admin_Account, Admin_Password, Admin_Level from admin_user WHERE ( Admin_Account = ? ) 
+18:05:20.738 [http-nio-80-exec-1] DEBUG c.r.t.d.A.selectByExample - ==> Parameters: ricky(String)
+18:05:20.747 [http-nio-80-exec-1] DEBUG c.r.t.d.A.selectByExample - <==      Total: 1
+18:05:21.333 [http-nio-80-exec-7] DEBUG c.r.t.d.S.countByExample - ==>  Preparing: select count(*) from scenic WHERE ( Scenic_Tag = ? ) 
+18:05:21.333 [http-nio-80-exec-7] DEBUG c.r.t.d.S.countByExample - ==> Parameters: 0(String)
+18:05:21.334 [http-nio-80-exec-7] DEBUG c.r.t.d.S.countByExample - <==      Total: 1
+18:05:21.336 [http-nio-80-exec-7] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - ==>  Preparing: select Scenic_Id, Create_Id, City_Id, Scenic_Name, Scenic_Phone, Scenic_Want, Scenic_Like, Scenic_Tag , Scenic_Description, Scenic_Cost, Scenic_Address, Scenic_Time from scenic WHERE ( Scenic_Tag = ? ) order by Scenic_Id asc limit 0, 2 
+18:05:21.337 [http-nio-80-exec-7] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - ==> Parameters: 0(String)
+18:05:21.337 [http-nio-80-exec-7] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - <==      Total: 0
+18:06:23.704 [restartedMain] INFO  com.ricky.travel.TravelApplication - Starting TravelApplication on PC-201702111430 with PID 10460 (E:\idea_workplace\travel\target\classes started by Administrator in E:\idea_workplace\travel)
+18:06:23.720 [restartedMain] INFO  com.ricky.travel.TravelApplication - No active profile set, falling back to default profiles: default
+18:06:24.910 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+18:06:24.910 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
+18:06:24.988 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+18:06:25.129 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Started.
+18:06:26.051 [restartedMain] WARN  o.t.templatemode.TemplateMode - [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+18:06:26.379 [restartedMain] INFO  com.ricky.travel.TravelApplication - Started TravelApplication in 2.925 seconds (JVM running for 3.821)
+18:06:30.210 [http-nio-80-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+18:06:30.286 [http-nio-80-exec-1] DEBUG c.r.t.d.A.selectByExample - ==>  Preparing: select Admin_Id, Admin_Account, Admin_Password, Admin_Level from admin_user WHERE ( Admin_Account = ? ) 
+18:06:30.298 [http-nio-80-exec-1] DEBUG c.r.t.d.A.selectByExample - ==> Parameters: ricky(String)
+18:06:30.307 [http-nio-80-exec-1] DEBUG c.r.t.d.A.selectByExample - <==      Total: 1
+18:06:31.046 [http-nio-80-exec-4] DEBUG c.r.t.d.S.countByExample - ==>  Preparing: select count(*) from scenic 
+18:06:31.046 [http-nio-80-exec-4] DEBUG c.r.t.d.S.countByExample - ==> Parameters: 
+18:06:31.047 [http-nio-80-exec-4] DEBUG c.r.t.d.S.countByExample - <==      Total: 1
+18:06:31.050 [http-nio-80-exec-4] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - ==>  Preparing: select Scenic_Id, Create_Id, City_Id, Scenic_Name, Scenic_Phone, Scenic_Want, Scenic_Like, Scenic_Tag , Scenic_Description, Scenic_Cost, Scenic_Address, Scenic_Time from scenic order by Scenic_Id asc limit 0, 2 
+18:06:31.050 [http-nio-80-exec-4] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - ==> Parameters: 
+18:06:31.053 [http-nio-80-exec-4] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - <==      Total: 2
+18:06:34.611 [http-nio-80-exec-1] DEBUG c.r.t.d.S.countByExample - ==>  Preparing: select count(*) from scenic 
+18:06:34.612 [http-nio-80-exec-1] DEBUG c.r.t.d.S.countByExample - ==> Parameters: 
+18:06:34.612 [http-nio-80-exec-1] DEBUG c.r.t.d.S.countByExample - <==      Total: 1
+18:06:34.613 [http-nio-80-exec-1] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - ==>  Preparing: select Scenic_Id, Create_Id, City_Id, Scenic_Name, Scenic_Phone, Scenic_Want, Scenic_Like, Scenic_Tag , Scenic_Description, Scenic_Cost, Scenic_Address, Scenic_Time from scenic order by Scenic_Id desc limit 0, 2 
+18:06:34.613 [http-nio-80-exec-1] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - ==> Parameters: 
+18:06:34.615 [http-nio-80-exec-1] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - <==      Total: 2
+18:06:37.291 [http-nio-80-exec-9] DEBUG c.r.t.d.S.countByExample - ==>  Preparing: select count(*) from scenic 
+18:06:37.292 [http-nio-80-exec-9] DEBUG c.r.t.d.S.countByExample - ==> Parameters: 
+18:06:37.292 [http-nio-80-exec-9] DEBUG c.r.t.d.S.countByExample - <==      Total: 1
+18:06:37.293 [http-nio-80-exec-9] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - ==>  Preparing: select Scenic_Id, Create_Id, City_Id, Scenic_Name, Scenic_Phone, Scenic_Want, Scenic_Like, Scenic_Tag , Scenic_Description, Scenic_Cost, Scenic_Address, Scenic_Time from scenic order by Scenic_Id asc limit 0, 2 
+18:06:37.293 [http-nio-80-exec-9] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - ==> Parameters: 
+18:06:37.295 [http-nio-80-exec-9] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - <==      Total: 2
+18:06:38.336 [http-nio-80-exec-10] DEBUG c.r.t.d.S.countByExample - ==>  Preparing: select count(*) from scenic 
+18:06:38.337 [http-nio-80-exec-10] DEBUG c.r.t.d.S.countByExample - ==> Parameters: 
+18:06:38.337 [http-nio-80-exec-10] DEBUG c.r.t.d.S.countByExample - <==      Total: 1
+18:06:38.338 [http-nio-80-exec-10] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - ==>  Preparing: select Scenic_Id, Create_Id, City_Id, Scenic_Name, Scenic_Phone, Scenic_Want, Scenic_Like, Scenic_Tag , Scenic_Description, Scenic_Cost, Scenic_Address, Scenic_Time from scenic order by Scenic_Id desc limit 0, 2 
+18:06:38.338 [http-nio-80-exec-10] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - ==> Parameters: 
+18:06:38.339 [http-nio-80-exec-10] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - <==      Total: 2
+18:06:39.386 [http-nio-80-exec-8] DEBUG c.r.t.d.S.countByExample - ==>  Preparing: select count(*) from scenic 
+18:06:39.387 [http-nio-80-exec-8] DEBUG c.r.t.d.S.countByExample - ==> Parameters: 
+18:06:39.387 [http-nio-80-exec-8] DEBUG c.r.t.d.S.countByExample - <==      Total: 1
+18:06:39.388 [http-nio-80-exec-8] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - ==>  Preparing: select Scenic_Id, Create_Id, City_Id, Scenic_Name, Scenic_Phone, Scenic_Want, Scenic_Like, Scenic_Tag , Scenic_Description, Scenic_Cost, Scenic_Address, Scenic_Time from scenic order by Scenic_Id asc limit 0, 2 
+18:06:39.388 [http-nio-80-exec-8] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - ==> Parameters: 
+18:06:39.389 [http-nio-80-exec-8] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - <==      Total: 2
+18:06:42.494 [http-nio-80-exec-3] DEBUG c.r.t.d.S.countByExample - ==>  Preparing: select count(*) from scenic 
+18:06:42.494 [http-nio-80-exec-3] DEBUG c.r.t.d.S.countByExample - ==> Parameters: 
+18:06:42.494 [http-nio-80-exec-3] DEBUG c.r.t.d.S.countByExample - <==      Total: 1
+18:06:42.495 [http-nio-80-exec-3] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - ==>  Preparing: select Scenic_Id, Create_Id, City_Id, Scenic_Name, Scenic_Phone, Scenic_Want, Scenic_Like, Scenic_Tag , Scenic_Description, Scenic_Cost, Scenic_Address, Scenic_Time from scenic order by Scenic_Id asc limit 0, 10 
+18:06:42.495 [http-nio-80-exec-3] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - ==> Parameters: 
+18:06:42.496 [http-nio-80-exec-3] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - <==      Total: 3
+18:06:44.319 [http-nio-80-exec-5] DEBUG c.r.t.d.S.countByExample - ==>  Preparing: select count(*) from scenic 
+18:06:44.320 [http-nio-80-exec-5] DEBUG c.r.t.d.S.countByExample - ==> Parameters: 
+18:06:44.320 [http-nio-80-exec-5] DEBUG c.r.t.d.S.countByExample - <==      Total: 1
+18:06:44.321 [http-nio-80-exec-5] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - ==>  Preparing: select Scenic_Id, Create_Id, City_Id, Scenic_Name, Scenic_Phone, Scenic_Want, Scenic_Like, Scenic_Tag , Scenic_Description, Scenic_Cost, Scenic_Address, Scenic_Time from scenic order by Scenic_Id desc limit 0, 10 
+18:06:44.321 [http-nio-80-exec-5] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - ==> Parameters: 
+18:06:44.323 [http-nio-80-exec-5] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - <==      Total: 3
+18:06:45.154 [http-nio-80-exec-7] DEBUG c.r.t.d.S.countByExample - ==>  Preparing: select count(*) from scenic 
+18:06:45.155 [http-nio-80-exec-7] DEBUG c.r.t.d.S.countByExample - ==> Parameters: 
+18:06:45.156 [http-nio-80-exec-7] DEBUG c.r.t.d.S.countByExample - <==      Total: 1
+18:06:45.158 [http-nio-80-exec-7] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - ==>  Preparing: select Scenic_Id, Create_Id, City_Id, Scenic_Name, Scenic_Phone, Scenic_Want, Scenic_Like, Scenic_Tag , Scenic_Description, Scenic_Cost, Scenic_Address, Scenic_Time from scenic order by Scenic_Id asc limit 0, 10 
+18:06:45.158 [http-nio-80-exec-7] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - ==> Parameters: 
+18:06:45.159 [http-nio-80-exec-7] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - <==      Total: 3
+18:06:45.902 [http-nio-80-exec-6] DEBUG c.r.t.d.S.countByExample - ==>  Preparing: select count(*) from scenic 
+18:06:45.903 [http-nio-80-exec-6] DEBUG c.r.t.d.S.countByExample - ==> Parameters: 
+18:06:45.903 [http-nio-80-exec-6] DEBUG c.r.t.d.S.countByExample - <==      Total: 1
+18:06:45.904 [http-nio-80-exec-6] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - ==>  Preparing: select Scenic_Id, Create_Id, City_Id, Scenic_Name, Scenic_Phone, Scenic_Want, Scenic_Like, Scenic_Tag , Scenic_Description, Scenic_Cost, Scenic_Address, Scenic_Time from scenic order by Scenic_Id desc limit 0, 10 
+18:06:45.904 [http-nio-80-exec-6] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - ==> Parameters: 
+18:06:45.905 [http-nio-80-exec-6] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - <==      Total: 3
+18:06:46.511 [http-nio-80-exec-2] DEBUG c.r.t.d.S.countByExample - ==>  Preparing: select count(*) from scenic 
+18:06:46.511 [http-nio-80-exec-2] DEBUG c.r.t.d.S.countByExample - ==> Parameters: 
+18:06:46.512 [http-nio-80-exec-2] DEBUG c.r.t.d.S.countByExample - <==      Total: 1
+18:06:46.512 [http-nio-80-exec-2] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - ==>  Preparing: select Scenic_Id, Create_Id, City_Id, Scenic_Name, Scenic_Phone, Scenic_Want, Scenic_Like, Scenic_Tag , Scenic_Description, Scenic_Cost, Scenic_Address, Scenic_Time from scenic order by Scenic_Id asc limit 0, 10 
+18:06:46.512 [http-nio-80-exec-2] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - ==> Parameters: 
+18:06:46.513 [http-nio-80-exec-2] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - <==      Total: 3
+18:06:47.873 [http-nio-80-exec-4] DEBUG c.r.t.d.S.countByExample - ==>  Preparing: select count(*) from scenic 
+18:06:47.874 [http-nio-80-exec-4] DEBUG c.r.t.d.S.countByExample - ==> Parameters: 
+18:06:47.874 [http-nio-80-exec-4] DEBUG c.r.t.d.S.countByExample - <==      Total: 1
+18:06:47.875 [http-nio-80-exec-4] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - ==>  Preparing: select Scenic_Id, Create_Id, City_Id, Scenic_Name, Scenic_Phone, Scenic_Want, Scenic_Like, Scenic_Tag , Scenic_Description, Scenic_Cost, Scenic_Address, Scenic_Time from scenic order by Scenic_Cost asc limit 0, 10 
+18:06:47.875 [http-nio-80-exec-4] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - ==> Parameters: 
+18:06:47.876 [http-nio-80-exec-4] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - <==      Total: 3
+18:06:48.636 [http-nio-80-exec-1] DEBUG c.r.t.d.S.countByExample - ==>  Preparing: select count(*) from scenic 
+18:06:48.636 [http-nio-80-exec-1] DEBUG c.r.t.d.S.countByExample - ==> Parameters: 
+18:06:48.637 [http-nio-80-exec-1] DEBUG c.r.t.d.S.countByExample - <==      Total: 1
+18:06:48.637 [http-nio-80-exec-1] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - ==>  Preparing: select Scenic_Id, Create_Id, City_Id, Scenic_Name, Scenic_Phone, Scenic_Want, Scenic_Like, Scenic_Tag , Scenic_Description, Scenic_Cost, Scenic_Address, Scenic_Time from scenic order by Scenic_Cost desc limit 0, 10 
+18:06:48.637 [http-nio-80-exec-1] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - ==> Parameters: 
+18:06:48.638 [http-nio-80-exec-1] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - <==      Total: 3
+18:06:49.581 [http-nio-80-exec-9] DEBUG c.r.t.d.S.countByExample - ==>  Preparing: select count(*) from scenic 
+18:06:49.581 [http-nio-80-exec-9] DEBUG c.r.t.d.S.countByExample - ==> Parameters: 
+18:06:49.582 [http-nio-80-exec-9] DEBUG c.r.t.d.S.countByExample - <==      Total: 1
+18:06:49.582 [http-nio-80-exec-9] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - ==>  Preparing: select Scenic_Id, Create_Id, City_Id, Scenic_Name, Scenic_Phone, Scenic_Want, Scenic_Like, Scenic_Tag , Scenic_Description, Scenic_Cost, Scenic_Address, Scenic_Time from scenic order by Scenic_Cost asc limit 0, 10 
+18:06:49.582 [http-nio-80-exec-9] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - ==> Parameters: 
+18:06:49.583 [http-nio-80-exec-9] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - <==      Total: 3
+18:06:50.327 [http-nio-80-exec-10] DEBUG c.r.t.d.S.countByExample - ==>  Preparing: select count(*) from scenic 
+18:06:50.327 [http-nio-80-exec-10] DEBUG c.r.t.d.S.countByExample - ==> Parameters: 
+18:06:50.327 [http-nio-80-exec-10] DEBUG c.r.t.d.S.countByExample - <==      Total: 1
+18:06:50.328 [http-nio-80-exec-10] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - ==>  Preparing: select Scenic_Id, Create_Id, City_Id, Scenic_Name, Scenic_Phone, Scenic_Want, Scenic_Like, Scenic_Tag , Scenic_Description, Scenic_Cost, Scenic_Address, Scenic_Time from scenic order by Scenic_Cost desc limit 0, 10 
+18:06:50.328 [http-nio-80-exec-10] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - ==> Parameters: 
+18:06:50.329 [http-nio-80-exec-10] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - <==      Total: 3
+18:06:51.314 [http-nio-80-exec-8] DEBUG c.r.t.d.S.countByExample - ==>  Preparing: select count(*) from scenic 
+18:06:51.314 [http-nio-80-exec-8] DEBUG c.r.t.d.S.countByExample - ==> Parameters: 
+18:06:51.315 [http-nio-80-exec-8] DEBUG c.r.t.d.S.countByExample - <==      Total: 1
+18:06:51.315 [http-nio-80-exec-8] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - ==>  Preparing: select Scenic_Id, Create_Id, City_Id, Scenic_Name, Scenic_Phone, Scenic_Want, Scenic_Like, Scenic_Tag , Scenic_Description, Scenic_Cost, Scenic_Address, Scenic_Time from scenic order by Scenic_Cost asc limit 0, 10 
+18:06:51.315 [http-nio-80-exec-8] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - ==> Parameters: 
+18:06:51.316 [http-nio-80-exec-8] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - <==      Total: 3
+18:06:55.988 [http-nio-80-exec-3] DEBUG c.r.t.d.S.countByExample - ==>  Preparing: select count(*) from scenic 
+18:06:55.988 [http-nio-80-exec-3] DEBUG c.r.t.d.S.countByExample - ==> Parameters: 
+18:06:55.989 [http-nio-80-exec-3] DEBUG c.r.t.d.S.countByExample - <==      Total: 1
+18:06:55.990 [http-nio-80-exec-3] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - ==>  Preparing: select Scenic_Id, Create_Id, City_Id, Scenic_Name, Scenic_Phone, Scenic_Want, Scenic_Like, Scenic_Tag , Scenic_Description, Scenic_Cost, Scenic_Address, Scenic_Time from scenic order by Scenic_Cost desc limit 0, 10 
+18:06:55.990 [http-nio-80-exec-3] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - ==> Parameters: 
+18:06:55.991 [http-nio-80-exec-3] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - <==      Total: 3
+18:06:57.908 [http-nio-80-exec-5] DEBUG c.r.t.d.S.countByExample - ==>  Preparing: select count(*) from scenic 
+18:06:57.908 [http-nio-80-exec-5] DEBUG c.r.t.d.S.countByExample - ==> Parameters: 
+18:06:57.909 [http-nio-80-exec-5] DEBUG c.r.t.d.S.countByExample - <==      Total: 1
+18:06:57.909 [http-nio-80-exec-5] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - ==>  Preparing: select Scenic_Id, Create_Id, City_Id, Scenic_Name, Scenic_Phone, Scenic_Want, Scenic_Like, Scenic_Tag , Scenic_Description, Scenic_Cost, Scenic_Address, Scenic_Time from scenic order by Scenic_Cost asc limit 0, 10 
+18:06:57.909 [http-nio-80-exec-5] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - ==> Parameters: 
+18:06:57.909 [http-nio-80-exec-5] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - <==      Total: 3
+18:07:00.168 [http-nio-80-exec-7] DEBUG c.r.t.d.S.countByExample - ==>  Preparing: select count(*) from scenic 
+18:07:00.169 [http-nio-80-exec-7] DEBUG c.r.t.d.S.countByExample - ==> Parameters: 
+18:07:00.169 [http-nio-80-exec-7] DEBUG c.r.t.d.S.countByExample - <==      Total: 1
+18:07:00.170 [http-nio-80-exec-7] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - ==>  Preparing: select Scenic_Id, Create_Id, City_Id, Scenic_Name, Scenic_Phone, Scenic_Want, Scenic_Like, Scenic_Tag , Scenic_Description, Scenic_Cost, Scenic_Address, Scenic_Time from scenic order by Scenic_Cost desc limit 0, 10 
+18:07:00.170 [http-nio-80-exec-7] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - ==> Parameters: 
+18:07:00.171 [http-nio-80-exec-7] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - <==      Total: 3
+18:07:01.173 [http-nio-80-exec-6] DEBUG c.r.t.d.S.countByExample - ==>  Preparing: select count(*) from scenic 
+18:07:01.173 [http-nio-80-exec-6] DEBUG c.r.t.d.S.countByExample - ==> Parameters: 
+18:07:01.173 [http-nio-80-exec-6] DEBUG c.r.t.d.S.countByExample - <==      Total: 1
+18:07:01.173 [http-nio-80-exec-6] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - ==>  Preparing: select Scenic_Id, Create_Id, City_Id, Scenic_Name, Scenic_Phone, Scenic_Want, Scenic_Like, Scenic_Tag , Scenic_Description, Scenic_Cost, Scenic_Address, Scenic_Time from scenic order by Scenic_Cost asc limit 0, 10 
+18:07:01.174 [http-nio-80-exec-6] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - ==> Parameters: 
+18:07:01.174 [http-nio-80-exec-6] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - <==      Total: 3
+18:07:08.955 [http-nio-80-exec-2] DEBUG c.r.t.d.S.countByExample - ==>  Preparing: select count(*) from scenic 
+18:07:08.955 [http-nio-80-exec-2] DEBUG c.r.t.d.S.countByExample - ==> Parameters: 
+18:07:08.955 [http-nio-80-exec-2] DEBUG c.r.t.d.S.countByExample - <==      Total: 1
+18:07:08.956 [http-nio-80-exec-2] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - ==>  Preparing: select Scenic_Id, Create_Id, City_Id, Scenic_Name, Scenic_Phone, Scenic_Want, Scenic_Like, Scenic_Tag , Scenic_Description, Scenic_Cost, Scenic_Address, Scenic_Time from scenic order by Scenic_Cost desc limit 0, 10 
+18:07:08.956 [http-nio-80-exec-2] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - ==> Parameters: 
+18:07:08.957 [http-nio-80-exec-2] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - <==      Total: 3
+18:07:10.045 [http-nio-80-exec-4] DEBUG c.r.t.d.S.countByExample - ==>  Preparing: select count(*) from scenic 
+18:07:10.045 [http-nio-80-exec-4] DEBUG c.r.t.d.S.countByExample - ==> Parameters: 
+18:07:10.045 [http-nio-80-exec-4] DEBUG c.r.t.d.S.countByExample - <==      Total: 1
+18:07:10.046 [http-nio-80-exec-4] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - ==>  Preparing: select Scenic_Id, Create_Id, City_Id, Scenic_Name, Scenic_Phone, Scenic_Want, Scenic_Like, Scenic_Tag , Scenic_Description, Scenic_Cost, Scenic_Address, Scenic_Time from scenic order by Scenic_Cost asc limit 0, 10 
+18:07:10.046 [http-nio-80-exec-4] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - ==> Parameters: 
+18:07:10.047 [http-nio-80-exec-4] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - <==      Total: 3
+18:07:13.624 [http-nio-80-exec-1] DEBUG c.r.t.d.S.countByExample - ==>  Preparing: select count(*) from scenic 
+18:07:13.624 [http-nio-80-exec-1] DEBUG c.r.t.d.S.countByExample - ==> Parameters: 
+18:07:13.624 [http-nio-80-exec-1] DEBUG c.r.t.d.S.countByExample - <==      Total: 1
+18:07:13.625 [http-nio-80-exec-1] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - ==>  Preparing: select Scenic_Id, Create_Id, City_Id, Scenic_Name, Scenic_Phone, Scenic_Want, Scenic_Like, Scenic_Tag , Scenic_Description, Scenic_Cost, Scenic_Address, Scenic_Time from scenic order by Scenic_Id asc limit 0, 10 
+18:07:13.625 [http-nio-80-exec-1] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - ==> Parameters: 
+18:07:13.625 [http-nio-80-exec-1] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - <==      Total: 3
+18:07:15.391 [http-nio-80-exec-9] DEBUG c.r.t.d.S.countByExample - ==>  Preparing: select count(*) from scenic 
+18:07:15.392 [http-nio-80-exec-9] DEBUG c.r.t.d.S.countByExample - ==> Parameters: 
+18:07:15.392 [http-nio-80-exec-9] DEBUG c.r.t.d.S.countByExample - <==      Total: 1
+18:07:15.393 [http-nio-80-exec-9] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - ==>  Preparing: select Scenic_Id, Create_Id, City_Id, Scenic_Name, Scenic_Phone, Scenic_Want, Scenic_Like, Scenic_Tag , Scenic_Description, Scenic_Cost, Scenic_Address, Scenic_Time from scenic order by Scenic_Cost asc limit 0, 10 
+18:07:15.393 [http-nio-80-exec-9] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - ==> Parameters: 
+18:07:15.394 [http-nio-80-exec-9] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - <==      Total: 3
+18:08:28.616 [http-nio-80-exec-2] DEBUG c.r.t.d.S.countByExample - ==>  Preparing: select count(*) from scenic 
+18:08:28.616 [http-nio-80-exec-2] DEBUG c.r.t.d.S.countByExample - ==> Parameters: 
+18:08:28.617 [http-nio-80-exec-2] DEBUG c.r.t.d.S.countByExample - <==      Total: 1
+18:08:28.618 [http-nio-80-exec-2] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - ==>  Preparing: select Scenic_Id, Create_Id, City_Id, Scenic_Name, Scenic_Phone, Scenic_Want, Scenic_Like, Scenic_Tag , Scenic_Description, Scenic_Cost, Scenic_Address, Scenic_Time from scenic order by Scenic_Cost asc limit 0, 2 
+18:08:28.618 [http-nio-80-exec-2] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - ==> Parameters: 
+18:08:28.619 [http-nio-80-exec-2] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - <==      Total: 2
+18:08:41.713 [http-nio-80-exec-4] DEBUG c.r.t.d.S.countByExample - ==>  Preparing: select count(*) from scenic 
+18:08:41.713 [http-nio-80-exec-4] DEBUG c.r.t.d.S.countByExample - ==> Parameters: 
+18:08:41.713 [http-nio-80-exec-4] DEBUG c.r.t.d.S.countByExample - <==      Total: 1
+18:08:41.714 [http-nio-80-exec-4] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - ==>  Preparing: select Scenic_Id, Create_Id, City_Id, Scenic_Name, Scenic_Phone, Scenic_Want, Scenic_Like, Scenic_Tag , Scenic_Description, Scenic_Cost, Scenic_Address, Scenic_Time from scenic order by Scenic_Cost desc limit 0, 2 
+18:08:41.714 [http-nio-80-exec-4] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - ==> Parameters: 
+18:08:41.715 [http-nio-80-exec-4] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - <==      Total: 2
+18:08:45.018 [http-nio-80-exec-1] DEBUG c.r.t.d.S.countByExample - ==>  Preparing: select count(*) from scenic 
+18:08:45.019 [http-nio-80-exec-1] DEBUG c.r.t.d.S.countByExample - ==> Parameters: 
+18:08:45.019 [http-nio-80-exec-1] DEBUG c.r.t.d.S.countByExample - <==      Total: 1
+18:08:45.019 [http-nio-80-exec-1] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - ==>  Preparing: select Scenic_Id, Create_Id, City_Id, Scenic_Name, Scenic_Phone, Scenic_Want, Scenic_Like, Scenic_Tag , Scenic_Description, Scenic_Cost, Scenic_Address, Scenic_Time from scenic order by Scenic_Cost asc limit 0, 2 
+18:08:45.020 [http-nio-80-exec-1] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - ==> Parameters: 
+18:08:45.020 [http-nio-80-exec-1] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - <==      Total: 2
+18:11:56.017 [http-nio-80-exec-10] DEBUG c.r.t.d.S.countByExample - ==>  Preparing: select count(*) from scenic 
+18:11:56.018 [http-nio-80-exec-10] DEBUG c.r.t.d.S.countByExample - ==> Parameters: 
+18:11:56.019 [http-nio-80-exec-10] DEBUG c.r.t.d.S.countByExample - <==      Total: 1
+18:11:56.019 [http-nio-80-exec-10] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - ==>  Preparing: select Scenic_Id, Create_Id, City_Id, Scenic_Name, Scenic_Phone, Scenic_Want, Scenic_Like, Scenic_Tag , Scenic_Description, Scenic_Cost, Scenic_Address, Scenic_Time from scenic order by Scenic_Cost asc limit 0, 10 
+18:11:56.019 [http-nio-80-exec-10] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - ==> Parameters: 
+18:11:56.020 [http-nio-80-exec-10] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - <==      Total: 3
+18:11:57.800 [http-nio-80-exec-8] DEBUG c.r.t.d.S.countByExample - ==>  Preparing: select count(*) from scenic 
+18:11:57.801 [http-nio-80-exec-8] DEBUG c.r.t.d.S.countByExample - ==> Parameters: 
+18:11:57.801 [http-nio-80-exec-8] DEBUG c.r.t.d.S.countByExample - <==      Total: 1
+18:11:57.802 [http-nio-80-exec-8] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - ==>  Preparing: select Scenic_Id, Create_Id, City_Id, Scenic_Name, Scenic_Phone, Scenic_Want, Scenic_Like, Scenic_Tag , Scenic_Description, Scenic_Cost, Scenic_Address, Scenic_Time from scenic order by Scenic_Id asc limit 0, 10 
+18:11:57.802 [http-nio-80-exec-8] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - ==> Parameters: 
+18:11:57.802 [http-nio-80-exec-8] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - <==      Total: 3
+18:11:58.492 [http-nio-80-exec-3] DEBUG c.r.t.d.S.countByExample - ==>  Preparing: select count(*) from scenic 
+18:11:58.492 [http-nio-80-exec-3] DEBUG c.r.t.d.S.countByExample - ==> Parameters: 
+18:11:58.493 [http-nio-80-exec-3] DEBUG c.r.t.d.S.countByExample - <==      Total: 1
+18:11:58.493 [http-nio-80-exec-3] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - ==>  Preparing: select Scenic_Id, Create_Id, City_Id, Scenic_Name, Scenic_Phone, Scenic_Want, Scenic_Like, Scenic_Tag , Scenic_Description, Scenic_Cost, Scenic_Address, Scenic_Time from scenic order by Scenic_Id desc limit 0, 10 
+18:11:58.493 [http-nio-80-exec-3] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - ==> Parameters: 
+18:11:58.494 [http-nio-80-exec-3] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - <==      Total: 3
+18:15:51.567 [restartedMain] INFO  com.ricky.travel.TravelApplication - Starting TravelApplication on PC-201702111430 with PID 4300 (E:\idea_workplace\travel\target\classes started by Administrator in E:\idea_workplace\travel)
+18:15:51.568 [restartedMain] INFO  com.ricky.travel.TravelApplication - No active profile set, falling back to default profiles: default
+18:15:52.837 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+18:15:52.838 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
+18:15:52.895 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+18:15:53.038 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Started.
+18:15:54.024 [restartedMain] WARN  o.t.templatemode.TemplateMode - [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+18:15:54.386 [restartedMain] INFO  com.ricky.travel.TravelApplication - Started TravelApplication in 3.038 seconds (JVM running for 3.985)
+18:15:59.280 [http-nio-80-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+18:15:59.364 [http-nio-80-exec-1] DEBUG c.r.t.d.A.selectByExample - ==>  Preparing: select Admin_Id, Admin_Account, Admin_Password, Admin_Level from admin_user WHERE ( Admin_Account = ? ) 
+18:15:59.377 [http-nio-80-exec-1] DEBUG c.r.t.d.A.selectByExample - ==> Parameters: ricky(String)
+18:15:59.385 [http-nio-80-exec-1] DEBUG c.r.t.d.A.selectByExample - <==      Total: 1
+18:16:00.022 [http-nio-80-exec-6] DEBUG c.r.t.d.S.countByExample - ==>  Preparing: select count(*) from scenic 
+18:16:00.022 [http-nio-80-exec-6] DEBUG c.r.t.d.S.countByExample - ==> Parameters: 
+18:16:00.023 [http-nio-80-exec-6] DEBUG c.r.t.d.S.countByExample - <==      Total: 1
+18:16:00.025 [http-nio-80-exec-6] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - ==>  Preparing: select Scenic_Id, Create_Id, City_Id, Scenic_Name, Scenic_Phone, Scenic_Want, Scenic_Like, Scenic_Tag , Scenic_Description, Scenic_Cost, Scenic_Address, Scenic_Time from scenic order by Scenic_Id asc limit 0, 2 
+18:16:00.026 [http-nio-80-exec-6] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - ==> Parameters: 
+18:16:00.028 [http-nio-80-exec-6] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - <==      Total: 2
+18:16:06.189 [http-nio-80-exec-10] DEBUG c.r.t.d.S.countByExample - ==>  Preparing: select count(*) from scenic WHERE ( Scenic_Tag = ? ) 
+18:16:06.190 [http-nio-80-exec-10] DEBUG c.r.t.d.S.countByExample - ==> Parameters: 草原(String)
+18:16:06.191 [http-nio-80-exec-10] DEBUG c.r.t.d.S.countByExample - <==      Total: 1
+18:16:06.191 [http-nio-80-exec-10] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - ==>  Preparing: select Scenic_Id, Create_Id, City_Id, Scenic_Name, Scenic_Phone, Scenic_Want, Scenic_Like, Scenic_Tag , Scenic_Description, Scenic_Cost, Scenic_Address, Scenic_Time from scenic WHERE ( Scenic_Tag = ? ) order by Scenic_Id asc limit 0, 2 
+18:16:06.192 [http-nio-80-exec-10] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - ==> Parameters: 草原(String)
+18:16:06.192 [http-nio-80-exec-10] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - <==      Total: 0
+18:16:09.356 [http-nio-80-exec-5] DEBUG c.r.t.d.S.countByExample - ==>  Preparing: select count(*) from scenic 
+18:16:09.357 [http-nio-80-exec-5] DEBUG c.r.t.d.S.countByExample - ==> Parameters: 
+18:16:09.357 [http-nio-80-exec-5] DEBUG c.r.t.d.S.countByExample - <==      Total: 1
+18:16:09.358 [http-nio-80-exec-5] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - ==>  Preparing: select Scenic_Id, Create_Id, City_Id, Scenic_Name, Scenic_Phone, Scenic_Want, Scenic_Like, Scenic_Tag , Scenic_Description, Scenic_Cost, Scenic_Address, Scenic_Time from scenic order by Scenic_Id asc limit 0, 2 
+18:16:09.358 [http-nio-80-exec-5] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - ==> Parameters: 
+18:16:09.360 [http-nio-80-exec-5] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - <==      Total: 2
+18:16:11.752 [http-nio-80-exec-2] DEBUG c.r.t.d.S.countByExample - ==>  Preparing: select count(*) from scenic 
+18:16:11.753 [http-nio-80-exec-2] DEBUG c.r.t.d.S.countByExample - ==> Parameters: 
+18:16:11.754 [http-nio-80-exec-2] DEBUG c.r.t.d.S.countByExample - <==      Total: 1
+18:16:11.754 [http-nio-80-exec-2] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - ==>  Preparing: select Scenic_Id, Create_Id, City_Id, Scenic_Name, Scenic_Phone, Scenic_Want, Scenic_Like, Scenic_Tag , Scenic_Description, Scenic_Cost, Scenic_Address, Scenic_Time from scenic order by Scenic_Id asc limit 2, 2 
+18:16:11.754 [http-nio-80-exec-2] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - ==> Parameters: 
+18:16:11.756 [http-nio-80-exec-2] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - <==      Total: 1
+18:16:13.855 [http-nio-80-exec-7] DEBUG c.r.t.d.S.countByExample - ==>  Preparing: select count(*) from scenic 
+18:16:13.856 [http-nio-80-exec-7] DEBUG c.r.t.d.S.countByExample - ==> Parameters: 
+18:16:13.856 [http-nio-80-exec-7] DEBUG c.r.t.d.S.countByExample - <==      Total: 1
+18:16:13.857 [http-nio-80-exec-7] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - ==>  Preparing: select Scenic_Id, Create_Id, City_Id, Scenic_Name, Scenic_Phone, Scenic_Want, Scenic_Like, Scenic_Tag , Scenic_Description, Scenic_Cost, Scenic_Address, Scenic_Time from scenic order by Scenic_Id asc limit 0, 10 
+18:16:13.857 [http-nio-80-exec-7] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - ==> Parameters: 
+18:16:13.858 [http-nio-80-exec-7] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - <==      Total: 3
+18:16:17.698 [http-nio-80-exec-1] DEBUG c.r.t.d.S.countByExample - ==>  Preparing: select count(*) from scenic 
+18:16:17.699 [http-nio-80-exec-1] DEBUG c.r.t.d.S.countByExample - ==> Parameters: 
+18:16:17.699 [http-nio-80-exec-1] DEBUG c.r.t.d.S.countByExample - <==      Total: 1
+18:16:17.700 [http-nio-80-exec-1] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - ==>  Preparing: select Scenic_Id, Create_Id, City_Id, Scenic_Name, Scenic_Phone, Scenic_Want, Scenic_Like, Scenic_Tag , Scenic_Description, Scenic_Cost, Scenic_Address, Scenic_Time from scenic order by Scenic_Id asc limit 0, 10 
+18:16:17.700 [http-nio-80-exec-1] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - ==> Parameters: 
+18:16:17.701 [http-nio-80-exec-1] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - <==      Total: 3
+18:16:18.393 [http-nio-80-exec-3] DEBUG c.r.t.d.S.countByExample - ==>  Preparing: select count(*) from scenic 
+18:16:18.393 [http-nio-80-exec-3] DEBUG c.r.t.d.S.countByExample - ==> Parameters: 
+18:16:18.394 [http-nio-80-exec-3] DEBUG c.r.t.d.S.countByExample - <==      Total: 1
+18:16:18.394 [http-nio-80-exec-3] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - ==>  Preparing: select Scenic_Id, Create_Id, City_Id, Scenic_Name, Scenic_Phone, Scenic_Want, Scenic_Like, Scenic_Tag , Scenic_Description, Scenic_Cost, Scenic_Address, Scenic_Time from scenic order by Scenic_Id desc limit 0, 10 
+18:16:18.394 [http-nio-80-exec-3] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - ==> Parameters: 
+18:16:18.395 [http-nio-80-exec-3] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - <==      Total: 3
+18:16:38.383 [http-nio-80-exec-4] DEBUG c.r.t.d.A.selectByExample - ==>  Preparing: select Admin_Id, Admin_Account, Admin_Password, Admin_Level from admin_user WHERE ( Admin_Account = ? ) 
+18:16:38.384 [http-nio-80-exec-4] DEBUG c.r.t.d.A.selectByExample - ==> Parameters: ricky(String)
+18:16:38.386 [http-nio-80-exec-4] DEBUG c.r.t.d.A.selectByExample - <==      Total: 1
+18:16:38.668 [http-nio-80-exec-2] DEBUG c.r.t.d.S.countByExample - ==>  Preparing: select count(*) from scenic 
+18:16:38.668 [http-nio-80-exec-2] DEBUG c.r.t.d.S.countByExample - ==> Parameters: 
+18:16:38.669 [http-nio-80-exec-2] DEBUG c.r.t.d.S.countByExample - <==      Total: 1
+18:16:38.670 [http-nio-80-exec-2] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - ==>  Preparing: select Scenic_Id, Create_Id, City_Id, Scenic_Name, Scenic_Phone, Scenic_Want, Scenic_Like, Scenic_Tag , Scenic_Description, Scenic_Cost, Scenic_Address, Scenic_Time from scenic order by Scenic_Id asc limit 0, 2 
+18:16:38.670 [http-nio-80-exec-2] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - ==> Parameters: 
+18:16:38.672 [http-nio-80-exec-2] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - <==      Total: 2
+18:16:41.446 [http-nio-80-exec-7] DEBUG c.r.t.d.S.countByExample - ==>  Preparing: select count(*) from scenic 
+18:16:41.446 [http-nio-80-exec-7] DEBUG c.r.t.d.S.countByExample - ==> Parameters: 
+18:16:41.447 [http-nio-80-exec-7] DEBUG c.r.t.d.S.countByExample - <==      Total: 1
+18:16:41.447 [http-nio-80-exec-7] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - ==>  Preparing: select Scenic_Id, Create_Id, City_Id, Scenic_Name, Scenic_Phone, Scenic_Want, Scenic_Like, Scenic_Tag , Scenic_Description, Scenic_Cost, Scenic_Address, Scenic_Time from scenic order by Scenic_Id asc limit 0, 10 
+18:16:41.448 [http-nio-80-exec-7] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - ==> Parameters: 
+18:16:41.449 [http-nio-80-exec-7] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - <==      Total: 3
+18:16:43.134 [http-nio-80-exec-5] DEBUG c.r.t.d.S.countByExample - ==>  Preparing: select count(*) from scenic 
+18:16:43.134 [http-nio-80-exec-5] DEBUG c.r.t.d.S.countByExample - ==> Parameters: 
+18:16:43.135 [http-nio-80-exec-5] DEBUG c.r.t.d.S.countByExample - <==      Total: 1
+18:16:43.135 [http-nio-80-exec-5] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - ==>  Preparing: select Scenic_Id, Create_Id, City_Id, Scenic_Name, Scenic_Phone, Scenic_Want, Scenic_Like, Scenic_Tag , Scenic_Description, Scenic_Cost, Scenic_Address, Scenic_Time from scenic order by Scenic_Id asc limit 0, 10 
+18:16:43.135 [http-nio-80-exec-5] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - ==> Parameters: 
+18:16:43.136 [http-nio-80-exec-5] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - <==      Total: 3
+18:16:43.743 [http-nio-80-exec-3] DEBUG c.r.t.d.S.countByExample - ==>  Preparing: select count(*) from scenic 
+18:16:43.743 [http-nio-80-exec-3] DEBUG c.r.t.d.S.countByExample - ==> Parameters: 
+18:16:43.744 [http-nio-80-exec-3] DEBUG c.r.t.d.S.countByExample - <==      Total: 1
+18:16:43.744 [http-nio-80-exec-3] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - ==>  Preparing: select Scenic_Id, Create_Id, City_Id, Scenic_Name, Scenic_Phone, Scenic_Want, Scenic_Like, Scenic_Tag , Scenic_Description, Scenic_Cost, Scenic_Address, Scenic_Time from scenic order by Scenic_Id desc limit 0, 10 
+18:16:43.745 [http-nio-80-exec-3] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - ==> Parameters: 
+18:16:43.746 [http-nio-80-exec-3] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - <==      Total: 3
+18:16:46.253 [http-nio-80-exec-4] DEBUG c.r.t.d.S.countByExample - ==>  Preparing: select count(*) from scenic 
+18:16:46.253 [http-nio-80-exec-4] DEBUG c.r.t.d.S.countByExample - ==> Parameters: 
+18:16:46.254 [http-nio-80-exec-4] DEBUG c.r.t.d.S.countByExample - <==      Total: 1
+18:16:46.254 [http-nio-80-exec-4] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - ==>  Preparing: select Scenic_Id, Create_Id, City_Id, Scenic_Name, Scenic_Phone, Scenic_Want, Scenic_Like, Scenic_Tag , Scenic_Description, Scenic_Cost, Scenic_Address, Scenic_Time from scenic order by Scenic_Id asc limit 0, 10 
+18:16:46.254 [http-nio-80-exec-4] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - ==> Parameters: 
+18:16:46.255 [http-nio-80-exec-4] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - <==      Total: 3
+18:22:19.530 [http-nio-80-exec-3] DEBUG c.r.t.d.A.selectByExample - ==>  Preparing: select Admin_Id, Admin_Account, Admin_Password, Admin_Level from admin_user WHERE ( Admin_Account = ? ) 
+18:22:19.531 [http-nio-80-exec-3] DEBUG c.r.t.d.A.selectByExample - ==> Parameters: ricky(String)
+18:22:19.531 [http-nio-80-exec-3] DEBUG c.r.t.d.A.selectByExample - <==      Total: 1
+18:22:19.786 [http-nio-80-exec-7] DEBUG c.r.t.d.S.countByExample - ==>  Preparing: select count(*) from scenic 
+18:22:19.786 [http-nio-80-exec-7] DEBUG c.r.t.d.S.countByExample - ==> Parameters: 
+18:22:19.786 [http-nio-80-exec-7] DEBUG c.r.t.d.S.countByExample - <==      Total: 1
+18:22:19.787 [http-nio-80-exec-7] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - ==>  Preparing: select Scenic_Id, Create_Id, City_Id, Scenic_Name, Scenic_Phone, Scenic_Want, Scenic_Like, Scenic_Tag , Scenic_Description, Scenic_Cost, Scenic_Address, Scenic_Time from scenic order by Scenic_Id asc limit 0, 2 
+18:22:19.787 [http-nio-80-exec-7] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - ==> Parameters: 
+18:22:19.788 [http-nio-80-exec-7] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - <==      Total: 2
+18:22:42.831 [restartedMain] INFO  com.ricky.travel.TravelApplication - Starting TravelApplication on PC-201702111430 with PID 6796 (E:\idea_workplace\travel\target\classes started by Administrator in E:\idea_workplace\travel)
+18:22:42.834 [restartedMain] INFO  com.ricky.travel.TravelApplication - No active profile set, falling back to default profiles: default
+18:22:44.085 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+18:22:44.086 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
+18:22:44.160 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+18:22:44.310 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Started.
+18:22:45.274 [restartedMain] WARN  o.t.templatemode.TemplateMode - [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+18:22:45.660 [restartedMain] INFO  com.ricky.travel.TravelApplication - Started TravelApplication in 3.012 seconds (JVM running for 3.999)
+18:22:49.334 [http-nio-80-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+18:22:49.406 [http-nio-80-exec-1] DEBUG c.r.t.d.A.selectByExample - ==>  Preparing: select Admin_Id, Admin_Account, Admin_Password, Admin_Level from admin_user WHERE ( Admin_Account = ? ) 
+18:22:49.418 [http-nio-80-exec-1] DEBUG c.r.t.d.A.selectByExample - ==> Parameters: ricky(String)
+18:22:49.427 [http-nio-80-exec-1] DEBUG c.r.t.d.A.selectByExample - <==      Total: 1
+18:22:50.037 [http-nio-80-exec-9] DEBUG c.r.t.d.S.countByExample - ==>  Preparing: select count(*) from scenic 
+18:22:50.037 [http-nio-80-exec-9] DEBUG c.r.t.d.S.countByExample - ==> Parameters: 
+18:22:50.038 [http-nio-80-exec-9] DEBUG c.r.t.d.S.countByExample - <==      Total: 1
+18:22:50.040 [http-nio-80-exec-9] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - ==>  Preparing: select Scenic_Id, Create_Id, City_Id, Scenic_Name, Scenic_Phone, Scenic_Want, Scenic_Like, Scenic_Tag , Scenic_Description, Scenic_Cost, Scenic_Address, Scenic_Time from scenic order by Scenic_Id asc limit 0, 2 
+18:22:50.040 [http-nio-80-exec-9] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - ==> Parameters: 
+18:22:50.043 [http-nio-80-exec-9] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - <==      Total: 2
+18:23:44.956 [restartedMain] INFO  com.ricky.travel.TravelApplication - Starting TravelApplication on PC-201702111430 with PID 1724 (E:\idea_workplace\travel\target\classes started by Administrator in E:\idea_workplace\travel)
+18:23:44.958 [restartedMain] INFO  com.ricky.travel.TravelApplication - No active profile set, falling back to default profiles: default
+18:23:46.374 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+18:23:46.375 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
+18:23:46.452 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+18:23:46.602 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Started.
+18:23:47.598 [restartedMain] WARN  o.t.templatemode.TemplateMode - [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+18:23:48.015 [restartedMain] INFO  com.ricky.travel.TravelApplication - Started TravelApplication in 3.355 seconds (JVM running for 4.34)
+18:23:50.801 [http-nio-80-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+18:23:50.878 [http-nio-80-exec-1] DEBUG c.r.t.d.A.selectByExample - ==>  Preparing: select Admin_Id, Admin_Account, Admin_Password, Admin_Level from admin_user WHERE ( Admin_Account = ? ) 
+18:23:50.891 [http-nio-80-exec-1] DEBUG c.r.t.d.A.selectByExample - ==> Parameters: ricky(String)
+18:23:50.901 [http-nio-80-exec-1] DEBUG c.r.t.d.A.selectByExample - <==      Total: 1
+18:23:51.445 [http-nio-80-exec-10] DEBUG c.r.t.d.S.countByExample - ==>  Preparing: select count(*) from scenic 
+18:23:51.446 [http-nio-80-exec-10] DEBUG c.r.t.d.S.countByExample - ==> Parameters: 
+18:23:51.446 [http-nio-80-exec-10] DEBUG c.r.t.d.S.countByExample - <==      Total: 1
+18:23:51.448 [http-nio-80-exec-10] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - ==>  Preparing: select Scenic_Id, Create_Id, City_Id, Scenic_Name, Scenic_Phone, Scenic_Want, Scenic_Like, Scenic_Tag , Scenic_Description, Scenic_Cost, Scenic_Address, Scenic_Time from scenic order by Scenic_Id asc limit 0, 2 
+18:23:51.449 [http-nio-80-exec-10] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - ==> Parameters: 
+18:23:51.451 [http-nio-80-exec-10] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - <==      Total: 2
+19:39:01.867 [restartedMain] INFO  com.ricky.travel.TravelApplication - Starting TravelApplication on PC-201702111430 with PID 3816 (E:\idea_workplace\travel\target\classes started by Administrator in E:\idea_workplace\travel)
+19:39:01.870 [restartedMain] INFO  com.ricky.travel.TravelApplication - No active profile set, falling back to default profiles: default
+19:39:03.499 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+19:39:03.499 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
+19:39:03.565 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+19:39:03.712 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Started.
+19:39:04.667 [restartedMain] WARN  o.t.templatemode.TemplateMode - [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+19:39:05.048 [restartedMain] INFO  com.ricky.travel.TravelApplication - Started TravelApplication in 3.316 seconds (JVM running for 4.138)
+19:39:11.129 [http-nio-80-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+19:44:12.718 [restartedMain] INFO  com.ricky.travel.TravelApplication - Starting TravelApplication on PC-201702111430 with PID 8236 (E:\idea_workplace\travel\target\classes started by Administrator in E:\idea_workplace\travel)
+19:44:12.720 [restartedMain] INFO  com.ricky.travel.TravelApplication - No active profile set, falling back to default profiles: default
+19:44:13.945 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+19:44:13.946 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
+19:44:14.012 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+19:44:14.155 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Started.
+19:44:15.109 [restartedMain] WARN  o.t.templatemode.TemplateMode - [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+19:44:15.464 [restartedMain] INFO  com.ricky.travel.TravelApplication - Started TravelApplication in 2.965 seconds (JVM running for 3.869)
+19:44:22.442 [http-nio-80-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+19:45:21.842 [restartedMain] INFO  com.ricky.travel.TravelApplication - Starting TravelApplication on PC-201702111430 with PID 10772 (E:\idea_workplace\travel\target\classes started by Administrator in E:\idea_workplace\travel)
+19:45:21.845 [restartedMain] INFO  com.ricky.travel.TravelApplication - No active profile set, falling back to default profiles: default
+19:45:23.162 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+19:45:23.163 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
+19:45:23.221 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+19:45:23.371 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Started.
+19:45:24.341 [restartedMain] WARN  o.t.templatemode.TemplateMode - [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+19:45:24.698 [restartedMain] INFO  com.ricky.travel.TravelApplication - Started TravelApplication in 3.097 seconds (JVM running for 4.21)
+19:45:32.984 [http-nio-80-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+19:46:19.942 [restartedMain] INFO  com.ricky.travel.TravelApplication - Starting TravelApplication on PC-201702111430 with PID 9120 (E:\idea_workplace\travel\target\classes started by Administrator in E:\idea_workplace\travel)
+19:46:19.944 [restartedMain] INFO  com.ricky.travel.TravelApplication - No active profile set, falling back to default profiles: default
+19:46:21.192 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+19:46:21.192 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
+19:46:21.306 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+19:46:21.452 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Started.
+19:46:22.394 [restartedMain] WARN  o.t.templatemode.TemplateMode - [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+19:46:22.751 [restartedMain] INFO  com.ricky.travel.TravelApplication - Started TravelApplication in 3.027 seconds (JVM running for 3.986)
+19:46:30.876 [http-nio-80-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+19:48:18.960 [restartedMain] INFO  com.ricky.travel.TravelApplication - Starting TravelApplication on PC-201702111430 with PID 3140 (E:\idea_workplace\travel\target\classes started by Administrator in E:\idea_workplace\travel)
+19:48:18.962 [restartedMain] INFO  com.ricky.travel.TravelApplication - No active profile set, falling back to default profiles: default
+19:48:20.305 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+19:48:20.306 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
+19:48:20.373 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+19:48:20.510 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Started.
+19:48:21.502 [restartedMain] WARN  o.t.templatemode.TemplateMode - [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+19:48:21.863 [restartedMain] INFO  com.ricky.travel.TravelApplication - Started TravelApplication in 3.216 seconds (JVM running for 4.032)
+19:48:27.500 [http-nio-80-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+19:49:24.614 [http-nio-80-exec-6] DEBUG c.r.t.d.C.selectByExample - ==>  Preparing: select Country_ID, Country_Nname from country WHERE ( Country_ID is not null ) 
+19:49:24.627 [http-nio-80-exec-6] DEBUG c.r.t.d.C.selectByExample - ==> Parameters: 
+19:49:24.638 [http-nio-80-exec-6] DEBUG c.r.t.d.C.selectByExample - <==      Total: 11
+19:49:39.316 [restartedMain] INFO  com.ricky.travel.TravelApplication - Starting TravelApplication on PC-201702111430 with PID 9684 (E:\idea_workplace\travel\target\classes started by Administrator in E:\idea_workplace\travel)
+19:49:39.318 [restartedMain] INFO  com.ricky.travel.TravelApplication - No active profile set, falling back to default profiles: default
+19:49:40.808 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+19:49:40.809 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
+19:49:40.870 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+19:49:41.008 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Started.
+19:49:42.013 [restartedMain] WARN  o.t.templatemode.TemplateMode - [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+19:49:42.375 [restartedMain] INFO  com.ricky.travel.TravelApplication - Started TravelApplication in 3.244 seconds (JVM running for 4.09)
+19:50:32.791 [restartedMain] INFO  com.ricky.travel.TravelApplication - Starting TravelApplication on PC-201702111430 with PID 6908 (E:\idea_workplace\travel\target\classes started by Administrator in E:\idea_workplace\travel)
+19:50:32.793 [restartedMain] INFO  com.ricky.travel.TravelApplication - No active profile set, falling back to default profiles: default
+19:50:34.013 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+19:50:34.014 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
+19:50:34.073 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+19:50:34.215 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Started.
+19:50:35.205 [restartedMain] WARN  o.t.templatemode.TemplateMode - [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+19:50:35.573 [restartedMain] INFO  com.ricky.travel.TravelApplication - Started TravelApplication in 3.028 seconds (JVM running for 3.881)
+19:50:53.664 [http-nio-80-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+19:50:55.473 [http-nio-80-exec-9] DEBUG c.r.t.d.C.selectByExample - ==>  Preparing: select Country_ID, Country_Nname from country WHERE ( Country_ID is not null ) 
+19:50:55.487 [http-nio-80-exec-9] DEBUG c.r.t.d.C.selectByExample - ==> Parameters: 
+19:50:55.496 [http-nio-80-exec-9] DEBUG c.r.t.d.C.selectByExample - <==      Total: 11
+19:50:56.454 [http-nio-80-exec-6] DEBUG c.r.t.d.C.selectByExample - ==>  Preparing: select Country_ID, Country_Nname from country WHERE ( Country_ID is not null ) 
+19:50:56.454 [http-nio-80-exec-6] DEBUG c.r.t.d.C.selectByExample - ==> Parameters: 
+19:50:56.457 [http-nio-80-exec-6] DEBUG c.r.t.d.C.selectByExample - <==      Total: 11

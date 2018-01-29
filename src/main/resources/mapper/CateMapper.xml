@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ricky.travel.dao.CateMapper" >
+  <resultMap id="BaseResultMap" type="com.ricky.travel.domain.Cate" >
+    <id column="Cate_Id" property="cateId" jdbcType="INTEGER" />
+    <result column="City_Id" property="cityId" jdbcType="INTEGER" />
+    <result column="Cate_Name" property="cateName" jdbcType="VARCHAR" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.ricky.travel.domain.CateWithBLOBs" extends="BaseResultMap" >
+    <result column="Cate_Description" property="cateDescription" jdbcType="LONGVARCHAR" />
+    <result column="Cate_Address" property="cateAddress" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    Cate_Id, City_Id, Cate_Name
+  </sql>
+  <sql id="Blob_Column_List" >
+    Cate_Description, Cate_Address
+  </sql>
+  <select id="selectByExampleWithBLOBs" resultMap="ResultMapWithBLOBs" parameterType="com.ricky.travel.domain.CateExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from cate
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.ricky.travel.domain.CateExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from cate
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+    <if test="limit != null" >
+      <if test="offset != null" >
+        limit ${offset}, ${limit}
+      </if>
+      <if test="offset == null" >
+        limit ${limit}
+      </if>
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from cate
+    where Cate_Id = #{cateId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from cate
+    where Cate_Id = #{cateId,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.ricky.travel.domain.CateExample" >
+    delete from cate
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.ricky.travel.domain.CateWithBLOBs" useGeneratedKeys="true" keyProperty="id" >
+    insert into cate (Cate_Id, City_Id, Cate_Name, 
+      Cate_Description, Cate_Address)
+    values (#{cateId,jdbcType=INTEGER}, #{cityId,jdbcType=INTEGER}, #{cateName,jdbcType=VARCHAR}, 
+      #{cateDescription,jdbcType=LONGVARCHAR}, #{cateAddress,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.ricky.travel.domain.CateWithBLOBs" useGeneratedKeys="true" keyProperty="id" >
+    insert into cate
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="cateId != null" >
+        Cate_Id,
+      </if>
+      <if test="cityId != null" >
+        City_Id,
+      </if>
+      <if test="cateName != null" >
+        Cate_Name,
+      </if>
+      <if test="cateDescription != null" >
+        Cate_Description,
+      </if>
+      <if test="cateAddress != null" >
+        Cate_Address,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="cateId != null" >
+        #{cateId,jdbcType=INTEGER},
+      </if>
+      <if test="cityId != null" >
+        #{cityId,jdbcType=INTEGER},
+      </if>
+      <if test="cateName != null" >
+        #{cateName,jdbcType=VARCHAR},
+      </if>
+      <if test="cateDescription != null" >
+        #{cateDescription,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="cateAddress != null" >
+        #{cateAddress,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.ricky.travel.domain.CateExample" resultType="java.lang.Integer" >
+    select count(*) from cate
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update cate
+    <set >
+      <if test="record.cateId != null" >
+        Cate_Id = #{record.cateId,jdbcType=INTEGER},
+      </if>
+      <if test="record.cityId != null" >
+        City_Id = #{record.cityId,jdbcType=INTEGER},
+      </if>
+      <if test="record.cateName != null" >
+        Cate_Name = #{record.cateName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.cateDescription != null" >
+        Cate_Description = #{record.cateDescription,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="record.cateAddress != null" >
+        Cate_Address = #{record.cateAddress,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExampleWithBLOBs" parameterType="map" >
+    update cate
+    set Cate_Id = #{record.cateId,jdbcType=INTEGER},
+      City_Id = #{record.cityId,jdbcType=INTEGER},
+      Cate_Name = #{record.cateName,jdbcType=VARCHAR},
+      Cate_Description = #{record.cateDescription,jdbcType=LONGVARCHAR},
+      Cate_Address = #{record.cateAddress,jdbcType=LONGVARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update cate
+    set Cate_Id = #{record.cateId,jdbcType=INTEGER},
+      City_Id = #{record.cityId,jdbcType=INTEGER},
+      Cate_Name = #{record.cateName,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ricky.travel.domain.CateWithBLOBs" >
+    update cate
+    <set >
+      <if test="cityId != null" >
+        City_Id = #{cityId,jdbcType=INTEGER},
+      </if>
+      <if test="cateName != null" >
+        Cate_Name = #{cateName,jdbcType=VARCHAR},
+      </if>
+      <if test="cateDescription != null" >
+        Cate_Description = #{cateDescription,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="cateAddress != null" >
+        Cate_Address = #{cateAddress,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where Cate_Id = #{cateId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.ricky.travel.domain.CateWithBLOBs" >
+    update cate
+    set City_Id = #{cityId,jdbcType=INTEGER},
+      Cate_Name = #{cateName,jdbcType=VARCHAR},
+      Cate_Description = #{cateDescription,jdbcType=LONGVARCHAR},
+      Cate_Address = #{cateAddress,jdbcType=LONGVARCHAR}
+    where Cate_Id = #{cateId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ricky.travel.domain.Cate" >
+    update cate
+    set City_Id = #{cityId,jdbcType=INTEGER},
+      Cate_Name = #{cateName,jdbcType=VARCHAR}
+    where Cate_Id = #{cateId,jdbcType=INTEGER}
+  </update>
+</mapper>

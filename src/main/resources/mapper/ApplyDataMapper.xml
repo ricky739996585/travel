@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ricky.travel.dao.ApplyDataMapper" >
+  <resultMap id="BaseResultMap" type="com.ricky.travel.domain.ApplyData" >
+    <id column="Data_Id" property="dataId" jdbcType="INTEGER" />
+    <result column="Apply_Id" property="applyId" jdbcType="INTEGER" />
+    <result column="Data_Name" property="dataName" jdbcType="VARCHAR" />
+    <result column="Data_Organize" property="dataOrganize" jdbcType="VARCHAR" />
+    <result column="Data_StartDate" property="dataStartdate" jdbcType="DATE" />
+    <result column="Data_EndDate" property="dataEnddate" jdbcType="DATE" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.ricky.travel.domain.ApplyData" extends="BaseResultMap" >
+    <result column="Data_Url" property="dataUrl" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    Data_Id, Apply_Id, Data_Name, Data_Organize, Data_StartDate, Data_EndDate
+  </sql>
+  <sql id="Blob_Column_List" >
+    Data_Url
+  </sql>
+  <select id="selectByExampleWithBLOBs" resultMap="ResultMapWithBLOBs" parameterType="com.ricky.travel.domain.ApplyDataExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from apply_data
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.ricky.travel.domain.ApplyDataExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from apply_data
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+    <if test="limit != null" >
+      <if test="offset != null" >
+        limit ${offset}, ${limit}
+      </if>
+      <if test="offset == null" >
+        limit ${limit}
+      </if>
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from apply_data
+    where Data_Id = #{dataId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from apply_data
+    where Data_Id = #{dataId,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.ricky.travel.domain.ApplyDataExample" >
+    delete from apply_data
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.ricky.travel.domain.ApplyData" useGeneratedKeys="true" keyProperty="id" >
+    insert into apply_data (Data_Id, Apply_Id, Data_Name, 
+      Data_Organize, Data_StartDate, Data_EndDate, 
+      Data_Url)
+    values (#{dataId,jdbcType=INTEGER}, #{applyId,jdbcType=INTEGER}, #{dataName,jdbcType=VARCHAR}, 
+      #{dataOrganize,jdbcType=VARCHAR}, #{dataStartdate,jdbcType=DATE}, #{dataEnddate,jdbcType=DATE}, 
+      #{dataUrl,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.ricky.travel.domain.ApplyData" useGeneratedKeys="true" keyProperty="id" >
+    insert into apply_data
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="dataId != null" >
+        Data_Id,
+      </if>
+      <if test="applyId != null" >
+        Apply_Id,
+      </if>
+      <if test="dataName != null" >
+        Data_Name,
+      </if>
+      <if test="dataOrganize != null" >
+        Data_Organize,
+      </if>
+      <if test="dataStartdate != null" >
+        Data_StartDate,
+      </if>
+      <if test="dataEnddate != null" >
+        Data_EndDate,
+      </if>
+      <if test="dataUrl != null" >
+        Data_Url,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="dataId != null" >
+        #{dataId,jdbcType=INTEGER},
+      </if>
+      <if test="applyId != null" >
+        #{applyId,jdbcType=INTEGER},
+      </if>
+      <if test="dataName != null" >
+        #{dataName,jdbcType=VARCHAR},
+      </if>
+      <if test="dataOrganize != null" >
+        #{dataOrganize,jdbcType=VARCHAR},
+      </if>
+      <if test="dataStartdate != null" >
+        #{dataStartdate,jdbcType=DATE},
+      </if>
+      <if test="dataEnddate != null" >
+        #{dataEnddate,jdbcType=DATE},
+      </if>
+      <if test="dataUrl != null" >
+        #{dataUrl,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.ricky.travel.domain.ApplyDataExample" resultType="java.lang.Integer" >
+    select count(*) from apply_data
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update apply_data
+    <set >
+      <if test="record.dataId != null" >
+        Data_Id = #{record.dataId,jdbcType=INTEGER},
+      </if>
+      <if test="record.applyId != null" >
+        Apply_Id = #{record.applyId,jdbcType=INTEGER},
+      </if>
+      <if test="record.dataName != null" >
+        Data_Name = #{record.dataName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.dataOrganize != null" >
+        Data_Organize = #{record.dataOrganize,jdbcType=VARCHAR},
+      </if>
+      <if test="record.dataStartdate != null" >
+        Data_StartDate = #{record.dataStartdate,jdbcType=DATE},
+      </if>
+      <if test="record.dataEnddate != null" >
+        Data_EndDate = #{record.dataEnddate,jdbcType=DATE},
+      </if>
+      <if test="record.dataUrl != null" >
+        Data_Url = #{record.dataUrl,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExampleWithBLOBs" parameterType="map" >
+    update apply_data
+    set Data_Id = #{record.dataId,jdbcType=INTEGER},
+      Apply_Id = #{record.applyId,jdbcType=INTEGER},
+      Data_Name = #{record.dataName,jdbcType=VARCHAR},
+      Data_Organize = #{record.dataOrganize,jdbcType=VARCHAR},
+      Data_StartDate = #{record.dataStartdate,jdbcType=DATE},
+      Data_EndDate = #{record.dataEnddate,jdbcType=DATE},
+      Data_Url = #{record.dataUrl,jdbcType=LONGVARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update apply_data
+    set Data_Id = #{record.dataId,jdbcType=INTEGER},
+      Apply_Id = #{record.applyId,jdbcType=INTEGER},
+      Data_Name = #{record.dataName,jdbcType=VARCHAR},
+      Data_Organize = #{record.dataOrganize,jdbcType=VARCHAR},
+      Data_StartDate = #{record.dataStartdate,jdbcType=DATE},
+      Data_EndDate = #{record.dataEnddate,jdbcType=DATE}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ricky.travel.domain.ApplyData" >
+    update apply_data
+    <set >
+      <if test="applyId != null" >
+        Apply_Id = #{applyId,jdbcType=INTEGER},
+      </if>
+      <if test="dataName != null" >
+        Data_Name = #{dataName,jdbcType=VARCHAR},
+      </if>
+      <if test="dataOrganize != null" >
+        Data_Organize = #{dataOrganize,jdbcType=VARCHAR},
+      </if>
+      <if test="dataStartdate != null" >
+        Data_StartDate = #{dataStartdate,jdbcType=DATE},
+      </if>
+      <if test="dataEnddate != null" >
+        Data_EndDate = #{dataEnddate,jdbcType=DATE},
+      </if>
+      <if test="dataUrl != null" >
+        Data_Url = #{dataUrl,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where Data_Id = #{dataId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.ricky.travel.domain.ApplyData" >
+    update apply_data
+    set Apply_Id = #{applyId,jdbcType=INTEGER},
+      Data_Name = #{dataName,jdbcType=VARCHAR},
+      Data_Organize = #{dataOrganize,jdbcType=VARCHAR},
+      Data_StartDate = #{dataStartdate,jdbcType=DATE},
+      Data_EndDate = #{dataEnddate,jdbcType=DATE},
+      Data_Url = #{dataUrl,jdbcType=LONGVARCHAR}
+    where Data_Id = #{dataId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ricky.travel.domain.ApplyData" >
+    update apply_data
+    set Apply_Id = #{applyId,jdbcType=INTEGER},
+      Data_Name = #{dataName,jdbcType=VARCHAR},
+      Data_Organize = #{dataOrganize,jdbcType=VARCHAR},
+      Data_StartDate = #{dataStartdate,jdbcType=DATE},
+      Data_EndDate = #{dataEnddate,jdbcType=DATE}
+    where Data_Id = #{dataId,jdbcType=INTEGER}
+  </update>
+</mapper>

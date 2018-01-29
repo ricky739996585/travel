@@ -1,0 +1,58 @@
+18:38:57.949 [restartedMain] INFO  com.ricky.travel.TravelApplication - Starting TravelApplication on PC-201702111430 with PID 600 (E:\idea_workplace\travel\target\classes started by Administrator in E:\idea_workplace\travel)
+18:38:57.978 [restartedMain] INFO  com.ricky.travel.TravelApplication - No active profile set, falling back to default profiles: default
+18:38:59.971 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+18:38:59.972 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
+18:39:00.049 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+18:39:00.307 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Started.
+18:39:02.379 [restartedMain] WARN  o.t.templatemode.TemplateMode - [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+18:39:03.317 [restartedMain] INFO  com.ricky.travel.TravelApplication - Started TravelApplication in 5.714 seconds (JVM running for 9.705)
+18:43:32.809 [restartedMain] INFO  com.ricky.travel.TravelApplication - Starting TravelApplication on PC-201702111430 with PID 5720 (E:\idea_workplace\travel\target\classes started by Administrator in E:\idea_workplace\travel)
+18:43:32.812 [restartedMain] INFO  com.ricky.travel.TravelApplication - No active profile set, falling back to default profiles: default
+18:43:34.572 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+18:43:34.573 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
+18:43:34.634 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+18:43:34.774 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Started.
+18:43:35.810 [restartedMain] WARN  o.t.templatemode.TemplateMode - [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+18:43:36.211 [restartedMain] INFO  com.ricky.travel.TravelApplication - Started TravelApplication in 3.648 seconds (JVM running for 5.215)
+18:48:08.156 [restartedMain] INFO  com.ricky.travel.TravelApplication - Starting TravelApplication on PC-201702111430 with PID 5044 (E:\idea_workplace\travel\target\classes started by Administrator in E:\idea_workplace\travel)
+18:48:08.158 [restartedMain] INFO  com.ricky.travel.TravelApplication - No active profile set, falling back to default profiles: default
+18:48:09.830 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+18:48:09.831 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
+18:48:09.907 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+18:48:10.086 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Started.
+18:48:11.141 [restartedMain] WARN  o.t.templatemode.TemplateMode - [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+18:48:11.584 [restartedMain] INFO  com.ricky.travel.TravelApplication - Started TravelApplication in 3.668 seconds (JVM running for 4.862)
+19:05:06.259 [restartedMain] INFO  com.ricky.travel.TravelApplication - Starting TravelApplication on PC-201702111430 with PID 12308 (E:\idea_workplace\travel\target\classes started by Administrator in E:\idea_workplace\travel)
+19:05:06.261 [restartedMain] INFO  com.ricky.travel.TravelApplication - No active profile set, falling back to default profiles: default
+19:05:07.668 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+19:05:07.669 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
+19:05:07.729 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+19:05:07.875 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Started.
+19:05:08.933 [restartedMain] WARN  o.t.templatemode.TemplateMode - [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+19:05:09.343 [restartedMain] INFO  com.ricky.travel.TravelApplication - Started TravelApplication in 3.358 seconds (JVM running for 4.303)
+19:18:22.339 [restartedMain] INFO  com.ricky.travel.TravelApplication - Starting TravelApplication on PC-201702111430 with PID 10088 (E:\idea_workplace\travel\target\classes started by Administrator in E:\idea_workplace\travel)
+19:18:22.345 [restartedMain] INFO  com.ricky.travel.TravelApplication - No active profile set, falling back to default profiles: default
+19:18:24.134 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+19:18:24.135 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
+19:18:24.197 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+19:18:24.335 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Started.
+19:18:25.393 [restartedMain] WARN  o.t.templatemode.TemplateMode - [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+19:18:25.799 [restartedMain] INFO  com.ricky.travel.TravelApplication - Started TravelApplication in 3.849 seconds (JVM running for 5.122)
+19:23:43.325 [restartedMain] INFO  com.ricky.travel.TravelApplication - Starting TravelApplication on PC-201702111430 with PID 10696 (E:\idea_workplace\travel\target\classes started by Administrator in E:\idea_workplace\travel)
+19:23:43.327 [restartedMain] INFO  com.ricky.travel.TravelApplication - No active profile set, falling back to default profiles: default
+19:23:44.717 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+19:23:44.718 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
+19:23:44.776 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+19:23:44.909 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Started.
+19:23:45.900 [restartedMain] WARN  o.t.templatemode.TemplateMode - [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+19:23:46.291 [restartedMain] INFO  com.ricky.travel.TravelApplication - Started TravelApplication in 3.284 seconds (JVM running for 4.484)
+19:24:01.138 [http-nio-80-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+19:26:16.965 [restartedMain] INFO  com.ricky.travel.TravelApplication - Starting TravelApplication on PC-201702111430 with PID 11112 (E:\idea_workplace\travel\target\classes started by Administrator in E:\idea_workplace\travel)
+19:26:16.968 [restartedMain] INFO  com.ricky.travel.TravelApplication - No active profile set, falling back to default profiles: default
+19:26:18.228 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+19:26:18.228 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
+19:26:18.290 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+19:26:18.432 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Started.
+19:26:19.454 [restartedMain] WARN  o.t.templatemode.TemplateMode - [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+19:26:19.867 [restartedMain] INFO  com.ricky.travel.TravelApplication - Started TravelApplication in 3.174 seconds (JVM running for 4.484)
+19:26:27.542 [http-nio-80-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'

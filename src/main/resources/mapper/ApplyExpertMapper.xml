@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ricky.travel.dao.ApplyExpertMapper" >
+  <resultMap id="BaseResultMap" type="com.ricky.travel.domain.ApplyExpert" >
+    <id column="Apply_Id" property="applyId" jdbcType="INTEGER" />
+    <result column="User_Id" property="userId" jdbcType="INTEGER" />
+    <result column="Data_Id" property="dataId" jdbcType="INTEGER" />
+    <result column="Apply_Date" property="applyDate" jdbcType="TIMESTAMP" />
+    <result column="Is_Pass" property="isPass" jdbcType="INTEGER" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.ricky.travel.domain.ApplyExpertWithBLOBs" extends="BaseResultMap" >
+    <result column="Apply_Prove" property="applyProve" jdbcType="LONGVARCHAR" />
+    <result column="Apply_Reason" property="applyReason" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    Apply_Id, User_Id, Data_Id, Apply_Date, Is_Pass
+  </sql>
+  <sql id="Blob_Column_List" >
+    Apply_Prove, Apply_Reason
+  </sql>
+  <select id="selectByExampleWithBLOBs" resultMap="ResultMapWithBLOBs" parameterType="com.ricky.travel.domain.ApplyExpertExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from apply_expert
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.ricky.travel.domain.ApplyExpertExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from apply_expert
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+    <if test="limit != null" >
+      <if test="offset != null" >
+        limit ${offset}, ${limit}
+      </if>
+      <if test="offset == null" >
+        limit ${limit}
+      </if>
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from apply_expert
+    where Apply_Id = #{applyId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from apply_expert
+    where Apply_Id = #{applyId,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.ricky.travel.domain.ApplyExpertExample" >
+    delete from apply_expert
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.ricky.travel.domain.ApplyExpertWithBLOBs" useGeneratedKeys="true" keyProperty="id" >
+    insert into apply_expert (Apply_Id, User_Id, Data_Id, 
+      Apply_Date, Is_Pass, Apply_Prove, 
+      Apply_Reason)
+    values (#{applyId,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, #{dataId,jdbcType=INTEGER}, 
+      #{applyDate,jdbcType=TIMESTAMP}, #{isPass,jdbcType=INTEGER}, #{applyProve,jdbcType=LONGVARCHAR}, 
+      #{applyReason,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.ricky.travel.domain.ApplyExpertWithBLOBs" useGeneratedKeys="true" keyProperty="id" >
+    insert into apply_expert
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="applyId != null" >
+        Apply_Id,
+      </if>
+      <if test="userId != null" >
+        User_Id,
+      </if>
+      <if test="dataId != null" >
+        Data_Id,
+      </if>
+      <if test="applyDate != null" >
+        Apply_Date,
+      </if>
+      <if test="isPass != null" >
+        Is_Pass,
+      </if>
+      <if test="applyProve != null" >
+        Apply_Prove,
+      </if>
+      <if test="applyReason != null" >
+        Apply_Reason,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="applyId != null" >
+        #{applyId,jdbcType=INTEGER},
+      </if>
+      <if test="userId != null" >
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="dataId != null" >
+        #{dataId,jdbcType=INTEGER},
+      </if>
+      <if test="applyDate != null" >
+        #{applyDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isPass != null" >
+        #{isPass,jdbcType=INTEGER},
+      </if>
+      <if test="applyProve != null" >
+        #{applyProve,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="applyReason != null" >
+        #{applyReason,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.ricky.travel.domain.ApplyExpertExample" resultType="java.lang.Integer" >
+    select count(*) from apply_expert
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update apply_expert
+    <set >
+      <if test="record.applyId != null" >
+        Apply_Id = #{record.applyId,jdbcType=INTEGER},
+      </if>
+      <if test="record.userId != null" >
+        User_Id = #{record.userId,jdbcType=INTEGER},
+      </if>
+      <if test="record.dataId != null" >
+        Data_Id = #{record.dataId,jdbcType=INTEGER},
+      </if>
+      <if test="record.applyDate != null" >
+        Apply_Date = #{record.applyDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.isPass != null" >
+        Is_Pass = #{record.isPass,jdbcType=INTEGER},
+      </if>
+      <if test="record.applyProve != null" >
+        Apply_Prove = #{record.applyProve,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="record.applyReason != null" >
+        Apply_Reason = #{record.applyReason,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExampleWithBLOBs" parameterType="map" >
+    update apply_expert
+    set Apply_Id = #{record.applyId,jdbcType=INTEGER},
+      User_Id = #{record.userId,jdbcType=INTEGER},
+      Data_Id = #{record.dataId,jdbcType=INTEGER},
+      Apply_Date = #{record.applyDate,jdbcType=TIMESTAMP},
+      Is_Pass = #{record.isPass,jdbcType=INTEGER},
+      Apply_Prove = #{record.applyProve,jdbcType=LONGVARCHAR},
+      Apply_Reason = #{record.applyReason,jdbcType=LONGVARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update apply_expert
+    set Apply_Id = #{record.applyId,jdbcType=INTEGER},
+      User_Id = #{record.userId,jdbcType=INTEGER},
+      Data_Id = #{record.dataId,jdbcType=INTEGER},
+      Apply_Date = #{record.applyDate,jdbcType=TIMESTAMP},
+      Is_Pass = #{record.isPass,jdbcType=INTEGER}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ricky.travel.domain.ApplyExpertWithBLOBs" >
+    update apply_expert
+    <set >
+      <if test="userId != null" >
+        User_Id = #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="dataId != null" >
+        Data_Id = #{dataId,jdbcType=INTEGER},
+      </if>
+      <if test="applyDate != null" >
+        Apply_Date = #{applyDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isPass != null" >
+        Is_Pass = #{isPass,jdbcType=INTEGER},
+      </if>
+      <if test="applyProve != null" >
+        Apply_Prove = #{applyProve,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="applyReason != null" >
+        Apply_Reason = #{applyReason,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where Apply_Id = #{applyId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.ricky.travel.domain.ApplyExpertWithBLOBs" >
+    update apply_expert
+    set User_Id = #{userId,jdbcType=INTEGER},
+      Data_Id = #{dataId,jdbcType=INTEGER},
+      Apply_Date = #{applyDate,jdbcType=TIMESTAMP},
+      Is_Pass = #{isPass,jdbcType=INTEGER},
+      Apply_Prove = #{applyProve,jdbcType=LONGVARCHAR},
+      Apply_Reason = #{applyReason,jdbcType=LONGVARCHAR}
+    where Apply_Id = #{applyId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ricky.travel.domain.ApplyExpert" >
+    update apply_expert
+    set User_Id = #{userId,jdbcType=INTEGER},
+      Data_Id = #{dataId,jdbcType=INTEGER},
+      Apply_Date = #{applyDate,jdbcType=TIMESTAMP},
+      Is_Pass = #{isPass,jdbcType=INTEGER}
+    where Apply_Id = #{applyId,jdbcType=INTEGER}
+  </update>
+</mapper>
