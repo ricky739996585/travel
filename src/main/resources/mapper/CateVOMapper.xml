@@ -254,4 +254,26 @@
       Cate_Name = #{cateName,jdbcType=VARCHAR}
     where Cate_Id = #{cateId,jdbcType=INTEGER}
   </update>
+
+  <select id="selectByPrimaryKeyWithCity" parameterType="java.lang.Integer" resultType="map">
+    select
+      a.Cate_Id  as cateId,
+      a.Cate_Name as cateName,
+      IFNULL(a.Cate_Description,"") as cateDescription,
+      IFNULL(a.Cate_Address,"") as cateAddress,
+      a.City_Id as cityId,
+      b.City_Name as cityName,
+      c.Province_Id as provinceId,
+      c.Province_Name as provinceName,
+      d.Country_ID as  countryId,
+      d.Country_Nname as  countryName
+    from  cate a
+    LEFT JOIN  city b
+    ON (a.City_Id=b.City_Id)
+    LEFT JOIN  province c
+    ON (b.Province_Id=c.Province_Id)
+    LEFT JOIN country d
+    ON (c.Country_ID=d.Country_ID)
+    WHERE a.Cate_Id=#{cateId}
+  </select>
 </mapper>

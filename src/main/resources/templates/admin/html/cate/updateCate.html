@@ -217,62 +217,52 @@
                                         <div class="title">编辑美食</div>
                                     </div>
                                 </div>
-                                <form id="Form1" method="post" enctype="multipart/form-data">
+                                <form id="CateForm" method="post" enctype="multipart/form-data">
                                 	<div class="card-body col-xs-6 form-inline" style="height: 78px;">
 	                                    <div>
 	                                    	国家：
-	                                    	<select name="country">
-	                                            <optgroup label="国家">
-	                                            	<option value="AK">请选择</option>
-	                                                <option value="AK">中国</option>
-	                                                <option value="HI">美国</option>
-	                                            </optgroup>
-	                                        </select>
-	                                        	省份：
-	                                        <select name="province">
-	                                            <optgroup label="省份">
-	                                            	<option value="AK">请选择</option>
-	                                                <option value="AK">广东</option>
-	                                                <option value="HI">芝加哥</option>
-	                                            </optgroup>
-	                                        </select>
-	                                        	城市：
-	                                        <select name="city">
-	                                            <optgroup label="城市">
-	                                            	<option value="AK">请选择</option>
-	                                                <option value="AK">广州</option>
-	                                                <option value="HI">深圳</option>
-	                                            </optgroup>
-	                                        </select>
+                                            <select name="countryId" id="s1" style="width: 100px;">
+                                                <optgroup label="国家">
+                                                    <option th:value="${cate.countryId}" th:text="${cate.countryName}"></option>
+                                                </optgroup>
+                                            </select>
+                                            省份：
+                                            <select name="provinceId" id="s2" style="width: 100px;">
+                                                <optgroup label="省份">
+                                                    <option th:value="${cate.provinceId}" th:text="${cate.provinceName}"></option>
+                                                </optgroup>
+                                            </select>
+                                            城市：
+                                            <select name="cityId" id="s3" style="width: 100px;">
+                                                <optgroup label="城市">
+                                                    <option th:value="${cate.cityId}" th:text="${cate.cityName}"></option>
+                                                </optgroup>
+                                            </select>
 	                                        <!--<input type="text" class="form-control" placeholder="请输入名称">-->
 	                                    </div>
                                 	</div>
 	                                <div class="card-body col-xs-6 form-inline" style="height: 78px;">
-	                                    <!--<div class="sub-title">Select <span class="description">( with <a href="https://select2.github.io/">select2</a> )</span></div>-->
 	                                    <div>
 	                                    	美食名称：
-	                                        <input type="text" class="form-control" placeholder="请输入名称" style="width: 70%;">
+                                            <input type="text" style="display: none" name="cateId" th:value="${cate.cateId}">
+	                                        <input type="text" class="form-control" placeholder="请输入名称" style="width: 70%;" name="cateName" id="cateName" th:value="${cate.cateName}">
 	                                    </div>
 	                                </div>
 	                                <div class="card-body col-xs-6 form-inline" style="height: 78px;">
-	                                    <!--<div class="sub-title">Select <span class="description">( with <a href="https://select2.github.io/">select2</a> )</span></div>-->
 	                                    <div>
 	                                    	美食描述：
-	                                        <input type="text" class="form-control" placeholder="请输入描述" style="width: 70%;">
+	                                        <input type="text" class="form-control" placeholder="请输入描述" style="width: 70%;" name="cateDescription" id="cateDescription" th:value="${cate.cateDescription}">
 	                                    </div>
 	                                </div>
 	                                <div class="card-body col-xs-6 form-inline" style="height: 78px;">
-	                                    <!--<div class="sub-title">Select <span class="description">( with <a href="https://select2.github.io/">select2</a> )</span></div>-->
 	                                    <div>
 	                                    	美食地址：
-	                                        <input type="text" class="form-control" placeholder="请输入地址" style="width: 70%;">
+	                                        <input type="text" class="form-control" placeholder="请输入地址" style="width: 70%;" name="cateAddress" id="cateAddress" th:value="${cate.cateAddress}">
 	                                    </div>
 	                                </div>
 	                                
 	                                <div class="card-body col-xs-6">
-	                                    <!--<div class="sub-title">Select <span class="description">( with <a href="https://select2.github.io/">select2</a> )</span></div>-->
-	                                    <div>
-	                                    	<button type="button" class="btn btn-info">保存</button>
+	                                    	<button type="button" class="btn btn-info" id="add">保存</button>
 	                                    </div>
 	                                </div>
                                 </form>

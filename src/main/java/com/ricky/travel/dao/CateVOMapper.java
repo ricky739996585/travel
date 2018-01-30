@@ -1,6 +1,7 @@
 package com.ricky.travel.dao;
 
 import java.util.List;
+import java.util.Map;
 
 import com.ricky.travel.domain.CateVO;
 import com.ricky.travel.domain.CateVOExample;
@@ -36,4 +37,7 @@ public interface CateVOMapper {
     int updateByPrimaryKeyWithBLOBs(CateVO record);
 
     int updateByPrimaryKey(CateVO record);
+
+    Map<String,Object> selectByPrimaryKeyWithCity(Integer cateId);
+
 }

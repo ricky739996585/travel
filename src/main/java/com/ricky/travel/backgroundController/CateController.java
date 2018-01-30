@@ -56,8 +56,8 @@ public class CateController {
         if(StringUtils.isNullOrEmpty(cateId)){
             mav.setViewName("/admin/error404");
         }else {
-            CateVO cateVO=cateService.getCate(Integer.parseInt(cateId));
-            mav.addObject("cate",cateVO);
+            Map<String,Object> map=cateService.selectByPrimaryKeyWithCity(Integer.parseInt(cateId));
+            mav.addObject("cate",map);
             mav.setViewName("/admin/html/cate/updateCate");
         }
         return mav;
@@ -98,7 +98,7 @@ public class CateController {
 
     @RequestMapping("/delete")
     @ResponseBody
-    public JSONObject delete(@RequestParam("cateId") String cateId ){
+    public JSONObject delete(@RequestParam("cateId") String cateId){
         JSONObject json=new JSONObject();
         try{
             cateService.delete(Integer.parseInt(cateId));

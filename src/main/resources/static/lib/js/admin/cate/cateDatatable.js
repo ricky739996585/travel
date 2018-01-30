@@ -117,24 +117,24 @@ function deleteCate(cateId) {
     $('#myModal').modal('show');
 }
 
-// $("#isDelete").click(function () {
-//    var scenicPhotoId= $("#isDelete").attr("data-id");
-//     $('#myModal').modal('hide');
-//     $.ajax({
-//         url:"/cate/delete.do",
-//         type:"POST",
-//         dataType:'JSON',
-//         data:{"scenicPhotoId":scenicPhotoId},
-//         error:function(){
-//             window.location.href="/admin/error.do";
-//         },
-//         success:function(data){
-//             if(data["result"]==1){
-//                 mydatatables.ajax.reload();
-//             }
-//         }
-//     });
-// });
+$("#isDelete").click(function () {
+   var cateId= $("#isDelete").attr("data-id");
+    $('#myModal').modal('hide');
+    $.ajax({
+        url:"/cate/delete.do",
+        type:"POST",
+        dataType:'JSON',
+        data:{"cateId":cateId},
+        error:function(){
+            window.location.href="/admin/error.do";
+        },
+        success:function(data){
+            if(data["result"]==1){
+                mydatatables.ajax.reload();
+            }
+        }
+    });
+});
 // function del(id){
 //     if(window.confirm("你确定要删除？")){
 //         $.getJSON("${path}/organization/doDel.action?id="+id,

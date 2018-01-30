@@ -4,6 +4,8 @@ import com.ricky.travel.datatable.DataTablesRequest;
 import com.ricky.travel.datatable.DataTablesResponse;
 import com.ricky.travel.domain.CateVO;
 
+import java.util.Map;
+
 public interface CateService {
     public DataTablesResponse<CateVO> getAll(DataTablesRequest request);
 
@@ -14,5 +16,7 @@ public interface CateService {
     public void update(CateVO cateVO);
 
     public void delete(Integer id);
+
+    public Map<String,Object> selectByPrimaryKeyWithCity(Integer cateId);
 
 }

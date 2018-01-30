@@ -70,4 +70,10 @@ public class CateServiceImpl implements CateService {
     public void delete(Integer id) {
         cateVOMapper.deleteByPrimaryKey(id);
     }
+
+    @Override
+    public Map<String, Object> selectByPrimaryKeyWithCity(Integer cateId) {
+
+        return cateVOMapper.selectByPrimaryKeyWithCity(cateId);
+    }
 }
