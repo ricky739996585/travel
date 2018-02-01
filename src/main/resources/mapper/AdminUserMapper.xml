@@ -201,4 +201,13 @@
       Admin_Level = #{adminLevel,jdbcType=INTEGER}
     where Admin_Id = #{adminId,jdbcType=INTEGER}
   </update>
+
+
+  <select id="validate" parameterType="com.ricky.travel.domain.AdminUser" resultType="int">
+    select count(*)
+      from admin_user a
+    where
+      a.Admin_Account=#{adminAccount}
+      and a.Admin_Password=#{adminPassword}
+  </select>
 </mapper>

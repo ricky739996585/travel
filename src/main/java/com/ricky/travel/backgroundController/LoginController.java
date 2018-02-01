@@ -1,5 +1,6 @@
 package com.ricky.travel.backgroundController;
 
+import com.alibaba.fastjson.JSONObject;
 import com.ricky.travel.domain.AdminUser;
 import com.ricky.travel.service.AdminUserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +17,7 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.List;
+import java.util.Map;
 
 @Controller
 @RequestMapping("admin")
@@ -35,17 +37,23 @@ public class LoginController {
     }
 
     @RequestMapping(value = "/validate",method = RequestMethod.POST)
-    public ModelAndView validate(String username,String password,@RequestParam("file") MultipartFile file){
-        ModelAndView  mav=new ModelAndView();
+    @ResponseBody
+    public JSONObject validate(String username, String password,HttpServletRequest request){
+        JSONObject json=new JSONObject();
+        HttpSession session=request.getSession();
         AdminUser user=new AdminUser();
         user.setAdminAccount(username);
         user.setAdminPassword(password);
+        //当登陆成功后
         if(adminUserService.validate(user)){
-            mav.setViewName("/admin/html/scene/scene");
-//            session.setAttribute("username",username);
+            List<Map<String,Object>> auths=adminUserService.selectAuthByUser(username);
+            json.put("result",1);
+            json.put("url","/scene/list.do");
+            session.setAttribute("user",user);
+            session.setAttribute("auths",auths);
         }else {
-            mav.setViewName("/admin/login");
+            json.put("result",0);
         }
-        return  mav;
+        return  json;
     }
 }

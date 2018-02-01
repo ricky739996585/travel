@@ -1,20 +1,146 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
-    <meta charset="UTF-8"></meta>
-    <title>登陆页面 </title>
+    <title>Home</title>
+    <!-- Custom Theme files -->
+    <link th:href="@{/css/login.css}" rel="stylesheet" type="text/css"/>
+    <!-- Custom Theme files -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Login form web template, Sign up Web Templates, Flat Web Templates, Login signup Responsive web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+    <!-- CSS Libs -->
+    <link th:href="@{/lib/css/bootstrap.min.css}" rel="stylesheet" type="text/css" />
+    <link th:href="@{/lib/css/font-awesome.min.css}" rel="stylesheet" type="text/css" />
+    <link th:href="@{/lib/css/animate.min.css}" rel="stylesheet" type="text/css" />
+    <link th:href="@{/lib/css/bootstrap-switch.min.css}" rel="stylesheet" type="text/css" />
+    <link th:href="@{/lib/css/checkbox3.min.css}" rel="stylesheet" type="text/css" />
+    <!--<link th:href="@{/lib/css/dataTables.min.css}" rel="stylesheet" type="text/css" />-->
+    <link th:href="@{/lib/css/dataTables.bootstrap.css}" rel="stylesheet" type="text/css" />
+    <link th:href="@{/lib/css/select2.min.css}" rel="stylesheet" type="text/css" />
+    <!-- CSS App -->
+    <link th:href="@{/css/style.css}" rel="stylesheet" type="text/css"/>
+    <link th:href="@{/css/pic.css}" rel="stylesheet" type="text/css" />
+    <link th:href="@{/css/themes/flat-blue.css}" rel="stylesheet" type="text/css" />
 
 </head>
 <body>
-<form th:type="POST" action="/admin/validate.do" enctype="multipart/form-data" >
-    用户名：<input type="text" name="username" placeholder="请输入用户" />
-    密码：<input type="password" name="password" placeholder="请输入密码" />
-    文件：<input type="file" name="file">
-    <!--<input type="file" name="file">-->
-    <input type="submit" value="提交" />
-</form>
-<br>
-图片：<image src="/img/bg.jpg" width="100px" height="50px" />
+<div class="login">
+    <h2>旅  游  网</h2>
+    <div class="login-top">
+        <h1>登  陆</h1>
+        <div  id="Form1" method="post">
+            <input type="text"  name="username" id="username" placeholder="User Name">
+            <input type="password"  name="password" id="password">
+        </div>
+        <div class="forgot">
+            <a href="#">forgot Password</a>
+            <input type="button" value="Login" id="login">
+        </div>
+    </div>
+    <div class="login-bottom">
+        <h3>New User &nbsp;<a href="#">Register</a>&nbsp Here</h3>
+    </div>
+</div>
+<!-- 模态框（Modal） -->
+<div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    &times;
+                </button>
+                <h4 class="modal-title" id="myModalLabel">
+                    警告！
+                </h4>
+            </div>
+            <div class="modal-body">
+                登陆失败！请输入正确信息！
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭
+                </button>
+
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>
+
+<div class="modal fade" id="modal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    &times;
+                </button>
+                <h4 class="modal-title" id="myModalLabel2">
+                    警告！
+                </h4>
+            </div>
+            <div class="modal-body">
+                请输入登陆信息！
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭
+                </button>
+
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>
+
+<!-- Javascript Libs -->
+<script type="text/javascript" th:src="@{/lib/js/jquery.min.js}"></script>
+<script type="text/javascript" th:src="@{/lib/js/bootstrap.min.js}"></script>
+<script type="text/javascript" th:src="@{/lib/js/Chart.min.js}"></script>
+<script type="text/javascript" th:src="@{/lib/js/bootstrap-switch.min.js}"></script>
+<script type="text/javascript" th:src="@{/lib/js/jquery.matchHeight-min.js}"></script>
+<script type="text/javascript" th:src="@{/lib/js/jquery.dataTables.min.js}"></script>
+<script type="text/javascript" th:src="@{/lib/js/dataTables.bootstrap.min.js}"></script>
+<script>
+    $("#login").click(function () {
+        if(!checkInput("username")){
+            return;
+        }
+        if(!checkInput("password")){
+            return;
+        }
+        $("#Form1").submit();
+    });
+
+    $("#Form1").submit(function () {
+        var username=$("#username").val();
+        var password=$("#password").val();
+        $.ajax({
+            url:"/admin/validate.do",
+            type:"post",
+            dataType:'JSON',
+            data:{"username":username,"password":password},
+            error:function(){
+                window.location.href="/admin/error.do";
+            },
+            success:function(data){
+                if(data["result"]==1){
+                    window.location.href=data["url"];
+                }else {
+                    $('#modal1').modal('show');
+                }
+            }
+        })
+    });
+
+
+    //检验元素的文字长度
+    function checkInput(inputId){
+        var len=$("#"+inputId).val().length;
+        if(len>0){
+            return true;
+        }else {
+            $('#modal2').modal('show');
+            return false;
+        }
+    }
+</script>
 
 
 </body>

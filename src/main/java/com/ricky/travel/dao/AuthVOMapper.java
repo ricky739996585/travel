@@ -1,6 +1,7 @@
 package com.ricky.travel.dao;
 
 import java.util.List;
+import java.util.Map;
 
 import com.ricky.travel.domain.AuthVO;
 import com.ricky.travel.domain.AuthVOExample;
@@ -36,4 +37,6 @@ public interface AuthVOMapper {
     int updateByPrimaryKeyWithBLOBs(AuthVO record);
 
     int updateByPrimaryKey(AuthVO record);
+
+    List<Map<String,Object>> selectAuthByUser(String adminAccount);
 }

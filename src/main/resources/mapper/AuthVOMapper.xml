@@ -239,4 +239,19 @@
       Auth_Date = #{authDate,jdbcType=TIMESTAMP}
     where Auth_Id = #{authId,jdbcType=INTEGER}
   </update>
+
+  <select id="selectAuthByUser" parameterType="string" resultType="map">
+    select
+      b.Admin_Id as adminId,
+      a.Admin_Account as adminAccount,
+      c.Auth_Id as authId,
+      c.Auth_Name as authName,
+      c.Auth_Url as authUrl,
+      c.Auth_Pic as authPic
+    from admin_user a
+    LEFT JOIN divide b on(a.Admin_Id=b.Admin_Id)
+    LEFT JOIN auth c on(b.Auth_Id=c.Auth_Id)
+    where a.Admin_Account=#{adminAccount}
+  </select>
+
 </mapper>

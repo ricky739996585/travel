@@ -1,6 +1,7 @@
 package com.ricky.travel.serviceImpl;
 
 import com.ricky.travel.dao.AdminUserMapper;
+import com.ricky.travel.dao.AuthVOMapper;
 import com.ricky.travel.domain.AdminUser;
 import com.ricky.travel.domain.AdminUserExample;
 import com.ricky.travel.service.AdminUserService;
@@ -8,10 +9,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Map;
+
 @Service("adminUserService")
 public class AdminUserServiceImpl implements AdminUserService {
     @Autowired
     public AdminUserMapper adminUserMapper;
+    @Autowired
+    public AuthVOMapper authVOMapper;
 
     @Override
     public List<AdminUser> getAll() {
@@ -42,14 +47,16 @@ public class AdminUserServiceImpl implements AdminUserService {
 
     @Override
     public boolean validate(AdminUser user) {
-        AdminUserExample example=new AdminUserExample();
-        example.createCriteria().andAdminAccountEqualTo(user.getAdminAccount());
-        example.createCriteria().andAdminPasswordEqualTo(user.getAdminPassword());
-        int length=adminUserMapper.selectByExample(example).size();
+        int length=adminUserMapper.validate(user);
         if(length>0){
             return true;
         }else {
             return false;
         }
+    }
+
+    @Override
+    public List<Map<String, Object>> selectAuthByUser(String adminAccount) {
+        return authVOMapper.selectAuthByUser(adminAccount);
     }
 }
