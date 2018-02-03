@@ -36,7 +36,7 @@ public class SceneController {
 
     @RequestMapping("/doScene")
     public @ResponseBody
-    DataTablesResponse<ScenicVO> pageSearch(@RequestBody DataTablesRequest request, String NameLike){
+    DataTablesResponse<ScenicVO> pageSearch(@RequestBody DataTablesRequest request){
         Map<String,Object> map=request.getSearchColumns();
 
         List<Order> orders=request.getOrder();

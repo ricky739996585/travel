@@ -8,6 +8,8 @@ import java.util.List;
 public class RsUserExample implements Serializable {
     protected String orderByClause;
 
+    private String orderByDirection;
+
     protected boolean distinct;
 
     protected List<Criteria> oredCriteria;
@@ -19,6 +21,8 @@ public class RsUserExample implements Serializable {
     public RsUserExample() {
         oredCriteria = new ArrayList<Criteria>();
     }
+
+
 
     public void setOrderByClause(String orderByClause) {
         this.orderByClause = orderByClause;
@@ -83,6 +87,14 @@ public class RsUserExample implements Serializable {
 
     public Integer getOffset() {
         return offset;
+    }
+
+    public String getOrderByDirection() {
+        return orderByDirection;
+    }
+
+    public void setOrderByDirection(String orderByDirection) {
+        this.orderByDirection = orderByDirection;
     }
 
     protected abstract static class GeneratedCriteria implements Serializable {

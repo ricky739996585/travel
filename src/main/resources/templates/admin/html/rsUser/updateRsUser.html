@@ -32,8 +32,9 @@
                             <i class="fa fa-bars icon"></i>
                         </button>
                         <ol class="breadcrumb navbar-breadcrumb">
-                            <li>城市美食</li>
-                            <li class="active">编辑美食</li>
+                            <li>用户信息</li>
+                            <!--<li class="active">新增景点</li>-->
+                            <!--<li class="active">景点编辑</li>-->
                         </ol>
                         <button type="button" class="navbar-right-expand-toggle pull-right visible-xs">
                             <i class="fa fa-th icon"></i>
@@ -85,7 +86,7 @@
                                     <span class="icon fa fa-tachometer"></span><span class="title">主页</span>
                                 </a>
                             </li>
-                            <li th:each="auth,itemStat:${session.auths}" th:class="${auth.authId}==3 ? 'active':''">
+                            <li th:each="auth,itemStat:${session.auths}" th:class="${auth.authId}==2 ? 'active':''">
                                 <a th:href="${auth.authUrl}">
                                     <span th:class="${auth.authPic}"></span><span class="title" th:text="${auth.authName}"></span>
                                 </a>
@@ -107,63 +108,88 @@
                             <div class="card">
                                 <div class="card-header">
                                     <div class="card-title">
-                                        <div class="title">编辑美食</div>
+                                        <div class="title">用户详情</div>
                                     </div>
                                 </div>
-                                <form id="CateForm" method="post" enctype="multipart/form-data">
-                                	<div class="card-body col-xs-6 form-inline" style="height: 78px;">
-	                                    <div>
-	                                    	国家：
-                                            <select name="countryId" id="s1" style="width: 100px;">
-                                                <optgroup label="国家">
-                                                    <option th:value="${cate.countryId}" th:text="${cate.countryName}"></option>
-                                                </optgroup>
-                                            </select>
-                                            省份：
-                                            <select name="provinceId" id="s2" style="width: 100px;">
-                                                <optgroup label="省份">
-                                                    <option th:value="${cate.provinceId}" th:text="${cate.provinceName}"></option>
-                                                </optgroup>
-                                            </select>
-                                            城市：
-                                            <select name="cityId" id="s3" style="width: 100px;">
-                                                <optgroup label="城市">
-                                                    <option th:value="${cate.cityId}" th:text="${cate.cityName}"></option>
-                                                </optgroup>
-                                            </select>
-	                                        <!--<input type="text" class="form-control" placeholder="请输入名称">-->
-	                                    </div>
-                                	</div>
-	                                <div class="card-body col-xs-6 form-inline" style="height: 78px;">
-	                                    <div>
-	                                    	美食名称：
-                                            <input type="text" style="display: none" name="cateId" th:value="${cate.cateId}">
-	                                        <input type="text" class="form-control" placeholder="请输入名称" style="width: 70%;" name="cateName" id="cateName" th:value="${cate.cateName}">
-	                                    </div>
-	                                </div>
-	                                <div class="card-body col-xs-6 form-inline" style="height: 78px;">
-	                                    <div>
-	                                    	美食描述：
-	                                        <input type="text" class="form-control" placeholder="请输入描述" style="width: 70%;" name="cateDescription" id="cateDescription" th:value="${cate.cateDescription}">
-	                                    </div>
-	                                </div>
-	                                <div class="card-body col-xs-6 form-inline" style="height: 78px;">
-	                                    <div>
-	                                    	美食地址：
-	                                        <input type="text" class="form-control" placeholder="请输入地址" style="width: 70%;" name="cateAddress" id="cateAddress" th:value="${cate.cateAddress}">
-	                                    </div>
-	                                </div>
-	                                
-	                                <div class="card-body col-xs-6">
-	                                    	<button type="button" class="btn btn-info" id="add">保存</button>
-	                                    </div>
-	                                </div>
-                                </form>
+                                
+                                <div class="card-body col-xs-6 form-inline" style="height: 78px;">
+                                    <!--<div class="sub-title">Select <span class="description">( with <a href="https://select2.github.io/">select2</a> )</span></div>-->
+                                    <div>
+                                    	用户名称：
+                                        <input type="text" class="form-control" style="width: 70%;" readonly="readonly" th:value="${rsUser.userName}">
+                                    </div>
+                                </div>
+                                <div class="card-body col-xs-6 form-inline" style="height: 78px;">
+                                    <!--<div class="sub-title">Select <span class="description">( with <a href="https://select2.github.io/">select2</a> )</span></div>-->
+                                    <div>
+                                    	用户手机：
+                                        <input type="text" class="form-control" style="width: 70%;" readonly="readonly" th:value="${rsUser.userPhone}">
+                                    </div>
+                                </div>
+                                <div class="card-body col-xs-6 form-inline" style="height: 78px;">
+                                    <!--<div class="sub-title">Select <span class="description">( with <a href="https://select2.github.io/">select2</a> )</span></div>-->
+                                    <div>
+                                    	用户邮箱：
+                                        <input type="email" class="form-control" style="width: 70%;" readonly="readonly" th:value="${rsUser.userEmail}">
+                                    </div>
+                                </div>
+                                
+                                <div class="card-body col-xs-6 form-inline" style="height: 78px;">
+                                    <!--<div class="sub-title">Select <span class="description">( with <a href="https://select2.github.io/">select2</a> )</span></div>-->
+                                    <div>
+                                    	创建时间：
+                                        <input type="email" class="form-control" style="width: 70%;" readonly="readonly" th:value="${userDate}">
+                                    </div>
+                                </div>
+                                <div class="card-body col-xs-6 form-inline" style="height: 78px;">
+                                    <!--<div class="sub-title">Select <span class="description">( with <a href="https://select2.github.io/">select2</a> )</span></div>-->
+                                    <div>
+                                    	用户状态：
+                                          <div class="radio3 radio-check radio-success radio-inline">
+                                            <input type="radio" id="radio1" name="radio" value="option2" readonly="readonly" th:checked="${rsUser.userStatus}==0 ? 'true':'false'">
+                                            <label for="radio1">
+                                              	活跃
+                                            </label>
+                                          </div>
+                                          <div class="radio3 radio-check radio-warning radio-inline">
+                                            <input type="radio" id="radio2" name="radio" value="option3" readonly="readonly" th:checked="${rsUser.userStatus}==1 ? 'true':'false'">
+                                            <label for="radio2">
+                                              	禁用
+                                            </label>
+                                          </div>
+                                        <!--<input type="text" class="form-control" placeholder="">-->
+                                    </div>
+                                </div>
+                                <div class="card-body col-xs-6 form-inline" style="height: 78px;">
+                                    <!--<div class="sub-title">Select <span class="description">( with <a href="https://select2.github.io/">select2</a> )</span></div>-->
+                                    <div>
+                                    	用户等级：
+                                          <div class="radio3 radio-check radio-inline">
+                                            <input type="radio" id="radio5" name="radio2" value="option2" readonly="readonly" th:checked="${rsUser.userLevel}==0 ? 'true':'false'">
+                                            <label for="radio5">
+                                              	普通用户
+                                            </label>
+                                          </div>
+                                          <div class="radio3 radio-check radio-success radio-inline">
+                                            <input type="radio" id="radio6" name="radio2" value="option3" readonly="readonly" th:checked="${rsUser.userLevel}==1 ? 'true':'false'">
+                                            <label for="radio6">
+                                              	专家
+                                            </label>
+                                          </div>
+                                        <!--<input type="text" class="form-control" placeholder="">-->
+                                    </div>
+                                </div>
+                                <div class="card-body col-xs-6 form-inline" style="height: 78px;">
+                                    <!--<div class="sub-title">Select <span class="description">( with <a href="https://select2.github.io/">select2</a> )</span></div>-->
+                                    <div>
+                                    	上次登录：
+                                        <input type="email" class="form-control" style="width: 70%;" readonly="readonly" th:value="${lastLogin}">
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                     
-                    </div>
                 </div>
             </div>
         </div>
@@ -173,29 +199,6 @@
             </div>
         </footer>
     <div>
-        <!-- 模态框（Modal） -->
-        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                            &times;
-                        </button>
-                        <h4 class="modal-title" id="myModalLabel">
-                            警告！
-                        </h4>
-                    </div>
-                    <div class="modal-body">
-                        网络异常！请稍后再尝试操作
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">关闭
-                        </button>
-
-                    </div>
-                </div><!-- /.modal-content -->
-            </div><!-- /.modal -->
-        </div>
         <!-- Javascript Libs -->
         <script type="text/javascript" th:src="@{/lib/js/jquery.min.js}"></script>
         <script type="text/javascript" th:src="@{/lib/js/bootstrap.min.js}"></script>
@@ -208,13 +211,9 @@
         <script type="text/javascript" th:src="@{/lib/js/ace/ace.js}"></script>
         <script type="text/javascript" th:src="@{/lib/js/ace/mode-html.js}"></script>
         <script type="text/javascript" th:src="@{/lib/js/ace/theme-github.js}"></script>
-        <script type="text/javascript" th:src="@{/lib/js/admin/cate/updateCate.js}"></script>
         <!-- Javascript -->
         <script type="text/javascript" th:src="@{/js/app.js}"></script>
-        <!--<script type="text/javascript" th:src="@{/js/pic.js}"></script>-->
-        <!--<script type="text/javascript" th:src="@{/lib/js/city.js}"></script>-->
-        <!-- DataTables -->
-        <script src="http://cdn.datatables.net/plug-ins/28e7751dbec/integration/bootstrap/3/dataTables.bootstrap.js"></script>
+        <!--<script type="text/javascript" th:src="@{/js/index.js}"></script>-->
 </body>
 
 </html>

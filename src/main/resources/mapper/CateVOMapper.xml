@@ -86,8 +86,13 @@
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
-    <if test="orderByClause != null" >
-      order by ${orderByClause}
+    <if test="orderByClause != null">
+      <if test="orderByDirection != null" >
+        order by ${orderByClause} ${orderByDirection}
+      </if>
+      <if test="orderByDirection = null" >
+        order by ${orderByClause}
+      </if>
     </if>
   </select>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.ricky.travel.domain.CateVOExample" >
