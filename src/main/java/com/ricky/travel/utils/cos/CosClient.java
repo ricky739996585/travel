@@ -73,6 +73,33 @@ public class CosClient {
     }
 
     /**
+     * 上传文章图片
+     * @return
+     */
+    public void uploadArticlePic(String fileName,long fileSize,InputStream inputStream, COSClient cosClient){
+        // 简单文件上传, 最大支持 5 GB, 适用于小文件上传, 建议 20 M 以下的文件使用该接口
+        // 大文件上传请参照 API 文档高级 API 上传
+        // 指定要上传到 COS 上的路径
+        try {
+            String key = "/article/"+fileName;
+            // 设置自定义属性(如 content-type, content-disposition 等)
+            ObjectMetadata objectMetadata = new ObjectMetadata();
+            // 设置 Content type, 默认是 application/octet-stream
+            objectMetadata.setContentType("image/jpeg");
+            objectMetadata.setContentEncoding("utf-8");
+            objectMetadata.setContentLength(fileSize);
+            PutObjectResult putObjectResult = cosClient.putObject("pic-1253210486", key, inputStream,objectMetadata);
+        } catch (CosServiceException cse) {
+            // 自定义异常处理比如打印异常等
+            log.error("上传cos对象失败！", cse);
+        } catch (CosClientException cle) {
+            // 自定义异常处理比如打印异常等
+            log.error("上传cos对象失败！", cle);
+        }
+
+    }
+
+    /**
      * 删除文件
      * @return
      */

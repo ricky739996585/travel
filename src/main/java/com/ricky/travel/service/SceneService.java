@@ -22,4 +22,6 @@ public interface SceneService {
     public void delete(Integer id);
 
     public Map<String,Object> getScenicAndTraffic(Integer id);
+
+    public List<ScenicVO> getHomeScene();
 }

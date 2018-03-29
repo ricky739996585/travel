@@ -3,6 +3,8 @@ package com.ricky.travel.dao;
 import com.ricky.travel.domain.Divide;
 import com.ricky.travel.domain.DivideExample;
 import java.util.List;
+import java.util.Map;
+
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
@@ -29,4 +31,6 @@ public interface DivideMapper {
     int updateByPrimaryKeySelective(Divide record);
 
     int updateByPrimaryKey(Divide record);
+
+    List<Map<String,Object>> getDivideByAccountId(Integer accountId);
 }

@@ -252,6 +252,7 @@
     LEFT JOIN divide b on(a.Admin_Id=b.Admin_Id)
     LEFT JOIN auth c on(b.Auth_Id=c.Auth_Id)
     where a.Admin_Account=#{adminAccount}
+    GROUP BY b.Auth_Id
   </select>
 
 </mapper>

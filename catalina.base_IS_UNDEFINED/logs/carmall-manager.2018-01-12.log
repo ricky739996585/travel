@@ -5,7 +5,7 @@
 17:04:30.006 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
 17:04:30.006 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
 17:04:30.069 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-17:04:30.069 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 3079 ms
+17:04:30.069 [localhost-startStop-1] INFO  o.s.templates.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 3079 ms
 17:04:30.162 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [*.do, *.jpg, *.css, *.js]
 17:04:30.162 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
 17:04:30.162 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Servlet dispatcherServlet was not registered (possibly already registered?)
@@ -15,13 +15,13 @@
 17:04:30.162 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
 17:04:30.303 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Started.
 17:04:32.392 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@48dc165: startup date [Fri Jan 12 17:04:26 CST 2018]; root of context hierarchy
-17:04:32.423 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/admin/validate]}" onto public org.springframework.web.servlet.ModelAndView com.ricky.travel.backgroundController.LoginController.validate(javax.servlet.http.HttpServletRequest,java.lang.String,java.lang.String)
+17:04:32.423 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/admin/validate]}" onto public org.springframework.templates.web.servlet.ModelAndView com.ricky.travel.backgroundController.LoginController.validate(javax.servlet.http.HttpServletRequest,java.lang.String,java.lang.String)
 17:04:32.423 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/admin/login]}" onto public java.lang.String com.ricky.travel.backgroundController.LoginController.login()
-17:04:32.423 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
-17:04:32.423 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
-17:04:32.454 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-17:04:32.454 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-17:04:32.470 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+17:04:32.423 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.templates.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+17:04:32.423 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.templates.web.servlet.ModelAndView org.springframework.boot.autoconfigure.templates.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+17:04:32.454 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.templates.web.servlet.resource.ResourceHttpRequestHandler]
+17:04:32.454 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.templates.web.servlet.resource.ResourceHttpRequestHandler]
+17:04:32.470 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.templates.web.servlet.resource.ResourceHttpRequestHandler]
 17:04:32.517 [restartedMain] WARN  o.t.templatemode.TemplateMode - [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
 17:04:33.032 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
 17:04:33.064 [restartedMain] INFO  o.s.j.e.a.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
@@ -30,8 +30,8 @@
 17:04:33.204 [restartedMain] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat started on port(s): 80 (http)
 17:04:33.204 [restartedMain] INFO  com.ricky.travel.TravelApplication - Started TravelApplication in 6.776 seconds (JVM running for 8.628)
 17:05:59.180 [http-nio-80-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
-17:05:59.180 [http-nio-80-exec-1] INFO  o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
-17:05:59.194 [http-nio-80-exec-1] INFO  o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 14 ms
+17:05:59.180 [http-nio-80-exec-1] INFO  o.s.templates.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
+17:05:59.194 [http-nio-80-exec-1] INFO  o.s.templates.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 14 ms
 17:09:02.165 [restartedMain] INFO  com.ricky.travel.TravelApplication - Starting TravelApplication on PC-201702111430 with PID 8824 (E:\idea_workplace\travel\target\classes started by Administrator in E:\idea_workplace\travel)
 17:09:02.165 [restartedMain] INFO  com.ricky.travel.TravelApplication - No active profile set, falling back to default profiles: default
 17:09:02.352 [restartedMain] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@566a45b1: startup date [Fri Jan 12 17:09:02 CST 2018]; root of context hierarchy
@@ -39,7 +39,7 @@
 17:09:03.354 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
 17:09:03.354 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
 17:09:03.416 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-17:09:03.416 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1064 ms
+17:09:03.416 [localhost-startStop-1] INFO  o.s.templates.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1064 ms
 17:09:03.510 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [*.do, *.jpg, *.css, *.js]
 17:09:03.510 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
 17:09:03.510 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Servlet dispatcherServlet was not registered (possibly already registered?)
@@ -49,13 +49,13 @@
 17:09:03.510 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
 17:09:03.557 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Started.
 17:09:04.385 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@566a45b1: startup date [Fri Jan 12 17:09:02 CST 2018]; root of context hierarchy
-17:09:04.416 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/admin/validate]}" onto public org.springframework.web.servlet.ModelAndView com.ricky.travel.backgroundController.LoginController.validate(javax.servlet.http.HttpServletRequest,java.lang.String,java.lang.String)
+17:09:04.416 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/admin/validate]}" onto public org.springframework.templates.web.servlet.ModelAndView com.ricky.travel.backgroundController.LoginController.validate(javax.servlet.http.HttpServletRequest,java.lang.String,java.lang.String)
 17:09:04.416 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/admin/login]}" onto public java.lang.String com.ricky.travel.backgroundController.LoginController.login()
-17:09:04.416 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
-17:09:04.416 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
-17:09:04.448 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-17:09:04.448 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-17:09:04.463 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+17:09:04.416 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.templates.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+17:09:04.416 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.templates.web.servlet.ModelAndView org.springframework.boot.autoconfigure.templates.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+17:09:04.448 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.templates.web.servlet.resource.ResourceHttpRequestHandler]
+17:09:04.448 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.templates.web.servlet.resource.ResourceHttpRequestHandler]
+17:09:04.463 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.templates.web.servlet.resource.ResourceHttpRequestHandler]
 17:09:04.495 [restartedMain] WARN  o.t.templatemode.TemplateMode - [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
 17:09:04.826 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
 17:09:04.858 [restartedMain] INFO  o.s.j.e.a.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
@@ -64,8 +64,8 @@
 17:09:04.905 [restartedMain] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat started on port(s): 80 (http)
 17:09:04.905 [restartedMain] INFO  com.ricky.travel.TravelApplication - Started TravelApplication in 2.99 seconds (JVM running for 4.061)
 17:09:06.848 [http-nio-80-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
-17:09:06.848 [http-nio-80-exec-1] INFO  o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
-17:09:06.860 [http-nio-80-exec-1] INFO  o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 11 ms
+17:09:06.848 [http-nio-80-exec-1] INFO  o.s.templates.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
+17:09:06.860 [http-nio-80-exec-1] INFO  o.s.templates.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 11 ms
 17:13:58.463 [restartedMain] INFO  com.ricky.travel.TravelApplication - Starting TravelApplication on PC-201702111430 with PID 768 (E:\idea_workplace\travel\target\classes started by Administrator in E:\idea_workplace\travel)
 17:13:58.463 [restartedMain] INFO  com.ricky.travel.TravelApplication - No active profile set, falling back to default profiles: default
 17:13:58.634 [restartedMain] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3311ed05: startup date [Fri Jan 12 17:13:58 CST 2018]; root of context hierarchy
@@ -73,7 +73,7 @@
 17:13:59.824 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
 17:13:59.824 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
 17:13:59.871 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-17:13:59.871 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1237 ms
+17:13:59.871 [localhost-startStop-1] INFO  o.s.templates.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1237 ms
 17:13:59.964 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [*.do, *.jpg, *.css, *.js]
 17:13:59.964 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
 17:13:59.964 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Servlet dispatcherServlet was not registered (possibly already registered?)
@@ -83,13 +83,13 @@
 17:13:59.980 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
 17:14:00.011 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Started.
 17:14:00.895 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3311ed05: startup date [Fri Jan 12 17:13:58 CST 2018]; root of context hierarchy
-17:14:00.929 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/admin/validate]}" onto public org.springframework.web.servlet.ModelAndView com.ricky.travel.backgroundController.LoginController.validate(javax.servlet.http.HttpServletRequest,java.lang.String,java.lang.String)
+17:14:00.929 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/admin/validate]}" onto public org.springframework.templates.web.servlet.ModelAndView com.ricky.travel.backgroundController.LoginController.validate(javax.servlet.http.HttpServletRequest,java.lang.String,java.lang.String)
 17:14:00.929 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/admin/login]}" onto public java.lang.String com.ricky.travel.backgroundController.LoginController.login()
-17:14:00.929 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
-17:14:00.929 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
-17:14:00.945 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-17:14:00.945 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-17:14:00.976 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+17:14:00.929 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.templates.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+17:14:00.929 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.templates.web.servlet.ModelAndView org.springframework.boot.autoconfigure.templates.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+17:14:00.945 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.templates.web.servlet.resource.ResourceHttpRequestHandler]
+17:14:00.945 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.templates.web.servlet.resource.ResourceHttpRequestHandler]
+17:14:00.976 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.templates.web.servlet.resource.ResourceHttpRequestHandler]
 17:14:00.992 [restartedMain] WARN  o.t.templatemode.TemplateMode - [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
 17:14:01.273 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
 17:14:01.304 [restartedMain] INFO  o.s.j.e.a.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
@@ -98,8 +98,8 @@
 17:14:01.336 [restartedMain] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat started on port(s): 80 (http)
 17:14:01.351 [restartedMain] INFO  com.ricky.travel.TravelApplication - Started TravelApplication in 3.138 seconds (JVM running for 4.182)
 17:14:04.325 [http-nio-80-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
-17:14:04.325 [http-nio-80-exec-1] INFO  o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
-17:14:04.337 [http-nio-80-exec-1] INFO  o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 11 ms
+17:14:04.325 [http-nio-80-exec-1] INFO  o.s.templates.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
+17:14:04.337 [http-nio-80-exec-1] INFO  o.s.templates.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 11 ms
 17:17:23.142 [restartedMain] INFO  com.ricky.travel.TravelApplication - Starting TravelApplication on PC-201702111430 with PID 6888 (E:\idea_workplace\travel\target\classes started by Administrator in E:\idea_workplace\travel)
 17:17:23.142 [restartedMain] INFO  com.ricky.travel.TravelApplication - No active profile set, falling back to default profiles: default
 17:17:23.361 [restartedMain] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@409d8f3c: startup date [Fri Jan 12 17:17:23 CST 2018]; root of context hierarchy
@@ -107,7 +107,7 @@
 17:17:24.415 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
 17:17:24.415 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
 17:17:24.462 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-17:17:24.462 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1101 ms
+17:17:24.462 [localhost-startStop-1] INFO  o.s.templates.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1101 ms
 17:17:24.556 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [*.do, *.jpg, *.css, *.js, fontawesome-webfont.*, glyphicons-halflings-regular.*, FontAwesome.otf]
 17:17:24.556 [localhost-startStop-1] ERROR o.s.b.c.e.tomcat.TomcatStarter - Error starting Tomcat context. Exception: java.lang.IllegalArgumentException. Message: Invalid <url-pattern> [fontawesome-webfont.*] in servlet mapping
 17:17:24.571 [restartedMain] WARN  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start embedded container; nested exception is org.springframework.boot.context.embedded.EmbeddedServletContainerException: Unable to start embedded Tomcat
@@ -142,8 +142,8 @@ Caused by: java.lang.IllegalArgumentException: Invalid <url-pattern> [fontawesom
 	at org.apache.catalina.core.StandardContext.addServletMappingDecoded(StandardContext.java:3159)
 	at org.apache.catalina.core.StandardContext.addServletMappingDecoded(StandardContext.java:3145)
 	at org.apache.catalina.core.ApplicationServletRegistration.addMapping(ApplicationServletRegistration.java:194)
-	at org.springframework.boot.web.servlet.ServletRegistrationBean.configure(ServletRegistrationBean.java:213)
-	at org.springframework.boot.web.servlet.ServletRegistrationBean.onStartup(ServletRegistrationBean.java:197)
+	at org.springframework.boot.templates.web.servlet.ServletRegistrationBean.configure(ServletRegistrationBean.java:213)
+	at org.springframework.boot.templates.web.servlet.ServletRegistrationBean.onStartup(ServletRegistrationBean.java:197)
 	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.selfInitialize(EmbeddedWebApplicationContext.java:229)
 	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.access$000(EmbeddedWebApplicationContext.java:89)
 	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext$1.onStartup(EmbeddedWebApplicationContext.java:213)
@@ -163,7 +163,7 @@ Caused by: java.lang.IllegalArgumentException: Invalid <url-pattern> [fontawesom
 17:19:10.737 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
 17:19:10.737 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
 17:19:10.804 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-17:19:10.804 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1067 ms
+17:19:10.804 [localhost-startStop-1] INFO  o.s.templates.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1067 ms
 17:19:10.913 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [*.do, *.jpg, *.css, *.js, *.otf, *.eot, *.svg, *.ttf, *.woff, *.woff2]
 17:19:10.913 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
 17:19:10.913 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Servlet dispatcherServlet was not registered (possibly already registered?)
@@ -173,13 +173,13 @@ Caused by: java.lang.IllegalArgumentException: Invalid <url-pattern> [fontawesom
 17:19:10.913 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
 17:19:10.944 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Started.
 17:19:11.773 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@5d172bb7: startup date [Fri Jan 12 17:19:09 CST 2018]; root of context hierarchy
-17:19:11.819 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/admin/validate]}" onto public org.springframework.web.servlet.ModelAndView com.ricky.travel.backgroundController.LoginController.validate(javax.servlet.http.HttpServletRequest,java.lang.String,java.lang.String)
+17:19:11.819 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/admin/validate]}" onto public org.springframework.templates.web.servlet.ModelAndView com.ricky.travel.backgroundController.LoginController.validate(javax.servlet.http.HttpServletRequest,java.lang.String,java.lang.String)
 17:19:11.819 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/admin/login]}" onto public java.lang.String com.ricky.travel.backgroundController.LoginController.login()
-17:19:11.819 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
-17:19:11.819 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
-17:19:11.835 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-17:19:11.835 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-17:19:11.851 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+17:19:11.819 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.templates.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+17:19:11.819 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.templates.web.servlet.ModelAndView org.springframework.boot.autoconfigure.templates.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+17:19:11.835 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.templates.web.servlet.resource.ResourceHttpRequestHandler]
+17:19:11.835 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.templates.web.servlet.resource.ResourceHttpRequestHandler]
+17:19:11.851 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.templates.web.servlet.resource.ResourceHttpRequestHandler]
 17:19:11.882 [restartedMain] WARN  o.t.templatemode.TemplateMode - [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
 17:19:12.179 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
 17:19:12.226 [restartedMain] INFO  o.s.j.e.a.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
@@ -188,8 +188,8 @@ Caused by: java.lang.IllegalArgumentException: Invalid <url-pattern> [fontawesom
 17:19:12.257 [restartedMain] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat started on port(s): 80 (http)
 17:19:12.257 [restartedMain] INFO  com.ricky.travel.TravelApplication - Started TravelApplication in 2.974 seconds (JVM running for 3.882)
 17:19:15.923 [http-nio-80-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
-17:19:15.924 [http-nio-80-exec-1] INFO  o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
-17:19:15.936 [http-nio-80-exec-1] INFO  o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 11 ms
+17:19:15.924 [http-nio-80-exec-1] INFO  o.s.templates.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
+17:19:15.936 [http-nio-80-exec-1] INFO  o.s.templates.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 11 ms
 17:21:55.212 [restartedMain] INFO  com.ricky.travel.TravelApplication - Starting TravelApplication on PC-201702111430 with PID 10128 (E:\idea_workplace\travel\target\classes started by Administrator in E:\idea_workplace\travel)
 17:21:55.212 [restartedMain] INFO  com.ricky.travel.TravelApplication - No active profile set, falling back to default profiles: default
 17:21:55.368 [restartedMain] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3026ff0e: startup date [Fri Jan 12 17:21:55 CST 2018]; root of context hierarchy
@@ -197,7 +197,7 @@ Caused by: java.lang.IllegalArgumentException: Invalid <url-pattern> [fontawesom
 17:21:56.415 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
 17:21:56.415 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
 17:21:56.478 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-17:21:56.478 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1110 ms
+17:21:56.478 [localhost-startStop-1] INFO  o.s.templates.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1110 ms
 17:21:56.572 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [*.do, *.jpg, *.css, *.js, *.otf, *.eot, *.svg, *.ttf, *.woff, *.woff2]
 17:21:56.572 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
 17:21:56.572 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Servlet dispatcherServlet was not registered (possibly already registered?)
@@ -207,13 +207,13 @@ Caused by: java.lang.IllegalArgumentException: Invalid <url-pattern> [fontawesom
 17:21:56.587 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
 17:21:56.619 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Started.
 17:21:57.462 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3026ff0e: startup date [Fri Jan 12 17:21:55 CST 2018]; root of context hierarchy
-17:21:57.494 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/admin/validate]}" onto public org.springframework.web.servlet.ModelAndView com.ricky.travel.backgroundController.LoginController.validate(javax.servlet.http.HttpServletRequest,java.lang.String,java.lang.String)
+17:21:57.494 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/admin/validate]}" onto public org.springframework.templates.web.servlet.ModelAndView com.ricky.travel.backgroundController.LoginController.validate(javax.servlet.http.HttpServletRequest,java.lang.String,java.lang.String)
 17:21:57.494 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/admin/login]}" onto public java.lang.String com.ricky.travel.backgroundController.LoginController.login()
-17:21:57.494 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
-17:21:57.494 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
-17:21:57.509 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-17:21:57.509 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-17:21:57.541 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+17:21:57.494 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.templates.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+17:21:57.494 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.templates.web.servlet.ModelAndView org.springframework.boot.autoconfigure.templates.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+17:21:57.509 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.templates.web.servlet.resource.ResourceHttpRequestHandler]
+17:21:57.509 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.templates.web.servlet.resource.ResourceHttpRequestHandler]
+17:21:57.541 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.templates.web.servlet.resource.ResourceHttpRequestHandler]
 17:21:57.556 [restartedMain] WARN  o.t.templatemode.TemplateMode - [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
 17:21:57.837 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
 17:21:57.869 [restartedMain] INFO  o.s.j.e.a.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
@@ -222,8 +222,8 @@ Caused by: java.lang.IllegalArgumentException: Invalid <url-pattern> [fontawesom
 17:21:57.900 [restartedMain] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat started on port(s): 80 (http)
 17:21:57.900 [restartedMain] INFO  com.ricky.travel.TravelApplication - Started TravelApplication in 2.875 seconds (JVM running for 3.869)
 17:22:02.277 [http-nio-80-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
-17:22:02.277 [http-nio-80-exec-1] INFO  o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
-17:22:02.290 [http-nio-80-exec-1] INFO  o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 13 ms
+17:22:02.277 [http-nio-80-exec-1] INFO  o.s.templates.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
+17:22:02.290 [http-nio-80-exec-1] INFO  o.s.templates.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 13 ms
 18:07:52.176 [restartedMain] INFO  com.ricky.travel.TravelApplication - Starting TravelApplication on PC-201702111430 with PID 4612 (E:\idea_workplace\travel\target\classes started by Administrator in E:\idea_workplace\travel)
 18:07:52.178 [restartedMain] INFO  com.ricky.travel.TravelApplication - No active profile set, falling back to default profiles: default
 18:07:52.313 [restartedMain] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@28c78aa0: startup date [Fri Jan 12 18:07:52 CST 2018]; root of context hierarchy
@@ -231,7 +231,7 @@ Caused by: java.lang.IllegalArgumentException: Invalid <url-pattern> [fontawesom
 18:07:53.389 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
 18:07:53.390 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
 18:07:53.450 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-18:07:53.450 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1137 ms
+18:07:53.450 [localhost-startStop-1] INFO  o.s.templates.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1137 ms
 18:07:53.551 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [*.do, *.jpg, *.css, *.js, *.otf, *.eot, *.svg, *.ttf, *.woff, *.woff2]
 18:07:53.552 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
 18:07:53.552 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Servlet dispatcherServlet was not registered (possibly already registered?)
@@ -241,14 +241,14 @@ Caused by: java.lang.IllegalArgumentException: Invalid <url-pattern> [fontawesom
 18:07:53.555 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
 18:07:53.597 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Started.
 18:07:54.454 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@28c78aa0: startup date [Fri Jan 12 18:07:52 CST 2018]; root of context hierarchy
-18:07:54.488 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/admin/validate]}" onto public org.springframework.web.servlet.ModelAndView com.ricky.travel.backgroundController.LoginController.validate(javax.servlet.http.HttpServletRequest,java.lang.String,java.lang.String)
+18:07:54.488 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/admin/validate]}" onto public org.springframework.templates.web.servlet.ModelAndView com.ricky.travel.backgroundController.LoginController.validate(javax.servlet.http.HttpServletRequest,java.lang.String,java.lang.String)
 18:07:54.489 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/admin/login]}" onto public java.lang.String com.ricky.travel.backgroundController.LoginController.login()
 18:07:54.489 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/scene/doScene]}" onto public com.ricky.travel.datatable.DataTablesResponse<com.ricky.travel.domain.ScenicVO> com.ricky.travel.backgroundController.SceneController.pageSearch(com.ricky.travel.datatable.DataTablesRequest,java.lang.String)
-18:07:54.491 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
-18:07:54.491 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
-18:07:54.511 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-18:07:54.511 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-18:07:54.534 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+18:07:54.491 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.templates.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+18:07:54.491 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.templates.web.servlet.ModelAndView org.springframework.boot.autoconfigure.templates.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+18:07:54.511 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.templates.web.servlet.resource.ResourceHttpRequestHandler]
+18:07:54.511 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.templates.web.servlet.resource.ResourceHttpRequestHandler]
+18:07:54.534 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.templates.web.servlet.resource.ResourceHttpRequestHandler]
 18:07:54.558 [restartedMain] WARN  o.t.templatemode.TemplateMode - [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
 18:07:54.856 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
 18:07:54.891 [restartedMain] INFO  o.s.j.e.a.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
@@ -257,8 +257,8 @@ Caused by: java.lang.IllegalArgumentException: Invalid <url-pattern> [fontawesom
 18:07:54.930 [restartedMain] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat started on port(s): 80 (http)
 18:07:54.933 [restartedMain] INFO  com.ricky.travel.TravelApplication - Started TravelApplication in 2.989 seconds (JVM running for 3.827)
 18:08:05.209 [http-nio-80-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
-18:08:05.210 [http-nio-80-exec-1] INFO  o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
-18:08:05.223 [http-nio-80-exec-1] INFO  o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 13 ms
+18:08:05.210 [http-nio-80-exec-1] INFO  o.s.templates.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
+18:08:05.223 [http-nio-80-exec-1] INFO  o.s.templates.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 13 ms
 18:09:53.458 [restartedMain] INFO  com.ricky.travel.TravelApplication - Starting TravelApplication on PC-201702111430 with PID 5740 (E:\idea_workplace\travel\target\classes started by Administrator in E:\idea_workplace\travel)
 18:09:53.460 [restartedMain] INFO  com.ricky.travel.TravelApplication - No active profile set, falling back to default profiles: default
 18:09:53.642 [restartedMain] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@5bb829d3: startup date [Fri Jan 12 18:09:53 CST 2018]; root of context hierarchy
@@ -266,7 +266,7 @@ Caused by: java.lang.IllegalArgumentException: Invalid <url-pattern> [fontawesom
 18:09:54.688 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
 18:09:54.688 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
 18:09:54.761 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-18:09:54.761 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1119 ms
+18:09:54.761 [localhost-startStop-1] INFO  o.s.templates.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1119 ms
 18:09:54.869 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [*.do, *.jpg, *.css, *.js, *.otf, *.eot, *.svg, *.ttf, *.woff, *.woff2]
 18:09:54.870 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
 18:09:54.870 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Servlet dispatcherServlet was not registered (possibly already registered?)
@@ -276,14 +276,14 @@ Caused by: java.lang.IllegalArgumentException: Invalid <url-pattern> [fontawesom
 18:09:54.873 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
 18:09:54.914 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Started.
 18:09:55.797 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@5bb829d3: startup date [Fri Jan 12 18:09:53 CST 2018]; root of context hierarchy
-18:09:55.832 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/admin/validate]}" onto public org.springframework.web.servlet.ModelAndView com.ricky.travel.backgroundController.LoginController.validate(javax.servlet.http.HttpServletRequest,java.lang.String,java.lang.String)
+18:09:55.832 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/admin/validate]}" onto public org.springframework.templates.web.servlet.ModelAndView com.ricky.travel.backgroundController.LoginController.validate(javax.servlet.http.HttpServletRequest,java.lang.String,java.lang.String)
 18:09:55.832 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/admin/login]}" onto public java.lang.String com.ricky.travel.backgroundController.LoginController.login()
 18:09:55.833 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/scene/doScene]}" onto public com.ricky.travel.datatable.DataTablesResponse<com.ricky.travel.domain.ScenicVO> com.ricky.travel.backgroundController.SceneController.pageSearch(com.ricky.travel.datatable.DataTablesRequest,java.lang.String)
-18:09:55.835 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
-18:09:55.836 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
-18:09:55.855 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-18:09:55.855 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-18:09:55.879 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+18:09:55.835 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.templates.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+18:09:55.836 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.templates.web.servlet.ModelAndView org.springframework.boot.autoconfigure.templates.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+18:09:55.855 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.templates.web.servlet.resource.ResourceHttpRequestHandler]
+18:09:55.855 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.templates.web.servlet.resource.ResourceHttpRequestHandler]
+18:09:55.879 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.templates.web.servlet.resource.ResourceHttpRequestHandler]
 18:09:55.904 [restartedMain] WARN  o.t.templatemode.TemplateMode - [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
 18:09:56.195 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
 18:09:56.230 [restartedMain] INFO  o.s.j.e.a.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
@@ -292,8 +292,8 @@ Caused by: java.lang.IllegalArgumentException: Invalid <url-pattern> [fontawesom
 18:09:56.268 [restartedMain] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat started on port(s): 80 (http)
 18:09:56.271 [restartedMain] INFO  com.ricky.travel.TravelApplication - Started TravelApplication in 3.071 seconds (JVM running for 3.977)
 18:10:13.634 [http-nio-80-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
-18:10:13.635 [http-nio-80-exec-1] INFO  o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
-18:10:13.648 [http-nio-80-exec-1] INFO  o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 13 ms
+18:10:13.635 [http-nio-80-exec-1] INFO  o.s.templates.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
+18:10:13.648 [http-nio-80-exec-1] INFO  o.s.templates.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 13 ms
 18:12:06.677 [restartedMain] INFO  com.ricky.travel.TravelApplication - Starting TravelApplication on PC-201702111430 with PID 11376 (E:\idea_workplace\travel\target\classes started by Administrator in E:\idea_workplace\travel)
 18:12:06.679 [restartedMain] INFO  com.ricky.travel.TravelApplication - No active profile set, falling back to default profiles: default
 18:12:06.846 [restartedMain] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@29f7d1ff: startup date [Fri Jan 12 18:12:06 CST 2018]; root of context hierarchy
@@ -301,7 +301,7 @@ Caused by: java.lang.IllegalArgumentException: Invalid <url-pattern> [fontawesom
 18:12:08.222 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
 18:12:08.223 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
 18:12:08.309 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-18:12:08.309 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1464 ms
+18:12:08.309 [localhost-startStop-1] INFO  o.s.templates.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1464 ms
 18:12:08.403 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [*.do, *.jpg, *.css, *.js, *.otf, *.eot, *.svg, *.ttf, *.woff, *.woff2]
 18:12:08.404 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
 18:12:08.404 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Servlet dispatcherServlet was not registered (possibly already registered?)
@@ -311,14 +311,14 @@ Caused by: java.lang.IllegalArgumentException: Invalid <url-pattern> [fontawesom
 18:12:08.407 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
 18:12:08.450 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Started.
 18:12:09.300 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@29f7d1ff: startup date [Fri Jan 12 18:12:06 CST 2018]; root of context hierarchy
-18:12:09.335 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/admin/validate]}" onto public org.springframework.web.servlet.ModelAndView com.ricky.travel.backgroundController.LoginController.validate(javax.servlet.http.HttpServletRequest,java.lang.String,java.lang.String)
+18:12:09.335 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/admin/validate]}" onto public org.springframework.templates.web.servlet.ModelAndView com.ricky.travel.backgroundController.LoginController.validate(javax.servlet.http.HttpServletRequest,java.lang.String,java.lang.String)
 18:12:09.335 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/admin/login]}" onto public java.lang.String com.ricky.travel.backgroundController.LoginController.login()
 18:12:09.336 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/scene/doScene]}" onto public com.ricky.travel.datatable.DataTablesResponse<com.ricky.travel.domain.ScenicVO> com.ricky.travel.backgroundController.SceneController.pageSearch(com.ricky.travel.datatable.DataTablesRequest,java.lang.String)
-18:12:09.338 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
-18:12:09.338 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
-18:12:09.357 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-18:12:09.358 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-18:12:09.381 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+18:12:09.338 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.templates.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+18:12:09.338 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.templates.web.servlet.ModelAndView org.springframework.boot.autoconfigure.templates.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+18:12:09.357 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.templates.web.servlet.resource.ResourceHttpRequestHandler]
+18:12:09.358 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.templates.web.servlet.resource.ResourceHttpRequestHandler]
+18:12:09.381 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.templates.web.servlet.resource.ResourceHttpRequestHandler]
 18:12:09.405 [restartedMain] WARN  o.t.templatemode.TemplateMode - [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
 18:12:09.690 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
 18:12:09.725 [restartedMain] INFO  o.s.j.e.a.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
@@ -327,8 +327,8 @@ Caused by: java.lang.IllegalArgumentException: Invalid <url-pattern> [fontawesom
 18:12:09.766 [restartedMain] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat started on port(s): 80 (http)
 18:12:09.769 [restartedMain] INFO  com.ricky.travel.TravelApplication - Started TravelApplication in 3.319 seconds (JVM running for 4.275)
 18:12:13.459 [http-nio-80-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
-18:12:13.460 [http-nio-80-exec-1] INFO  o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
-18:12:13.471 [http-nio-80-exec-1] INFO  o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 11 ms
+18:12:13.460 [http-nio-80-exec-1] INFO  o.s.templates.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
+18:12:13.471 [http-nio-80-exec-1] INFO  o.s.templates.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 11 ms
 18:14:12.142 [restartedMain] INFO  com.ricky.travel.TravelApplication - Starting TravelApplication on PC-201702111430 with PID 11960 (E:\idea_workplace\travel\target\classes started by Administrator in E:\idea_workplace\travel)
 18:14:12.144 [restartedMain] INFO  com.ricky.travel.TravelApplication - No active profile set, falling back to default profiles: default
 18:14:12.337 [restartedMain] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@386ed793: startup date [Fri Jan 12 18:14:12 CST 2018]; root of context hierarchy
@@ -336,7 +336,7 @@ Caused by: java.lang.IllegalArgumentException: Invalid <url-pattern> [fontawesom
 18:14:13.396 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
 18:14:13.397 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
 18:14:13.456 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-18:14:13.456 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1119 ms
+18:14:13.456 [localhost-startStop-1] INFO  o.s.templates.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1119 ms
 18:14:13.555 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [*.do, *.jpg, *.css, *.js, *.otf, *.eot, *.svg, *.ttf, *.woff, *.woff2]
 18:14:13.556 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
 18:14:13.556 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Servlet dispatcherServlet was not registered (possibly already registered?)
@@ -346,14 +346,14 @@ Caused by: java.lang.IllegalArgumentException: Invalid <url-pattern> [fontawesom
 18:14:13.558 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
 18:14:13.598 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Started.
 18:14:14.458 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@386ed793: startup date [Fri Jan 12 18:14:12 CST 2018]; root of context hierarchy
-18:14:14.495 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/admin/validate]}" onto public org.springframework.web.servlet.ModelAndView com.ricky.travel.backgroundController.LoginController.validate(javax.servlet.http.HttpServletRequest,java.lang.String,java.lang.String)
+18:14:14.495 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/admin/validate]}" onto public org.springframework.templates.web.servlet.ModelAndView com.ricky.travel.backgroundController.LoginController.validate(javax.servlet.http.HttpServletRequest,java.lang.String,java.lang.String)
 18:14:14.496 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/admin/login]}" onto public java.lang.String com.ricky.travel.backgroundController.LoginController.login()
 18:14:14.496 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/scene/doScene]}" onto public com.ricky.travel.datatable.DataTablesResponse<com.ricky.travel.domain.ScenicVO> com.ricky.travel.backgroundController.SceneController.pageSearch(com.ricky.travel.datatable.DataTablesRequest,java.lang.String)
-18:14:14.498 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
-18:14:14.499 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
-18:14:14.519 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-18:14:14.520 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-18:14:14.544 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+18:14:14.498 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.templates.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+18:14:14.499 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.templates.web.servlet.ModelAndView org.springframework.boot.autoconfigure.templates.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+18:14:14.519 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.templates.web.servlet.resource.ResourceHttpRequestHandler]
+18:14:14.520 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.templates.web.servlet.resource.ResourceHttpRequestHandler]
+18:14:14.544 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.templates.web.servlet.resource.ResourceHttpRequestHandler]
 18:14:14.568 [restartedMain] WARN  o.t.templatemode.TemplateMode - [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
 18:14:14.856 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
 18:14:14.890 [restartedMain] INFO  o.s.j.e.a.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
@@ -362,8 +362,8 @@ Caused by: java.lang.IllegalArgumentException: Invalid <url-pattern> [fontawesom
 18:14:14.931 [restartedMain] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat started on port(s): 80 (http)
 18:14:14.934 [restartedMain] INFO  com.ricky.travel.TravelApplication - Started TravelApplication in 2.973 seconds (JVM running for 3.797)
 18:14:19.800 [http-nio-80-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
-18:14:19.800 [http-nio-80-exec-1] INFO  o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
-18:14:19.813 [http-nio-80-exec-1] INFO  o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 13 ms
+18:14:19.800 [http-nio-80-exec-1] INFO  o.s.templates.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
+18:14:19.813 [http-nio-80-exec-1] INFO  o.s.templates.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 13 ms
 18:15:03.648 [restartedMain] INFO  com.ricky.travel.TravelApplication - Starting TravelApplication on PC-201702111430 with PID 604 (E:\idea_workplace\travel\target\classes started by Administrator in E:\idea_workplace\travel)
 18:15:03.650 [restartedMain] INFO  com.ricky.travel.TravelApplication - No active profile set, falling back to default profiles: default
 18:15:03.787 [restartedMain] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@d5d6a37: startup date [Fri Jan 12 18:15:03 CST 2018]; root of context hierarchy
@@ -371,7 +371,7 @@ Caused by: java.lang.IllegalArgumentException: Invalid <url-pattern> [fontawesom
 18:15:04.869 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
 18:15:04.869 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
 18:15:04.942 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-18:15:04.943 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1156 ms
+18:15:04.943 [localhost-startStop-1] INFO  o.s.templates.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1156 ms
 18:15:05.044 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [*.do, *.jpg, *.css, *.js, *.otf, *.eot, *.svg, *.ttf, *.woff, *.woff2]
 18:15:05.045 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
 18:15:05.045 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Servlet dispatcherServlet was not registered (possibly already registered?)
@@ -381,14 +381,14 @@ Caused by: java.lang.IllegalArgumentException: Invalid <url-pattern> [fontawesom
 18:15:05.048 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
 18:15:05.092 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Started.
 18:15:05.944 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@d5d6a37: startup date [Fri Jan 12 18:15:03 CST 2018]; root of context hierarchy
-18:15:05.979 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/admin/validate]}" onto public org.springframework.web.servlet.ModelAndView com.ricky.travel.backgroundController.LoginController.validate(javax.servlet.http.HttpServletRequest,java.lang.String,java.lang.String)
+18:15:05.979 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/admin/validate]}" onto public org.springframework.templates.web.servlet.ModelAndView com.ricky.travel.backgroundController.LoginController.validate(javax.servlet.http.HttpServletRequest,java.lang.String,java.lang.String)
 18:15:05.980 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/admin/login]}" onto public java.lang.String com.ricky.travel.backgroundController.LoginController.login()
 18:15:05.981 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/scene/doScene]}" onto public com.ricky.travel.datatable.DataTablesResponse<com.ricky.travel.domain.ScenicVO> com.ricky.travel.backgroundController.SceneController.pageSearch(com.ricky.travel.datatable.DataTablesRequest,java.lang.String)
-18:15:05.983 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
-18:15:05.983 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
-18:15:06.002 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-18:15:06.002 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-18:15:06.027 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+18:15:05.983 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.templates.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+18:15:05.983 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.templates.web.servlet.ModelAndView org.springframework.boot.autoconfigure.templates.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+18:15:06.002 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.templates.web.servlet.resource.ResourceHttpRequestHandler]
+18:15:06.002 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.templates.web.servlet.resource.ResourceHttpRequestHandler]
+18:15:06.027 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.templates.web.servlet.resource.ResourceHttpRequestHandler]
 18:15:06.051 [restartedMain] WARN  o.t.templatemode.TemplateMode - [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
 18:15:06.341 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
 18:15:06.375 [restartedMain] INFO  o.s.j.e.a.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
@@ -397,8 +397,8 @@ Caused by: java.lang.IllegalArgumentException: Invalid <url-pattern> [fontawesom
 18:15:06.414 [restartedMain] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat started on port(s): 80 (http)
 18:15:06.417 [restartedMain] INFO  com.ricky.travel.TravelApplication - Started TravelApplication in 2.992 seconds (JVM running for 3.972)
 18:15:10.238 [http-nio-80-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
-18:15:10.238 [http-nio-80-exec-1] INFO  o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
-18:15:10.252 [http-nio-80-exec-1] INFO  o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 14 ms
+18:15:10.238 [http-nio-80-exec-1] INFO  o.s.templates.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
+18:15:10.252 [http-nio-80-exec-1] INFO  o.s.templates.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 14 ms
 18:16:31.143 [restartedMain] INFO  com.ricky.travel.TravelApplication - Starting TravelApplication on PC-201702111430 with PID 5312 (E:\idea_workplace\travel\target\classes started by Administrator in E:\idea_workplace\travel)
 18:16:31.145 [restartedMain] INFO  com.ricky.travel.TravelApplication - No active profile set, falling back to default profiles: default
 18:16:31.283 [restartedMain] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3026ff0e: startup date [Fri Jan 12 18:16:31 CST 2018]; root of context hierarchy
@@ -406,7 +406,7 @@ Caused by: java.lang.IllegalArgumentException: Invalid <url-pattern> [fontawesom
 18:16:32.397 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
 18:16:32.398 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
 18:16:32.482 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-18:16:32.484 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1201 ms
+18:16:32.484 [localhost-startStop-1] INFO  o.s.templates.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1201 ms
 18:16:32.598 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [*.do, *.jpg, *.css, *.js, *.otf, *.eot, *.svg, *.ttf, *.woff, *.woff2]
 18:16:32.599 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
 18:16:32.599 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Servlet dispatcherServlet was not registered (possibly already registered?)
@@ -416,14 +416,14 @@ Caused by: java.lang.IllegalArgumentException: Invalid <url-pattern> [fontawesom
 18:16:32.602 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
 18:16:32.646 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Started.
 18:16:33.548 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3026ff0e: startup date [Fri Jan 12 18:16:31 CST 2018]; root of context hierarchy
-18:16:33.584 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/admin/validate]}" onto public org.springframework.web.servlet.ModelAndView com.ricky.travel.backgroundController.LoginController.validate(javax.servlet.http.HttpServletRequest,java.lang.String,java.lang.String)
+18:16:33.584 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/admin/validate]}" onto public org.springframework.templates.web.servlet.ModelAndView com.ricky.travel.backgroundController.LoginController.validate(javax.servlet.http.HttpServletRequest,java.lang.String,java.lang.String)
 18:16:33.585 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/admin/login]}" onto public java.lang.String com.ricky.travel.backgroundController.LoginController.login()
 18:16:33.585 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/scene/doScene]}" onto public com.ricky.travel.datatable.DataTablesResponse<com.ricky.travel.domain.ScenicVO> com.ricky.travel.backgroundController.SceneController.pageSearch(com.ricky.travel.datatable.DataTablesRequest,java.lang.String)
-18:16:33.587 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
-18:16:33.587 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
-18:16:33.608 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-18:16:33.608 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-18:16:33.632 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+18:16:33.587 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.templates.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+18:16:33.587 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.templates.web.servlet.ModelAndView org.springframework.boot.autoconfigure.templates.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+18:16:33.608 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.templates.web.servlet.resource.ResourceHttpRequestHandler]
+18:16:33.608 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.templates.web.servlet.resource.ResourceHttpRequestHandler]
+18:16:33.632 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.templates.web.servlet.resource.ResourceHttpRequestHandler]
 18:16:33.656 [restartedMain] WARN  o.t.templatemode.TemplateMode - [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
 18:16:33.941 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
 18:16:33.975 [restartedMain] INFO  o.s.j.e.a.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
@@ -432,8 +432,8 @@ Caused by: java.lang.IllegalArgumentException: Invalid <url-pattern> [fontawesom
 18:16:34.019 [restartedMain] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat started on port(s): 80 (http)
 18:16:34.022 [restartedMain] INFO  com.ricky.travel.TravelApplication - Started TravelApplication in 3.11 seconds (JVM running for 4.098)
 18:16:34.834 [http-nio-80-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
-18:16:34.834 [http-nio-80-exec-2] INFO  o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
-18:16:34.848 [http-nio-80-exec-2] INFO  o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 14 ms
+18:16:34.834 [http-nio-80-exec-2] INFO  o.s.templates.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
+18:16:34.848 [http-nio-80-exec-2] INFO  o.s.templates.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 14 ms
 18:16:35.562 [http-nio-80-exec-7] INFO  o.s.b.f.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [org/springframework/jdbc/support/sql-error-codes.xml]
 18:16:35.605 [http-nio-80-exec-7] INFO  o.s.j.support.SQLErrorCodesFactory - SQLErrorCodes loaded: [DB2, Derby, H2, HSQL, Informix, MS-SQL, MySQL, Oracle, PostgreSQL, Sybase, Hana]
 18:16:35.624 [http-nio-80-exec-7] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.jdbc.BadSqlGrammarException: 
@@ -498,38 +498,38 @@ com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 'id' i
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:133)
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:97)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:827)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:738)
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85)
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:967)
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901)
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
-	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:872)
+	at org.springframework.templates.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.templates.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:133)
+	at org.springframework.templates.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:97)
+	at org.springframework.templates.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:827)
+	at org.springframework.templates.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:738)
+	at org.springframework.templates.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85)
+	at org.springframework.templates.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:967)
+	at org.springframework.templates.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901)
+	at org.springframework.templates.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+	at org.springframework.templates.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:872)
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:661)
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+	at org.springframework.templates.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
 	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.templates.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.templates.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:108)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.templates.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:108)
+	at org.springframework.templates.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.templates.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81)
+	at org.springframework.templates.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.templates.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
+	at org.springframework.templates.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
 	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
@@ -610,38 +610,38 @@ com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 'id' i
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:133)
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:97)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:827)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:738)
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85)
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:967)
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901)
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
-	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:872)
+	at org.springframework.templates.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.templates.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:133)
+	at org.springframework.templates.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:97)
+	at org.springframework.templates.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:827)
+	at org.springframework.templates.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:738)
+	at org.springframework.templates.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85)
+	at org.springframework.templates.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:967)
+	at org.springframework.templates.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901)
+	at org.springframework.templates.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+	at org.springframework.templates.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:872)
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:661)
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+	at org.springframework.templates.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
 	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.templates.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.templates.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:108)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.templates.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:108)
+	at org.springframework.templates.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.templates.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81)
+	at org.springframework.templates.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.templates.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
+	at org.springframework.templates.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
 	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
@@ -667,7 +667,7 @@ com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 'id' i
 18:17:57.642 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
 18:17:57.642 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
 18:17:57.715 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-18:17:57.716 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1079 ms
+18:17:57.716 [localhost-startStop-1] INFO  o.s.templates.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1079 ms
 18:17:57.810 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [*.do, *.jpg, *.css, *.js, *.otf, *.eot, *.svg, *.ttf, *.woff, *.woff2]
 18:17:57.811 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
 18:17:57.811 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Servlet dispatcherServlet was not registered (possibly already registered?)
@@ -677,14 +677,14 @@ com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 'id' i
 18:17:57.814 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
 18:17:57.854 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Started.
 18:17:58.727 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@57adacbf: startup date [Fri Jan 12 18:17:56 CST 2018]; root of context hierarchy
-18:17:58.762 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/admin/validate]}" onto public org.springframework.web.servlet.ModelAndView com.ricky.travel.backgroundController.LoginController.validate(javax.servlet.http.HttpServletRequest,java.lang.String,java.lang.String)
+18:17:58.762 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/admin/validate]}" onto public org.springframework.templates.web.servlet.ModelAndView com.ricky.travel.backgroundController.LoginController.validate(javax.servlet.http.HttpServletRequest,java.lang.String,java.lang.String)
 18:17:58.763 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/admin/login]}" onto public java.lang.String com.ricky.travel.backgroundController.LoginController.login()
 18:17:58.764 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/scene/doScene]}" onto public com.ricky.travel.datatable.DataTablesResponse<com.ricky.travel.domain.ScenicVO> com.ricky.travel.backgroundController.SceneController.pageSearch(com.ricky.travel.datatable.DataTablesRequest,java.lang.String)
-18:17:58.766 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
-18:17:58.767 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
-18:17:58.786 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-18:17:58.786 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-18:17:58.811 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+18:17:58.766 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.templates.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+18:17:58.767 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.templates.web.servlet.ModelAndView org.springframework.boot.autoconfigure.templates.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+18:17:58.786 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.templates.web.servlet.resource.ResourceHttpRequestHandler]
+18:17:58.786 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.templates.web.servlet.resource.ResourceHttpRequestHandler]
+18:17:58.811 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.templates.web.servlet.resource.ResourceHttpRequestHandler]
 18:17:58.835 [restartedMain] WARN  o.t.templatemode.TemplateMode - [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
 18:17:59.153 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
 18:17:59.187 [restartedMain] INFO  o.s.j.e.a.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
@@ -693,8 +693,8 @@ com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 'id' i
 18:17:59.229 [restartedMain] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat started on port(s): 80 (http)
 18:17:59.233 [restartedMain] INFO  com.ricky.travel.TravelApplication - Started TravelApplication in 3.109 seconds (JVM running for 3.976)
 18:18:02.972 [http-nio-80-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
-18:18:02.972 [http-nio-80-exec-1] INFO  o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
-18:18:02.984 [http-nio-80-exec-1] INFO  o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 12 ms
+18:18:02.972 [http-nio-80-exec-1] INFO  o.s.templates.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
+18:18:02.984 [http-nio-80-exec-1] INFO  o.s.templates.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 12 ms
 18:18:03.667 [http-nio-80-exec-7] INFO  o.s.b.f.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [org/springframework/jdbc/support/sql-error-codes.xml]
 18:18:03.685 [http-nio-80-exec-7] INFO  o.s.j.support.SQLErrorCodesFactory - SQLErrorCodes loaded: [DB2, Derby, H2, HSQL, Informix, MS-SQL, MySQL, Oracle, PostgreSQL, Sybase, Hana]
 18:18:03.695 [http-nio-80-exec-7] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.jdbc.BadSqlGrammarException: 
@@ -759,38 +759,38 @@ com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 'sceni
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:133)
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:97)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:827)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:738)
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85)
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:967)
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901)
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
-	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:872)
+	at org.springframework.templates.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.templates.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:133)
+	at org.springframework.templates.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:97)
+	at org.springframework.templates.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:827)
+	at org.springframework.templates.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:738)
+	at org.springframework.templates.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85)
+	at org.springframework.templates.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:967)
+	at org.springframework.templates.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901)
+	at org.springframework.templates.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+	at org.springframework.templates.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:872)
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:661)
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+	at org.springframework.templates.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
 	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.templates.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.templates.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:108)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.templates.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:108)
+	at org.springframework.templates.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.templates.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81)
+	at org.springframework.templates.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.templates.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
+	at org.springframework.templates.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
 	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
@@ -816,7 +816,7 @@ com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 'sceni
 18:19:07.430 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
 18:19:07.431 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
 18:19:07.501 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-18:19:07.502 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1065 ms
+18:19:07.502 [localhost-startStop-1] INFO  o.s.templates.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1065 ms
 18:19:07.603 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [*.do, *.jpg, *.css, *.js, *.otf, *.eot, *.svg, *.ttf, *.woff, *.woff2]
 18:19:07.604 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
 18:19:07.604 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Servlet dispatcherServlet was not registered (possibly already registered?)
@@ -826,14 +826,14 @@ com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 'sceni
 18:19:07.607 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
 18:19:07.648 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Started.
 18:19:08.490 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@555477ec: startup date [Fri Jan 12 18:19:06 CST 2018]; root of context hierarchy
-18:19:08.525 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/admin/validate]}" onto public org.springframework.web.servlet.ModelAndView com.ricky.travel.backgroundController.LoginController.validate(javax.servlet.http.HttpServletRequest,java.lang.String,java.lang.String)
+18:19:08.525 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/admin/validate]}" onto public org.springframework.templates.web.servlet.ModelAndView com.ricky.travel.backgroundController.LoginController.validate(javax.servlet.http.HttpServletRequest,java.lang.String,java.lang.String)
 18:19:08.526 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/admin/login]}" onto public java.lang.String com.ricky.travel.backgroundController.LoginController.login()
 18:19:08.526 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/scene/doScene]}" onto public com.ricky.travel.datatable.DataTablesResponse<com.ricky.travel.domain.ScenicVO> com.ricky.travel.backgroundController.SceneController.pageSearch(com.ricky.travel.datatable.DataTablesRequest,java.lang.String)
-18:19:08.528 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
-18:19:08.528 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
-18:19:08.548 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-18:19:08.548 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-18:19:08.573 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+18:19:08.528 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.templates.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+18:19:08.528 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.templates.web.servlet.ModelAndView org.springframework.boot.autoconfigure.templates.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+18:19:08.548 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.templates.web.servlet.resource.ResourceHttpRequestHandler]
+18:19:08.548 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.templates.web.servlet.resource.ResourceHttpRequestHandler]
+18:19:08.573 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.templates.web.servlet.resource.ResourceHttpRequestHandler]
 18:19:08.596 [restartedMain] WARN  o.t.templatemode.TemplateMode - [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
 18:19:08.887 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
 18:19:08.922 [restartedMain] INFO  o.s.j.e.a.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
@@ -842,8 +842,8 @@ com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 'sceni
 18:19:08.961 [restartedMain] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat started on port(s): 80 (http)
 18:19:08.964 [restartedMain] INFO  com.ricky.travel.TravelApplication - Started TravelApplication in 2.912 seconds (JVM running for 3.9)
 18:19:16.400 [http-nio-80-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
-18:19:16.401 [http-nio-80-exec-1] INFO  o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
-18:19:16.415 [http-nio-80-exec-1] INFO  o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 14 ms
+18:19:16.401 [http-nio-80-exec-1] INFO  o.s.templates.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
+18:19:16.415 [http-nio-80-exec-1] INFO  o.s.templates.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 14 ms
 18:42:51.012 [restartedMain] INFO  com.ricky.travel.TravelApplication - Starting TravelApplication on PC-201702111430 with PID 12092 (E:\idea_workplace\travel\target\classes started by Administrator in E:\idea_workplace\travel)
 18:42:51.012 [restartedMain] INFO  com.ricky.travel.TravelApplication - No active profile set, falling back to default profiles: default
 18:42:51.246 [restartedMain] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@50d7ef05: startup date [Fri Jan 12 18:42:51 CST 2018]; root of context hierarchy
@@ -851,7 +851,7 @@ com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 'sceni
 18:42:52.509 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
 18:42:52.509 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
 18:42:52.563 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-18:42:52.563 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1317 ms
+18:42:52.563 [localhost-startStop-1] INFO  o.s.templates.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1317 ms
 18:42:52.673 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [*.do, *.jpg, *.css, *.js, *.otf, *.eot, *.svg, *.ttf, *.woff, *.woff2]
 18:42:52.673 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
 18:42:52.673 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Servlet dispatcherServlet was not registered (possibly already registered?)
@@ -861,14 +861,14 @@ com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 'sceni
 18:42:52.673 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
 18:42:52.704 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Started.
 18:42:53.735 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@50d7ef05: startup date [Fri Jan 12 18:42:51 CST 2018]; root of context hierarchy
-18:42:53.766 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/admin/validate]}" onto public org.springframework.web.servlet.ModelAndView com.ricky.travel.backgroundController.LoginController.validate(javax.servlet.http.HttpServletRequest,java.lang.String,java.lang.String)
+18:42:53.766 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/admin/validate]}" onto public org.springframework.templates.web.servlet.ModelAndView com.ricky.travel.backgroundController.LoginController.validate(javax.servlet.http.HttpServletRequest,java.lang.String,java.lang.String)
 18:42:53.782 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/admin/login]}" onto public java.lang.String com.ricky.travel.backgroundController.LoginController.login()
 18:42:53.782 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/scene/doScene]}" onto public com.ricky.travel.datatable.DataTablesResponse<com.ricky.travel.domain.ScenicVO> com.ricky.travel.backgroundController.SceneController.pageSearch(com.ricky.travel.datatable.DataTablesRequest,java.lang.String)
-18:42:53.782 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
-18:42:53.782 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
-18:42:53.813 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-18:42:53.813 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-18:42:53.829 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+18:42:53.782 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.templates.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+18:42:53.782 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.templates.web.servlet.ModelAndView org.springframework.boot.autoconfigure.templates.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+18:42:53.813 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.templates.web.servlet.resource.ResourceHttpRequestHandler]
+18:42:53.813 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.templates.web.servlet.resource.ResourceHttpRequestHandler]
+18:42:53.829 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.templates.web.servlet.resource.ResourceHttpRequestHandler]
 18:42:53.860 [restartedMain] WARN  o.t.templatemode.TemplateMode - [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
 18:42:54.157 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
 18:42:54.204 [restartedMain] INFO  o.s.j.e.a.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
@@ -877,8 +877,8 @@ com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 'sceni
 18:42:54.235 [restartedMain] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat started on port(s): 80 (http)
 18:42:54.251 [restartedMain] INFO  com.ricky.travel.TravelApplication - Started TravelApplication in 3.474 seconds (JVM running for 4.644)
 18:43:10.325 [http-nio-80-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
-18:43:10.325 [http-nio-80-exec-1] INFO  o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
-18:43:10.336 [http-nio-80-exec-1] INFO  o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 11 ms
+18:43:10.325 [http-nio-80-exec-1] INFO  o.s.templates.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
+18:43:10.336 [http-nio-80-exec-1] INFO  o.s.templates.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 11 ms
 18:47:07.815 [restartedMain] INFO  com.ricky.travel.TravelApplication - Starting TravelApplication on PC-201702111430 with PID 8504 (E:\idea_workplace\travel\target\classes started by Administrator in E:\idea_workplace\travel)
 18:47:07.817 [restartedMain] INFO  com.ricky.travel.TravelApplication - No active profile set, falling back to default profiles: default
 18:47:08.030 [restartedMain] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@cf3e34e: startup date [Fri Jan 12 18:47:08 CST 2018]; root of context hierarchy
@@ -886,7 +886,7 @@ com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 'sceni
 18:47:09.079 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
 18:47:09.079 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
 18:47:09.142 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-18:47:09.143 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1113 ms
+18:47:09.143 [localhost-startStop-1] INFO  o.s.templates.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1113 ms
 18:47:09.257 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [*.do, *.jpg, *.css, *.js, *.otf, *.eot, *.svg, *.ttf, *.woff, *.woff2]
 18:47:09.259 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
 18:47:09.259 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Servlet dispatcherServlet was not registered (possibly already registered?)
@@ -896,14 +896,14 @@ com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 'sceni
 18:47:09.262 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
 18:47:09.314 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Started.
 18:47:10.209 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@cf3e34e: startup date [Fri Jan 12 18:47:08 CST 2018]; root of context hierarchy
-18:47:10.244 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/admin/validate]}" onto public org.springframework.web.servlet.ModelAndView com.ricky.travel.backgroundController.LoginController.validate(javax.servlet.http.HttpServletRequest,java.lang.String,java.lang.String)
+18:47:10.244 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/admin/validate]}" onto public org.springframework.templates.web.servlet.ModelAndView com.ricky.travel.backgroundController.LoginController.validate(javax.servlet.http.HttpServletRequest,java.lang.String,java.lang.String)
 18:47:10.245 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/admin/login]}" onto public java.lang.String com.ricky.travel.backgroundController.LoginController.login()
 18:47:10.246 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/scene/doScene]}" onto public com.ricky.travel.datatable.DataTablesResponse<com.ricky.travel.domain.ScenicVO> com.ricky.travel.backgroundController.SceneController.pageSearch(com.ricky.travel.datatable.DataTablesRequest,java.lang.String)
-18:47:10.247 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
-18:47:10.248 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
-18:47:10.266 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-18:47:10.266 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-18:47:10.288 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+18:47:10.247 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.templates.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+18:47:10.248 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.templates.web.servlet.ModelAndView org.springframework.boot.autoconfigure.templates.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+18:47:10.266 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.templates.web.servlet.resource.ResourceHttpRequestHandler]
+18:47:10.266 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.templates.web.servlet.resource.ResourceHttpRequestHandler]
+18:47:10.288 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.templates.web.servlet.resource.ResourceHttpRequestHandler]
 18:47:10.312 [restartedMain] WARN  o.t.templatemode.TemplateMode - [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
 18:47:10.611 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
 18:47:10.649 [restartedMain] INFO  o.s.j.e.a.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
@@ -912,8 +912,8 @@ com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 'sceni
 18:47:10.693 [restartedMain] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat started on port(s): 80 (http)
 18:47:10.696 [restartedMain] INFO  com.ricky.travel.TravelApplication - Started TravelApplication in 3.229 seconds (JVM running for 4.491)
 18:47:17.236 [http-nio-80-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
-18:47:17.237 [http-nio-80-exec-1] INFO  o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
-18:47:17.249 [http-nio-80-exec-1] INFO  o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 12 ms
+18:47:17.237 [http-nio-80-exec-1] INFO  o.s.templates.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
+18:47:17.249 [http-nio-80-exec-1] INFO  o.s.templates.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 12 ms
 18:48:00.877 [restartedMain] INFO  com.ricky.travel.TravelApplication - Starting TravelApplication on PC-201702111430 with PID 9132 (E:\idea_workplace\travel\target\classes started by Administrator in E:\idea_workplace\travel)
 18:48:00.879 [restartedMain] INFO  com.ricky.travel.TravelApplication - No active profile set, falling back to default profiles: default
 18:48:01.082 [restartedMain] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@5842ff6b: startup date [Fri Jan 12 18:48:01 CST 2018]; root of context hierarchy
@@ -921,7 +921,7 @@ com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 'sceni
 18:48:02.159 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
 18:48:02.160 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
 18:48:02.220 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-18:48:02.220 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1139 ms
+18:48:02.220 [localhost-startStop-1] INFO  o.s.templates.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1139 ms
 18:48:02.320 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [*.do, *.jpg, *.css, *.js, *.otf, *.eot, *.svg, *.ttf, *.woff, *.woff2]
 18:48:02.321 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
 18:48:02.322 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Servlet dispatcherServlet was not registered (possibly already registered?)
@@ -931,14 +931,14 @@ com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 'sceni
 18:48:02.324 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
 18:48:02.364 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Started.
 18:48:03.228 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@5842ff6b: startup date [Fri Jan 12 18:48:01 CST 2018]; root of context hierarchy
-18:48:03.263 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/admin/validate]}" onto public org.springframework.web.servlet.ModelAndView com.ricky.travel.backgroundController.LoginController.validate(javax.servlet.http.HttpServletRequest,java.lang.String,java.lang.String)
+18:48:03.263 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/admin/validate]}" onto public org.springframework.templates.web.servlet.ModelAndView com.ricky.travel.backgroundController.LoginController.validate(javax.servlet.http.HttpServletRequest,java.lang.String,java.lang.String)
 18:48:03.264 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/admin/login]}" onto public java.lang.String com.ricky.travel.backgroundController.LoginController.login()
 18:48:03.264 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/scene/doScene]}" onto public com.ricky.travel.datatable.DataTablesResponse<com.ricky.travel.domain.ScenicVO> com.ricky.travel.backgroundController.SceneController.pageSearch(com.ricky.travel.datatable.DataTablesRequest,java.lang.String)
-18:48:03.266 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
-18:48:03.266 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
-18:48:03.286 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-18:48:03.286 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-18:48:03.310 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+18:48:03.266 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.templates.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+18:48:03.266 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.templates.web.servlet.ModelAndView org.springframework.boot.autoconfigure.templates.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+18:48:03.286 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.templates.web.servlet.resource.ResourceHttpRequestHandler]
+18:48:03.286 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.templates.web.servlet.resource.ResourceHttpRequestHandler]
+18:48:03.310 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.templates.web.servlet.resource.ResourceHttpRequestHandler]
 18:48:03.335 [restartedMain] WARN  o.t.templatemode.TemplateMode - [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
 18:48:03.641 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
 18:48:03.677 [restartedMain] INFO  o.s.j.e.a.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
@@ -953,7 +953,7 @@ com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 'sceni
 18:48:18.603 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
 18:48:18.604 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
 18:48:18.660 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-18:48:18.660 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1079 ms
+18:48:18.660 [localhost-startStop-1] INFO  o.s.templates.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1079 ms
 18:48:18.761 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [*.do, *.jpg, *.css, *.js, *.otf, *.eot, *.svg, *.ttf, *.woff, *.woff2]
 18:48:18.762 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
 18:48:18.762 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Servlet dispatcherServlet was not registered (possibly already registered?)
@@ -963,14 +963,14 @@ com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 'sceni
 18:48:18.765 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
 18:48:18.803 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Started.
 18:48:19.673 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@62ac7800: startup date [Fri Jan 12 18:48:17 CST 2018]; root of context hierarchy
-18:48:19.708 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/admin/validate]}" onto public org.springframework.web.servlet.ModelAndView com.ricky.travel.backgroundController.LoginController.validate(javax.servlet.http.HttpServletRequest,java.lang.String,java.lang.String)
+18:48:19.708 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/admin/validate]}" onto public org.springframework.templates.web.servlet.ModelAndView com.ricky.travel.backgroundController.LoginController.validate(javax.servlet.http.HttpServletRequest,java.lang.String,java.lang.String)
 18:48:19.709 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/admin/login]}" onto public java.lang.String com.ricky.travel.backgroundController.LoginController.login()
 18:48:19.710 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/scene/doScene]}" onto public com.ricky.travel.datatable.DataTablesResponse<com.ricky.travel.domain.ScenicVO> com.ricky.travel.backgroundController.SceneController.pageSearch(com.ricky.travel.datatable.DataTablesRequest,java.lang.String)
-18:48:19.712 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
-18:48:19.712 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
-18:48:19.734 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-18:48:19.734 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-18:48:19.758 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+18:48:19.712 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.templates.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+18:48:19.712 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.templates.web.servlet.ModelAndView org.springframework.boot.autoconfigure.templates.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+18:48:19.734 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.templates.web.servlet.resource.ResourceHttpRequestHandler]
+18:48:19.734 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.templates.web.servlet.resource.ResourceHttpRequestHandler]
+18:48:19.758 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.templates.web.servlet.resource.ResourceHttpRequestHandler]
 18:48:19.782 [restartedMain] WARN  o.t.templatemode.TemplateMode - [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
 18:48:20.079 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
 18:48:20.114 [restartedMain] INFO  o.s.j.e.a.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
@@ -979,5 +979,5 @@ com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 'sceni
 18:48:20.153 [restartedMain] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat started on port(s): 80 (http)
 18:48:20.156 [restartedMain] INFO  com.ricky.travel.TravelApplication - Started TravelApplication in 2.97 seconds (JVM running for 3.985)
 18:48:29.101 [http-nio-80-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
-18:48:29.101 [http-nio-80-exec-1] INFO  o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
-18:48:29.113 [http-nio-80-exec-1] INFO  o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 12 ms
+18:48:29.101 [http-nio-80-exec-1] INFO  o.s.templates.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
+18:48:29.113 [http-nio-80-exec-1] INFO  o.s.templates.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 12 ms

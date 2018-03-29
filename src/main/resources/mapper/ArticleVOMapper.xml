@@ -309,4 +309,48 @@
       Article_Pass = #{articlePass,jdbcType=INTEGER}
     where Article_Id = #{articleId,jdbcType=INTEGER}
   </update>
+  <select id="selectArticleById" resultType="map" parameterType="com.ricky.travel.domain.ArticleVOExample" >
+    SELECT
+    b.Article_Id as articleId,
+    b.Article_Name as articleName,
+    a.User_Name as userName,
+    b.Article_Date as articleDate,
+    b.Article_Tag as articleTag
+    FROM rs_user a
+    RIGHT JOIN article b
+    ON(a.User_Id=b.User_Id)
+
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      <if test="orderByDirection != null" >
+        order by ${orderByClause} ${orderByDirection}
+      </if>
+      <if test="orderByDirection = null" >
+        order by ${orderByClause}
+      </if>
+    </if>
+    <if test="limit != null" >
+      <if test="offset != null" >
+        limit ${offset}, ${limit}
+      </if>
+      <if test="offset == null" >
+        limit ${limit}
+      </if>
+    </if>
+  </select>
+  <select id="getDataByArticleId" parameterType="int" resultType="map">
+    SELECT
+      a.User_Name as userName,
+      b.Article_Id as articleId,
+      b.Article_Name as articleName,
+      b.Article_Content as articleContent,
+      b.Article_Tag as articleTag,
+      b.Article_Date as articleDate
+      FROM rs_user a
+      RIGHT JOIN article b
+      ON(a.User_Id=b.User_Id)
+      WHERE b.Article_Id=#{articleId}
+  </select>
 </mapper>

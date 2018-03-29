@@ -50,13 +50,20 @@ public class SceneServiceImpl implements SceneService {
         example2.setOrderByDirection(request.getOrder().get(0).getDir());
         Map<String,Object> search=request.getSearchColumns();
         if(search!=null){
+            String key_1=null;
+            String key_2=null;
             if(!search.get("searchName").toString().equals("")){
-                String key="%"+search.get("searchName").toString()+"%";
-                example2.createCriteria().andScenicNameLike(key);
+                key_1="%"+search.get("searchName").toString()+"%";
             }
             if(!search.get("tagName").toString().equals("0")){
-                String key=search.get("tagName").toString();
-                example2.createCriteria().andScenicTagEqualTo(key);
+                key_2=search.get("tagName").toString();
+            }
+            if(null!=key_1&&null!=key_2){
+                example2.createCriteria().andScenicNameLike(key_1).andScenicTagEqualTo(key_2);
+            }else if(null!=key_1){
+                example2.createCriteria().andScenicNameLike(key_1);
+            }else if(null!=key_2){
+                example2.createCriteria().andScenicNameLike(key_2);
             }
         }
         response.setDraw(request.getDraw());
@@ -94,5 +101,16 @@ public class SceneServiceImpl implements SceneService {
     @Override
     public Map<String, Object> getScenicAndTraffic(Integer id) {
         return scenicVOMapper.selectByPrimaryKeyWithTraffic(id);
+    }
+
+    @Override
+    public List<ScenicVO> getHomeScene() {
+        ScenicVOExample example=new ScenicVOExample();
+        example.createCriteria().andScenicIdIsNotNull();
+        example.setOrderByClause("Scenic_Name");
+        example.setOffset(0);
+        example.setLimit(4);
+
+        return scenicVOMapper.selectByExampleWithBLOBs(example);
     }
 }

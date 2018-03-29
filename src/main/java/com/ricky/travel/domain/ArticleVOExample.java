@@ -9,6 +9,8 @@ import java.util.List;
 public class ArticleVOExample implements Serializable {
     protected String orderByClause;
 
+    private String orderByDirection;
+
     protected boolean distinct;
 
     protected List<Criteria> oredCriteria;
@@ -84,6 +86,14 @@ public class ArticleVOExample implements Serializable {
 
     public Integer getOffset() {
         return offset;
+    }
+
+    public String getOrderByDirection() {
+        return orderByDirection;
+    }
+
+    public void setOrderByDirection(String orderByDirection) {
+        this.orderByDirection = orderByDirection;
     }
 
     protected abstract static class GeneratedCriteria implements Serializable {
@@ -315,6 +325,11 @@ public class ArticleVOExample implements Serializable {
 
         public Criteria andArticleNameLike(String value) {
             addCriterion("Article_Name like", value, "articleName");
+            return (Criteria) this;
+        }
+
+        public Criteria andUserNameLike(String value) {
+            addCriterion("User_Name like", value, "userName");
             return (Criteria) this;
         }
 

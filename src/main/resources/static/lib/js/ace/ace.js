@@ -14734,7 +14734,7 @@ var EventEmitter = require("./lib/event_emitter").EventEmitter;
 var editorCss = ".ace_editor {\
 position: relative;\
 overflow: hidden;\
-font: 12px/normal 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace;\
+fonts: 12px/normal 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace;\
 direction: ltr;\
 }\
 .ace_scroller {\
@@ -14854,7 +14854,7 @@ border: none;\
 resize: none;\
 outline: none;\
 overflow: hidden;\
-font: inherit;\
+fonts: inherit;\
 padding: 0 1px;\
 margin: 0 -1px;\
 text-indent: -1em;\
@@ -14891,7 +14891,7 @@ text-align: right;\
 pointer-events: auto;\
 }\
 .ace_text-layer {\
-font: inherit !important;\
+fonts: inherit !important;\
 }\
 .ace_cjk {\
 display: inline-block;\
@@ -14994,8 +14994,8 @@ cursor: default;\
 white-space: pre;\
 word-wrap: break-word;\
 line-height: normal;\
-font-style: normal;\
-font-weight: normal;\
+fonts-style: normal;\
+fonts-weight: normal;\
 letter-spacing: normal;\
 pointer-events: none;\
 }\
@@ -15070,13 +15070,13 @@ opacity:1;\
 text-decoration: underline;\
 }\
 .ace_bold {\
-font-weight: bold;\
+fonts-weight: bold;\
 }\
 .ace_nobold .ace_bold {\
-font-weight: normal;\
+fonts-weight: normal;\
 }\
 .ace_italic {\
-font-style: italic;\
+fonts-style: italic;\
 }\
 .ace_error-marker {\
 background-color: rgba(255, 0, 0,0.2);\

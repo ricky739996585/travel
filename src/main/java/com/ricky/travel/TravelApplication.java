@@ -3,16 +3,21 @@ package com.ricky.travel;
 import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.alibaba.fastjson.support.config.FastJsonConfig;
 import com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter;
+import com.ricky.travel.config.RedisConfig;
+import com.ricky.travel.listener.SessionListener;
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.annotation.MapperScan;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.web.HttpMessageConverters;
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.boot.web.servlet.ServletListenerRegistrationBean;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -21,6 +26,8 @@ import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.web.servlet.DispatcherServlet;
+import redis.clients.jedis.JedisPool;
+import redis.clients.jedis.JedisPoolConfig;
 
 import javax.servlet.MultipartConfigElement;
 import javax.sql.DataSource;
@@ -32,6 +39,8 @@ public class TravelApplication {
 
 	@Autowired
 	private MultipartConfigElement multipartConfigElement;//注入 “多部件配置元素”
+
+	Logger logger = LoggerFactory.getLogger(RedisConfig.class);
 
 	public static void main(String[] args) {
 		SpringApplication.run(TravelApplication.class, args);
@@ -84,6 +93,13 @@ public class TravelApplication {
 		sqlSessionFactoryBean.setMapperLocations(resolver.getResources("classpath:/mapper/*.xml"));//
 
 		return sqlSessionFactoryBean.getObject();
+	}
+
+	//设置监听器
+	@Bean
+	public ServletListenerRegistrationBean<SessionListener> sessionListenerServletListenerRegistrationBean(){
+		ServletListenerRegistrationBean<SessionListener> registration = new ServletListenerRegistrationBean<SessionListener>(new SessionListener());
+		return registration;
 	}
 
 	//事务管理

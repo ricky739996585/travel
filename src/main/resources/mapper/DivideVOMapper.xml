@@ -106,13 +106,13 @@
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.ricky.travel.domain.DivideVO" useGeneratedKeys="true" keyProperty="id" >
+  <insert id="insert" parameterType="com.ricky.travel.domain.DivideVO" useGeneratedKeys="true" keyProperty="divideId" >
     insert into divide (Divide_Id, Admin_Id, Auth_Id, 
       Divide_Date)
     values (#{divideId,jdbcType=INTEGER}, #{adminId,jdbcType=INTEGER}, #{authId,jdbcType=INTEGER}, 
       #{divideDate,jdbcType=TIMESTAMP})
   </insert>
-  <insert id="insertSelective" parameterType="com.ricky.travel.domain.DivideVO" useGeneratedKeys="true" keyProperty="id" >
+  <insert id="insertSelective" parameterType="com.ricky.travel.domain.DivideVO" useGeneratedKeys="true" keyProperty="divideId" >
     insert into divide
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="divideId != null" >

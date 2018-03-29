@@ -4,6 +4,8 @@ import com.ricky.travel.domain.ApplyExpert;
 import com.ricky.travel.domain.ApplyExpertExample;
 import com.ricky.travel.domain.ApplyExpertWithBLOBs;
 import java.util.List;
+import java.util.Map;
+
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
@@ -36,4 +38,8 @@ public interface ApplyExpertMapper {
     int updateByPrimaryKeyWithBLOBs(ApplyExpertWithBLOBs record);
 
     int updateByPrimaryKey(ApplyExpert record);
+
+    List<Map<String,Object>> selectApplyById(ApplyExpertExample example);
+
+    List<Map<String,Object>> getDataByApplyId(Integer applyId);
 }

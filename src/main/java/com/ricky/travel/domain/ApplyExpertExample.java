@@ -8,6 +8,8 @@ import java.util.List;
 public class ApplyExpertExample implements Serializable {
     protected String orderByClause;
 
+    private String orderByDirection;
+
     protected boolean distinct;
 
     protected List<Criteria> oredCriteria;
@@ -69,6 +71,8 @@ public class ApplyExpertExample implements Serializable {
         distinct = false;
     }
 
+
+
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
@@ -83,6 +87,14 @@ public class ApplyExpertExample implements Serializable {
 
     public Integer getOffset() {
         return offset;
+    }
+
+    public String getOrderByDirection() {
+        return orderByDirection;
+    }
+
+    public void setOrderByDirection(String orderByDirection) {
+        this.orderByDirection = orderByDirection;
     }
 
     protected abstract static class GeneratedCriteria implements Serializable {
@@ -178,6 +190,11 @@ public class ApplyExpertExample implements Serializable {
 
         public Criteria andApplyIdBetween(Integer value1, Integer value2) {
             addCriterion("Apply_Id between", value1, value2, "applyId");
+            return (Criteria) this;
+        }
+
+        public Criteria andUserNameLike(String value) {
+            addCriterion("User_Name like", value, "userName");
             return (Criteria) this;
         }
 

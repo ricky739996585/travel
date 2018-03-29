@@ -7,6 +7,8 @@ import java.util.List;
 public class AdminUserExample implements Serializable {
     protected String orderByClause;
 
+    private String orderByDirection;
+
     protected boolean distinct;
 
     protected List<Criteria> oredCriteria;
@@ -26,6 +28,8 @@ public class AdminUserExample implements Serializable {
     public String getOrderByClause() {
         return orderByClause;
     }
+
+
 
     public void setDistinct(boolean distinct) {
         this.distinct = distinct;
@@ -82,6 +86,14 @@ public class AdminUserExample implements Serializable {
 
     public Integer getOffset() {
         return offset;
+    }
+
+    public String getOrderByDirection() {
+        return orderByDirection;
+    }
+
+    public void setOrderByDirection(String orderByDirection) {
+        this.orderByDirection = orderByDirection;
     }
 
     protected abstract static class GeneratedCriteria implements Serializable {

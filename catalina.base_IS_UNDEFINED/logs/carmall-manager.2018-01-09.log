@@ -7,7 +7,7 @@
 15:04:07.030 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
 15:04:07.031 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
 15:04:07.085 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-15:04:07.086 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1210 ms
+15:04:07.086 [localhost-startStop-1] INFO  o.s.templates.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1210 ms
 15:04:07.193 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [*.do]
 15:04:07.194 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
 15:04:07.194 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Servlet dispatcherServlet was not registered (possibly already registered?)
@@ -94,7 +94,7 @@ Caused by: java.lang.IllegalArgumentException: Result Maps collection already co
 15:22:26.451 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
 15:22:26.452 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
 15:22:26.512 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-15:22:26.512 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1153 ms
+15:22:26.512 [localhost-startStop-1] INFO  o.s.templates.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1153 ms
 15:22:26.622 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [*.do]
 15:22:26.623 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
 15:22:26.623 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Servlet dispatcherServlet was not registered (possibly already registered?)
@@ -104,11 +104,11 @@ Caused by: java.lang.IllegalArgumentException: Result Maps collection already co
 15:22:26.626 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
 15:22:26.661 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Started.
 15:22:27.544 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@48dc165: startup date [Fri Dec 22 15:22:25 CST 2017]; root of context hierarchy
-15:22:27.604 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
-15:22:27.605 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
-15:22:27.628 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-15:22:27.628 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-15:22:27.669 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+15:22:27.604 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.templates.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+15:22:27.605 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.templates.web.servlet.ModelAndView org.springframework.boot.autoconfigure.templates.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+15:22:27.628 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.templates.web.servlet.resource.ResourceHttpRequestHandler]
+15:22:27.628 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.templates.web.servlet.resource.ResourceHttpRequestHandler]
+15:22:27.669 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.templates.web.servlet.resource.ResourceHttpRequestHandler]
 15:22:28.010 [restartedMain] WARN  o.s.b.d.a.OptionalLiveReloadServer - Unable to start LiveReload server
 15:22:28.043 [restartedMain] INFO  o.s.j.e.a.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
 15:22:28.044 [restartedMain] INFO  o.s.j.e.a.AnnotationMBeanExporter - Bean with name 'dataSource' has been autodetected for JMX exposure
@@ -211,7 +211,7 @@ Verify the connector's configuration, identify and stop any process that's liste
 15:22:57.159 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
 15:22:57.160 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
 15:22:57.218 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-15:22:57.218 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1169 ms
+15:22:57.218 [localhost-startStop-1] INFO  o.s.templates.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1169 ms
 15:22:57.317 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [*.do]
 15:22:57.318 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
 15:22:57.318 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Servlet dispatcherServlet was not registered (possibly already registered?)
@@ -221,11 +221,11 @@ Verify the connector's configuration, identify and stop any process that's liste
 15:22:57.321 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
 15:22:57.358 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Started.
 15:22:58.182 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@6564c64: startup date [Fri Dec 22 15:22:56 CST 2017]; root of context hierarchy
-15:22:58.220 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
-15:22:58.221 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
-15:22:58.243 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-15:22:58.244 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-15:22:58.270 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+15:22:58.220 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.templates.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+15:22:58.221 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.templates.web.servlet.ModelAndView org.springframework.boot.autoconfigure.templates.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+15:22:58.243 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.templates.web.servlet.resource.ResourceHttpRequestHandler]
+15:22:58.244 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.templates.web.servlet.resource.ResourceHttpRequestHandler]
+15:22:58.270 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.templates.web.servlet.resource.ResourceHttpRequestHandler]
 15:22:58.604 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
 15:22:58.638 [restartedMain] INFO  o.s.j.e.a.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
 15:22:58.639 [restartedMain] INFO  o.s.j.e.a.AnnotationMBeanExporter - Bean with name 'dataSource' has been autodetected for JMX exposure
@@ -241,7 +241,7 @@ Verify the connector's configuration, identify and stop any process that's liste
 16:42:39.966 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
 16:42:39.967 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
 16:42:40.069 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-16:42:40.069 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1738 ms
+16:42:40.069 [localhost-startStop-1] INFO  o.s.templates.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1738 ms
 16:42:40.279 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [*.do]
 16:42:40.281 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
 16:42:40.281 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Servlet dispatcherServlet was not registered (possibly already registered?)
@@ -328,7 +328,7 @@ Caused by: java.lang.IllegalArgumentException: Result Maps collection already co
 16:46:36.287 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
 16:46:36.288 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
 16:46:36.342 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-16:46:36.342 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2448 ms
+16:46:36.342 [localhost-startStop-1] INFO  o.s.templates.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2448 ms
 16:46:36.436 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [*.do]
 16:46:36.437 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
 16:46:36.437 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Servlet dispatcherServlet was not registered (possibly already registered?)
@@ -415,7 +415,7 @@ Caused by: java.lang.IllegalArgumentException: Result Maps collection already co
 16:47:25.058 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
 16:47:25.058 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
 16:47:25.112 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-16:47:25.112 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1576 ms
+16:47:25.112 [localhost-startStop-1] INFO  o.s.templates.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1576 ms
 16:47:25.205 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [*.do]
 16:47:25.206 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
 16:47:25.206 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Servlet dispatcherServlet was not registered (possibly already registered?)
@@ -498,7 +498,7 @@ Caused by: java.lang.IllegalArgumentException: XML fragments parsed from previou
 16:49:11.892 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
 16:49:11.892 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
 16:49:11.948 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-16:49:11.948 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1050 ms
+16:49:11.948 [localhost-startStop-1] INFO  o.s.templates.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1050 ms
 16:49:12.055 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [*.do]
 16:49:12.056 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
 16:49:12.056 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Servlet dispatcherServlet was not registered (possibly already registered?)
@@ -592,7 +592,7 @@ Caused by: java.lang.ClassNotFoundException: Cannot find class: com.ricky.travel
 16:51:43.402 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
 16:51:43.402 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
 16:51:43.456 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-16:51:43.456 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1180 ms
+16:51:43.456 [localhost-startStop-1] INFO  o.s.templates.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1180 ms
 16:51:43.556 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [*.do]
 16:51:43.557 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
 16:51:43.558 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Servlet dispatcherServlet was not registered (possibly already registered?)
@@ -679,7 +679,7 @@ Caused by: java.lang.IllegalArgumentException: Result Maps collection already co
 16:54:28.221 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
 16:54:28.221 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
 16:54:28.274 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-16:54:28.274 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1520 ms
+16:54:28.274 [localhost-startStop-1] INFO  o.s.templates.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1520 ms
 16:54:28.367 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [*.do]
 16:54:28.368 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
 16:54:28.368 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Servlet dispatcherServlet was not registered (possibly already registered?)
@@ -766,7 +766,7 @@ Caused by: java.lang.IllegalArgumentException: Result Maps collection already co
 17:00:48.538 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
 17:00:48.538 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
 17:00:48.593 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-17:00:48.594 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1205 ms
+17:00:48.594 [localhost-startStop-1] INFO  o.s.templates.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1205 ms
 17:00:48.702 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [*.do]
 17:00:48.703 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
 17:00:48.704 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Servlet dispatcherServlet was not registered (possibly already registered?)
@@ -860,7 +860,7 @@ Caused by: java.lang.ClassNotFoundException: Cannot find class: com.ricky.travel
 17:08:39.584 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
 17:08:39.585 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
 17:08:39.638 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-17:08:39.638 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1150 ms
+17:08:39.638 [localhost-startStop-1] INFO  o.s.templates.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1150 ms
 17:08:39.740 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [*.do]
 17:08:39.740 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
 17:08:39.741 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Servlet dispatcherServlet was not registered (possibly already registered?)
@@ -947,7 +947,7 @@ Caused by: java.lang.IllegalArgumentException: Result Maps collection already co
 17:12:41.337 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
 17:12:41.338 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
 17:12:41.395 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-17:12:41.395 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1140 ms
+17:12:41.395 [localhost-startStop-1] INFO  o.s.templates.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1140 ms
 17:12:41.499 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [*.do]
 17:12:41.501 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
 17:12:41.501 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Servlet dispatcherServlet was not registered (possibly already registered?)
@@ -1034,7 +1034,7 @@ Caused by: java.lang.IllegalArgumentException: Result Maps collection already co
 17:13:29.163 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
 17:13:29.164 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
 17:13:29.221 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-17:13:29.221 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1138 ms
+17:13:29.221 [localhost-startStop-1] INFO  o.s.templates.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1138 ms
 17:13:29.317 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [*.do]
 17:13:29.318 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
 17:13:29.318 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Servlet dispatcherServlet was not registered (possibly already registered?)
@@ -1044,11 +1044,11 @@ Caused by: java.lang.IllegalArgumentException: Result Maps collection already co
 17:13:29.321 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
 17:13:29.349 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Started.
 17:13:30.299 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@40fdd1b0: startup date [Tue Jan 09 17:13:28 CST 2018]; root of context hierarchy
-17:13:30.368 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
-17:13:30.369 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
-17:13:30.409 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-17:13:30.409 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-17:13:30.449 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+17:13:30.368 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.templates.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+17:13:30.369 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.templates.web.servlet.ModelAndView org.springframework.boot.autoconfigure.templates.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+17:13:30.409 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.templates.web.servlet.resource.ResourceHttpRequestHandler]
+17:13:30.409 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.templates.web.servlet.resource.ResourceHttpRequestHandler]
+17:13:30.449 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.templates.web.servlet.resource.ResourceHttpRequestHandler]
 17:13:31.584 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
 17:13:31.620 [restartedMain] INFO  o.s.j.e.a.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
 17:13:31.621 [restartedMain] INFO  o.s.j.e.a.AnnotationMBeanExporter - Bean with name 'dataSource' has been autodetected for JMX exposure

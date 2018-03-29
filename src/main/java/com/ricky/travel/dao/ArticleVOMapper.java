@@ -1,6 +1,7 @@
 package com.ricky.travel.dao;
 
 import java.util.List;
+import java.util.Map;
 
 import com.ricky.travel.domain.ArticleVO;
 import com.ricky.travel.domain.ArticleVOExample;
@@ -36,4 +37,8 @@ public interface ArticleVOMapper {
     int updateByPrimaryKeyWithBLOBs(ArticleVO record);
 
     int updateByPrimaryKey(ArticleVO record);
+
+    List<Map<String,Object>> selectArticleById(ArticleVOExample articleVOExample);
+
+    List<Map<String,Object>> getDataByArticleId(Integer articleId);
 }

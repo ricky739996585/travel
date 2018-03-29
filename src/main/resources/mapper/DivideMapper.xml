@@ -201,4 +201,11 @@
       Divide_Date = #{divideDate,jdbcType=TIMESTAMP}
     where Divide_Id = #{divideId,jdbcType=INTEGER}
   </update>
+  <select id="getDivideByAccountId" parameterType="int" resultType="map">
+    select a.Auth_Id as authId,a.Auth_Name as authName,IFNULL(b.Divide_Id,"0") as isDivide
+      from auth a
+      LEFT JOIN divide b
+      on(a.Auth_Id=b.Auth_Id)
+      and b.Admin_Id=#{adminId}
+  </select>
 </mapper>

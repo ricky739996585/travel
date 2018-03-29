@@ -12,7 +12,7 @@ background: #fff;\
 color: #000;\
 }\
 .ace-github .ace_keyword {\
-font-weight: bold;\
+fonts-weight: bold;\
 }\
 .ace-github .ace_string {\
 color: #D14;\
@@ -31,26 +31,26 @@ color: #0086B3;\
 }\
 .ace-github .ace_comment {\
 color: #998;\
-font-style: italic;\
+fonts-style: italic;\
 }\
 .ace-github .ace_variable.ace_language  {\
 color: #0086B3;\
 }\
 .ace-github .ace_paren {\
-font-weight: bold;\
+fonts-weight: bold;\
 }\
 .ace-github .ace_boolean {\
-font-weight: bold;\
+fonts-weight: bold;\
 }\
 .ace-github .ace_string.ace_regexp {\
 color: #009926;\
-font-weight: normal;\
+fonts-weight: normal;\
 }\
 .ace-github .ace_variable.ace_instance {\
 color: teal;\
 }\
 .ace-github .ace_constant.ace_language {\
-font-weight: bold;\
+fonts-weight: bold;\
 }\
 .ace-github .ace_cursor {\
 color: black;\
@@ -68,7 +68,7 @@ background: rgb(181, 213, 255);\
 box-shadow: 0 0 3px 0px white;\
 }\
 .ace-github.ace_nobold .ace_line > span {\
-font-weight: normal !important;\
+fonts-weight: normal !important;\
 }\
 .ace-github .ace_marker-layer .ace_step {\
 background: rgb(252, 255, 0);\

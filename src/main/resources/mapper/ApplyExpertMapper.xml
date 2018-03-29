@@ -290,4 +290,53 @@
       Is_Pass = #{isPass,jdbcType=INTEGER}
     where Apply_Id = #{applyId,jdbcType=INTEGER}
   </update>
+  <select id="selectApplyById" resultType="map" parameterType="com.ricky.travel.domain.ApplyExpertExample" >
+    SELECT
+    a.Apply_Id as applyId,
+    b.User_Name as userName,
+    a.Apply_Date as applyDate
+    from apply_expert a
+    LEFT JOIN rs_user b
+    ON(a.User_Id=b.User_Id)
+
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      <if test="orderByDirection != null" >
+        order by ${orderByClause} ${orderByDirection}
+      </if>
+      <if test="orderByDirection = null" >
+        order by ${orderByClause}
+      </if>
+    </if>
+    <if test="limit != null" >
+      <if test="offset != null" >
+        limit ${offset}, ${limit}
+      </if>
+      <if test="offset == null" >
+        limit ${limit}
+      </if>
+    </if>
+  </select>
+  <select id="getDataByApplyId" resultType="map" parameterType="int">
+    SELECT
+      c.Data_Id as dataId,
+      b.Apply_Id as applyId,
+      a.User_Name as userName,
+      b.Apply_Reason as applyReason,
+      c.Data_Name as dataName,
+      c.Data_Organize as dataOrganize,
+      c.Data_StartDate as dataStartDate,
+      c.Data_EndDate as dataEndDate,
+      b.Apply_Date as applyDate,
+      c.Data_Url as dataUrl
+      FROM rs_user a
+      RIGHT JOIN apply_expert b
+      ON(a.User_Id=b.User_Id)
+      RIGHT JOIN apply_data c
+      ON(b.Apply_Id=c.Apply_Id)
+      WHERE b.Apply_Id=#{applyId}
+      ORDER BY b.Apply_Date
+  </select>
 </mapper>

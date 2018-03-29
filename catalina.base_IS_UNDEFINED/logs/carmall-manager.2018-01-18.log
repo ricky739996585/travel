@@ -262,7 +262,7 @@
 18:33:56.847 [restartedMain] WARN  o.t.templatemode.TemplateMode - [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
 18:33:57.302 [restartedMain] INFO  com.ricky.travel.TravelApplication - Started TravelApplication in 3.216 seconds (JVM running for 4.397)
 18:34:02.883 [http-nio-80-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
-18:34:02.946 [http-nio-80-exec-1] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved exception caused by Handler execution: org.springframework.web.bind.MissingServletRequestParameterException: Required String parameter 'scenicName' is not present
+18:34:02.946 [http-nio-80-exec-1] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved exception caused by Handler execution: org.springframework.templates.web.bind.MissingServletRequestParameterException: Required String parameter 'scenicName' is not present
 18:34:15.862 [http-nio-80-exec-5] DEBUG c.r.t.d.C.selectByExample - ==>  Preparing: select Country_ID, Country_Nname from country WHERE ( Country_ID is not null ) 
 18:34:15.876 [http-nio-80-exec-5] DEBUG c.r.t.d.C.selectByExample - ==> Parameters: 
 18:34:15.886 [http-nio-80-exec-5] DEBUG c.r.t.d.C.selectByExample - <==      Total: 11
@@ -272,7 +272,7 @@
 18:34:18.273 [http-nio-80-exec-9] DEBUG c.r.t.d.CityVOMapper.selectByExample - ==>  Preparing: select City_Id, Province_Id, City_Name from city WHERE ( Province_Id = ? ) 
 18:34:18.273 [http-nio-80-exec-9] DEBUG c.r.t.d.CityVOMapper.selectByExample - ==> Parameters: 2(Integer)
 18:34:18.278 [http-nio-80-exec-9] DEBUG c.r.t.d.CityVOMapper.selectByExample - <==      Total: 19
-18:34:20.637 [http-nio-80-exec-2] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved exception caused by Handler execution: org.springframework.web.bind.MissingServletRequestParameterException: Required String parameter 'scenicName' is not present
+18:34:20.637 [http-nio-80-exec-2] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved exception caused by Handler execution: org.springframework.templates.web.bind.MissingServletRequestParameterException: Required String parameter 'scenicName' is not present
 18:37:14.581 [restartedMain] INFO  com.ricky.travel.TravelApplication - Starting TravelApplication on PC-201702111430 with PID 1964 (E:\idea_workplace\travel\target\classes started by Administrator in E:\idea_workplace\travel)
 18:37:14.599 [restartedMain] INFO  com.ricky.travel.TravelApplication - No active profile set, falling back to default profiles: default
 18:37:16.167 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]

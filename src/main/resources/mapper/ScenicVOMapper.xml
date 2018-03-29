@@ -417,5 +417,6 @@
       LEFT JOIN country e
       ON (e.Country_Id=d.Country_Id)
       where a.Scenic_Id=#{scenicId}
+      limit 1
   </select>
 </mapper>
