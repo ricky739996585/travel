@@ -6,6 +6,7 @@ import com.ricky.travel.datatable.DataTablesResponse;
 import com.ricky.travel.domain.ApplyExpert;
 import com.ricky.travel.domain.ApplyExpertExample;
 import com.ricky.travel.domain.ApplyExpertWithBLOBs;
+import com.ricky.travel.domain.ExpertVO;
 import com.ricky.travel.service.ExpertService;
 import com.ricky.travel.utils.commons.FormatTool;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -76,6 +77,17 @@ public class ExpertServiceImpl implements ExpertService {
     public void notPassExpert(ApplyExpertWithBLOBs applyExpertWithBLOBs) {
         //状态码：0代表未审核，1代表审核通过，2代表审核不通过
         applyExpertWithBLOBs.setIsPass(2);
+        applyExpertMapper.updateByPrimaryKeySelective(applyExpertWithBLOBs);
+    }
+
+    @Override
+    public int insert(ApplyExpertWithBLOBs applyExpertWithBLOBs) {
+        applyExpertMapper.insertSelective(applyExpertWithBLOBs);
+        return applyExpertWithBLOBs.getApplyId();
+    }
+
+    @Override
+    public void update(ApplyExpertWithBLOBs applyExpertWithBLOBs) {
         applyExpertMapper.updateByPrimaryKeySelective(applyExpertWithBLOBs);
     }
 

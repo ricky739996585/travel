@@ -112,7 +112,9 @@ public class SceneController {
         List<ScenicPhoto> photos=new ArrayList<ScenicPhoto>();
         if(file.length>0){
             for (MultipartFile f:file){
-                String fileName=UUID.randomUUID().toString()+f.getOriginalFilename();
+                String picName=f.getOriginalFilename();
+                String suffix=picName.substring(picName.lastIndexOf(".")+1);
+                String fileName= UUID.randomUUID().toString()+"."+suffix;
                 String url=preUrl+fileName;
                 ScenicPhoto photo=new ScenicPhoto();
                 //进行cos对象上传操作

@@ -12,13 +12,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- CSS Libs -->
 <link th:href="@{/web/css/bootstrap.css}" rel="stylesheet" type="text/css" />
 <link th:href="@{/web/css/style.css}" rel="stylesheet" type="text/css" />
-
+<link th:href="@{/web/css/flexslider.css}" rel="stylesheet" type="text/css" />
 <!-- Javascript Libs -->
 <script type="text/javascript" th:src="@{/web/js/jquery-1.11.1.min.js}"></script>
-
-<!-- //js -->
-<!-- FlexSlider -->
-<link th:href="@{/web/css/flexslider.css}" rel="stylesheet" type="text/css" />
 <script type="text/javascript" th:src="@{/web/js/jquery.flexslider.js}"></script>
 <script type="text/javascript" th:src="@{/web/js/bootstrap.js}"></script>
 <script type="text/javascript">
@@ -39,13 +35,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <body>
 <!-- header -->
 	<div class="header">
-		<div class="search">
+		<div class="search" style="visibility: hidden">
 			<form>
-				<i class="glyphicon glyphicon-search" aria-hidden="true"></i><input type="text" value="Search Here" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search Here';}" required="">
+				<i class="glyphicon glyphicon-search" aria-hidden="true"></i><input type="text" placeholder="Search Here" id="search"/>
 			</form>
 		</div>
 		<div class="logo">
-			<a href="/home.do">Four Seasons</a>
+			<a href="/home/index.do">Four Seasons</a>
 		</div>
 		<div class="logo-right">
 			<ul>
@@ -73,8 +69,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
 					<nav class="cl-effect-1">
 						<ul class="nav navbar-nav">
-							<li class="active"><a href="index.html">首页</a></li>
-							<li><a href="about.html">景点</a></li>
+							<li class="active"><a href="/home/index.do">首页</a></li>
+							<li><a href="/sceneWeb/list.do">景点</a></li>
 							<li><a href="codes.html">文章</a></li>
 							<li><a href="services.html">猜你喜欢</a></li>
 							<li><a href="gallery.html">照片墙</a></li>
@@ -146,11 +142,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									</ul>
 									<p th:utext="${data[iterStat.index].scene.scenicDescription}"></p>
 									<div class="more m1">
-										<a href="single.html">More Info</a>
+										<a th:href="'/sceneWeb/detail.do?sceneId='+${data[iterStat.index].scene.scenicId}">More Info</a>
 									</div>
 								</div>
 								<div class="col-xs-4 banner-bottom-grid-right">
-									<img th:src="${data[iterStat.index].photo.scenicPhotoUrl}" alt=" " class="img-responsive" />
+									<img th:src="${data[iterStat.index].photo.scenicPhotoUrl}" alt=" " class="img-responsive" style="height: 150px;"/>
 								</div>
 								<div class="clearfix"> </div>
 							</div>
@@ -158,7 +154,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<th:block th:if="${iterStat.count<iterStat.size}">
 							<div class="col-md-6 banner-bottom-grid">
 								<div class="col-xs-4 banner-bottom-grid-right">
-									<img th:src="${data[iterStat.count].photo.scenicPhotoUrl}" alt=" " class="img-responsive" />
+									<img th:src="${data[iterStat.count].photo.scenicPhotoUrl}" alt=" " class="img-responsive" style="height: 150px;"/>
 								</div>
 								<div class="col-xs-8 banner-bottom-grid-left banner-bottom-grid-l">
 									<h4 th:text="${data[iterStat.count].scene.scenicName}"></h4>
@@ -168,12 +164,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									</ul>
 									<p th:utext="${data[iterStat.count].scene.scenicDescription}"></p>
 									<div class="more m1">
-										<a href="single.html">More Info</a>
+										<a th:href="'/sceneWeb/detail.do?sceneId='+${data[iterStat.count].scene.scenicId}">More Info</a>
 									</div>
 								</div>
 								<div class="clearfix"> </div>
 							</div>
 						</th:block>
+						<div class="clearfix"> </div>
 					</div>
 				</th:block>
 

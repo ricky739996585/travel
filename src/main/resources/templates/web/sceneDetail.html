@@ -12,9 +12,21 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- CSS Libs -->
 <link th:href="@{/web/css/bootstrap.css}" rel="stylesheet" type="text/css" />
 <link th:href="@{/web/css/style.css}" rel="stylesheet" type="text/css" />
+<link th:href="@{/web/css/flexslider.css}" rel="stylesheet" type="text/css" />
 <!-- Javascript Libs -->
 <script type="text/javascript" th:src="@{/web/js/jquery-1.11.1.min.js}"></script>
-<!-- //js -->
+<script type="text/javascript" th:src="@{/web/js/jquery.flexslider.js}"></script>
+<script type="text/javascript" th:src="@{/web/js/bootstrap.js}"></script>
+<script type="text/javascript">
+	$(window).load(function(){
+		$('.flexslider').flexslider({
+			animation: "slide",
+			start: function(slider){
+				$('body').removeClass('loading');
+			}
+		});
+	});
+</script>
 <link href='https://fonts.googleapis.com/css?family=Josefin+Sans:400,100,100italic,300,300italic,400italic,600,600italic,700,700italic' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
 </head>
@@ -24,11 +36,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<div class="header">
 		<div class="search">
 			<form>
-				<i class="glyphicon glyphicon-search" aria-hidden="true"></i><input type="text" value="Search Here" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search Here';}" required="">
+				<i class="glyphicon glyphicon-search" aria-hidden="true"></i><input type="text" placeholder="Search Here" id="search"/>
 			</form>
 		</div>
 		<div class="logo">
-			<a href="index.html">Four Seasons</a>
+			<a href="/home.do">Four Seasons</a>
 		</div>
 		<div class="logo-right">
 			<ul>
@@ -83,36 +95,35 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<h3>Scene Detail</h3>
 			<div class="gallery-grids">
 				<div class="gallery-grid">
-					<a href="images/11.jpg" rel="title" class="b-link-stripe b-animate-go  thickbox">
-						<img src="images/11.jpg" alt=" " class="img-responsive" />
+					<a rel="title" class="b-link-stripe b-animate-go  thickbox">
+						<img th:src="${data.photoSize>0}? ${data.photoList[0].scenicPhotoUrl}:'/img/nopic.png'" alt=" " class="img-responsive" style="width:100%;height: 320px;"/>
+					</a>
+				</div>
+				<div class="gallery-grid">
+					<a rel="title" class="b-link-stripe b-animate-go  thickbox">
+						<img th:src="${data.photoSize>1}? ${data.photoList[1].scenicPhotoUrl}:'/img/nopic.png'" alt=" " class="img-responsive" style="width:100%;height: 160px;"/>
+					</a>
+					<a rel="title" class="b-link-stripe b-animate-go  thickbox">
+						<img th:src="${data.photoSize>2}? ${data.photoList[2].scenicPhotoUrl}:'/img/nopic.png'" alt=" " class="img-responsive" style="width:100%;height: 160px;"/>
 					</a>
 					
 				</div>
 				<div class="gallery-grid">
-					<a href="images/8.jpg" rel="title" class="b-link-stripe b-animate-go  thickbox">
-						<img src="images/8.jpg" alt=" " class="img-responsive" />
+					<a rel="title" class="b-link-stripe b-animate-go  thickbox">
+						<img th:src="${data.photoSize>3}? ${data.photoList[3].scenicPhotoUrl}:'/img/nopic.png'" alt=" " class="img-responsive" style="width:100%;height: 160px;"/>
 					</a>
-					<a href="images/13.jpg" rel="title" class="b-link-stripe b-animate-go  thickbox">
-						<img src="images/13.jpg" alt=" " class="img-responsive" />
-					</a>
-					
-				</div>
-				<div class="gallery-grid">
-					<a href="images/15.jpg" rel="title" class="b-link-stripe b-animate-go  thickbox">
-						<img src="images/15.jpg" alt=" " class="img-responsive" />
-					</a>
-					<a href="images/16.jpg" rel="title" class="b-link-stripe b-animate-go  thickbox">
-						<img src="images/16.jpg" alt=" " class="img-responsive" />
+					<a rel="title" class="b-link-stripe b-animate-go  thickbox">
+						<img th:src="${data.photoSize>4}? ${data.photoList[4].scenicPhotoUrl}:'/img/nopic.png'" alt=" " class="img-responsive" style="width:100%;height: 160px;"/>
 					</a>
 				</div>
 				
 				<div class="clearfix"> </div>
-				<h4>广州塔</h4>
-				<p>详细地址：广州市海珠区阅江西路222号</p>
-				<p>咨询电话：82282268</p>
-				<p>入场费：150.00元/人</p>
-				<p>开放时间：正常时段是9时—23时，节假日可能延长.</p>
-				<p>详细介绍：广州塔（英语：Canton Tower）又称广州新电视塔，昵称小蛮腰。位于广州市海珠区（艺洲岛）赤岗塔附近，距离珠江南岸125米，与珠江新城、花城广场、海心沙岛隔江相望。广州塔塔身主体高454米，天线桅杆高146米，总高度600米 。是中国第一高塔，世界第二高塔，仅次于东京晴空塔 。</p>
+				<h4 th:utext="${data.scene.scenicName}"></h4>
+				<p th:utext="'详细地址：'+${data.scene.scenicAddress}"></p>
+				<p th:utext="'咨询电话：'+${data.scene.scenicPhone}"></p>
+				<p th:utext="'入场费：'+${data.scene.scenicCost}"></p>
+				<p th:utext="'开放时间：'+${data.scene.scenicTime}"></p>
+				<p th:utext="'详细介绍：'+${data.scene.scenicDescription}"></p>
 			</div>
 		</div>
 	</div>
@@ -122,43 +133,18 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="container">
 			<div class="col-md-6 history-left">	
 				<h3>City Cate</h3>
-				<div class="history-left-grid">
-					<h4>艇仔粥</h4>
-					<p class="aut"><i class="glyphicon glyphicon-asterisk" aria-hidden="true"></i> 简介：广州地道美食。</p>
-					<p class="aut"><i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i> 地址：陈添记(十五甫三巷店)。</p>
+				<div class="history-left-grid" th:each="cate,iterStat:${data.cateList}">
+					<h4 th:utext="${cate.cateName}">艇仔粥</h4>
+					<p class="aut" th:utext="'&lt;i class=&quot; glyphicon glyphicon-asterisk&quot; aria-hidden=&quot;true&quot; &gt;&lt;/i&gt;'+'简介：'+${cate.cateDescription}"></p>
+					<p class="aut" th:utext="'&lt;i class=&quot; glyphicon glyphicon-map-marker&quot; aria-hidden=&quot;true&quot; &gt;&lt;/i&gt;'+'地址：'+${cate.cateAddress}"></p>
 				</div>
-				<div class="history-left-grid">
-					<h4>艇仔粥</h4>
-					<p class="aut"><i class="glyphicon glyphicon-asterisk" aria-hidden="true"></i> 简介：广州地道美食。广州地道美食。广州地道美食。广州地道美食。广州地道美食。广州地道美食。广州地道美食。广州地道美食。</p>
-					<p class="aut"><i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i> 地址：陈添记(十五甫三巷店)。</p>
-				</div>
-				<div class="history-left-grid">
-					<h4>艇仔粥</h4>
-					<p class="aut"><i class="glyphicon glyphicon-asterisk" aria-hidden="true"></i> 简介：广州地道美食。</p>
-					<p class="aut"><i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i> 地址：陈添记(十五甫三巷店)。</p>
-				</div>
+
 			</div>
 			<div class="col-md-6 history-right">
 				<h3>How To Go</h3>
-				<div class="history-left-grid">
-					<h4>平均10.00元/人</h4>
-					<p class="aut"><i class="glyphicon glyphicon-tag" aria-hidden="true"></i> 
-						乘坐468、262到达广州塔西站、旅游观光1线到达广州塔东站。</p>
-				</div>
-				<div class="history-left-grid">
-					<h4>平均10.00元/人</h4>
-					<p class="aut"><i class="glyphicon glyphicon-tag" aria-hidden="true"></i> 
-						白云机场，乘坐地铁3号线直接到广州塔站B出口下</p>
-				</div>
-				<div class="history-left-grid">
-					<h4>平均10.00元/人</h4>
-					<p class="aut"><i class="glyphicon glyphicon-tag" aria-hidden="true"></i> 
-						广州天河客运站乘公交252到客村站下车，过对面马路，步行约10分钟就到</p>
-				</div>
-				<div class="history-left-grid">
-					<h4>平均10.00元/人</h4>
-					<p class="aut"><i class="glyphicon glyphicon-tag" aria-hidden="true"></i> 
-						坐公交车到珠江帝景苑总站：204、121、121A、旅游公交2线、262；珠江旅客输送系统(简称AP米)到广州塔站</p>
+				<div class="history-left-grid" th:each="traffic,iterStat:${data.trafficList}">
+					<h4 th:utext="${traffic.trafficCost}">平均10.00元/人</h4>
+					<p class="aut" th:utext="'&lt;i class=&quot; glyphicon glyphicon-tag&quot; aria-hidden=&quot;true&quot; &gt;&lt;/i&gt;'+${traffic.trafficContent}"></p>
 				</div>
 			</div>
 			<div class="clearfix"> </div>

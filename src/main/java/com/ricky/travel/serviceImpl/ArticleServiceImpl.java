@@ -1,8 +1,10 @@
 package com.ricky.travel.serviceImpl;
 
+import com.ricky.travel.dao.ArticleLikeRecordMapper;
 import com.ricky.travel.dao.ArticleVOMapper;
 import com.ricky.travel.datatable.DataTablesRequest;
 import com.ricky.travel.datatable.DataTablesResponse;
+import com.ricky.travel.domain.ArticleLikeRecordExample;
 import com.ricky.travel.domain.ArticleVO;
 import com.ricky.travel.domain.ArticleVOExample;
 import com.ricky.travel.service.ArticleService;
@@ -18,6 +20,8 @@ public class ArticleServiceImpl implements ArticleService {
 
     @Autowired
     public ArticleVOMapper articleVOMapper;
+    @Autowired
+    public ArticleLikeRecordMapper articleLikeRecordMapper;
 
     @Override
     public DataTablesResponse<Map<String, Object>> getAll(DataTablesRequest request) {
@@ -98,5 +102,32 @@ public class ArticleServiceImpl implements ArticleService {
     public void notPassArticle(ArticleVO articleVO) {
         articleVO.setArticlePass(2);
         articleVOMapper.updateByPrimaryKeySelective(articleVO);
+    }
+
+    @Override
+    public List<ArticleVO> getArticleBySearch(String search, int offset, int limit) {
+        ArticleVOExample example=new ArticleVOExample();
+        if(search!=null&&!("".equals(search))){
+            example.createCriteria().andArticleNameLike("%"+"search"+"%").andArticlePassEqualTo(1);
+        }
+        example.setOffset(offset);
+        example.setLimit(limit);
+        return articleVOMapper.selectByExampleWithBLOBs(example);
+    }
+
+    @Override
+    public int getCountBySearch(String search) {
+        ArticleVOExample example=new ArticleVOExample();
+        if(search!=null&&!("".equals(search))){
+            example.createCriteria().andArticleNameLike("%"+search+"%");
+        }
+        return articleVOMapper.countByExample(example);
+    }
+
+    @Override
+    public int getLikeRecordByArticleId(int articleId) {
+        ArticleLikeRecordExample example=new ArticleLikeRecordExample();
+        example.createCriteria().andArticleRecordActicleIdEqualTo(articleId);
+        return articleLikeRecordMapper.countByExample(example);
     }
 }

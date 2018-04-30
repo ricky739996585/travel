@@ -3,12 +3,14 @@ package com.ricky.travel.serviceImpl;
 import com.ricky.travel.dao.CateVOMapper;
 import com.ricky.travel.datatable.DataTablesRequest;
 import com.ricky.travel.datatable.DataTablesResponse;
+import com.ricky.travel.domain.CateExample;
 import com.ricky.travel.domain.CateVO;
 import com.ricky.travel.domain.CateVOExample;
 import com.ricky.travel.service.CateService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Map;
 
 @Service
@@ -75,5 +77,12 @@ public class CateServiceImpl implements CateService {
     public Map<String, Object> selectByPrimaryKeyWithCity(Integer cateId) {
 
         return cateVOMapper.selectByPrimaryKeyWithCity(cateId);
+    }
+
+    @Override
+    public List<CateVO> getCateByCityId(int cityId) {
+        CateVOExample example=new CateVOExample();
+        example.createCriteria().andCityIdEqualTo(cityId);
+        return cateVOMapper.selectByExampleWithBLOBs(example);
     }
 }

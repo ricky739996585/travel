@@ -132,7 +132,7 @@
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.ricky.travel.domain.DataVO" useGeneratedKeys="true" keyProperty="id" >
+  <insert id="insert" parameterType="com.ricky.travel.domain.DataVO" useGeneratedKeys="true" keyProperty="dataId" >
     insert into apply_data (Data_Id, Apply_Id, Data_Name, 
       Data_Organize, Data_StartDate, Data_EndDate, 
       Data_Url)
@@ -140,7 +140,7 @@
       #{dataOrganize,jdbcType=VARCHAR}, #{dataStartdate,jdbcType=DATE}, #{dataEnddate,jdbcType=DATE}, 
       #{dataUrl,jdbcType=LONGVARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.ricky.travel.domain.DataVO" useGeneratedKeys="true" keyProperty="id" >
+  <insert id="insertSelective" parameterType="com.ricky.travel.domain.DataVO" useGeneratedKeys="true" keyProperty="dataId" >
     insert into apply_data
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="dataId != null" >

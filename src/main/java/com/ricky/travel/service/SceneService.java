@@ -24,4 +24,8 @@ public interface SceneService {
     public Map<String,Object> getScenicAndTraffic(Integer id);
 
     public List<ScenicVO> getHomeScene();
+
+    public List<ScenicVO> getSceneBySearch(String search,int offset,int limit);
+
+    public int getCountBySearch(String search);
 }

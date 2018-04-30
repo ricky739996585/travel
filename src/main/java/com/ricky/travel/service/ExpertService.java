@@ -4,6 +4,7 @@ import com.ricky.travel.datatable.DataTablesRequest;
 import com.ricky.travel.datatable.DataTablesResponse;
 import com.ricky.travel.domain.ApplyExpert;
 import com.ricky.travel.domain.ApplyExpertWithBLOBs;
+import com.ricky.travel.domain.ExpertVO;
 
 import java.util.List;
 import java.util.Map;
@@ -16,4 +17,8 @@ public interface ExpertService {
     public void passExpert(ApplyExpertWithBLOBs applyExpertWithBLOBs);
 
     public void notPassExpert(ApplyExpertWithBLOBs applyExpertWithBLOBs);
+
+    public int insert(ApplyExpertWithBLOBs applyExpertWithBLOBs);
+
+    public void update(ApplyExpertWithBLOBs applyExpertWithBLOBs);
 }

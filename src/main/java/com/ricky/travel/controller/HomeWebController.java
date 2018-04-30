@@ -36,9 +36,14 @@ public class HomeWebController {
         int sceneId=0;
         int like=0;
         System.out.println(sceneList.size());
+        String content="";
         for (ScenicVO scenicVO:sceneList){
             JSONObject jsonObject=new JSONObject();
             sceneId=scenicVO.getScenicId();
+            content=scenicVO.getScenicDescription();
+            if(content.length()>90){
+                scenicVO.setScenicDescription(content.substring(0,90)+"....");
+            }
             like=sceneLikeService.getLikeCount(sceneId);
             ScenicPhoto scenicPhoto=scenePhotoService.getPhotoes(sceneId).get(0);
             jsonObject.put("scene",scenicVO);
@@ -46,6 +51,8 @@ public class HomeWebController {
             jsonObject.put("photo",scenicPhoto);
             System.out.println(jsonObject.toJSONString());
             data.add(jsonObject);
+
+            content="";
         }
         mav.addObject("data",data);
         mav.setViewName("/web/home");

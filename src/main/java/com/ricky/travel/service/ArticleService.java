@@ -15,4 +15,10 @@ public interface ArticleService {
     public void passArticle(ArticleVO articleVO);
 
     public void notPassArticle(ArticleVO articleVO);
+
+    public List<ArticleVO> getArticleBySearch(String search,int offset,int limit);
+
+    public int getCountBySearch(String search);
+
+    public int getLikeRecordByArticleId(int articleId);
 }

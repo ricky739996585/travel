@@ -132,7 +132,7 @@
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.ricky.travel.domain.ExpertVO" useGeneratedKeys="true" keyProperty="id" >
+  <insert id="insert" parameterType="com.ricky.travel.domain.ExpertVO" useGeneratedKeys="true" keyProperty="applyId" >
     insert into apply_expert (Apply_Id, User_Id, Data_Id, 
       Apply_Date, Is_Pass, Apply_Prove, 
       Apply_Reason)
@@ -140,7 +140,7 @@
       #{applyDate,jdbcType=TIMESTAMP}, #{isPass,jdbcType=INTEGER}, #{applyProve,jdbcType=LONGVARCHAR}, 
       #{applyReason,jdbcType=LONGVARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.ricky.travel.domain.ExpertVO" useGeneratedKeys="true" keyProperty="id" >
+  <insert id="insertSelective" parameterType="com.ricky.travel.domain.ExpertVO" useGeneratedKeys="true" keyProperty="applyId" >
     insert into apply_expert
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="applyId != null" >

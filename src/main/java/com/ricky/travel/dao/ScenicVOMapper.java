@@ -39,4 +39,6 @@ public interface ScenicVOMapper {
     int updateByPrimaryKey(ScenicVO record);
 
     Map<String,Object> selectByPrimaryKeyWithTraffic(Integer scenicId);
+
+    List<Map<String,Object>> selectList(int offset,int limit);
 }

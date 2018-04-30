@@ -839,6 +839,27 @@ h2.typoh2{
 .contact-grid input[type="submit"]:hover{
 	background:#999;
 }
+
+.contact-grid input[type="button"]{
+	outline:none;
+	border:none;
+	width:100%;
+	background:#66D5DE;
+	color:#fff;
+	font-size:14px;
+	padding:12px 0px;
+	transition:.5s all;
+	-webkit-transition:.5s all;
+	-moz-transition:.5s all;
+	-o-transition:.5s all;
+	-ms-transition:.5s all;
+}
+.contact-grid input[type="button"]:hover{
+	background:#999;
+}
+
+
+
 .newsletter{
 	padding:5.45em 2em 3em 0.5em;
     text-align: center;

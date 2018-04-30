@@ -419,4 +419,16 @@
       where a.Scenic_Id=#{scenicId}
       limit 1
   </select>
+  <select id="selectList" parameterType="int" resultType="map">
+    select
+      a.Scenic_Id as scenicId,
+      a.Scenic_Name as scenicName,
+      a.Scenic_Description as scenicDescription,
+      b.Scenic_Photo_Url as scenicPhotoUrl
+    from scenic a
+    left join scenic_photo b
+    on(a.Scenic_Id=b.Scenic_Id)
+    group by a.Scenic_Id
+    limit #{offset},#{limit}
+  </select>
 </mapper>

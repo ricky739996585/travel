@@ -1,67 +1,209 @@
-22:48:27.976 [restartedMain] INFO  com.ricky.travel.TravelApplication - Starting TravelApplication on PC-201801231402 with PID 10412 (E:\idea_workplace\travel\target\classes started by Administrator in E:\idea_workplace\travel)
-22:48:28.041 [restartedMain] INFO  com.ricky.travel.TravelApplication - No active profile set, falling back to default profiles: default
-22:48:41.467 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
-22:48:41.469 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.15
-22:48:41.874 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-22:48:42.479 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Started.
-22:48:46.074 [restartedMain] INFO  com.ricky.travel.config.RedisConfig - JedisPool注入成功！！
-22:48:46.075 [restartedMain] INFO  com.ricky.travel.config.RedisConfig - redis地址：127.0.0.1:6379
-22:48:47.281 [restartedMain] WARN  o.t.templatemode.TemplateMode - [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
-22:48:49.447 [restartedMain] INFO  com.ricky.travel.TravelApplication - Started TravelApplication in 23.16 seconds (JVM running for 36.351)
-22:50:27.477 [http-nio-80-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
-22:50:37.561 [http-nio-80-exec-5] DEBUG c.r.t.dao.AdminUserMapper.validate - ==>  Preparing: select count(*) from admin_user a where a.Admin_Account=? and a.Admin_Password=? 
-22:50:37.588 [http-nio-80-exec-5] DEBUG c.r.t.dao.AdminUserMapper.validate - ==> Parameters: ricky(String), 123456(String)
-22:50:37.701 [http-nio-80-exec-5] DEBUG c.r.t.dao.AdminUserMapper.validate - <==      Total: 1
-22:50:37.708 [http-nio-80-exec-5] DEBUG c.r.t.d.A.selectAuthByUser - ==>  Preparing: select b.Admin_Id as adminId, a.Admin_Account as adminAccount, c.Auth_Id as authId, c.Auth_Name as authName, c.Auth_Url as authUrl, c.Auth_Pic as authPic from admin_user a LEFT JOIN divide b on(a.Admin_Id=b.Admin_Id) LEFT JOIN auth c on(b.Auth_Id=c.Auth_Id) where a.Admin_Account=? GROUP BY b.Auth_Id 
-22:50:37.709 [http-nio-80-exec-5] DEBUG c.r.t.d.A.selectAuthByUser - ==> Parameters: ricky(String)
-22:50:37.902 [http-nio-80-exec-5] DEBUG c.r.t.d.A.selectAuthByUser - <==      Total: 6
-22:50:40.151 [http-nio-80-exec-10] DEBUG c.r.t.d.S.countByExample - ==>  Preparing: select count(*) from scenic 
-22:50:40.152 [http-nio-80-exec-10] DEBUG c.r.t.d.S.countByExample - ==> Parameters: 
-22:50:40.189 [http-nio-80-exec-10] DEBUG c.r.t.d.S.countByExample - <==      Total: 1
-22:50:40.194 [http-nio-80-exec-10] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - ==>  Preparing: select Scenic_Id, Create_Id, City_Id, Scenic_Name, Scenic_Phone, Scenic_Want, Scenic_Like, Scenic_Tag , Scenic_Description, Scenic_Cost, Scenic_Address, Scenic_Time from scenic order by Scenic_Id asc limit 0, 2 
-22:50:40.218 [http-nio-80-exec-10] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - ==> Parameters: 
-22:50:40.221 [http-nio-80-exec-10] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - <==      Total: 2
-22:51:55.219 [http-nio-80-exec-4] DEBUG c.r.t.d.S.countByExample - ==>  Preparing: select count(*) from scenic 
-22:51:55.220 [http-nio-80-exec-4] DEBUG c.r.t.d.S.countByExample - ==> Parameters: 
-22:51:55.221 [http-nio-80-exec-4] DEBUG c.r.t.d.S.countByExample - <==      Total: 1
-22:51:55.222 [http-nio-80-exec-4] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - ==>  Preparing: select Scenic_Id, Create_Id, City_Id, Scenic_Name, Scenic_Phone, Scenic_Want, Scenic_Like, Scenic_Tag , Scenic_Description, Scenic_Cost, Scenic_Address, Scenic_Time from scenic order by Scenic_Id asc limit 0, 2 
-22:51:55.222 [http-nio-80-exec-4] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - ==> Parameters: 
-22:51:55.225 [http-nio-80-exec-4] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - <==      Total: 2
-22:52:16.754 [http-nio-80-exec-10] DEBUG c.r.t.d.S.selectByPrimaryKeyWithTraffic - ==>  Preparing: select a.Scenic_Id as scenicId, a.City_Id as cityId, a.Create_Id as createId, IFNULL(a.Scenic_Address,"") as scenicAddress, IFNULL(a.Scenic_Cost,"") as scenicCost, IFNULL(a.Scenic_Description,"") as scenicDescription, a.Scenic_Name as scenicName, IFNULL(a.Scenic_Phone,"") as scenicPhone, IFNULL(a.Scenic_Tag,"") as scenicTag, a.Scenic_Time as scenicTime, b.Traffic_Id as trafficId, IFNULL(b.Traffic_Content,"") as trafficContent, IFNULL(b.Traffic_Cost,"") as trafficCost, c.City_Name as cityName, d.Province_Name as provinceName, d.Province_Id as provinceId, e.Country_Nname as countryName, e.Country_ID as countryId from scenic a LEFT JOIN traffic b ON (a.Scenic_Id=b.Scenic_Id) LEFT JOIN city c ON (a.City_Id=c.City_Id) LEFT JOIN province d ON (c.Province_Id=d.Province_Id) LEFT JOIN country e ON (e.Country_Id=d.Country_Id) where a.Scenic_Id=? 
-22:52:16.755 [http-nio-80-exec-10] DEBUG c.r.t.d.S.selectByPrimaryKeyWithTraffic - ==> Parameters: 4(Integer)
-22:52:17.099 [http-nio-80-exec-10] DEBUG c.r.t.d.S.selectByPrimaryKeyWithTraffic - <==      Total: 5
-22:52:17.253 [http-nio-80-exec-10] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.exceptions.TooManyResultsException: Expected one result (or null) to be returned by selectOne(), but found: 5] with root cause
-org.apache.ibatis.exceptions.TooManyResultsException: Expected one result (or null) to be returned by selectOne(), but found: 5
-	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectOne(DefaultSqlSession.java:81)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433)
-	at com.sun.proxy.$Proxy72.selectOne(Unknown Source)
-	at org.mybatis.spring.SqlSessionTemplate.selectOne(SqlSessionTemplate.java:166)
-	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:82)
-	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:59)
-	at com.sun.proxy.$Proxy96.selectByPrimaryKeyWithTraffic(Unknown Source)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:333)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:190)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157)
-	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:136)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
-	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:213)
-	at com.sun.proxy.$Proxy97.selectByPrimaryKeyWithTraffic(Unknown Source)
-	at com.ricky.travel.serviceImpl.SceneServiceImpl.getScenicAndTraffic(SceneServiceImpl.java:103)
-	at com.ricky.travel.backgroundController.SceneController.one(SceneController.java:62)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:133)
+08:57:55.021 [restartedMain] INFO  com.ricky.travel.TravelApplication - Starting TravelApplication on PC-201801231402 with PID 3988 (E:\idea_workplace\travel\target\classes started by Administrator in E:\idea_workplace\travel)
+08:57:55.106 [restartedMain] INFO  com.ricky.travel.TravelApplication - No active profile set, falling back to default profiles: default
+08:58:06.543 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+08:58:06.544 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.15
+08:58:06.742 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+08:58:07.314 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Started.
+08:58:10.096 [restartedMain] INFO  com.ricky.travel.config.RedisConfig - JedisPool注入成功！！
+08:58:10.097 [restartedMain] INFO  com.ricky.travel.config.RedisConfig - redis地址：127.0.0.1:6379
+08:58:11.184 [restartedMain] WARN  o.t.templatemode.TemplateMode - [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+08:58:13.206 [restartedMain] INFO  com.ricky.travel.TravelApplication - Started TravelApplication in 19.283 seconds (JVM running for 26.478)
+08:59:16.915 [http-nio-80-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+08:59:27.201 [http-nio-80-exec-8] ERROR org.thymeleaf.TemplateEngine - [THYMELEAF][http-nio-80-exec-8] Exception processing template "/web/article": An error happened during template parsing (template: "class path resource [templates//web/article.html]")
+org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates//web/article.html]")
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:241)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100)
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:667)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1087)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1061)
+	at org.thymeleaf.spring4.view.ThymeleafView.renderFragment(ThymeleafView.java:335)
+	at org.thymeleaf.spring4.view.ThymeleafView.render(ThymeleafView.java:189)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1286)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1041)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:984)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:635)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:105)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:478)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:80)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:799)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:861)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1455)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.attoparser.ParseException: Exception evaluating SpringEL expression: "data.articleList" (template: "/web/article" - line 85, col 15)
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:393)
+	at org.attoparser.MarkupParser.parse(MarkupParser.java:257)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230)
+	... 52 common frames omitted
+Caused by: org.thymeleaf.exceptions.TemplateProcessingException: Exception evaluating SpringEL expression: "data.articleList" (template: "/web/article" - line 85, col 15)
+	at org.thymeleaf.spring4.expression.SPELVariableExpressionEvaluator.evaluate(SPELVariableExpressionEvaluator.java:290)
+	at org.thymeleaf.standard.expression.VariableExpression.executeVariableExpression(VariableExpression.java:165)
+	at org.thymeleaf.standard.expression.SimpleExpression.executeSimple(SimpleExpression.java:66)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:109)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:138)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:125)
+	at org.thymeleaf.standard.processor.StandardEachTagProcessor.doProcess(StandardEachTagProcessor.java:73)
+	at org.thymeleaf.processor.element.AbstractAttributeTagProcessor.doProcess(AbstractAttributeTagProcessor.java:74)
+	at org.thymeleaf.processor.element.AbstractElementTagProcessor.process(AbstractElementTagProcessor.java:95)
+	at org.thymeleaf.util.ProcessorConfigurationUtils$ElementTagProcessorWrapper.process(ProcessorConfigurationUtils.java:633)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1314)
+	at org.thymeleaf.engine.TemplateHandlerAdapterMarkupHandler.handleOpenElementEnd(TemplateHandlerAdapterMarkupHandler.java:304)
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler$InlineMarkupAdapterPreProcessorHandler.handleOpenElementEnd(InlinedOutputExpressionMarkupHandler.java:278)
+	at org.thymeleaf.standard.inline.OutputExpressionInlinePreProcessorHandler.handleOpenElementEnd(OutputExpressionInlinePreProcessorHandler.java:186)
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler.handleOpenElementEnd(InlinedOutputExpressionMarkupHandler.java:124)
+	at org.attoparser.HtmlElement.handleOpenElementEnd(HtmlElement.java:109)
+	at org.attoparser.HtmlMarkupHandler.handleOpenElementEnd(HtmlMarkupHandler.java:297)
+	at org.attoparser.MarkupEventProcessorHandler.handleOpenElementEnd(MarkupEventProcessorHandler.java:402)
+	at org.attoparser.ParsingElementMarkupUtil.parseOpenElement(ParsingElementMarkupUtil.java:159)
+	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:710)
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301)
+	... 54 common frames omitted
+Caused by: org.springframework.expression.spel.SpelEvaluationException: EL1007E: Property or field 'articleList' cannot be found on null
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.readProperty(PropertyOrFieldReference.java:220)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.getValueInternal(PropertyOrFieldReference.java:94)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.access$000(PropertyOrFieldReference.java:46)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference$AccessorLValue.getValue(PropertyOrFieldReference.java:375)
+	at org.springframework.expression.spel.ast.CompoundExpression.getValueInternal(CompoundExpression.java:88)
+	at org.springframework.expression.spel.ast.SpelNodeImpl.getValue(SpelNodeImpl.java:120)
+	at org.springframework.expression.spel.standard.SpelExpression.getValue(SpelExpression.java:267)
+	at org.thymeleaf.spring4.expression.SPELVariableExpressionEvaluator.evaluate(SPELVariableExpressionEvaluator.java:263)
+	... 74 common frames omitted
+08:59:27.219 [http-nio-80-exec-8] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates//web/article.html]")] with root cause
+org.springframework.expression.spel.SpelEvaluationException: EL1007E: Property or field 'articleList' cannot be found on null
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.readProperty(PropertyOrFieldReference.java:220)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.getValueInternal(PropertyOrFieldReference.java:94)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.access$000(PropertyOrFieldReference.java:46)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference$AccessorLValue.getValue(PropertyOrFieldReference.java:375)
+	at org.springframework.expression.spel.ast.CompoundExpression.getValueInternal(CompoundExpression.java:88)
+	at org.springframework.expression.spel.ast.SpelNodeImpl.getValue(SpelNodeImpl.java:120)
+	at org.springframework.expression.spel.standard.SpelExpression.getValue(SpelExpression.java:267)
+	at org.thymeleaf.spring4.expression.SPELVariableExpressionEvaluator.evaluate(SPELVariableExpressionEvaluator.java:263)
+	at org.thymeleaf.standard.expression.VariableExpression.executeVariableExpression(VariableExpression.java:165)
+	at org.thymeleaf.standard.expression.SimpleExpression.executeSimple(SimpleExpression.java:66)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:109)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:138)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:125)
+	at org.thymeleaf.standard.processor.StandardEachTagProcessor.doProcess(StandardEachTagProcessor.java:73)
+	at org.thymeleaf.processor.element.AbstractAttributeTagProcessor.doProcess(AbstractAttributeTagProcessor.java:74)
+	at org.thymeleaf.processor.element.AbstractElementTagProcessor.process(AbstractElementTagProcessor.java:95)
+	at org.thymeleaf.util.ProcessorConfigurationUtils$ElementTagProcessorWrapper.process(ProcessorConfigurationUtils.java:633)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1314)
+	at org.thymeleaf.engine.TemplateHandlerAdapterMarkupHandler.handleOpenElementEnd(TemplateHandlerAdapterMarkupHandler.java:304)
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler$InlineMarkupAdapterPreProcessorHandler.handleOpenElementEnd(InlinedOutputExpressionMarkupHandler.java:278)
+	at org.thymeleaf.standard.inline.OutputExpressionInlinePreProcessorHandler.handleOpenElementEnd(OutputExpressionInlinePreProcessorHandler.java:186)
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler.handleOpenElementEnd(InlinedOutputExpressionMarkupHandler.java:124)
+	at org.attoparser.HtmlElement.handleOpenElementEnd(HtmlElement.java:109)
+	at org.attoparser.HtmlMarkupHandler.handleOpenElementEnd(HtmlMarkupHandler.java:297)
+	at org.attoparser.MarkupEventProcessorHandler.handleOpenElementEnd(MarkupEventProcessorHandler.java:402)
+	at org.attoparser.ParsingElementMarkupUtil.parseOpenElement(ParsingElementMarkupUtil.java:159)
+	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:710)
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301)
+	at org.attoparser.MarkupParser.parse(MarkupParser.java:257)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100)
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:667)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1087)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1061)
+	at org.thymeleaf.spring4.view.ThymeleafView.renderFragment(ThymeleafView.java:335)
+	at org.thymeleaf.spring4.view.ThymeleafView.render(ThymeleafView.java:189)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1286)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1041)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:984)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:635)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:105)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:478)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:80)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:799)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:861)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1455)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+09:05:18.618 [restartedMain] INFO  com.ricky.travel.TravelApplication - Starting TravelApplication on PC-201801231402 with PID 2880 (E:\idea_workplace\travel\target\classes started by Administrator in E:\idea_workplace\travel)
+09:05:18.622 [restartedMain] INFO  com.ricky.travel.TravelApplication - No active profile set, falling back to default profiles: default
+09:05:21.633 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+09:05:21.635 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.15
+09:05:21.736 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+09:05:22.010 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Started.
+09:05:23.322 [restartedMain] INFO  com.ricky.travel.config.RedisConfig - JedisPool注入成功！！
+09:05:23.322 [restartedMain] INFO  com.ricky.travel.config.RedisConfig - redis地址：127.0.0.1:6379
+09:05:23.873 [restartedMain] WARN  o.t.templatemode.TemplateMode - [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+09:05:24.729 [restartedMain] INFO  com.ricky.travel.TravelApplication - Started TravelApplication in 6.655 seconds (JVM running for 8.495)
+09:05:41.875 [http-nio-80-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+09:05:41.989 [http-nio-80-exec-1] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.IllegalStateException: Optional int parameter 'offset' is present but cannot be translated into a null value due to being declared as a primitive type. Consider declaring it as object wrapper for the corresponding primitive type.] with root cause
+java.lang.IllegalStateException: Optional int parameter 'offset' is present but cannot be translated into a null value due to being declared as a primitive type. Consider declaring it as object wrapper for the corresponding primitive type.
+	at org.springframework.web.method.annotation.AbstractNamedValueMethodArgumentResolver.handleNullValue(AbstractNamedValueMethodArgumentResolver.java:238)
+	at org.springframework.web.method.annotation.AbstractNamedValueMethodArgumentResolver.resolveArgument(AbstractNamedValueMethodArgumentResolver.java:111)
+	at org.springframework.web.method.support.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:121)
+	at org.springframework.web.method.support.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:158)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:128)
 	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:97)
 	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:827)
 	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:738)
@@ -110,98 +252,3 @@ org.apache.ibatis.exceptions.TooManyResultsException: Expected one result (or nu
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.lang.Thread.run(Thread.java:745)
-22:58:36.227 [restartedMain] INFO  com.ricky.travel.TravelApplication - Starting TravelApplication on PC-201801231402 with PID 10064 (E:\idea_workplace\travel\target\classes started by Administrator in E:\idea_workplace\travel)
-22:58:36.267 [restartedMain] INFO  com.ricky.travel.TravelApplication - No active profile set, falling back to default profiles: default
-22:58:44.531 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
-22:58:44.533 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.15
-22:58:44.836 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-22:58:45.292 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Started.
-22:58:49.099 [restartedMain] INFO  com.ricky.travel.config.RedisConfig - JedisPool注入成功！！
-22:58:49.100 [restartedMain] INFO  com.ricky.travel.config.RedisConfig - redis地址：127.0.0.1:6379
-22:58:49.710 [restartedMain] WARN  o.t.templatemode.TemplateMode - [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
-22:58:50.886 [restartedMain] INFO  com.ricky.travel.TravelApplication - Started TravelApplication in 15.484 seconds (JVM running for 21.57)
-22:59:12.868 [http-nio-80-exec-3] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
-22:59:12.966 [http-nio-80-exec-3] DEBUG c.r.t.d.S.selectByPrimaryKeyWithTraffic - ==>  Preparing: select a.Scenic_Id as scenicId, a.City_Id as cityId, a.Create_Id as createId, IFNULL(a.Scenic_Address,"") as scenicAddress, IFNULL(a.Scenic_Cost,"") as scenicCost, IFNULL(a.Scenic_Description,"") as scenicDescription, a.Scenic_Name as scenicName, IFNULL(a.Scenic_Phone,"") as scenicPhone, IFNULL(a.Scenic_Tag,"") as scenicTag, a.Scenic_Time as scenicTime, b.Traffic_Id as trafficId, IFNULL(b.Traffic_Content,"") as trafficContent, IFNULL(b.Traffic_Cost,"") as trafficCost, c.City_Name as cityName, d.Province_Name as provinceName, d.Province_Id as provinceId, e.Country_Nname as countryName, e.Country_ID as countryId from scenic a LEFT JOIN traffic b ON (a.Scenic_Id=b.Scenic_Id) LEFT JOIN city c ON (a.City_Id=c.City_Id) LEFT JOIN province d ON (c.Province_Id=d.Province_Id) LEFT JOIN country e ON (e.Country_Id=d.Country_Id) where a.Scenic_Id=? limit 1 
-22:59:12.988 [http-nio-80-exec-3] DEBUG c.r.t.d.S.selectByPrimaryKeyWithTraffic - ==> Parameters: 4(Integer)
-22:59:13.100 [http-nio-80-exec-3] DEBUG c.r.t.d.S.selectByPrimaryKeyWithTraffic - <==      Total: 1
-22:59:13.134 [http-nio-80-exec-3] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - ==>  Preparing: select Scenic_Photo_Id, Scenic_Id, Scenic_Photo_Date , Scenic_Photo_Url from scenic_photo WHERE ( Scenic_Id = ? ) 
-22:59:13.135 [http-nio-80-exec-3] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - ==> Parameters: 4(Integer)
-22:59:13.227 [http-nio-80-exec-3] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - <==      Total: 3
-22:59:27.213 [http-nio-80-exec-1] DEBUG c.r.t.dao.AdminUserMapper.validate - ==>  Preparing: select count(*) from admin_user a where a.Admin_Account=? and a.Admin_Password=? 
-22:59:27.214 [http-nio-80-exec-1] DEBUG c.r.t.dao.AdminUserMapper.validate - ==> Parameters: ricky(String), 123456(String)
-22:59:27.250 [http-nio-80-exec-1] DEBUG c.r.t.dao.AdminUserMapper.validate - <==      Total: 1
-22:59:27.252 [http-nio-80-exec-1] DEBUG c.r.t.d.A.selectAuthByUser - ==>  Preparing: select b.Admin_Id as adminId, a.Admin_Account as adminAccount, c.Auth_Id as authId, c.Auth_Name as authName, c.Auth_Url as authUrl, c.Auth_Pic as authPic from admin_user a LEFT JOIN divide b on(a.Admin_Id=b.Admin_Id) LEFT JOIN auth c on(b.Auth_Id=c.Auth_Id) where a.Admin_Account=? GROUP BY b.Auth_Id 
-22:59:27.252 [http-nio-80-exec-1] DEBUG c.r.t.d.A.selectAuthByUser - ==> Parameters: ricky(String)
-22:59:27.264 [http-nio-80-exec-1] DEBUG c.r.t.d.A.selectAuthByUser - <==      Total: 6
-22:59:27.756 [http-nio-80-exec-6] DEBUG c.r.t.d.S.countByExample - ==>  Preparing: select count(*) from scenic 
-22:59:27.757 [http-nio-80-exec-6] DEBUG c.r.t.d.S.countByExample - ==> Parameters: 
-22:59:27.758 [http-nio-80-exec-6] DEBUG c.r.t.d.S.countByExample - <==      Total: 1
-22:59:27.763 [http-nio-80-exec-6] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - ==>  Preparing: select Scenic_Id, Create_Id, City_Id, Scenic_Name, Scenic_Phone, Scenic_Want, Scenic_Like, Scenic_Tag , Scenic_Description, Scenic_Cost, Scenic_Address, Scenic_Time from scenic order by Scenic_Id asc limit 0, 2 
-22:59:27.763 [http-nio-80-exec-6] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - ==> Parameters: 
-22:59:27.768 [http-nio-80-exec-6] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - <==      Total: 2
-22:59:36.359 [http-nio-80-exec-4] DEBUG c.r.t.d.S.selectByPrimaryKeyWithTraffic - ==>  Preparing: select a.Scenic_Id as scenicId, a.City_Id as cityId, a.Create_Id as createId, IFNULL(a.Scenic_Address,"") as scenicAddress, IFNULL(a.Scenic_Cost,"") as scenicCost, IFNULL(a.Scenic_Description,"") as scenicDescription, a.Scenic_Name as scenicName, IFNULL(a.Scenic_Phone,"") as scenicPhone, IFNULL(a.Scenic_Tag,"") as scenicTag, a.Scenic_Time as scenicTime, b.Traffic_Id as trafficId, IFNULL(b.Traffic_Content,"") as trafficContent, IFNULL(b.Traffic_Cost,"") as trafficCost, c.City_Name as cityName, d.Province_Name as provinceName, d.Province_Id as provinceId, e.Country_Nname as countryName, e.Country_ID as countryId from scenic a LEFT JOIN traffic b ON (a.Scenic_Id=b.Scenic_Id) LEFT JOIN city c ON (a.City_Id=c.City_Id) LEFT JOIN province d ON (c.Province_Id=d.Province_Id) LEFT JOIN country e ON (e.Country_Id=d.Country_Id) where a.Scenic_Id=? limit 1 
-22:59:36.361 [http-nio-80-exec-4] DEBUG c.r.t.d.S.selectByPrimaryKeyWithTraffic - ==> Parameters: 4(Integer)
-22:59:36.363 [http-nio-80-exec-4] DEBUG c.r.t.d.S.selectByPrimaryKeyWithTraffic - <==      Total: 1
-22:59:36.364 [http-nio-80-exec-4] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - ==>  Preparing: select Scenic_Photo_Id, Scenic_Id, Scenic_Photo_Date , Scenic_Photo_Url from scenic_photo WHERE ( Scenic_Id = ? ) 
-22:59:36.365 [http-nio-80-exec-4] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - ==> Parameters: 4(Integer)
-22:59:36.366 [http-nio-80-exec-4] DEBUG c.r.t.d.S.selectByExampleWithBLOBs - <==      Total: 3
-23:00:02.857 [http-nio-80-exec-10] DEBUG c.r.t.d.CateVOMapper.countByExample - ==>  Preparing: select count(*) from cate 
-23:00:02.858 [http-nio-80-exec-10] DEBUG c.r.t.d.CateVOMapper.countByExample - ==> Parameters: 
-23:00:02.974 [http-nio-80-exec-10] DEBUG c.r.t.d.CateVOMapper.countByExample - <==      Total: 1
-23:00:02.975 [http-nio-80-exec-10] DEBUG c.r.t.d.C.selectByExampleWithBLOBs - ==>  Preparing: select Cate_Id, City_Id, Cate_Name , Cate_Description, Cate_Address from cate order by Cate_Id asc 
-23:00:02.976 [http-nio-80-exec-10] DEBUG c.r.t.d.C.selectByExampleWithBLOBs - ==> Parameters: 
-23:00:02.977 [http-nio-80-exec-10] DEBUG c.r.t.d.C.selectByExampleWithBLOBs - <==      Total: 2
-23:00:42.052 [http-nio-80-exec-2] DEBUG c.r.t.d.C.selectByPrimaryKeyWithCity - ==>  Preparing: select a.Cate_Id as cateId, a.Cate_Name as cateName, IFNULL(a.Cate_Description,"") as cateDescription, IFNULL(a.Cate_Address,"") as cateAddress, a.City_Id as cityId, b.City_Name as cityName, c.Province_Id as provinceId, c.Province_Name as provinceName, d.Country_ID as countryId, d.Country_Nname as countryName from cate a LEFT JOIN city b ON (a.City_Id=b.City_Id) LEFT JOIN province c ON (b.Province_Id=c.Province_Id) LEFT JOIN country d ON (c.Country_ID=d.Country_ID) WHERE a.Cate_Id=? 
-23:00:42.053 [http-nio-80-exec-2] DEBUG c.r.t.d.C.selectByPrimaryKeyWithCity - ==> Parameters: 1(Integer)
-23:00:42.056 [http-nio-80-exec-2] DEBUG c.r.t.d.C.selectByPrimaryKeyWithCity - <==      Total: 1
-23:01:33.174 [http-nio-80-exec-9] DEBUG c.r.t.d.RsUserMapper.countByExample - ==>  Preparing: select count(*) from rs_user WHERE ( User_Status = ? ) 
-23:01:33.174 [http-nio-80-exec-9] DEBUG c.r.t.d.RsUserMapper.countByExample - ==> Parameters: 0(Integer)
-23:01:33.206 [http-nio-80-exec-9] DEBUG c.r.t.d.RsUserMapper.countByExample - <==      Total: 1
-23:01:33.208 [http-nio-80-exec-9] DEBUG c.r.t.d.RsUserMapper.selectByExample - ==>  Preparing: select User_Id, User_Phone, User_Email, User_Status, User_Level, User_Date, Last_Login, User_Name from rs_user WHERE ( User_Status = ? ) order by User_Id asc limit 0, 2 
-23:01:33.208 [http-nio-80-exec-9] DEBUG c.r.t.d.RsUserMapper.selectByExample - ==> Parameters: 0(Integer)
-23:01:33.210 [http-nio-80-exec-9] DEBUG c.r.t.d.RsUserMapper.selectByExample - <==      Total: 2
-23:01:57.780 [http-nio-80-exec-2] DEBUG c.r.t.d.R.selectByPrimaryKey - ==>  Preparing: select User_Id, User_Phone, User_Email, User_Status, User_Level, User_Date, Last_Login, User_Name from rs_user where User_Id = ? 
-23:01:57.781 [http-nio-80-exec-2] DEBUG c.r.t.d.R.selectByPrimaryKey - ==> Parameters: 1(Integer)
-23:01:57.783 [http-nio-80-exec-2] DEBUG c.r.t.d.R.selectByPrimaryKey - <==      Total: 1
-23:02:11.280 [http-nio-80-exec-2] DEBUG c.r.t.d.RsUserMapper.countByExample - ==>  Preparing: select count(*) from rs_user WHERE ( User_Status = ? ) 
-23:02:11.281 [http-nio-80-exec-2] DEBUG c.r.t.d.RsUserMapper.countByExample - ==> Parameters: 0(Integer)
-23:02:11.282 [http-nio-80-exec-2] DEBUG c.r.t.d.RsUserMapper.countByExample - <==      Total: 1
-23:02:11.284 [http-nio-80-exec-2] DEBUG c.r.t.d.RsUserMapper.selectByExample - ==>  Preparing: select User_Id, User_Phone, User_Email, User_Status, User_Level, User_Date, Last_Login, User_Name from rs_user WHERE ( User_Status = ? ) order by User_Id asc limit 0, 2 
-23:02:11.286 [http-nio-80-exec-2] DEBUG c.r.t.d.RsUserMapper.selectByExample - ==> Parameters: 0(Integer)
-23:02:11.292 [http-nio-80-exec-2] DEBUG c.r.t.d.RsUserMapper.selectByExample - <==      Total: 2
-23:02:51.189 [http-nio-80-exec-2] DEBUG c.r.t.d.A.countByExample - ==>  Preparing: select count(*) from admin_user 
-23:02:51.189 [http-nio-80-exec-2] DEBUG c.r.t.d.A.countByExample - ==> Parameters: 
-23:02:51.190 [http-nio-80-exec-2] DEBUG c.r.t.d.A.countByExample - <==      Total: 1
-23:02:51.191 [http-nio-80-exec-2] DEBUG c.r.t.d.A.selectByExample - ==>  Preparing: select Admin_Id, Admin_Account, Admin_Password, Admin_Level from admin_user order by Admin_Id asc limit 0, 2 
-23:02:51.191 [http-nio-80-exec-2] DEBUG c.r.t.d.A.selectByExample - ==> Parameters: 
-23:02:51.193 [http-nio-80-exec-2] DEBUG c.r.t.d.A.selectByExample - <==      Total: 2
-23:03:01.968 [http-nio-80-exec-5] DEBUG c.r.t.d.A.selectByPrimaryKey - ==>  Preparing: select Admin_Id, Admin_Account, Admin_Password, Admin_Level from admin_user where Admin_Id = ? 
-23:03:01.969 [http-nio-80-exec-5] DEBUG c.r.t.d.A.selectByPrimaryKey - ==> Parameters: 1(Integer)
-23:03:01.970 [http-nio-80-exec-5] DEBUG c.r.t.d.A.selectByPrimaryKey - <==      Total: 1
-23:03:01.972 [http-nio-80-exec-5] DEBUG c.r.t.d.D.getDivideByAccountId - ==>  Preparing: select a.Auth_Id as authId,a.Auth_Name as authName,IFNULL(b.Divide_Id,"0") as isDivide from auth a LEFT JOIN divide b on(a.Auth_Id=b.Auth_Id) and b.Admin_Id=? 
-23:03:01.972 [http-nio-80-exec-5] DEBUG c.r.t.d.D.getDivideByAccountId - ==> Parameters: 1(Integer)
-23:03:02.013 [http-nio-80-exec-5] DEBUG c.r.t.d.D.getDivideByAccountId - <==      Total: 6
-23:03:10.023 [http-nio-80-exec-1] DEBUG c.r.t.d.A.countByExample - ==>  Preparing: select count(*) from admin_user 
-23:03:10.024 [http-nio-80-exec-1] DEBUG c.r.t.d.A.countByExample - ==> Parameters: 
-23:03:10.025 [http-nio-80-exec-1] DEBUG c.r.t.d.A.countByExample - <==      Total: 1
-23:03:10.026 [http-nio-80-exec-1] DEBUG c.r.t.d.A.selectByExample - ==>  Preparing: select Admin_Id, Admin_Account, Admin_Password, Admin_Level from admin_user order by Admin_Id asc limit 0, 2 
-23:03:10.027 [http-nio-80-exec-1] DEBUG c.r.t.d.A.selectByExample - ==> Parameters: 
-23:03:10.028 [http-nio-80-exec-1] DEBUG c.r.t.d.A.selectByExample - <==      Total: 2
-23:03:12.607 [http-nio-80-exec-3] DEBUG c.r.t.d.A.selectByPrimaryKey - ==>  Preparing: select Admin_Id, Admin_Account, Admin_Password, Admin_Level from admin_user where Admin_Id = ? 
-23:03:12.607 [http-nio-80-exec-3] DEBUG c.r.t.d.A.selectByPrimaryKey - ==> Parameters: 2(Integer)
-23:03:12.608 [http-nio-80-exec-3] DEBUG c.r.t.d.A.selectByPrimaryKey - <==      Total: 1
-23:03:12.609 [http-nio-80-exec-3] DEBUG c.r.t.d.D.getDivideByAccountId - ==>  Preparing: select a.Auth_Id as authId,a.Auth_Name as authName,IFNULL(b.Divide_Id,"0") as isDivide from auth a LEFT JOIN divide b on(a.Auth_Id=b.Auth_Id) and b.Admin_Id=? 
-23:03:12.609 [http-nio-80-exec-3] DEBUG c.r.t.d.D.getDivideByAccountId - ==> Parameters: 2(Integer)
-23:03:12.611 [http-nio-80-exec-3] DEBUG c.r.t.d.D.getDivideByAccountId - <==      Total: 6
-23:03:20.393 [http-nio-80-exec-3] DEBUG c.r.t.d.A.selectApplyById - ==>  Preparing: SELECT a.Apply_Id as applyId, b.User_Name as userName, a.Apply_Date as applyDate from apply_expert a LEFT JOIN rs_user b ON(a.User_Id=b.User_Id) WHERE ( Apply_Id is not null and Is_Pass = ? ) order by Apply_Id asc limit 0, 2 
-23:03:20.394 [http-nio-80-exec-3] DEBUG c.r.t.d.A.selectApplyById - ==> Parameters: 0(Integer)
-23:03:20.450 [http-nio-80-exec-3] DEBUG c.r.t.d.A.selectApplyById - <==      Total: 1
-23:03:48.387 [http-nio-80-exec-5] DEBUG c.r.t.d.A.getDataByApplyId - ==>  Preparing: SELECT c.Data_Id as dataId, b.Apply_Id as applyId, a.User_Name as userName, b.Apply_Reason as applyReason, c.Data_Name as dataName, c.Data_Organize as dataOrganize, c.Data_StartDate as dataStartDate, c.Data_EndDate as dataEndDate, b.Apply_Date as applyDate, c.Data_Url as dataUrl FROM rs_user a RIGHT JOIN apply_expert b ON(a.User_Id=b.User_Id) RIGHT JOIN apply_data c ON(b.Apply_Id=c.Apply_Id) WHERE b.Apply_Id=? ORDER BY b.Apply_Date 
-23:03:48.388 [http-nio-80-exec-5] DEBUG c.r.t.d.A.getDataByApplyId - ==> Parameters: 1(Integer)
-23:03:48.444 [http-nio-80-exec-5] DEBUG c.r.t.d.A.getDataByApplyId - <==      Total: 1
-23:04:11.092 [http-nio-80-exec-4] DEBUG c.r.t.d.A.selectArticleById - ==>  Preparing: SELECT b.Article_Id as articleId, b.Article_Name as articleName, a.User_Name as userName, b.Article_Date as articleDate, b.Article_Tag as articleTag FROM rs_user a RIGHT JOIN article b ON(a.User_Id=b.User_Id) WHERE ( Article_Pass = ? ) order by Article_Id asc limit 0, 2 
-23:04:11.093 [http-nio-80-exec-4] DEBUG c.r.t.d.A.selectArticleById - ==> Parameters: 0(Integer)
-23:04:11.146 [http-nio-80-exec-4] DEBUG c.r.t.d.A.selectArticleById - <==      Total: 2
-23:04:35.000 [http-nio-80-exec-10] DEBUG c.r.t.d.A.getDataByArticleId - ==>  Preparing: SELECT a.User_Name as userName, b.Article_Id as articleId, b.Article_Name as articleName, b.Article_Content as articleContent, b.Article_Tag as articleTag, b.Article_Date as articleDate FROM rs_user a RIGHT JOIN article b ON(a.User_Id=b.User_Id) WHERE b.Article_Id=? 
-23:04:35.001 [http-nio-80-exec-10] DEBUG c.r.t.d.A.getDataByArticleId - ==> Parameters: 1(Integer)
-23:04:35.003 [http-nio-80-exec-10] DEBUG c.r.t.d.A.getDataByArticleId - <==      Total: 1
