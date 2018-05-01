@@ -9,6 +9,7 @@ import com.ricky.travel.service.RsUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Map;
 
 @Service
@@ -64,5 +65,24 @@ public class RsUserServiceImpl implements RsUserService {
     public RsUser getRsUser(Integer rsUserId) {
 
         return rsUserMapper.selectByPrimaryKey(rsUserId);
+    }
+
+    @Override
+    public RsUser getRsUserByEmail(String email) {
+        RsUserExample example=new RsUserExample();
+        example.createCriteria().andUserEmailEqualTo(email);
+        List<RsUser> userList = rsUserMapper.selectByExample(example);
+
+        return userList.size()>0 ? userList.get(0):null;
+    }
+
+    @Override
+    public void insertRsUser(RsUser user) {
+        rsUserMapper.insertSelective(user);
+    }
+
+    @Override
+    public void updateRsUser(RsUser user) {
+        rsUserMapper.updateByPrimaryKeySelective(user);
     }
 }

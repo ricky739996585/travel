@@ -12,8 +12,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- CSS Libs -->
 <link th:href="@{/web/css/bootstrap.css}" rel="stylesheet" type="text/css" />
 <link th:href="@{/web/css/style.css}" rel="stylesheet" type="text/css" />
+<link th:href="@{/web/css/wangEditor.css}" rel="stylesheet" type="text/css" />
 <!-- Javascript Libs -->
-<script type="text/javascript" th:src="@{/web/js/jquery-1.11.1.min.js}"></script>
+<script type="text/javascript" th:src="@{/web/js/jquery-3.3.1.min.js}"></script>
+<script type="text/javascript" th:src="@{/web/js/wangEditor.js}">
+</script><script type="text/javascript" th:src="@{/web/js/article.js}"></script>
 <!-- //js -->
 <link href='https://fonts.googleapis.com/css?family=Josefin+Sans:400,100,100italic,300,300italic,400italic,600,600italic,700,700italic' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
@@ -24,17 +27,18 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<div class="header">
 		<div class="search">
 			<form>
-				<i class="glyphicon glyphicon-search" aria-hidden="true"></i><input type="text" value="Search Here" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search Here';}" required="">
+				<i class="glyphicon glyphicon-search" aria-hidden="true" id="doSearch"></i><input type="text" placeholder="Search Here" value="Search Here" id="search" th:value="${search}!=null ? ${search}:''">
 			</form>
 		</div>
 		<div class="logo">
-			<a href="/home.do">Four Seasons</a>
+			<a href="/home/index.do">Four Seasons</a>
 		</div>
 		<div class="logo-right">
+			<input type="hidden" id="userId" th:value="${session.user}!=null ? ${session.user.userId}:''">
 			<ul>
-				<li><a href="#login">登 录</a></li>|
-				<li><a href="#login">申请专家</a></li>|
-				<li><a href="#phone">联系我们</a></li>
+				<li><a href="/home/index.do" th:text="${session.user}!=null ? ${session.user.userName}:'登 录'"></a></li>
+				<li><a href="tel:88888888">联系我们</a></li>
+				<li><a href="javascript:cancel();" th:text="${session.user}!=null ? '注 销':''"></a></li>
 			</ul>
 		</div>
 		<div class="clearfix"> </div>
@@ -56,12 +60,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
 					<nav class="cl-effect-1">
 						<ul class="nav navbar-nav">
-							<li class="active"><a href="/home.do">首页</a></li>
-							<li><a href="about.html">景点</a></li>
-							<li><a href="codes.html">文章</a></li>
-							<li><a href="services.html">猜你喜欢</a></li>
-							<li><a href="gallery.html">照片墙</a></li>
-							<li><a href="gallery.html">联系我们</a></li>
+							<li ><a href="/home/index.do">首页</a></li>
+							<li><a href="/sceneWeb/scene.do">景点</a></li>
+							<li class="active"><a href="/articleWeb/article.do">文章</a></li>
+							<li><a href="#">猜你喜欢</a></li>
+							<li><a href="/sceneWeb/photo.do">照片墙</a></li>
+							<li ><a href="/expertWeb/expert.do">申请专家</a></li>
 						</ul>
 					</nav>
 				</div><!-- /.navbar-collapse -->	
@@ -82,172 +86,47 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</ol>
 			<div class="services-grid">
 				<h3>Hot Article</h3>
-				<th:block th:each="article,iterStat:${data.articleList}">
-					<th:block th:if="${(iterStat.index) % 3 eq 0}">
-						<div class="services-grd">
-							<th:block th:if="${iterStat.index<iterStat.size}">
-								<div class="col-md-4 services-grd1">
-									<div class="col-xs-3 services-grd1-left">
-										<span class="glyphicon glyphicon-send" aria-hidden="true"></span>
-									</div>
-									<div class="col-xs-9 banner-bottom-grid-left banner-bottom-grid-l">
-										<h4 th:text="${data.articleList[iterStat.index].title}"></h4>
-										<ul>
-											<li><a th:utext="'&lt;span class=&quot; glyphicon glyphicon-heart&quot;  aria-hidden=&quot; true&quot; &gt;&lt;/span&gt;'+${data.articleList[iterStat.index].like}+'人 喜欢'"></a></li>
-											<li><a th:utext="'&lt;span class=&quot; glyphicon glyphicon-pencil&quot;  aria-hidden=&quot; true&quot; &gt;&lt;/span&gt;笔者：'+${data.articleList[iterStat.index].author}"></a></li>
-											<li><a th:utext="'&lt;span class=&quot; glyphicon glyphicon-tag&quot;  aria-hidden=&quot; true&quot; &gt;&lt;/span&gt;'+${data.articleList[iterStat.index].tag}"></a></li>
-											<li><a th:utext="'&lt;span class=&quot; glyphicon glyphicon-tag&quot;  aria-hidden=&quot; true&quot; &gt;&lt;/span&gt;'+${data.articleList[iterStat.index].time}"></a></li>
-										</ul>
+					<div class="services-grd">
+						<div class="col-md-4 services-grd1" th:each="article,iterStat:${data.hotArticleList}">
+							<div class="col-xs-3 services-grd1-left">
+								<span class="glyphicon glyphicon-send" aria-hidden="true"></span>
+							</div>
+							<div class="col-xs-9 banner-bottom-grid-left banner-bottom-grid-l">
+								<h4 th:text="${article.title}"></h4>
+								<ul>
+									<li><a th:utext="'&lt;span class=&quot; glyphicon glyphicon-heart&quot;  aria-hidden=&quot; true&quot; &gt;&lt;/span&gt;'+${article.like}+'人 喜欢'"></a></li>
+									<li><a th:utext="'&lt;span class=&quot; glyphicon glyphicon-pencil&quot;  aria-hidden=&quot; true&quot; &gt;&lt;/span&gt;笔者：'+${article.author}"></a></li>
+									<li><a th:utext="'&lt;span class=&quot; glyphicon glyphicon-tag&quot;  aria-hidden=&quot; true&quot; &gt;&lt;/span&gt;'+${article.tag}"></a></li>
+									<li><a th:utext="'&lt;span class=&quot; glyphicon glyphicon-tag&quot;  aria-hidden=&quot; true&quot; &gt;&lt;/span&gt;'+${article.time}"></a></li>
+								</ul>
 
-									</div>
-									<div class="clearfix"> </div>
-								</div>
-							</th:block>
-							<th:block th:if="${iterStat.index+1<iterStat.size}">
-								<div class="col-md-4 services-grd1">
-									<div class="col-xs-3 services-grd1-left">
-										<span class="glyphicon glyphicon-send" aria-hidden="true"></span>
-									</div>
-									<div class="col-xs-9 banner-bottom-grid-left banner-bottom-grid-l">
-										<h4 th:text="${data.articleList[iterStat.index+1].title}"></h4>
-										<ul>
-											<li><a th:utext="'&lt;span class=&quot; glyphicon glyphicon-heart&quot;  aria-hidden=&quot; true&quot; &gt;&lt;/span&gt;'+${data.articleList[iterStat.index+1].like}+'人 喜欢'"></a></li>
-											<li><a th:utext="'&lt;span class=&quot; glyphicon glyphicon-pencil&quot;  aria-hidden=&quot; true&quot; &gt;&lt;/span&gt;笔者：'+${data.articleList[iterStat.index+1].author}"></a></li>
-											<li><a th:utext="'&lt;span class=&quot; glyphicon glyphicon-tag&quot;  aria-hidden=&quot; true&quot; &gt;&lt;/span&gt;'+${data.articleList[iterStat.index+1].tag}"></a></li>
-											<li><a th:utext="'&lt;span class=&quot; glyphicon glyphicon-tag&quot;  aria-hidden=&quot; true&quot; &gt;&lt;/span&gt;'+${data.articleList[iterStat.index+1].time}"></a></li>
-										</ul>
-
-									</div>
-									<div class="clearfix"> </div>
-								</div>
-							</th:block>
-							<th:block th:if="${iterStat.index+2<iterStat.size}">
-								<div class="col-md-4 services-grd1">
-									<div class="col-xs-3 services-grd1-left">
-										<span class="glyphicon glyphicon-send" aria-hidden="true"></span>
-									</div>
-									<div class="col-xs-9 banner-bottom-grid-left banner-bottom-grid-l">
-										<h4 th:text="${data.articleList[iterStat.index+2].title}"></h4>
-										<ul>
-											<li><a th:utext="'&lt;span class=&quot; glyphicon glyphicon-heart&quot;  aria-hidden=&quot; true&quot; &gt;&lt;/span&gt;'+${data.articleList[iterStat.index+2].like}+'人 喜欢'"></a></li>
-											<li><a th:utext="'&lt;span class=&quot; glyphicon glyphicon-pencil&quot;  aria-hidden=&quot; true&quot; &gt;&lt;/span&gt;笔者：'+${data.articleList[iterStat.index+2].author}"></a></li>
-											<li><a th:utext="'&lt;span class=&quot; glyphicon glyphicon-tag&quot;  aria-hidden=&quot; true&quot; &gt;&lt;/span&gt;'+${data.articleList[iterStat.index+2].tag}"></a></li>
-											<li><a th:utext="'&lt;span class=&quot; glyphicon glyphicon-tag&quot;  aria-hidden=&quot; true&quot; &gt;&lt;/span&gt;'+${data.articleList[iterStat.index+2].time}"></a></li>
-										</ul>
-
-									</div>
-									<div class="clearfix"> </div>
-								</div>
-							</th:block>
+							</div>
+							<div class="clearfix"> </div>
 						</div>
-					</th:block>
-				</th:block>
-				<!--<div class="services-grd">-->
-					<!--<div class="col-md-4 services-grd1">-->
-						<!--<div class="col-xs-3 services-grd1-left">-->
-							<!--<span class="glyphicon glyphicon-send" aria-hidden="true"></span>-->
-						<!--</div>-->
-						<!--<div class="col-xs-9 banner-bottom-grid-left banner-bottom-grid-l">-->
-							<!--<h4>广州塔</h4>-->
-							<!--<ul>-->
-								<!--<li><a><span class="glyphicon glyphicon-heart" aria-hidden="true"></span>242人 喜欢 </a></li>-->
-								<!--<li><a><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>笔者：ricky</a></li>-->
-								<!--<li><a><span class="glyphicon glyphicon-tag" aria-hidden="true"></span>海滩</a></li>-->
-								<!--<li><a><span class="glyphicon glyphicon-time" aria-hidden="true"></span>2018-03-25 16:04:04</a></li>-->
-							<!--</ul>-->
-							<!---->
-						<!--</div>-->
-						<!--<div class="clearfix"> </div>-->
-					<!--</div>-->
-					<!--<div class="col-md-4 services-grd1">-->
-						<!--<div class="col-xs-3 services-grd1-left">-->
-							<!--<span class="glyphicon glyphicon-send" aria-hidden="true"></span>-->
-						<!--</div>-->
-						<!--<div class="col-xs-9 banner-bottom-grid-left banner-bottom-grid-l">-->
-							<!--<h4>广州塔</h4>-->
-							<!--<ul>-->
-								<!--<li><a><span class="glyphicon glyphicon-heart" aria-hidden="true"></span>242人 喜欢 </a></li>-->
-								<!--<li><a><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>笔者：ricky</a></li>-->
-								<!--<li><a><span class="glyphicon glyphicon-tag" aria-hidden="true"></span>海滩</a></li>-->
-								<!--<li><a><span class="glyphicon glyphicon-time" aria-hidden="true"></span>2018-03-25 16:04:04</a></li>-->
-							<!--</ul>-->
-							<!---->
-						<!--</div>-->
-						<!--<div class="clearfix"> </div>-->
-					<!--</div>-->
-					<!--<div class="col-md-4 services-grd1">-->
-						<!--<div class="col-xs-3 services-grd1-left">-->
-							<!--<span class="glyphicon glyphicon-send" aria-hidden="true"></span>-->
-						<!--</div>-->
-						<!--<div class="col-xs-9 banner-bottom-grid-left banner-bottom-grid-l">-->
-							<!--<h4>广州塔</h4>-->
-							<!--<ul>-->
-								<!--<li><a><span class="glyphicon glyphicon-heart" aria-hidden="true"></span>242人 喜欢 </a></li>-->
-								<!--<li><a><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>笔者：ricky</a></li>-->
-								<!--<li><a><span class="glyphicon glyphicon-tag" aria-hidden="true"></span>海滩</a></li>-->
-								<!--<li><a><span class="glyphicon glyphicon-time" aria-hidden="true"></span>2018-03-25 16:04:04</a></li>-->
-							<!--</ul>-->
-							<!---->
-						<!--</div>-->
-						<!--<div class="clearfix"> </div>-->
-					<!--</div>-->
-					<!---->
+					</div>
+				<div class="clearfix"> </div>
+			</div>
+			<div class="services-overview">
+				<h3>New Article</h3>
+				<div class="services-grd">
+					<div class="col-md-4 services-grd1" th:each="article,iterStat:${data.newArticleList}">
+						<div class="col-xs-3 services-grd1-left">
+							<span class="glyphicon glyphicon-send" aria-hidden="true"></span>
+						</div>
+						<div class="col-xs-9 banner-bottom-grid-left banner-bottom-grid-l">
+							<h4 th:text="${article.title}"></h4>
+							<ul>
+								<li><a th:utext="'&lt;span class=&quot; glyphicon glyphicon-heart&quot;  aria-hidden=&quot; true&quot; &gt;&lt;/span&gt;'+${article.like}+'人 喜欢'"></a></li>
+								<li><a th:utext="'&lt;span class=&quot; glyphicon glyphicon-pencil&quot;  aria-hidden=&quot; true&quot; &gt;&lt;/span&gt;笔者：'+${article.author}"></a></li>
+								<li><a th:utext="'&lt;span class=&quot; glyphicon glyphicon-tag&quot;  aria-hidden=&quot; true&quot; &gt;&lt;/span&gt;'+${article.tag}"></a></li>
+								<li><a th:utext="'&lt;span class=&quot; glyphicon glyphicon-tag&quot;  aria-hidden=&quot; true&quot; &gt;&lt;/span&gt;'+${article.time}"></a></li>
+							</ul>
 
-					<!--<div class="clearfix"> </div>-->
-				<!--</div>-->
-				<!--<div class="services-grd">-->
-					<!--<div class="col-md-4 services-grd1">-->
-						<!--<div class="col-xs-3 services-grd1-left">-->
-							<!--<span class="glyphicon glyphicon-send" aria-hidden="true"></span>-->
-						<!--</div>-->
-						<!--<div class="col-xs-9 banner-bottom-grid-left banner-bottom-grid-l">-->
-							<!--<h4>广州塔</h4>-->
-							<!--<ul>-->
-								<!--<li><a><span class="glyphicon glyphicon-heart" aria-hidden="true"></span>242人 喜欢 </a></li>-->
-								<!--<li><a><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>笔者：ricky</a></li>-->
-								<!--<li><a><span class="glyphicon glyphicon-tag" aria-hidden="true"></span>海滩</a></li>-->
-								<!--<li><a><span class="glyphicon glyphicon-time" aria-hidden="true"></span>2018-03-25 16:04:04</a></li>-->
-							<!--</ul>-->
-							<!---->
-						<!--</div>-->
-						<!--<div class="clearfix"> </div>-->
-					<!--</div>-->
-					<!--<div class="col-md-4 services-grd1">-->
-						<!--<div class="col-xs-3 services-grd1-left">-->
-							<!--<span class="glyphicon glyphicon-send" aria-hidden="true"></span>-->
-						<!--</div>-->
-						<!--<div class="col-xs-9 banner-bottom-grid-left banner-bottom-grid-l">-->
-							<!--<h4>广州塔</h4>-->
-							<!--<ul>-->
-								<!--<li><a><span class="glyphicon glyphicon-heart" aria-hidden="true"></span>242人 喜欢 </a></li>-->
-								<!--<li><a><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>笔者：ricky</a></li>-->
-								<!--<li><a><span class="glyphicon glyphicon-tag" aria-hidden="true"></span>海滩</a></li>-->
-								<!--<li><a><span class="glyphicon glyphicon-time" aria-hidden="true"></span>2018-03-25 16:04:04</a></li>-->
-							<!--</ul>-->
-							<!---->
-						<!--</div>-->
-						<!--<div class="clearfix"> </div>-->
-					<!--</div>-->
-					<!--<div class="col-md-4 services-grd1">-->
-						<!--<div class="col-xs-3 services-grd1-left">-->
-							<!--<span class="glyphicon glyphicon-send" aria-hidden="true"></span>-->
-						<!--</div>-->
-						<!--<div class="col-xs-9 banner-bottom-grid-left banner-bottom-grid-l">-->
-							<!--<h4>广州塔</h4>-->
-							<!--<ul>-->
-								<!--<li><a><span class="glyphicon glyphicon-heart" aria-hidden="true"></span>242人 喜欢 </a></li>-->
-								<!--<li><a><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>笔者：ricky</a></li>-->
-								<!--<li><a><span class="glyphicon glyphicon-tag" aria-hidden="true"></span>海滩</a></li>-->
-								<!--<li><a><span class="glyphicon glyphicon-time" aria-hidden="true"></span>2018-03-25 16:04:04</a></li>-->
-							<!--</ul>-->
-							<!---->
-						<!--</div>-->
-						<!--<div class="clearfix"> </div>-->
-					<!--</div>-->
-					<!---->
-
-					<!--<div class="clearfix"> </div>-->
-				<!--</div>-->
+						</div>
+						<div class="clearfix"> </div>
+					</div>
+				</div>
+				<div class="clearfix"> </div>
 			</div>
 			<div class="services-overview">
 				<h3>Write Story</h3>
@@ -255,17 +134,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="services-overview-grids">
 					<div class="col-md-4 services-overview-grid">
 						<div class="services-overview-grd">
-							<form class="form-horizontal" role="form">
+							<form class="form-horizontal">
 							  <div class="form-group">
-							    <label for="firstname" class="col-sm-3 control-label">标   题</label>
+							    <label class="col-sm-3 control-label">标   题</label>
 							    <div class="col-sm-8">
-							      <input type="text" class="form-control" id="firstname" placeholder="起一个美丽的名字">
+							      <input type="text" class="form-control" id="title" placeholder="起一个美丽的名字">
 							    </div>
 							  </div>
 							  <div class="form-group">
-							    <label for="lastname" class="col-sm-3 control-label">标	签</label>
+							    <label class="col-sm-3 control-label">标	签</label>
 							    <div class="col-sm-4">
-							      	<select class="form-control">
+							      	<select class="form-control" id="tag">
 								      <option>请选择</option>
 								      <option>2</option>
 								      <option>3</option>
@@ -275,9 +154,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							    </div>
 							  </div>
 							  <div class="form-group">
-							  	<label for="lastname" class="col-sm-3 control-label"></label>
+							  	<label class="col-sm-3 control-label"></label>
 							    <div class="col-sm-8">
-							      <button class="btn btn-info">写好啦</button>
+							      <input class="btn btn-info" id="btn" type="button" value="写好啦"/>
 							    </div>
 							  </div>
 							</form>
@@ -285,10 +164,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</div>
 					<div class="col-md-8 services-overview-grid">
 						<div class="services-overview-grd">
-							<form role="form">
-							  <div class="form-group">
-							    <textarea class="form-control" rows="10" placeholder="内容"></textarea>
-							  </div>
+							<form method="post" id="myForm">
+								<div id="editor">
+									<p>抒写属于你的故事</p>
+								</div>
+								<input type="hidden" name="content" id="content"/>
+								<input type="hidden" name="txt" id="txt"/>
+
 							</form>
 						</div>
 					</div>
@@ -318,10 +200,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="col-md-3 footer-grids">
 					<h3>Navigation</h3>					
 					<ul>
-						<li><a href="index.html">首页</a></li>
-						<li><a href="about.html">景点</a></li>
-						<li><a href="services.html">文章</a></li>
-						<li><a href="codes.html">照片墙</a></li>
+						<li><a href="/home/index.do">首页</a></li>
+						<li><a href="/sceneWeb/scene.do">景点</a></li>
+						<li><a href="/articleWeb/article.do">文章</a></li>
+						<li><a href="/expertWeb/expert.do">申请专家</a></li>
 						<li><a href="contact.html">联系我们</a></li>
 					</ul>
 				</div>
@@ -334,28 +216,86 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</ul>
 				</div>
 				<div class="col-md-4 footer-grids">	
-					<h3>Login</h3>
-					<p>如果你没有注册过，也没有关系<p>
-					<form class="form-horizontal" id="login">
-						<div class="form-group">
-						    <div class="col-sm-10">
-						      	<input type="text" class="text" value="请输入邮箱" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '请输入邮箱';}">
-								<input type="button" value="验证码">
-						    </div>
-  						</div>
-						<div class="form-group">
-						    <div class="col-sm-10">
-						      	<input type="text" class="text" value="请输入验证码" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '请输入验证码';}">
-								<input type="button" value="GO">
-						    </div>
-						</div>
-				 </form>
+					<!--<h3>Login</h3>-->
+					<!--<p>如果你没有注册过，也没有关系<p>-->
+					<!--<form class="form-horizontal" id="login">-->
+						<!--<div class="form-group">-->
+						    <!--<div class="col-sm-10">-->
+						      	<!--<input type="text" class="text" value="请输入邮箱" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '请输入邮箱';}">-->
+								<!--<input type="button" value="验证码">-->
+						    <!--</div>-->
+  						<!--</div>-->
+						<!--<div class="form-group">-->
+						    <!--<div class="col-sm-10">-->
+						      	<!--<input type="text" class="text" value="请输入验证码" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '请输入验证码';}">-->
+								<!--<input type="button" value="GO">-->
+						    <!--</div>-->
+						<!--</div>-->
+				 	<!--</form>-->
 				</div>
 				<div class="clearfix"> </div>
 			</div>
 		</div>
 	</div>
-	
+<script type="application/javascript">
+    var E = window.wangEditor;
+    var editor = new E('#editor');
+    editor.customConfig.uploadImgMaxLength = 5;
+    editor.customConfig.uploadFileName = 'pic';
+    editor.customConfig.uploadImgHooks = {
+        before: function (xhr, editor, files) {
+            // 图片上传之前触发
+            // xhr 是 XMLHttpRequst 对象，editor 是编辑器对象，files 是选择的图片文件
+            // 如果返回的结果是 {prevent: true, msg: 'xxxx'} 则表示用户放弃上传
+            // return {
+            //     prevent: true,
+            //     msg: '放弃上传'
+            // }
+        },
+        success: function (xhr, editor, result) {
+            console.log(result)
+            // 图片上传并返回结果，图片插入成功之后触发
+            // xhr 是 XMLHttpRequst 对象，editor 是编辑器对象，result 是服务器端返回的结果
+        },
+        fail: function (xhr, editor, result) {
+            console.log(xhr, editor, result)
+            // 图片上传并返回结果，但图片插入错误时触发
+            // xhr 是 XMLHttpRequst 对象，editor 是编辑器对象，result 是服务器端返回的结果
+        },
+        error: function (xhr, editor) {
+            console.log(xhr, editor)
+            // 图片上传出错时触发
+            // xhr 是 XMLHttpRequst 对象，editor 是编辑器对象
+        },
+        timeout: function (xhr, editor) {
+            // 图片上传超时时触发
+            // xhr 是 XMLHttpRequst 对象，editor 是编辑器对象
+        },
+        // 如果服务器端返回的不是 {errno:0, data: [...]} 这种格式，可使用该配置
+        // （但是，服务器端返回的必须是一个 JSON 格式字符串！！！否则会报错）
+        customInsert: function (insertImg, result, editor) {
+            // 图片上传并返回结果，自定义插入图片的事件（而不是编辑器自动插入图片！！！）
+            // insertImg 是插入图片的函数，editor 是编辑器对象，result 是服务器端返回的结果
+
+            // 举例：假如上传图片成功后，服务器端返回的是 {url:'....'} 这种格式，即可这样插入图片：
+            var url = result.data
+            insertImg(url)
+
+            // result 必须是一个 JSON 格式字符串！！！否则报错
+        }
+    }
+    editor.customConfig.debug = true;
+    editor.customConfig.uploadImgHeaders = {
+        //有点坑这个参数
+//        'Accept': 'text/x-json'
+    };
+    editor.customConfig.withCredentials = true;
+    editor.customConfig.showLinkImg = false;
+    editor.customConfig.uploadImgServer = '/articleWeb/insertArticlePic.do';
+    // 或者 var editor = new E( document.getElementById('#editor') )
+    editor.create();
+
+</script>
 <!--//footer-->	
 <!-- for bootstrap working -->
 <!-- //for bootstrap working -->

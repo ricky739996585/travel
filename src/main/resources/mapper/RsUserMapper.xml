@@ -116,7 +116,7 @@
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.ricky.travel.domain.RsUser" useGeneratedKeys="true" keyProperty="id" >
+  <insert id="insert" parameterType="com.ricky.travel.domain.RsUser" useGeneratedKeys="true" keyProperty="userId" >
     insert into rs_user (User_Id, User_Phone, User_Email, 
       User_Status, User_Level, User_Date, 
       Last_Login, User_Name)
@@ -124,7 +124,7 @@
       #{userStatus,jdbcType=INTEGER}, #{userLevel,jdbcType=INTEGER}, #{userDate,jdbcType=TIMESTAMP}, 
       #{lastLogin,jdbcType=TIMESTAMP}, #{userName,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.ricky.travel.domain.RsUser" useGeneratedKeys="true" keyProperty="id" >
+  <insert id="insertSelective" parameterType="com.ricky.travel.domain.RsUser" useGeneratedKeys="true" keyProperty="userId" >
     insert into rs_user
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="userId != null" >

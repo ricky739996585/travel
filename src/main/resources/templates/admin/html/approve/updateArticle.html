@@ -143,8 +143,8 @@
 	                                    </div>
 	                                </div>
 	                                <div class="card-body col-xs-12">
-	                                    <div>
-	                                    	<textarea class="form-control" rows="5" style="resize: none;" th:text="${articleData.articleContent}"></textarea>
+	                                    <div th:utext="${articleData.articleContent}" style="width: 100%;height: 50%;" class="form-control">
+	                                    	<!--<textarea class="form-control" rows="5" style="resize: none;" th:utext="${articleData.articleContent}"></textarea>-->
 	                                    </div>
 	                                </div>
 	                                <div class="card-body col-xs-6">

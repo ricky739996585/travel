@@ -23,6 +23,15 @@ public class ScenePhotoServiceImpl implements ScenePhotoService {
     }
 
     @Override
+    public List<ScenicPhoto> photoList() {
+        ScenicPhotoExample example=new ScenicPhotoExample();
+        example.setOrderByClause("Scenic_Photo_Date");
+        example.setOffset(0);
+        example.setLimit(5);
+        return scenicPhotoMapper.selectByExampleWithBLOBs(example);
+    }
+
+    @Override
     public int insert(List<ScenicPhoto> list) {
         for(ScenicPhoto photo : list){
             photo.setScenicPhotoDate(new Date(System.currentTimeMillis()));

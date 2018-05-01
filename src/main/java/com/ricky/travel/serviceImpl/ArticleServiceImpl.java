@@ -108,7 +108,7 @@ public class ArticleServiceImpl implements ArticleService {
     public List<ArticleVO> getArticleBySearch(String search, int offset, int limit) {
         ArticleVOExample example=new ArticleVOExample();
         if(search!=null&&!("".equals(search))){
-            example.createCriteria().andArticleNameLike("%"+"search"+"%").andArticlePassEqualTo(1);
+            example.createCriteria().andArticleNameLike("%"+search+"%").andArticlePassEqualTo(1);
         }
         example.setOffset(offset);
         example.setLimit(limit);
@@ -119,9 +119,31 @@ public class ArticleServiceImpl implements ArticleService {
     public int getCountBySearch(String search) {
         ArticleVOExample example=new ArticleVOExample();
         if(search!=null&&!("".equals(search))){
-            example.createCriteria().andArticleNameLike("%"+search+"%");
+            example.createCriteria().andArticleNameLike("%"+search+"%").andArticlePassEqualTo(1);
         }
         return articleVOMapper.countByExample(example);
+    }
+
+    @Override
+    public List<ArticleVO> getHotArticleList() {
+        ArticleVOExample example=new ArticleVOExample();
+        example.createCriteria().andArticlePassEqualTo(1);
+        example.setOrderByClause("Article_Like");
+        example.setOrderByDirection("desc");
+        example.setOffset(0);
+        example.setLimit(3);
+        return articleVOMapper.selectByExampleWithBLOBs(example);
+    }
+
+    @Override
+    public List<ArticleVO> getNewArticleList() {
+        ArticleVOExample example=new ArticleVOExample();
+        example.createCriteria().andArticlePassEqualTo(1);
+        example.setOrderByClause("Article_Id");
+        example.setOrderByDirection("desc");
+        example.setOffset(0);
+        example.setLimit(3);
+        return articleVOMapper.selectByExampleWithBLOBs(example);
     }
 
     @Override
@@ -129,5 +151,11 @@ public class ArticleServiceImpl implements ArticleService {
         ArticleLikeRecordExample example=new ArticleLikeRecordExample();
         example.createCriteria().andArticleRecordActicleIdEqualTo(articleId);
         return articleLikeRecordMapper.countByExample(example);
+    }
+
+    @Override
+    public int insertArticle(ArticleVO articleVO) {
+        articleVOMapper.insert(articleVO);
+        return articleVO.getArticleId();
     }
 }

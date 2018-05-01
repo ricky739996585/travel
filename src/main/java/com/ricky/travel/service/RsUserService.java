@@ -8,4 +8,12 @@ public interface RsUserService {
     public DataTablesResponse<RsUser> getAll(DataTablesRequest request);
 
     public RsUser getRsUser(Integer rsUserId);
+
+    public RsUser getRsUserByEmail(String email);
+
+    public void insertRsUser(RsUser user);
+
+    public void updateRsUser(RsUser user);
+
+
 }

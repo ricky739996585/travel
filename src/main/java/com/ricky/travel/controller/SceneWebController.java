@@ -86,9 +86,85 @@ public class SceneWebController {
         return data;
     }
 
+    /**
+      * @author:ricky
+      * 功能:景点首页页面
+      * 时间:2018/4/30 0030 15:06
+      */
+    @RequestMapping("scene")
+    public ModelAndView scene(){
+        ModelAndView mav = new ModelAndView();
+        JSONObject data=new JSONObject();
+        //热门景点列表信息
+        List<ScenicVO> hotSceneList = sceneService.getHotSceneList();
+        JSONArray jsonArray=new JSONArray();
+        JSONObject sceneEnity=new JSONObject();
+        ScenicPhoto scenicPhoto=new ScenicPhoto();
+        String desc="";
+        for (ScenicVO scenicVO:hotSceneList){
+            scenicPhoto = scenePhotoService.getPhotoes(scenicVO.getScenicId()).get(0);
+            sceneEnity.put("photoUrl",scenicPhoto.getScenicPhotoUrl());
+            sceneEnity.put("scenicId",scenicVO.getScenicId());
+            sceneEnity.put("scenicName",scenicVO.getScenicName());
+            desc=scenicVO.getScenicDescription();
+            if(desc.length()>80){
+                sceneEnity.put("scenicDescription",desc.substring(0,80)+"...");
+            }else {
+                sceneEnity.put("scenicDescription",desc);
+            }
+
+            jsonArray.add(sceneEnity);
+            sceneEnity=new JSONObject();
+            scenicPhoto=new ScenicPhoto();
+            desc="";
+        }
+
+        //热门景点列表信息
+        List<ScenicVO> newSceneList = sceneService.getNewSceneList();
+        JSONArray newArray=new JSONArray();
+        for (ScenicVO scenicVO:hotSceneList){
+            scenicPhoto = scenePhotoService.getPhotoes(scenicVO.getScenicId()).get(0);
+            sceneEnity.put("photoUrl",scenicPhoto.getScenicPhotoUrl());
+            sceneEnity.put("scenicId",scenicVO.getScenicId());
+            sceneEnity.put("scenicName",scenicVO.getScenicName());
+            desc=scenicVO.getScenicDescription();
+            if(desc.length()>80){
+                sceneEnity.put("scenicDescription",desc.substring(0,80)+"...");
+            }else {
+                sceneEnity.put("scenicDescription",desc);
+            }
+
+            newArray.add(sceneEnity);
+            sceneEnity=new JSONObject();
+            scenicPhoto=new ScenicPhoto();
+            desc="";
+        }
+
+        data.put("hotSceneList",jsonArray);
+        data.put("newSceneList",newArray);
+        mav.addObject("data",data);
+        mav.setViewName("/web/scene");
+        return mav;
+    }
+
     @RequestMapping("list")
-    public String list(){
-        return "/web/sceneList";
+    public ModelAndView list(String search){
+        ModelAndView mav = new ModelAndView();
+        mav.setViewName("/web/sceneList");
+        mav.addObject("search",search);
+        return mav;
+    }
+
+    @RequestMapping("photo")
+    public ModelAndView photo(){
+        ModelAndView mav = new ModelAndView();
+        JSONObject data=new JSONObject();
+        List<ScenicPhoto> photoList = scenePhotoService.photoList();
+        data.put("photoList",photoList);
+
+        mav.setViewName("/web/photo");
+        mav.addObject("data",data);
+        return mav;
     }
 
 }

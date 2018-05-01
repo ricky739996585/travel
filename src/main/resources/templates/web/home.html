@@ -17,6 +17,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <script type="text/javascript" th:src="@{/web/js/jquery-1.11.1.min.js}"></script>
 <script type="text/javascript" th:src="@{/web/js/jquery.flexslider.js}"></script>
 <script type="text/javascript" th:src="@{/web/js/bootstrap.js}"></script>
+<script type="text/javascript" th:src="@{/web/js/common.js}"></script>
 <script type="text/javascript">
 						$(window).load(function(){
 						  $('.flexslider').flexslider({
@@ -45,9 +46,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		</div>
 		<div class="logo-right">
 			<ul>
-				<li><a href="#login">登 录</a></li>|
-				<li><a href="#login">申请专家</a></li>|
-				<li><a href="#phone">联系我们</a></li>
+				<li><a href="#login" th:text="${session.user}!=null ? ${session.user.userName}:'登 录'"></a></li>
+				<li><a href="tel:88888888">联系我们</a></li>
+				<li><a href="javascript:cancel();" th:text="${session.user}!=null ? '注 销':''"></a></li>
 			</ul>
 		</div>
 		<div class="clearfix"> </div>
@@ -70,11 +71,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<nav class="cl-effect-1">
 						<ul class="nav navbar-nav">
 							<li class="active"><a href="/home/index.do">首页</a></li>
-							<li><a href="/sceneWeb/list.do">景点</a></li>
-							<li><a href="codes.html">文章</a></li>
-							<li><a href="services.html">猜你喜欢</a></li>
-							<li><a href="gallery.html">照片墙</a></li>
-							<li><a href="gallery.html">联系我们</a></li>
+							<li><a href="/sceneWeb/scene.do">景点</a></li>
+							<li><a href="/articleWeb/article.do">文章</a></li>
+							<li><a href="#">猜你喜欢</a></li>
+							<li><a href="/sceneWeb/photo.do">照片墙</a></li>
+							<li><a href="/expertWeb/expert.do">申请专家</a></li>
 						</ul>
 					</nav>
 				</div><!-- /.navbar-collapse -->	
@@ -186,13 +187,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="welcome-bottom-grids">
 				<div class="welcome-bottom-grid-l">
 					<div class="more">
-						<a href="single.html">More Info</a>
+						<a href="/sceneWeb/scene.do">More Info</a>
 					</div>
 				</div>
 				<div class="welcome-bottom-grid-left">
-					<h3>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet commodi consequatur</h3>
-					<p>Ut enim ad minima veniam, quis nostrum exercitationem ullam 
-						corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur.</p>
+					<h3>Let people who understand travel take you to the world</h3>
+					<p>Travel is part of life, knows how to travel, knows how to taste life,
+						Intentionally tell you the appearance of every unforgettable trip</p>
 				</div>
 				<div class="clearfix"> </div>
 			</div>
@@ -218,10 +219,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="col-md-3 footer-grids">
 					<h3>Navigation</h3>					
 					<ul>
-						<li><a href="index.html">首页</a></li>
-						<li><a href="about.html">景点</a></li>
-						<li><a href="services.html">文章</a></li>
-						<li><a href="codes.html">照片墙</a></li>
+						<li><a href="/home/index.do">首页</a></li>
+						<li><a href="/sceneWeb/scene.do">景点</a></li>
+						<li><a href="/articleWeb/article.do">文章</a></li>
+						<li><a href="/expertWeb/expert.do">申请专家</a></li>
 						<li><a href="contact.html">联系我们</a></li>
 					</ul>
 				</div>
@@ -239,14 +240,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<form class="form-horizontal" id="login">
 						<div class="form-group">
 						    <div class="col-sm-10">
-						      	<input type="text" class="text" value="请输入邮箱" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '请输入邮箱';}">
-								<input type="button" value="验证码">
+						      	<input type="text" class="text" value="请输入邮箱" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '请输入邮箱';}" id="email">
+								<input type="button" value="验证码" onclick="sendMessage()" id="btnSendCode">
 						    </div>
   						</div>
 						<div class="form-group">
 						    <div class="col-sm-10">
-						      	<input type="text" class="text" value="请输入验证码" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '请输入验证码';}">
-								<input type="button" value="GO">
+						      	<input type="text" class="text" value="请输入验证码" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '请输入验证码';}" id="code">
+								<input type="hidden" id="sessionId">
+								<input type="button" value="GO" id="btnLogin" onclick="login()">
 						    </div>
 						</div>
 				 </form>
@@ -255,7 +257,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</div>
 		</div>
 	</div>
-	
+
 <!--//footer-->	
 <!-- for bootstrap working -->
 

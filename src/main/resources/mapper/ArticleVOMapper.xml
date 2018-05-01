@@ -89,8 +89,21 @@
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
-    <if test="orderByClause != null" >
-      order by ${orderByClause}
+    <if test="orderByClause != null">
+      <if test="orderByDirection != null" >
+        order by ${orderByClause} ${orderByDirection}
+      </if>
+      <if test="orderByDirection = null" >
+        order by ${orderByClause}
+      </if>
+    </if>
+    <if test="limit != null" >
+      <if test="offset != null" >
+        limit ${offset}, ${limit}
+      </if>
+      <if test="offset == null" >
+        limit ${limit}
+      </if>
     </if>
   </select>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.ricky.travel.domain.ArticleVOExample" >
@@ -103,8 +116,13 @@
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
-    <if test="orderByClause != null" >
-      order by ${orderByClause}
+    <if test="orderByClause != null">
+      <if test="orderByDirection != null" >
+        order by ${orderByClause} ${orderByDirection}
+      </if>
+      <if test="orderByDirection = null" >
+        order by ${orderByClause}
+      </if>
     </if>
     <if test="limit != null" >
       <if test="offset != null" >
@@ -133,7 +151,7 @@
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.ricky.travel.domain.ArticleVO" useGeneratedKeys="true" keyProperty="id" >
+  <insert id="insert" parameterType="com.ricky.travel.domain.ArticleVO" useGeneratedKeys="true" keyProperty="articleId" >
     insert into article (Article_Id, User_Id, Article_Name, 
       Article_Date, Article_Like, Article_Tag, 
       Article_Pass, Article_Content)
@@ -141,7 +159,7 @@
       #{articleDate,jdbcType=DATE}, #{articleLike,jdbcType=INTEGER}, #{articleTag,jdbcType=VARCHAR}, 
       #{articlePass,jdbcType=INTEGER}, #{articleContent,jdbcType=LONGVARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.ricky.travel.domain.ArticleVO" useGeneratedKeys="true" keyProperty="id" >
+  <insert id="insertSelective" parameterType="com.ricky.travel.domain.ArticleVO" useGeneratedKeys="true" keyProperty="articleId" >
     insert into article
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="articleId != null" >

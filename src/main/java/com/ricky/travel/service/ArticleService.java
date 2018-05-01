@@ -20,5 +20,11 @@ public interface ArticleService {
 
     public int getCountBySearch(String search);
 
+    public List<ArticleVO> getHotArticleList();
+
+    public List<ArticleVO> getNewArticleList();
+
     public int getLikeRecordByArticleId(int articleId);
+
+    public int insertArticle(ArticleVO articleVO);
 }

@@ -27,5 +27,9 @@ public interface SceneService {
 
     public List<ScenicVO> getSceneBySearch(String search,int offset,int limit);
 
+    public List<ScenicVO> getHotSceneList();
+
+    public List<ScenicVO> getNewSceneList();
+
     public int getCountBySearch(String search);
 }

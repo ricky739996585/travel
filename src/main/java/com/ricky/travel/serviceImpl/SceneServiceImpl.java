@@ -118,10 +118,30 @@ public class SceneServiceImpl implements SceneService {
     public List<ScenicVO> getSceneBySearch(String search,int offset,int limit) {
         ScenicVOExample example=new ScenicVOExample();
         if(search!=null&&!("".equals(search))){
-            example.createCriteria().andScenicNameLike("%"+"search"+"%");
+            example.createCriteria().andScenicNameLike("%"+search+"%");
         }
         example.setOffset(offset);
         example.setLimit(limit);
+        return scenicVOMapper.selectByExampleWithBLOBs(example);
+    }
+
+    @Override
+    public List<ScenicVO> getHotSceneList() {
+        ScenicVOExample example=new ScenicVOExample();
+        example.setOrderByClause("Scenic_Like");
+        example.setOrderByDirection("desc");
+        example.setOffset(0);
+        example.setLimit(3);
+        return scenicVOMapper.selectByExampleWithBLOBs(example);
+    }
+
+    @Override
+    public List<ScenicVO> getNewSceneList() {
+        ScenicVOExample example=new ScenicVOExample();
+        example.setOrderByClause("Scenic_Id");
+        example.setOrderByDirection("desc");
+        example.setOffset(0);
+        example.setLimit(3);
         return scenicVOMapper.selectByExampleWithBLOBs(example);
     }
 
